@@ -10,7 +10,7 @@ if INGREDIENTS == 0 image_blend = c_white;
 for(i=0;i<INGREDIENTS;i++)
 {
 	if i == 0 var _ing = spr_ingrLaranja;
-	if i == 1 var _ing = spr_ingrAwa;
+	if i == 1 var _ing = spr_ingrAgua;
 	if i == 2 var _ing = spr_ingrGelo;
 	
 	draw_sprite(_ing, 0, x+150,  y + i*64 - 50)

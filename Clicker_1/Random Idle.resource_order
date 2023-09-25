@@ -46,7 +46,6 @@
     {"name":"GMLive_seekSetOp","order":6,"path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},
     {"name":"GMLive_parser","order":4,"path":"scripts/GMLive_parser/GMLive_parser.yy",},
     {"name":"scn_room1","order":1,"path":"rooms/scn_room1/scn_room1.yy",},
-    {"name":"bgm_musica1","order":1,"path":"sounds/bgm_musica1/bgm_musica1.yy",},
     {"name":"GMLive_compiler","order":1,"path":"scripts/GMLive_compiler/GMLive_compiler.yy",},
     {"name":"GMLive_node","order":2,"path":"scripts/GMLive_node/GMLive_node.yy",},
     {"name":"obj_numberpopup","order":3,"path":"objects/obj_numberpopup/obj_numberpopup.yy",},

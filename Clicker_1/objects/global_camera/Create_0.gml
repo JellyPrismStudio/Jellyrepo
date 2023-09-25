@@ -43,7 +43,7 @@
 		}
 		if mouse_check_button(mb_right)
 		{
-			draw_sprite(Sprite2,0,mouse_drawx,mouse_drawy);	
+			draw_sprite(spr_mouse_move,0,mouse_drawx,mouse_drawy);	
 		}
 	
 	}
