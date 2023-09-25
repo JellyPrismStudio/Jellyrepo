@@ -8,9 +8,11 @@ controle = function()
 	#endregion
 	
 	#region mouse/toque
-	if (mouse_check_button(mb_left) and !movendo)		//se o botão esquerdo estiver precionado e o player não estiver se movendo:
+	// se o botão esquerdo estiver precionado e o player não estiver se movendo:
+	if (mouse_check_button(mb_left) and !movendo)		
 	{
-		if (mouse_x != clamp(mouse_x, posicao_mouse-5, posicao_mouse+5)) //se a posição atual do mouse ter a diferença d 10 pixels do frame anterior
+		// se a posição atual do mouse ter a diferença d 10 pixels do frame anterior
+		if (mouse_x != clamp(mouse_x, posicao_mouse-(mouse_margem/2), posicao_mouse+(mouse_margem/2))) 
 		var _mudar = mouse_x > posicao_mouse? _mudar+1 : _mudar-1;
 	}
 	posicao_mouse = mouse_x;
@@ -23,10 +25,13 @@ movimento = function()
 {
 	posicao += controle();
 	posicao = clamp(posicao, -1, 1);
-	var _posicao_parar = room_width/2+posicao*room_width/3;		//qual posição o player tem que parar
+	
+	//qual posição o player tem que parar
+	var _posicao_parar = room_width/2 + posicao*room_width/3;		
 	x = lerp(x, _posicao_parar, .3);
 	
-	movendo = x == clamp(x, _posicao_parar-5, _posicao_parar+5)? false : true;		//diz se o player está se movendo
+	//diz se o player está se movendo
+	movendo = x == clamp(x, _posicao_parar-5, _posicao_parar+5)? false : true;		
 }
 #endregion
 
