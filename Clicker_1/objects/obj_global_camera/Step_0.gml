@@ -1,3 +1,6 @@
+if (live_call()) return live_result;
+
+
 #region funcoes
 	// * Algumas funcoes precisam ser atualizadas a todo momento.
 	// * as que não puderem ser definidas no create são definidas aqui
@@ -33,7 +36,7 @@
 	// * Agrupa todo o código que ficaria solto no step aqui.
 	// * Pra desativar o step, basicamente é só desativar o main no final desse código.
 	main = function(){
-		if (live_call()) return live_result;
+		
 		// * A maioria (se não todos os projetos) vai vir com o LiveEdit instalado.
 		// * Esse trecho da linha 10 é necessário para o objeto se tornar 'editável'
 		// * Enquanto testa. Esse trecho deve ser sempre removido do código
