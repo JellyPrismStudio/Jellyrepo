@@ -1,5 +1,3 @@
-if (live_call()) return live_result;
-
 draw_self();
 if INGREDIENTS == 3 image_blend = c_red;
 if INGREDIENTS == 1 image_blend = c_olive;

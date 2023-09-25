@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_funcoes_i",
+  "name": "GMLive_action",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Runtime",
+    "path": "folders/Extensions/GMLive/Internal/Runtime.yy",
   },
 }

@@ -3,9 +3,9 @@
 /////////////
 
 #region variaveis
-
+	variavel_1 = 1;
 	mouse_pos_x = x;
-	mouse_pos_x = y;
+	mouse_pos_y = y;
 	// * Nome de variavel claro. Pode ter nome comprido: posicao_x_do_mouse_na_tela = x;
 
 	mouse_x_gui = window_mouse_get_x() - display_get_gui_width() / 2;
@@ -31,13 +31,21 @@
 	/// DESENHAR PONTEIRO (f_draw_mouse_pointer):
 	/// Desenha o ponteiro do mouse quando o mb_right for cllicado
 	/// ========================================================= ///
+	f_adicionar_a_variavel = function(_arg1 = 1)
+	{
+		// Adiciona um valor a variavel
+		variavel_1 += _arg1;		
+	}
+	
+	f_adicionar_o_valor_um_a_variavel = function(_arg1);
+	
 	f_draw_mouse_pointer = function() // * Método usado para funções locais
 	{								  // * sempre dar enter, nos IFs também.
-	
+		// Pega a posição X e Y do mouse na window (e não na room como é o mouse_x)
 
 		if mouse_check_button_pressed(mb_right)
 		{
-			// Pega a posição X e Y do mouse na window (e não na room como é o mouse_x)
+			
 			mouse_drawx = window_mouse_get_x();
 			mouse_drawy = window_mouse_get_y();
 		}
@@ -54,10 +62,12 @@
 	/// DUPLICAR VALOR (f_duplicar_valor):
 	/// Duplica o valor de uma variavel 
 	/// ========================================================= ///
-	f_duplicar_valor = function(arg1)
+	f_duplicar_valor = function(_arg1)
 	{
-		arg1 *= 2;
-		return arg1;		
+		color = c_yellow;
+		var _color = c_red;
+		_arg1 *= 2;
+		return _arg1;		
 	}
 	/// ============== ///
 
@@ -73,5 +83,7 @@
 	display_set_gui_size(display_get_width(), display_get_height());
 	display_set_gui_maximise(true);
 	var _dobro = f_duplicar_valor(60); 
+	f_adicionar_a_variavel();
+	variavel_1 *= 2;
 	// * variavel local com o _ na frente. Variável de objeto não precisa (linha 9)
 #endregion

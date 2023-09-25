@@ -25,6 +25,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"spr_ingrGelo","order":5,"path":"sprites/spr_ingrGelo/spr_ingrGelo.yy",},
+    {"name":"sfx_gato","order":2,"path":"sounds/sfx_gato/sfx_gato.yy",},
     {"name":"GMLive_vm_call","order":6,"path":"scripts/GMLive_vm_call/GMLive_vm_call.yy",},
     {"name":"GMLive_node","order":2,"path":"scripts/GMLive_node/GMLive_node.yy",},
     {"name":"GMLive_seekEval","order":5,"path":"scripts/GMLive_seekEval/GMLive_seekEval.yy",},

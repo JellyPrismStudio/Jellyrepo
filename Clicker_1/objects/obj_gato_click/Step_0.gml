@@ -1,7 +1,6 @@
 #region funcoes
-if (live_call()) return live_result;
-image_blend = c_yellow;
 
+image_blend = c_red;
 
 #endregion
 

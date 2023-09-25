@@ -1,5 +1,6 @@
 if (live_call()) return live_result;
 
+atualizar_variavel = 4304;
 
 #region funcoes
 	// * Algumas funcoes precisam ser atualizadas a todo momento.
@@ -38,7 +39,7 @@ if (live_call()) return live_result;
 	main = function(){
 		
 		// * A maioria (se não todos os projetos) vai vir com o LiveEdit instalado.
-		// * Esse trecho da linha 10 é necessário para o objeto se tornar 'editável'
+		// * Esse trecho da linha 1 é necessário para o objeto se tornar 'editável'
 		// * Enquanto testa. Esse trecho deve ser sempre removido do código
 		// * Depois de ter o objeto finalizado, pois pesa no processamento.
 		
