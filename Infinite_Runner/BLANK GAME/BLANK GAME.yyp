@@ -81,12 +81,14 @@
     {"id":{"name":"GMLive_tools","path":"scripts/GMLive_tools/GMLive_tools.yy",},},
     {"id":{"name":"GMLiveAPI_js","path":"scripts/GMLiveAPI_js/GMLiveAPI_js.yy",},},
     {"id":{"name":"GMLive_builder","path":"scripts/GMLive_builder/GMLive_builder.yy",},},
+    {"id":{"name":"scn_room_teste","path":"rooms/scn_room_teste/scn_room_teste.yy",},},
     {"id":{"name":"GMLive_program","path":"scripts/GMLive_program/GMLive_program.yy",},},
     {"id":{"name":"GMLive_call","path":"scripts/GMLive_call/GMLive_call.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"scn_room_teste","path":"rooms/scn_room_teste/scn_room_teste.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

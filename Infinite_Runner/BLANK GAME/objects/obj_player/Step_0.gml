@@ -19,6 +19,8 @@ controle = function()
 	
 	return _mudar
 	#endregion
+	
+	
 }
 
 movimento = function()

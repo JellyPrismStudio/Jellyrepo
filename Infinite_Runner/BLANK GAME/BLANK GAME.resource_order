@@ -47,6 +47,7 @@
     {"name":"GMLive_vm","order":5,"path":"scripts/GMLive_vm/GMLive_vm.yy",},
     {"name":"GMLive_tools","order":1,"path":"scripts/GMLive_tools/GMLive_tools.yy",},
     {"name":"GMLiveAPI_js","order":4,"path":"scripts/GMLiveAPI_js/GMLiveAPI_js.yy",},
+    {"name":"scn_room_teste","order":1,"path":"rooms/scn_room_teste/scn_room_teste.yy",},
     {"name":"GMLive_program","order":3,"path":"scripts/GMLive_program/GMLive_program.yy",},
   ],
 }
