@@ -1,21 +1,21 @@
 #region moviento
-controle = function()
+f_controle = function()
 {
 	#region teclado
 	var _right = keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord("D"));
 	var _left = keyboard_check_pressed(vk_left) or keyboard_check_pressed(ord("A"));
-	var _mudar = _right-_left;		//para que lado o player vai mudar
+	//para que lado o player vai mudar
+	var _mudar = _right-_left;
 	#endregion
 	
 	#region mouse/toque
 	// se o botão esquerdo estiver precionado e o player não estiver se movendo:
 	if (mouse_check_button(mb_left) and !movendo)		
 	{
-		// se a posição atual do mouse ter a diferença d 10 pixels do frame anterior
-		if (mouse_x != clamp(mouse_x, posicao_mouse-(mouse_margem/2), posicao_mouse+(mouse_margem/2))) 
-		var _mudar = mouse_x > posicao_mouse? _mudar+1 : _mudar-1;
+		if (mouse_x != clamp(mouse_x, posicao_mouse_x-(mouse_margem/2), posicao_mouse_x+(mouse_margem/2))) 
+		var _mudar = mouse_x > posicao_mouse_x? _mudar+1 : _mudar-1;
 	}
-	posicao_mouse = mouse_x;
+	posicao_mouse_x = mouse_x;
 	
 	return _mudar
 	#endregion
@@ -23,9 +23,9 @@ controle = function()
 	
 }
 
-movimento = function()
+f_movimento = function()
 {
-	posicao += controle();
+	posicao += f_controle();
 	posicao = clamp(posicao, -1, 1);
 	
 	//qual posição o player tem que parar
@@ -39,7 +39,9 @@ movimento = function()
 
 main = function()
 {
-	movimento();
+	f_pulo();
+	f_movimento();
+	f_dano();
 }
 
 main();

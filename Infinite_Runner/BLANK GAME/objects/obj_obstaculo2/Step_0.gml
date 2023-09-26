@@ -1,0 +1,1 @@
+y += layer_get_vspeed("fundo");

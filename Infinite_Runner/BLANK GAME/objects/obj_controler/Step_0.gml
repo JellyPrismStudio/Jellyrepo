@@ -1,7 +1,7 @@
 main = function()
 {
-	f_tempo();
-	f_speed();
+	f_geracao();
+	f_speed_add();
 	f_vida();
 }
 

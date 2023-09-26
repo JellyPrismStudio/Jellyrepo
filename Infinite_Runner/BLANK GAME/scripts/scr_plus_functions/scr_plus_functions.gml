@@ -1,3 +1,5 @@
+randomize();
+
 function plus_instance_create_layer(xx,yy,layername,object, layerdepth = depth){
 	if !layer_exists(layername){
 		show_debug_message("criou a layer: " + layername);
