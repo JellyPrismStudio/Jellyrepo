@@ -6,6 +6,7 @@ main = function()
 	
 	//destruindo o objeto caso o player esteja com a vida cheia
 	if (obj_player.vida == 2) instance_destroy();
+	if (y > room_height+100) instance_destroy();
 }
 
 main();

@@ -42,6 +42,7 @@ main = function()
 	f_pulo();
 	f_movimento();
 	f_dano();
+	f_moeda();
 }
 
 main();

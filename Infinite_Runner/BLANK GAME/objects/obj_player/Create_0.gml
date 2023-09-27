@@ -8,6 +8,7 @@ mouse_margem = 30;
 hsped = 0;
 jump_boost = 6;
 range_pulo = 6;
+pontuacao = 0;
 #endregion
 
 #region dano
@@ -35,7 +36,19 @@ f_dano = function()
 		vida++;
 	}
 	
-	if (!vida) game_restart();
+	if (!vida)
+	{
+		layer_vspeed("fundo", 0);
+		if (!instance_exists(obj_gameover))
+		{
+			instance_create_depth(0, 0, 0, obj_gameover);
+		
+			if (obj_gui.timer > global.timer) global.timer = obj_gui.timer;
+			if (pontuacao > global.moedas) global.moedas = pontuacao
+			
+			global.pontos += pontuacao;
+		}
+	}
 }
 #endregion
 
@@ -53,7 +66,7 @@ f_up = function()
 	
 		if (_up)
 		{
-			hsped = jump_boost;
+			hsped = jump_boost/(layer_get_vspeed("fundo")/5);
 			y = ystart-1;
 		}
 	}
@@ -64,10 +77,22 @@ f_pulo = function()
 	//se o player deslizar pra cima ou apertar W ou ^ o hsped é igual jump_boost
 	f_up();
 	//faz o player cair
-	if (hsped > -3) hsped = lerp(hsped, -jump_boost, .03);
+	if (hsped > -3) hsped = lerp(hsped, -jump_boost/(layer_get_vspeed("fundo")/5), .03);
 	//se o player estive no nível do chão ele para
 	if (y > ystart) y = ystart;
 	if (y == ystart) hsped = 0;
-	y -= hsped;
+	y -= hsped*layer_get_vspeed("fundo")/5;
+}
+#endregion
+
+#region moeda
+f_moeda = function()
+{
+	var _moeda = instance_place(x, y, obj_moeda)
+	if (_moeda)
+	{
+		instance_destroy(_moeda);
+		pontuacao++;
+	}
 }
 #endregion

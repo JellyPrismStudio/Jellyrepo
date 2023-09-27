@@ -2,12 +2,12 @@
 timer = 0;
 f_tempo = function()
 {
-	timer++;
+	if (layer_get_vspeed("fundo") > 0) timer++;
 	plus_text_font(1, room_height-25, "TIMER: " + string(timer/60), c_black, fnt_DayDream, fa_left);
 }
 #endregion
 
-#region speeda
+#region speed
 start_speed = layer_get_vspeed("fundo");
 f_speed = function()
 {
@@ -23,5 +23,13 @@ f_vida = function()
 		var _submig = obj_player.vida > i? 0 : 1;
 		draw_sprite_ext(spr_coracao, _submig, room_width/2-56/2+i*56, 32, 3, 3, 0, c_white, 1);
 	}
+}
+#endregion
+
+#region moedas
+f_moeda = function()
+{
+	draw_sprite_ext(spr_moeda, 0, 30, 30, 2, 2, 0, c_white, 1);
+	plus_text_font(50, 30, ": " + string(obj_player.pontuacao), c_black, fnt_DayDream, fa_left, fa_middle);
 }
 #endregion

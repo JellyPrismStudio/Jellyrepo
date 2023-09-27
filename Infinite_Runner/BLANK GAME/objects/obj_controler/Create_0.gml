@@ -26,7 +26,7 @@ f_geracao = function()
 			_chance_ = choose(false, false, true);
 			var _posicao = irandom_range(-1, 1);
 			//
-			instance_create_layer(room_width/2+_posicao*room_width/3, -100, layer, f_obstaculo());
+			instance_create_layer(room_width/2+_posicao*room_width/3, -200, layer, f_obstaculo());
 			if (_chance_)
 			{
 				var _posicao2;
@@ -34,14 +34,14 @@ f_geracao = function()
 				if (_posicao == 0) _posicao2 = choose(-1, 1);
 				if (_posicao == 1) _posicao2 = choose(-1, 0);
 		
-				instance_create_layer(room_width/2+_posicao2*room_width/3, -100, layer, f_obstaculo());
+				instance_create_layer(room_width/2+_posicao2*room_width/3, -200, layer, f_obstaculo());
 			}
 		}
 		else
 		{
 			for (var i = -1; i < 2; i++)
 			{
-				instance_create_layer(room_width/2+i*room_width/3, -100, layer, obj_obstaculo1);
+				instance_create_layer(room_width/2+i*room_width/3, -200, layer, obj_obstaculo1);
 			}
 		}
 	}
@@ -62,7 +62,7 @@ f_vida = function()
 		if (timer_vida <= 0 and timer <= 1)
 		{
 			var _posicao = irandom_range(-1, 1);
-			instance_create_layer(room_width/2+_posicao*room_width/3, -100, layer, obj_vida);
+			instance_create_layer(room_width/2+_posicao*room_width/3, -200, layer, obj_vida);
 			timer_vida = timer_vida_max*layer_get_vspeed("fundo")/start_speed;
 		}
 	}
