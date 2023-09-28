@@ -25,7 +25,7 @@ f_controle = function()
 
 f_movimento = function()
 {
-	posicao += f_controle();
+	if (!instance_exists(obj_gameover)) posicao += f_controle();
 	posicao = clamp(posicao, -1, 1);
 	
 	//qual posição o player tem que parar

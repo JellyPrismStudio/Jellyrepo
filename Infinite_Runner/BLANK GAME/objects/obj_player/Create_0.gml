@@ -3,7 +3,7 @@ posicao = 0;
 posicao_mouse_x = mouse_x;
 posicao_mouse_y = mouse_y;
 movendo = true;
-mouse_margem = 30;
+mouse_margem = 50;
 
 hsped = 0;
 jump_boost = 6;
@@ -55,7 +55,7 @@ f_dano = function()
 #region pulo
 f_up = function()
 {
-	if (y >= ystart-range_pulo)
+	if (y >= ystart-range_pulo and !instance_exists(obj_gameover))
 	{
 		var _up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"));
 		if (mouse_check_button(mb_left))
@@ -81,7 +81,7 @@ f_pulo = function()
 	//se o player estive no nível do chão ele para
 	if (y > ystart) y = ystart;
 	if (y == ystart) hsped = 0;
-	y -= hsped*layer_get_vspeed("fundo")/5;
+	if (!instance_exists(obj_gameover)) y -= hsped*layer_get_vspeed("fundo")/5;
 }
 #endregion
 

@@ -30,3 +30,11 @@ f_ui = function()
 	
 	draw_text(40, 140, "time: " + string(obj_gui.timer) + "\ncollected coins: " + string(obj_player.pontuacao) + "\nbest time: " + string(global.timer) + "\nbest collected coins:" + string(global.moedas) + "\npoints: " + string(global.pontos))
 }
+f_save = function()
+{
+	ini_open("stats.ini");
+	ini_write_real("stats", "timer", global.timer);
+	ini_write_real("stats", "moedas", global.moedas);
+	ini_write_real("stats", "pontos", global.pontos);
+	ini_close();
+}
