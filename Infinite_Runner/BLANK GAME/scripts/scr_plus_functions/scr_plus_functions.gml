@@ -68,3 +68,4 @@ function plus_draw_sprite(sprite_index, xx, yy, width, height)
 
 	draw_sprite_ext(sprite_index, 0, xx, yy, scale_x, scale_y, 0, -1, 1);
 }
+
