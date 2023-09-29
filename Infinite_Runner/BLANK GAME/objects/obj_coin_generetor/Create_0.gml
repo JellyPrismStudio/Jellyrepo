@@ -40,9 +40,9 @@ f_geracao = function()
 		var _chance = irandom(40);
 		if (_chance == 40) instance_create_layer(x, -130, layer, obj_escudo);
 		if (_chance == 39) instance_create_layer(x, -130, layer, obj_estrela);
-		if (_chance < 39) instance_create_layer(x, -130, layer, obj_moeda);
+		if (_chance == 38) instance_create_layer(x, -130, layer, obj_ima);
+		if (_chance < 38) instance_create_layer(x, -130, layer, obj_moeda);
 		
-		show_message(string(_chance))
 	}
 }
 #endregion

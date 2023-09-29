@@ -30,6 +30,18 @@ f_vida = function()
 f_moeda = function()
 {
 	draw_sprite_ext(spr_moeda, 0, 30, 30, 2, 2, 0, c_white, 1);
-	plus_text_font(50, 30, ": " + string(obj_player.pontuacao), c_black, fnt_DayDream, fa_left, fa_middle);
+	plus_text_font(50, 30, ": " + string(obj_player.pontuacao), c_white, fnt_DayDream, fa_left, fa_middle);
+}
+#endregion
+
+#region fundo
+f_fundo = function()
+{
+	draw_set_alpha(.9);
+	draw_set_color(c_dkgray);
+	draw_rectangle(0, 0, room_width, 62, false);
+	draw_set_color(c_white);
+	draw_rectangle(1, 0, room_width-2, 62, true);
+	draw_set_alpha(1);
 }
 #endregion
