@@ -39,7 +39,7 @@ f_moeda = function()
 f_fundo = function()
 {
 	draw_set_alpha(.9);
-	draw_set_color(c_dkgray);
+	draw_set_color(c_black);
 	draw_rectangle(0, 0, room_width, 62, false);
 	draw_set_color(c_white);
 	draw_rectangle(1, 0, room_width-2, 62, true);
