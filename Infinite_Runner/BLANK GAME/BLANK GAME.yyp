@@ -68,6 +68,7 @@
     {"id":{"name":"GMLive_parser","path":"scripts/GMLive_parser/GMLive_parser.yy",},},
     {"id":{"name":"GMLive_new","path":"scripts/GMLive_new/GMLive_new.yy",},},
     {"id":{"name":"GMLive_thread","path":"scripts/GMLive_thread/GMLive_thread.yy",},},
+    {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"GMLive_roomLoader","path":"scripts/GMLive_roomLoader/GMLive_roomLoader.yy",},},
     {"id":{"name":"GMLive_nodeTools","path":"scripts/GMLive_nodeTools/GMLive_nodeTools.yy",},},
     {"id":{"name":"spr_moeda","path":"sprites/spr_moeda/spr_moeda.yy",},},

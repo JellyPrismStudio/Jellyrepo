@@ -4,6 +4,7 @@ f_tempo = function()
 {
 	if (layer_get_vspeed("fundo") > 0) timer++;
 	plus_text_font(1, room_height-25, "TIMER: " + string(timer/60), c_black, fnt_DayDream, fa_left);
+	if (round(timer/60/30) == timer/60/30) obj_background.spr += choose(1, 2);
 }
 #endregion
 

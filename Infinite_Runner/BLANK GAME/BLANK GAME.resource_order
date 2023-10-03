@@ -40,6 +40,7 @@
     {"name":"GMLive_parser","order":4,"path":"scripts/GMLive_parser/GMLive_parser.yy",},
     {"name":"GMLive_new","order":2,"path":"scripts/GMLive_new/GMLive_new.yy",},
     {"name":"GMLive_thread","order":4,"path":"scripts/GMLive_thread/GMLive_thread.yy",},
+    {"name":"obj_background","order":3,"path":"objects/obj_background/obj_background.yy",},
     {"name":"GMLive_roomLoader","order":2,"path":"scripts/GMLive_roomLoader/GMLive_roomLoader.yy",},
     {"name":"GMLive_nodeTools","order":3,"path":"scripts/GMLive_nodeTools/GMLive_nodeTools.yy",},
     {"name":"spr_obstaculo1","order":2,"path":"sprites/spr_obstaculo1/spr_obstaculo1.yy",},
