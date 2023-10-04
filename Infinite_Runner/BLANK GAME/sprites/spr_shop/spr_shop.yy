@@ -49,8 +49,8 @@
   },
   "origin": 4,
   "parent": {
-    "name": "botoes",
-    "path": "folders/Sprites/botoes.yy",
+    "name": "UI",
+    "path": "folders/Sprites/UI.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

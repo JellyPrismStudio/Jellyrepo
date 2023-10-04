@@ -17,7 +17,7 @@ f_itens = function()
 f_star = function()
 {
 	var _color = c_white;
-	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 420, 540))
+	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 320, 440))
 	{
 		_color = c_gray;
 		
@@ -31,17 +31,17 @@ f_star = function()
 		}
 	}
 	
-	draw_sprite_ext(spr_estrela, 0, 70, 480, 3, 3, 0, _color, 1);
-	draw_sprite_ext(spr_moeda, 0, 150, 480, 0, 0, 0, _color, 1);
+	draw_sprite_ext(spr_estrela, 0, 70, 380, 3, 3, 0, _color, 1);
+	draw_sprite_ext(spr_moeda, 0, 150, 380, 1, 1, 0, _color, 1);
 	draw_set_color(_color);
-	draw_text(160, 470, ": 50");
+	draw_text(160, 370, ": 50");
 	draw_set_color(c_white);
 }
 //star + shield = starfield?
 f_shield = function()
 {
 	var _color = c_white;
-	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 240, 360))
+	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 190, 310))
 	{
 		_color = c_gray;
 		
@@ -55,10 +55,10 @@ f_shield = function()
 		}
 	}
 	
-	draw_sprite_ext(spr_escudo, 0, 70, 300, 1, 1, 0, _color, 1);
-	draw_sprite_ext(spr_moeda, 0, 150, 300, 1, 1, 0, _color, 1);
+	draw_sprite_ext(spr_escudo, 0, 70, 250, 1, 1, 0, _color, 1);
+	draw_sprite_ext(spr_moeda, 0, 150, 250, 1, 1, 0, _color, 1);
 	draw_set_color(_color);
-	draw_text(160, 290, ": 30");
+	draw_text(160, 240, ": 30");
 	draw_set_color(c_white);
 }
 
