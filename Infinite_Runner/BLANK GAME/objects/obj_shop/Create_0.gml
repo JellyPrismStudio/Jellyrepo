@@ -1,7 +1,17 @@
-f_moeda = function()
+f_moeda = function ()
 {
 	draw_sprite_ext(spr_moeda, 0, 30, 30, 2, 2, 0, c_white, 1);
 	plus_text_font(50, 30, ": " + string(global.pontos), c_white, fnt_DayDream, fa_left, fa_middle);
+}
+
+f_itens = function()
+{
+	draw_sprite_ext(spr_ima, 0, 130, 30, 1, 1, -90, c_white, 1);
+	plus_text_font(150, 30, ": " + string(global.ima), c_white, fnt_DayDream, fa_left, fa_middle);
+	draw_sprite_ext(spr_escudo, 0, 198, 30, .4, .4, 0, c_white, 1);
+	plus_text_font(220, 30, ": " + string(global.shield), c_white, fnt_DayDream, fa_left, fa_middle);
+	draw_sprite_ext(spr_estrela, 0, 265, 30, 1.2, 1.2, 0, c_white, 1);
+	plus_text_font(285, 30, ": " + string(global.star), c_white, fnt_DayDream, fa_left, fa_middle);
 }
 
 f_star = function()
@@ -11,7 +21,14 @@ f_star = function()
 	{
 		_color = c_gray;
 		
-		if (mouse_check_button_released(mb_left)) room_goto(scn_jogo);
+		if (mouse_check_button_released(mb_left) and global.pontos >= 50)
+		{
+			global.star++;
+			global.pontos -= 50;
+			ini_open("stats.ini");
+			ini_write_real("stats", "estrela", global.star);
+			ini_close();
+		}
 	}
 	
 	draw_sprite_ext(spr_estrela, 0, 70, 480, 3, 3, 0, _color, 1);
@@ -28,7 +45,14 @@ f_shield = function()
 	{
 		_color = c_gray;
 		
-		if (mouse_check_button_released(mb_left)) room_goto(scn_jogo);
+		if (mouse_check_button_released(mb_left) and global.pontos >= 30)
+		{
+			global.shield++;
+			global.pontos -= 30;
+			ini_open("stats.ini");
+			ini_write_real("stats", "escudo", global.shield);
+			ini_close();
+		}
 	}
 	
 	draw_sprite_ext(spr_escudo, 0, 70, 300, 1, 1, 0, _color, 1);
@@ -45,7 +69,14 @@ f_ima = function()
 	{
 		_color = c_gray;
 		
-		if (mouse_check_button_released(mb_left)) room_goto(scn_jogo);
+		if (mouse_check_button_released(mb_left) and global.pontos >= 20)
+		{
+			global.ima++;
+			global.pontos -= 20;
+			ini_open("stats.ini");
+			ini_write_real("stats", "imã", global.ima);
+			ini_close();
+		}
 	}
 	
 	draw_sprite_ext(spr_ima, 0, 70, 120, 2.5, 2.5, -90, _color, 1);

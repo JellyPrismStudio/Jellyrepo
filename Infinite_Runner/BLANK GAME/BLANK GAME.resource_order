@@ -29,8 +29,8 @@
     {"name":"Sons","order":3,"path":"folders/Sons.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"botoes","order":9,"path":"folders/Sprites/botoes.yy",},
-    {"name":"power ups","order":10,"path":"folders/Sprites/power ups.yy",},
     {"name":"fundo","order":11,"path":"folders/Sprites/fundo.yy",},
+    {"name":"power ups","order":10,"path":"folders/Sprites/power ups.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"GMLive_seekSetOp","order":6,"path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},

@@ -40,8 +40,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sons","folderPath":"folders/Sons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"botoes","folderPath":"folders/Sprites/botoes.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"power ups","folderPath":"folders/Sprites/power ups.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"fundo","folderPath":"folders/Sprites/fundo.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"power ups","folderPath":"folders/Sprites/power ups.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gcmt-dll.dll","CopyToMask":0,"filePath":"datafiles/GMLive",},
