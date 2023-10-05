@@ -6,6 +6,7 @@ main = function()
 	f_ima();
 	f_botao();
 	f_itens();
+	f_bet();
 }
 
 main();

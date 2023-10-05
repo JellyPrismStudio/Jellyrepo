@@ -1,3 +1,4 @@
+#region UI
 f_moeda = function ()
 {
 	draw_sprite_ext(spr_moeda, 0, 30, 30, 2, 2, 0, c_white, 1);
@@ -13,88 +14,130 @@ f_itens = function()
 	draw_sprite_ext(spr_estrela, 0, 265, 30, 1.2, 1.2, 0, c_white, 1);
 	plus_text_font(285, 30, ": " + string(global.star), c_white, fnt_DayDream, fa_left, fa_middle);
 }
+#endregion
 
+#region compras
 f_star = function()
 {
 	var _color = c_white;
-	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 320, 440))
+	if (!instance_exists(obj_bet))
 	{
-		_color = c_gray;
-		
-		if (mouse_check_button_released(mb_left) and global.pontos >= 50)
+		if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 320, 440))
 		{
-			global.star++;
-			global.pontos -= 50;
-			ini_open("stats.ini");
-			ini_write_real("stats", "estrela", global.star);
-			ini_close();
+			_color = c_gray;
+		
+			if (mouse_check_button_released(mb_left) and global.pontos >= 50)
+			{
+				global.star++;
+				global.pontos -= 50;
+				ini_open("stats.ini");
+				ini_write_real("stats", "estrela", global.star);
+				ini_write_real("stats", "pontos", global.pontos);
+				ini_close();
+			}
 		}
 	}
 	
-	draw_sprite_ext(spr_estrela, 0, 70, 380, 3, 3, 0, _color, 1);
-	draw_sprite_ext(spr_moeda, 0, 150, 380, 1, 1, 0, _color, 1);
-	draw_set_color(_color);
-	draw_text(160, 370, ": 50");
-	draw_set_color(c_white);
+		draw_sprite_ext(spr_estrela, 0, 70, 380, 3, 3, 0, _color, 1);
+		draw_sprite_ext(spr_moeda, 0, 150, 380, 1, 1, 0, _color, 1);
+		draw_set_color(_color);
+		draw_text(160, 370, ": 50");
+		draw_set_color(c_white);
 }
 //star + shield = starfield?
 f_shield = function()
 {
 	var _color = c_white;
-	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 190, 310))
+	if (!instance_exists(obj_bet))
 	{
-		_color = c_gray;
-		
-		if (mouse_check_button_released(mb_left) and global.pontos >= 30)
+		if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 190, 310))
 		{
-			global.shield++;
-			global.pontos -= 30;
-			ini_open("stats.ini");
-			ini_write_real("stats", "escudo", global.shield);
-			ini_close();
+			_color = c_gray;
+		
+			if (mouse_check_button_released(mb_left) and global.pontos >= 30)
+			{
+				global.shield++;
+				global.pontos -= 30;
+				ini_open("stats.ini");
+				ini_write_real("stats", "escudo", global.shield);
+				ini_write_real("stats", "pontos", global.pontos);
+				ini_close();
+			}
 		}
 	}
 	
-	draw_sprite_ext(spr_escudo, 0, 70, 250, 1, 1, 0, _color, 1);
-	draw_sprite_ext(spr_moeda, 0, 150, 250, 1, 1, 0, _color, 1);
-	draw_set_color(_color);
-	draw_text(160, 240, ": 30");
-	draw_set_color(c_white);
+		draw_sprite_ext(spr_escudo, 0, 70, 250, 1, 1, 0, _color, 1);
+		draw_sprite_ext(spr_moeda, 0, 150, 250, 1, 1, 0, _color, 1);
+		draw_set_color(_color);
+		draw_text(160, 240, ": 30");
+		draw_set_color(c_white);
 }
 
 f_ima = function()
 {
 	var _color = c_white;
-	if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 60, 180))
+	if (!instance_exists(obj_bet))
 	{
-		_color = c_gray;
-		
-		if (mouse_check_button_released(mb_left) and global.pontos >= 20)
+		if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 60, 180))
 		{
-			global.ima++;
-			global.pontos -= 20;
-			ini_open("stats.ini");
-			ini_write_real("stats", "imã", global.ima);
-			ini_close();
+			_color = c_gray;
+		
+			if (mouse_check_button_released(mb_left) and global.pontos >= 20)
+			{
+				global.ima++;
+				global.pontos -= 20;
+				ini_open("stats.ini");
+				ini_write_real("stats", "imã", global.ima);
+				ini_write_real("stats", "pontos", global.pontos);
+				ini_close();
+			}
 		}
 	}
 	
-	draw_sprite_ext(spr_ima, 0, 70, 120, 2.5, 2.5, -90, _color, 1);
-	draw_sprite_ext(spr_moeda, 0, 150, 120, 1, 1, 0, _color, 1);
-	draw_set_color(_color);
-	draw_text(160, 110, ": 20");
-	draw_set_color(c_white);
+		draw_sprite_ext(spr_ima, 0, 70, 120, 2.5, 2.5, -90, _color, 1);
+		draw_sprite_ext(spr_moeda, 0, 150, 120, 1, 1, 0, _color, 1);
+		draw_set_color(_color);
+		draw_text(160, 110, ": 20");
+		draw_set_color(c_white);
 }
+
+f_bet = function()
+{
+	var _color = c_white;
+	if (!instance_exists(obj_bet))
+	{
+		if (mouse_x == clamp(mouse_x, 0, 220) and mouse_y == clamp(mouse_y, 445,565))
+		{
+			_color = c_gray;
+		
+			if (mouse_check_button_released(mb_left) and global.pontos >= 100)
+			{
+				global.pontos -= 100;
+				instance_create_layer(room_width/2, room_height/2, layer, obj_bet);
+			}
+		}
+	}
+	
+		draw_sprite_ext(spr_bet, 0, 70, 505, .9, .9, 0, _color, 1);
+		draw_sprite_ext(spr_moeda, 0, 150, 505, 1, 1, 0, _color, 1);
+		draw_set_color(_color);
+		draw_text(160, 495, ": 100");
+		draw_set_color(c_white);
+}
+#endregion
 
 f_botao = function()
 {
 	var _color = c_white;
-	if (mouse_x == clamp(mouse_x, room_width-70, room_width-10) and mouse_y == clamp(mouse_y, room_height-70, room_height-10))
+	if (!instance_exists(obj_bet))
 	{
-		_color = c_gray;
+		if (mouse_x == clamp(mouse_x, room_width-70, room_width-10) and mouse_y == clamp(mouse_y, room_height-70, room_height-10))
+		{
+			_color = c_gray;
 		
-		if (mouse_check_button_released(mb_left)) room_goto(scn_jogo);
+			if (mouse_check_button_released(mb_left)) room_goto(scn_jogo);
+		}
 	}
 	
-	draw_sprite_ext(spr_play, 0, room_width-40, room_height-40, 1, 1, 0, _color, 1);
+		draw_sprite_ext(spr_play, 0, room_width-40, room_height-40, 1, 1, 0, _color, 1);
 }
