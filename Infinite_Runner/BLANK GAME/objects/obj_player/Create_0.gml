@@ -1,9 +1,9 @@
 #region variaveis
 posicao = 0;
-posicao_mouse_x = mouse_x;
-posicao_mouse_y = mouse_y;
 movendo = true;
 mouse_margem = 50;
+mouse_pos_x = device_mouse_x(0);
+mouse_pos_y = device_mouse_y(0);
 
 hsped = 0;
 jump_boost = 6;
@@ -57,12 +57,12 @@ f_up = function()
 {
 	if (y >= ystart-range_pulo and !instance_exists(obj_gameover))
 	{
-		var _up = keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"));
-		if (mouse_check_button(mb_left))
-		{
-			_up = mouse_y < posicao_mouse_y-mouse_margem/2;
-		}
-		posicao_mouse_y = mouse_y;
+	var _up = false
+	if (device_mouse_check_button_pressed(0, mb_left)) mouse_pos_y = device_mouse_y(0);
+	if (device_mouse_check_button_released(0, mb_left))
+	{
+		var _up = mouse_pos_y-device_mouse_y(0) > mouse_margem;
+	}
 	
 		if (_up)
 		{

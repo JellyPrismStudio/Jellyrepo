@@ -9,13 +9,11 @@ f_controle = function()
 	#endregion
 	
 	#region mouse/toque
-	// se o botão esquerdo estiver precionado e o player não estiver se movendo:
-	if (mouse_check_button(mb_left) and !movendo)		
+	if (device_mouse_check_button_pressed(0, mb_left)) mouse_pos_x = device_mouse_x(0);
+	if (device_mouse_check_button_released(0, mb_left))
 	{
-		if (mouse_x != clamp(mouse_x, posicao_mouse_x-(mouse_margem/2), posicao_mouse_x+(mouse_margem/2))) 
-		var _mudar = mouse_x > posicao_mouse_x? _mudar+1 : _mudar-1;
+		var _mudar = abs(device_mouse_x(0)-mouse_pos_x) > mouse_margem? sign(device_mouse_x(0)-mouse_pos_x) : false;
 	}
-	posicao_mouse_x = mouse_x;
 	
 	return _mudar
 	#endregion
@@ -33,14 +31,14 @@ f_movimento = function()
 	x = lerp(x, _posicao_parar, .3);
 	
 	//diz se o player está se movendo
-	movendo = x == clamp(x, _posicao_parar-5, _posicao_parar+5)? false : true;		
+	movendo = x == clamp(x, _posicao_parar-10, _posicao_parar+10)? false : true;		
 }
 #endregion
 
 main = function()
 {
-	f_pulo();
 	f_movimento();
+	f_pulo();
 	f_dano();
 	f_moeda();
 }
