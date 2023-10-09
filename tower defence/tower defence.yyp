@@ -55,6 +55,7 @@
     {"id":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},},
     {"id":{"name":"obj_progetil","path":"objects/obj_progetil/obj_progetil.yy",},},
     {"id":{"name":"spr_criacao","path":"sprites/spr_criacao/spr_criacao.yy",},},
+    {"id":{"name":"obj_final","path":"objects/obj_final/obj_final.yy",},},
     {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},},
     {"id":{"name":"obj_monstro_base","path":"objects/obj_monstro_base/obj_monstro_base.yy",},},
     {"id":{"name":"obj_gui","path":"objects/obj_gui/obj_gui.yy",},},

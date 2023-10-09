@@ -1,6 +1,8 @@
 #region variaveis
 caminho = path_add();
 sped = 1;
+desx = x;
+desy = y;
 
 vida_max = 100;
 vida = 100;
@@ -12,12 +14,28 @@ dano = 10;
 
 f_movimento = function()
 {
-	var x1 = x;
-	var y1 = y;
-	desx = instance_exists(obj_tower)? obj_tower.x : x;
-	desy = instance_exists(obj_tower)? obj_tower.y : y;
+	var _x1 = x;
+	var _y1 = y;
+	if (!instance_exists(obj_tower))
+	{
+		desx = instance_exists(obj_final)? obj_final.x : x;
+		desy = instance_exists(obj_final)? obj_final.y : y;
+	}
+	else
+	{
+		var _raio = 100;
+		_col = collision_circle(x, y, _raio, obj_tower, false, true);
+		while (!_col)
+		{
+			_col = collision_circle(x, y, _raio, obj_tower, false, true);
+			_raio++;
+		}
+		
+		desx = _col.x;
+		desy = _col.y;
+	}
 	
-	if (mp_grid_path(obj_grid.grid, caminho, x1, y1, desx, desy, true))
+	if (mp_grid_path(obj_grid.grid, caminho, _x1, _y1, desx, desy, true))
 	{
 		path_start(caminho, sped, path_action_stop, false)
 	}
@@ -34,13 +52,14 @@ f_tiro = function()
 
 f_dano = function()
 {
-	if (place_meeting(x, y, obj_tower))
+	var col = instance_place(x, y, obj_tower);
+	if (col)
 	{
 		timer--;
 		if (timer <= 0)
 		{
 			timer = timer_max;
-			obj_tower.vida -= dano;
+			col.vida -= dano;
 		}
 	}
 }

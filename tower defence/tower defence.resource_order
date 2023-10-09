@@ -29,6 +29,7 @@
     {"name":"obj_colisao","order":1,"path":"objects/obj_colisao/obj_colisao.yy",},
     {"name":"obj_progetil","order":1,"path":"objects/obj_progetil/obj_progetil.yy",},
     {"name":"spr_criacao","order":3,"path":"sprites/spr_criacao/spr_criacao.yy",},
+    {"name":"obj_final","order":4,"path":"objects/obj_final/obj_final.yy",},
     {"name":"obj_grid","order":1,"path":"objects/obj_grid/obj_grid.yy",},
     {"name":"obj_monstro_base","order":1,"path":"objects/obj_monstro_base/obj_monstro_base.yy",},
     {"name":"spr_monstro1","order":1,"path":"sprites/spr_monstro1/spr_monstro1.yy",},
