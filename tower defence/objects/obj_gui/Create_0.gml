@@ -1,8 +1,10 @@
 gold = 100;
+wave = ds_list_create();
 
 f_monstros = function()
 {
 	draw_set_alpha(.6);
+	draw_rectangle(room_width/3, room_height/8, room_width/1.5, room_height/1.3, false);
 	draw_rectangle(room_width/2-180, room_height-8, room_width/2+180, room_height-135, false);
 	draw_set_alpha(.9);
 	draw_sprite_ext(spr_monstro1, 0, room_width/2-110, room_height-70, 1.5, 1.5, 0, c_white, 1);
@@ -36,7 +38,7 @@ f_mouse = function()
 		{
 			if (gold >= 50)
 			{
-				_obj = obj_monstro1;
+				ds_list_add(wave, obj_monstro1)
 				gold -= 50;
 			}
 		}
@@ -44,7 +46,7 @@ f_mouse = function()
 		{
 			if (gold >= 100)
 			{
-				_obj = obj_monstro2;
+				ds_list_add(wave, obj_monstro2)
 				gold -= 100;
 			}
 		}
@@ -52,7 +54,7 @@ f_mouse = function()
 		{
 			if (gold >= 150)
 			{
-				_obj = obj_monstro3;
+				ds_list_add(wave, obj_monstro3)
 				gold -= 150;
 			}
 		}
