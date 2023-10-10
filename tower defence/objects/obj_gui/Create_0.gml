@@ -46,14 +46,6 @@ f_monstros = function()
 	f_botao();
 }
 
-f_criatura = function(_obj)
-{
-	if (instance_exists(obj_criacao))
-	{
-		instance_create_layer(obj_criacao.x, obj_criacao.y, layer, _obj);
-	}
-}
-
 f_mouse = function()
 {
 	if (mouse_check_button_released(mb_left) and mouse_y == clamp(mouse_y, room_height-70-48, room_height-70+48))
@@ -83,8 +75,6 @@ f_mouse = function()
 				gold -= 150;
 			}
 		}
-		
-		if (_obj != noone) f_criatura(_obj);
 	}
 }
 
@@ -113,6 +103,26 @@ f_ui = function()
 			timer = 30;
 			monstro++
 		}
-		if (monstro >= ds_list_size(wave)) game = 2;
+		if (monstro >= ds_list_size(wave))
+		{
+			monstro = 0;
+			game = 2;
+		}
+	}
+	if (game == 2)
+	{
+		var _list = ds_list_create();
+		collision_rectangle_list(0, 0, room_width, room_height, obj_monstro_base, false, true, _list, false);
+		for (var i = 0; i < ds_list_size(_list); i++)
+		{
+			_obj = ds_list_find_value(_list, i);
+			if (point_distance(_obj.x, _obj.y, obj_final.x, obj_final.y) > 10) break;
+			if (i == ds_list_size(_list)-1)
+			{
+				game = 0;
+				ds_list_clear(wave)
+			}
+		}
+		ds_list_destroy(_list);
 	}
 }
