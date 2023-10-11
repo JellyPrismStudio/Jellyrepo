@@ -37,7 +37,7 @@ f_movimento = function()
 	
 	if (mp_grid_path(obj_grid.grid, caminho, _x1, _y1, desx, desy, true))
 	{
-		path_start(caminho, sped, path_action_stop, false)
+		path_start(caminho, sped*global.game_speed, path_action_stop, false)
 	}
 }
 
@@ -55,7 +55,7 @@ f_dano = function()
 	var col = instance_place(x, y, obj_tower);
 	if (col)
 	{
-		timer--;
+		timer -= global.game_speed;
 		if (timer <= 0)
 		{
 			timer = timer_max;

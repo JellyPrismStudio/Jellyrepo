@@ -1,2 +1,2 @@
-x += lengthdir_x(sped, image_angle);
-y += lengthdir_y(sped, image_angle);
+x += lengthdir_x(sped*global.game_speed, image_angle);
+y += lengthdir_y(sped*global.game_speed, image_angle);

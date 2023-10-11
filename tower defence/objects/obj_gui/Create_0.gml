@@ -1,9 +1,12 @@
+#region variaveis
 gold = 100;
 wave = ds_list_create();
 game = 0;
 timer = 30;
 monstro = 0;
+#endregion
 
+#region seleção de wave
 f_botao = function()
 {
 	var _color = c_lime;
@@ -124,5 +127,26 @@ f_ui = function()
 			}
 		}
 		ds_list_destroy(_list);
+	}
+}
+#endregion
+
+f_speed = function()
+{
+	draw_set_color(c_gray);
+	draw_circle(room_width-30, room_height-30, 25, false);
+	draw_set_color(c_white);
+	draw_set_halign(fa_middle);
+	draw_set_valign(fa_center);
+	draw_text(room_width-30, room_height-30, string(global.game_speed)+"x");
+	draw_set_valign(-1);
+	draw_set_halign(-1);
+	
+	if (mouse_x == clamp(mouse_x, room_width-55, room_width-5) and mouse_y == clamp(mouse_y, room_height-55, room_height-5) and mouse_check_button_pressed(mb_left))
+	{
+		if (global.game_speed == 1) global.game_speed = 2;
+		else if (global.game_speed == 2) global.game_speed = 3;
+		else if (global.game_speed == 3) global.game_speed = 5;
+		else if (global.game_speed == 5) global.game_speed = 1;
 	}
 }

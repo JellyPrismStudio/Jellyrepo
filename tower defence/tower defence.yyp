@@ -56,6 +56,7 @@
     {"id":{"name":"obj_progetil","path":"objects/obj_progetil/obj_progetil.yy",},},
     {"id":{"name":"spr_criacao","path":"sprites/spr_criacao/spr_criacao.yy",},},
     {"id":{"name":"obj_final","path":"objects/obj_final/obj_final.yy",},},
+    {"id":{"name":"scn_inicio","path":"rooms/scn_inicio/scn_inicio.yy",},},
     {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},},
     {"id":{"name":"obj_monstro_base","path":"objects/obj_monstro_base/obj_monstro_base.yy",},},
     {"id":{"name":"obj_gui","path":"objects/obj_gui/obj_gui.yy",},},
@@ -63,10 +64,11 @@
     {"id":{"name":"obj_monstro3","path":"objects/obj_monstro3/obj_monstro3.yy",},},
     {"id":{"name":"obj_criacao","path":"objects/obj_criacao/obj_criacao.yy",},},
     {"id":{"name":"spr_monstro3","path":"sprites/spr_monstro3/spr_monstro3.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scn_level1","path":"rooms/scn_level1/scn_level1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"scn_inicio","path":"rooms/scn_inicio/scn_inicio.yy",},},
+    {"roomId":{"name":"scn_level1","path":"rooms/scn_level1/scn_level1.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

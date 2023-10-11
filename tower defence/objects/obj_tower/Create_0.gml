@@ -8,8 +8,8 @@ f_bala = function()
 	var _col = collision_circle(x, y, 500, obj_monstro_base, false, true);
 	if (_col)
 	{
-		timer--;
-		if (timer == 0)
+		timer -= global.game_speed;
+		if (timer <= 0)
 		{
 			timer = timer_max;
 			var _tiro = instance_create_layer(x, y-100, layer, obj_progetil);
