@@ -37,7 +37,6 @@ f_monstros = function()
 	draw_sprite_ext(spr_monstro2, 0, room_width/2, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_sprite_ext(spr_monstro3, 0, room_width/2+110, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_set_color(c_yellow);
-	draw_text(10, 10, string(gold))
 	draw_set_halign(fa_center);
 	draw_text(room_width/2-110, room_height-25, ": 50");
 	draw_text(room_width/2, room_height-25, ": 100");
@@ -99,12 +98,12 @@ f_ui = function()
 	}
 	if (game == 1)
 	{
-		timer--;
-		if (timer == 0)
+		timer -= global.game_speed;
+		if (timer <= 0)
 		{
 			instance_create_layer(obj_criacao.x, obj_criacao.y, layer, ds_list_find_value(wave, monstro))
 			timer = 30;
-			monstro++
+			monstro++;
 		}
 		if (monstro >= ds_list_size(wave))
 		{
@@ -115,10 +114,18 @@ f_ui = function()
 	if (game == 2)
 	{
 		var _list = ds_list_create();
-		collision_rectangle_list(0, 0, room_width, room_height, obj_monstro_base, false, true, _list, false);
+		collision_rectangle_list(0, 0, room_width, room_height, obj_monstro_base, false, true, _list, true);
+		//tem 2 for igual porque um é pra testar se tem algum monstro fora do final, então tem que dar um break
+		//o for com o código
 		for (var i = 0; i < ds_list_size(_list); i++)
 		{
-			_obj = ds_list_find_value(_list, i);
+			var _obj = ds_list_find_value(_list, i);
+			
+			draw_sprite_ext(_obj.sprite_index, 0, room_width-100, 50+30*i, .3, .3, 0, c_white, 1);
+			draw_set_valign(fa_middle);
+			draw_text(room_width-90, 50*30*i, "nível: " + string(_obj.nivel));
+			draw_set_valign(-1);
+			
 			if (point_distance(_obj.x, _obj.y, obj_final.x, obj_final.y) > 10) break;
 			if (i == ds_list_size(_list)-1)
 			{
@@ -126,8 +133,28 @@ f_ui = function()
 				ds_list_clear(wave)
 			}
 		}
+		
+		//for pra mostrar a lista
+		for (var i = 0; i < ds_list_size(_list); i++)
+		{
+			var _obj = ds_list_find_value(_list, i);
+			
+			draw_sprite_ext(_obj.sprite_index, 0, room_width-100, 50+30*i, .3, .3, 0, c_white, 1);
+			draw_set_valign(fa_middle);
+			draw_text(room_width-85, 50+30*i, "nivel: " + string(_obj.nivel));
+			draw_set_valign(-1);
+		}
+		if (!instance_exists(obj_monstro_base))
+		{
+			game = 0;
+			ds_list_clear(wave)
+		}
 		ds_list_destroy(_list);
 	}
+	
+	draw_set_color(c_yellow);
+	draw_text(10, 10, string(gold))
+	draw_set_color(c_white);
 }
 #endregion
 

@@ -10,8 +10,13 @@ vida = 100;
 timer_max = 40;
 timer = timer_max;
 dano = 10;
+
+timer_gold_max = 180;
+timer_gold = timer_gold_max;
+nivel = 0;
 #endregion
 
+#region IA
 f_movimento = function()
 {
 	var _x1 = x;
@@ -60,6 +65,22 @@ f_dano = function()
 		{
 			timer = timer_max;
 			col.vida -= dano;
+		}
+	}
+}
+#endregion
+
+f_gold = function()
+{
+	if (!place_meeting(x, y, obj_final))
+	{
+		timer_gold -= global.game_speed;
+		if (timer_gold <= 0)
+		{
+			obj_gui.gold += 10;
+			timer_gold = timer_gold_max;
+			dano += 25*dano/100;
+			nivel++;
 		}
 	}
 }

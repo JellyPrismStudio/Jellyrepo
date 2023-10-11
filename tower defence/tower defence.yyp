@@ -64,6 +64,7 @@
     {"id":{"name":"obj_monstro3","path":"objects/obj_monstro3/obj_monstro3.yy",},},
     {"id":{"name":"obj_criacao","path":"objects/obj_criacao/obj_criacao.yy",},},
     {"id":{"name":"spr_monstro3","path":"sprites/spr_monstro3/spr_monstro3.yy",},},
+    {"id":{"name":"spr_up","path":"sprites/spr_up/spr_up.yy",},},
     {"id":{"name":"scn_level1","path":"rooms/scn_level1/scn_level1.yy",},},
   ],
   "RoomOrderNodes": [
