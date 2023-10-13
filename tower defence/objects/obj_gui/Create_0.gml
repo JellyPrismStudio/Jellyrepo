@@ -85,6 +85,17 @@ f_onda = function()
 	for (var i = 0; i < ds_list_size(wave); i++;)
 	{
 		draw_sprite(object_get_sprite(ds_list_find_value(wave, i)), 0, room_width/3+40+70*(i-floor(i/6)*6), room_height/8+40+floor(i/6)*70)
+		if (mouse_check_button_pressed(mb_left))
+		{
+			if (mouse_x == clamp(mouse_x, room_width/3+70*(i-floor(i/6)*6), room_width/3+80+70*(i-floor(i/6)*6)) and 
+			mouse_y == clamp(mouse_y, room_height/8+floor(i/6)*70, room_height/8+80+floor(i/6)*70))
+			{
+				if (ds_list_find_value(wave, i) == obj_monstro1) gold += 50;
+				if (ds_list_find_value(wave, i) == obj_monstro2) gold += 100;
+				if (ds_list_find_value(wave, i) == obj_monstro3) gold += 150;
+				ds_list_delete(wave, i);
+			}
+		}
 	}
 }
 
@@ -95,6 +106,7 @@ f_ui = function()
 		f_monstros();
 		f_mouse();
 		f_onda();
+		if (gold < 50 and ds_list_size(wave) == 0) show_message("perdeu");
 	}
 	if (game == 1)
 	{

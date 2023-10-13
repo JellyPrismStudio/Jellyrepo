@@ -13,3 +13,5 @@ if (global.fase == fase)
 }
 draw_set_valign(-1);
 draw_set_halign(-1);
+
+if (mouse_check_button_pressed(mb_left) and collision_point(mouse_x, mouse_y, self, false, false) and image_index > 0) room_goto(rom);
