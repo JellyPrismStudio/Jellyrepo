@@ -1,0 +1,1 @@
+pos_mouse_x = mouse_x;
