@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "torre",
-    "path": "folders/Objetos/torre.yy",
+    "name": "obstaculos",
+    "path": "folders/Objetos/obstaculos.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
