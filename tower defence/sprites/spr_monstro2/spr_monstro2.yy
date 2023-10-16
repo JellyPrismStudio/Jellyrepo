@@ -14,6 +14,8 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4e9ec856-920c-47cb-9b66-d86a7387d0c3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0f5673e2-8afc-421d-b2de-d7f3a91f7c87",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6ab73d3c-bc99-4b1e-bb9e-f75090ec4dff",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -43,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -55,6 +57,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4e9ec856-920c-47cb-9b66-d86a7387d0c3","path":"sprites/spr_monstro2/spr_monstro2.yy",},},},"Disabled":false,"id":"7091359e-3a12-4b52-a4b9-aa31a5cea18f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0f5673e2-8afc-421d-b2de-d7f3a91f7c87","path":"sprites/spr_monstro2/spr_monstro2.yy",},},},"Disabled":false,"id":"53b67b28-cd90-4aae-8070-65ff401b0be1","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6ab73d3c-bc99-4b1e-bb9e-f75090ec4dff","path":"sprites/spr_monstro2/spr_monstro2.yy",},},},"Disabled":false,"id":"1c89935d-da1d-4536-84f9-e4ccbbc6d4b5","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

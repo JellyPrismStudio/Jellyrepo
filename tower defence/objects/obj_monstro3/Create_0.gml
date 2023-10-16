@@ -1,5 +1,5 @@
 event_inherited();
 
-vida_max = 200;
-vida = 200;
+vida_max = 300;
+vida = 300;
 dano = 20;

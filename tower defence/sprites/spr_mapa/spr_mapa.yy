@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "mapa",
-    "path": "folders/Objetos/mapa.yy",
+    "name": "menu",
+    "path": "folders/Objetos/menu.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
