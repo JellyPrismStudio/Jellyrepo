@@ -143,3 +143,20 @@ f_botao = function()
 	draw_text(10, 10, string(global.gold))
 }
 
+f_upgrades = function()
+{
+	var _color = c_white;
+	draw_set_halign(fa_middle);
+	if (point_in_rectangle(mouse_x, mouse_y, room_width-350, 95, room_width-50, 170)) _color = c_yellow;
+	draw_set_color(_color);
+	draw_rectangle(room_width-350, 95, room_width-50, 170, true);
+	draw_text(room_width-200, 100, "forca:\nmonstros dão mais dano\n100 pontos");
+	
+	_color = c_white;
+	if (point_in_rectangle(mouse_x, mouse_y, room_width-350, 195, room_width-50, 270)) _color = c_yellow;
+	draw_set_color(_color);
+	draw_rectangle(room_width-350, 195, room_width-50, 270, true);
+	draw_text(room_width-200, 200, "velocidade:\nmonstros são mais velozes\n100 pontos");
+	draw_set_color(c_white);
+	draw_set_halign(-1);
+}
