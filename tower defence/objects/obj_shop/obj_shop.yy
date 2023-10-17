@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "menu",
-    "path": "folders/Objetos/menu.yy",
+    "name": "shop",
+    "path": "folders/Objetos/menu/shop.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -16,7 +16,8 @@ f_mapa = function()
 f_shop = function()
 {
 	var _color = c_white;
-	if (point_in_circle(mouse_x, mouse_y, 1240, 600, 32))
+	var _x = camera_get_view_x(view_camera[0]);
+	if (point_in_circle(mouse_x, mouse_y, 1240+_x, 600, 32))
 	{
 		_color = c_gray;
 		if (mouse_check_button_pressed(mb_left)) room_goto((scn_shop));

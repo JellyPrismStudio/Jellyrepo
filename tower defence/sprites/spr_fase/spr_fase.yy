@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "menu",
-    "path": "folders/Objetos/menu.yy",
+    "name": "fase",
+    "path": "folders/Objetos/menu/fase.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
