@@ -21,6 +21,7 @@
     {"name":"pontos","order":2,"path":"folders/Objetos/cenario/pontos.yy",},
     {"name":"moeda","order":1,"path":"folders/Objetos/cenario/pontos/moeda.yy",},
     {"name":"power up","order":2,"path":"folders/Objetos/cenario/pontos/power up.yy",},
+    {"name":"UI","order":3,"path":"folders/Objetos/UI.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
     {"name":"Sequências","order":11,"path":"folders/Sequências.yy",},
@@ -30,7 +31,6 @@
     {"name":"fundo","order":11,"path":"folders/Sprites/fundo.yy",},
     {"name":"power ups","order":10,"path":"folders/Sprites/power ups.yy",},
     {"name":"UI","order":9,"path":"folders/Sprites/UI.yy",},
-    {"name":"UI","order":3,"path":"folders/Objetos/UI.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"GMLive_seekSetOp","order":6,"path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},

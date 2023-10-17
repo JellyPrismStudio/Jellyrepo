@@ -10,9 +10,10 @@ f_controle = function()
 	
 	#region mouse/toque
 	if (device_mouse_check_button_pressed(0, mb_left)) mouse_pos_x = device_mouse_x(0);
-	if (device_mouse_check_button_released(0, mb_left))
+	if (abs(mouse_pos_x-device_mouse_x(0)) > mouse_margem and device_mouse_check_button(0, mb_left) and not movendo)
 	{
 		var _mudar = abs(device_mouse_x(0)-mouse_pos_x) > mouse_margem? sign(device_mouse_x(0)-mouse_pos_x) : false;
+		mouse_pos_x = device_mouse_x(0);
 	}
 	
 	return _mudar

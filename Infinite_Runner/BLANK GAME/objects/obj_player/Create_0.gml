@@ -59,9 +59,10 @@ f_up = function()
 	{
 	var _up = false
 	if (device_mouse_check_button_pressed(0, mb_left)) mouse_pos_y = device_mouse_y(0);
-	if (device_mouse_check_button_released(0, mb_left))
+	if (device_mouse_check_button(0, mb_left) and abs(mouse_pos_y-device_mouse_y(0)) > mouse_margem)
 	{
 		var _up = mouse_pos_y-device_mouse_y(0) > mouse_margem;
+		mouse_pos_y = device_mouse_y(0);
 	}
 	
 		if (_up)
