@@ -9,6 +9,9 @@ monstro = 0;
 #region seleção de wave
 f_botao = function()
 {
+	draw_set_alpha(.6);
+	draw_rectangle(room_width/3, room_height/8, room_width/1.5, room_height/1.3, false);
+	draw_set_alpha(1);
 	var _color = c_lime;
 	if (mouse_x == clamp(mouse_x, room_width/2-200, room_width/2+200) and mouse_y == clamp(mouse_y, room_height/1.35-40, room_height/1.35)) _color = c_green;
 	if (ds_list_size(wave) == 0) _color = c_maroon;
@@ -27,10 +30,9 @@ f_botao = function()
 	if (_color == c_green and mouse_check_button_pressed(mb_left)) game = 1;
 }
 
-f_monstros = function()
+f_monsterbar = function()
 {
 	draw_set_alpha(.6);
-	draw_rectangle(room_width/3, room_height/8, room_width/1.5, room_height/1.3, false);
 	draw_rectangle(room_width/2-180, room_height-8, room_width/2+180, room_height-135, false);
 	draw_set_alpha(.9);
 	draw_sprite_ext(spr_monstro1, 0, room_width/2-110, room_height-70, 1.5, 1.5, 0, c_white, 1);
@@ -44,8 +46,6 @@ f_monstros = function()
 	draw_set_halign(-1);
 	draw_set_color(c_white)
 	draw_set_alpha(1);
-	
-	f_botao();
 }
 
 f_mouse = function()
@@ -103,7 +103,7 @@ f_ui = function()
 {
 	if (game == 0)
 	{
-		f_monstros();
+		f_botao();
 		f_mouse();
 		f_onda();
 		if (gold < 50 and ds_list_size(wave) == 0) show_message("perdeu");
@@ -113,7 +113,7 @@ f_ui = function()
 		timer -= global.game_speed;
 		if (timer <= 0)
 		{
-			instance_create_layer(obj_criacao.x, obj_criacao.y, layer, ds_list_find_value(wave, monstro))
+			instance_create_layer(obj_criacao.x, obj_criacao.y, layer, ds_list_find_value(wave, monstro));
 			timer = 30;
 			monstro++;
 		}
@@ -125,6 +125,7 @@ f_ui = function()
 	}
 	if (game == 2)
 	{
+		#region saindo do estado
 		var _list = ds_list_create();
 		collision_rectangle_list(0, 0, room_width, room_height, obj_monstro_base, false, true, _list, true);
 		//tem 2 for igual porque um é pra testar se tem algum monstro fora do final, então tem que dar um break
@@ -162,6 +163,13 @@ f_ui = function()
 			ds_list_clear(wave)
 		}
 		ds_list_destroy(_list);
+		#endregion
+		
+		f_mouse();
+		if (mouse_check_button_pressed(mb_left))
+		{
+			instance_create_layer(obj_criacao.x, obj_criacao.y, layer, ds_list_find_value(wave, monstro));
+		}
 	}
 	
 	draw_set_color(c_yellow);

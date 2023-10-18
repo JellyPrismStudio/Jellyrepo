@@ -14,6 +14,9 @@ dano = 10;
 timer_gold_max = 180;
 timer_gold = timer_gold_max;
 nivel = 0;
+
+//é pra no primeiro frame do step fazer um negocio
+create = 0;
 #endregion
 
 #region IA

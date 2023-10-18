@@ -34,7 +34,25 @@ f_monstro1 = function()
 			draw_set_color(c_white);
 		}
 		
-		if (col and mouse_check_button_pressed(mb_left)) global.visual1 = i+1;
+		var _cadeado = false;
+		if (i == 0 and global.visual1_m1 == 0 or i == 1 and global.visual2_m1 == 0)
+		{
+			_cadeado = true;
+			draw_sprite_ext(spr_cadeado, 0, room_width/2+80*i, 155, 2.3, 2.3, 0, c_white, 1);
+		}
+		if (col and mouse_check_button_pressed(mb_left))
+		{
+			if (_cadeado)
+			{
+				if (global.gold > 100)
+				{
+					global.gold -= 100;
+					if (i == 0) global.visual1_m1 = true;
+					if (i == 1) global.visual2_m1 = true;
+				}
+			}
+			else global.visual1 = i+1;
+		}
 	}
 }
 
@@ -52,7 +70,25 @@ f_monstro2 = function()
 			draw_set_color(c_white);
 		}
 		
-		if (col and mouse_check_button_pressed(mb_left)) global.visual2 = i+1;
+		var _cadeado = false;
+		if (i == 0 and global.visual1_m2 == 0 or i == 1 and global.visual2_m2 == 0)
+		{
+			_cadeado = true;
+			draw_sprite_ext(spr_cadeado, 0, room_width/2+80*i, 255, 2.3, 2.3, 0, c_white, 1);
+		}
+		if (col and mouse_check_button_pressed(mb_left))
+		{
+			if (_cadeado)
+			{
+				if (global.gold > 100)
+				{
+					global.gold -= 100;
+					if (i == 0) global.visual1_m2 = true;
+					if (i == 1) global.visual2_m2 = true;
+				}
+			}
+			else global.visual1 = i+1;
+		}
 	}
 }
 
@@ -70,7 +106,25 @@ f_monstro3 = function()
 			draw_set_color(c_white);
 		}
 		
-		if (col and mouse_check_button_pressed(mb_left)) global.visual3 = i+1;
+		var _cadeado = false;
+		if (i == 0 and global.visual1_m3 == 0 or i == 1 and global.visual2_m3 == 0)
+		{
+			_cadeado = true;
+			draw_sprite_ext(spr_cadeado, 0, room_width/2+80*i, 355, 2.3, 2.3, 0, c_white, 1);
+		}
+		if (col and mouse_check_button_pressed(mb_left))
+		{
+			if (_cadeado)
+			{
+				if (global.gold > 100)
+				{
+					global.gold -= 100;
+					if (i == 0) global.visual1_m3 = true;
+					if (i == 1) global.visual2_m3 = true;
+				}
+			}
+			else global.visual1 = i+1;
+		}
 	}
 }
 
@@ -88,7 +142,25 @@ f_monstro4 = function()
 			draw_set_color(c_white);
 		}
 		
-		if (col and mouse_check_button_pressed(mb_left)) global.visual4 = i+1;
+		var _cadeado = false;
+		if (i == 0 and global.visual1_m4 == 0 or i == 1 and global.visual2_m4 == 0)
+		{
+			_cadeado = true;
+			draw_sprite_ext(spr_cadeado, 0, room_width/2+80*i, 455, 2.3, 2.3, 0, c_white, 1);
+		}
+		if (col and mouse_check_button_pressed(mb_left))
+		{
+			if (_cadeado)
+			{
+				if (global.gold > 100)
+				{
+					global.gold -= 100;
+					if (i == 0) global.visual1_m4 = true;
+					if (i == 1) global.visual2_m4 = true;
+				}
+			}
+			else global.visual1 = i+1;
+		}
 	}
 }
 
@@ -106,9 +178,24 @@ f_monstro5 = function()
 			draw_set_color(c_white);
 		}
 		
+		var _cadeado = false;
+		if (i == 0 and global.visual1_m5 == 0 or i == 1 and global.visual2_m5 == 0)
+		{
+			_cadeado = true;
+			draw_sprite_ext(spr_cadeado, 0, room_width/2+80*i, 555, 2.3, 2.3, 0, c_white, 1);
+		}
 		if (col and mouse_check_button_pressed(mb_left))
 		{
-			global.visual5 = i+1;
+			if (_cadeado)
+			{
+				if (global.gold > 100)
+				{
+					global.gold -= 100;
+					if (i == 0) global.visual1_m5 = true;
+					if (i == 1) global.visual2_m5 = true;
+				}
+			}
+			else global.visual1 = i+1;
 		}
 	}
 }
@@ -116,14 +203,16 @@ f_monstro5 = function()
 #endregion
 f_visual = function()
 {
+	draw_set_halign(fa_center);
+	draw_set_color(c_yellow);
+	draw_text(room_width/2, 75, "100");
+	draw_set_color(c_white);
+	draw_set_halign(-1);
+	
 	f_monstro1();
-	
 	f_monstro2();
-	
 	f_monstro3();
-	
 	f_monstro4();
-	
 	f_monstro5();
 }
 
@@ -145,18 +234,46 @@ f_botao = function()
 
 f_upgrades = function()
 {
-	var _color = c_white;
+	var _color = global.strenght > 0? c_white : c_gray;
 	draw_set_halign(fa_middle);
-	if (point_in_rectangle(mouse_x, mouse_y, room_width-350, 95, room_width-50, 170)) _color = c_yellow;
+	if (point_in_rectangle(mouse_x, mouse_y, room_width-350, 95, room_width-50, 170))
+	{
+		_color = c_yellow;
+		if (mouse_check_button_pressed(mb_left) and global.gold > 100+global.strenght*50 and global.strenght < 10)
+		{
+			global.strenght++;
+			global.gold -= 100+global.strenght*50;
+		}
+	}
 	draw_set_color(_color);
 	draw_rectangle(room_width-350, 95, room_width-50, 170, true);
-	draw_text(room_width-200, 100, "forca:\nmonstros dão mais dano\n100 pontos");
+	var draw = global.strenght < 10? string(100 + global.strenght*50) + " pontos" : "";
+	draw_text(room_width-200, 100, "forca:" + string(global.strenght) + "\nmonstros dão mais dano\n" + draw);
+	if (global.strenght == 0)
+	{
+		draw_sprite_ext(spr_cadeado, 0, room_width-200, 140, 2.5, 2.5, 0, c_white, 1);
+	}
 	
-	_color = c_white;
-	if (point_in_rectangle(mouse_x, mouse_y, room_width-350, 195, room_width-50, 270)) _color = c_yellow;
+	
+	
+	var _color = global.sped > 0? c_white : c_gray;
+	if (point_in_rectangle(mouse_x, mouse_y, room_width-350, 195, room_width-50, 270))
+	{
+		_color = c_yellow;
+		if (mouse_check_button_pressed(mb_left) and global.gold > 100+global.sped*50 and global.sped < 10)
+		{
+			global.sped++;
+			global.gold -= 100+global.sped*50;
+		}
+	}
 	draw_set_color(_color);
 	draw_rectangle(room_width-350, 195, room_width-50, 270, true);
-	draw_text(room_width-200, 200, "velocidade:\nmonstros são mais velozes\n100 pontos");
+	var draw = global.sped < 10? string(100 + global.sped*50) + " pontos" : "";
+	draw_text(room_width-200, 200, "velocidade:" + string(global.sped) + "\nmonstros são mais velozes\n" + draw);
+	if (global.sped == 0)
+	{
+		draw_sprite_ext(spr_cadeado, 0, room_width-200, 240, 2.5, 2.5, 0, c_white, 1);
+	}
 	draw_set_color(c_white);
 	draw_set_halign(-1);
 }
