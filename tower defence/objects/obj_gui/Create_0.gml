@@ -33,16 +33,20 @@ f_botao = function()
 f_monsterbar = function()
 {
 	draw_set_alpha(.6);
-	draw_rectangle(room_width/2-180, room_height-8, room_width/2+180, room_height-135, false);
+	draw_rectangle(room_width/2-280, room_height-8, room_width/2+280, room_height-135, false);
 	draw_set_alpha(.9);
 	draw_sprite_ext(spr_monstro1, 0, room_width/2-110, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_sprite_ext(spr_monstro2, 0, room_width/2, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_sprite_ext(spr_monstro3, 0, room_width/2+110, room_height-70, 1.5, 1.5, 0, c_white, 1);
+	if (global.monstro4) draw_sprite_ext(spr_monstro4, 0, room_width/2-220, room_height-70, 1.5, 1.5, 0, c_white, 1);
+	draw_sprite_ext(spr_monstro5, 0, room_width/2+220, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_set_color(c_yellow);
 	draw_set_halign(fa_center);
 	draw_text(room_width/2-110, room_height-25, ": 50");
 	draw_text(room_width/2, room_height-25, ": 100");
 	draw_text(room_width/2+110, room_height-25, ": 150");
+	if (global.monstro4) draw_text(room_width/2-220, room_height-25, ": 100");
+	draw_text(room_width/2+220, room_height-25, ": 100");
 	draw_set_halign(-1);
 	draw_set_color(c_white)
 	draw_set_alpha(1);
@@ -75,6 +79,23 @@ f_mouse = function()
 			{
 				ds_list_add(wave, obj_monstro3)
 				gold -= 150;
+				var _obj = obj_monstro3;
+			}
+		}
+		if (mouse_x == clamp(mouse_x, room_width/2-48-220, room_width/2+48-220))
+		{
+			if (gold >= 100 and global.monstro4)
+			{
+				ds_list_add(wave, obj_monstro4)
+				gold -= 100;
+			}
+		}
+		if (mouse_x == clamp(mouse_x, room_width/2-48+220, room_width/2+48+220))
+		{
+			if (gold >= 100)
+			{
+				//ds_list_add(wave, obj_monstro)
+				gold -= 100;
 			}
 		}
 	}
@@ -93,6 +114,7 @@ f_onda = function()
 				if (ds_list_find_value(wave, i) == obj_monstro1) gold += 50;
 				if (ds_list_find_value(wave, i) == obj_monstro2) gold += 100;
 				if (ds_list_find_value(wave, i) == obj_monstro3) gold += 150;
+				if (ds_list_find_value(wave, i) == obj_monstro4) gold += 100;
 				ds_list_delete(wave, i);
 			}
 		}
@@ -165,11 +187,51 @@ f_ui = function()
 		ds_list_destroy(_list);
 		#endregion
 		
-		f_mouse();
+		#region monstros
 		if (mouse_check_button_pressed(mb_left))
 		{
-			instance_create_layer(obj_criacao.x, obj_criacao.y, layer, ds_list_find_value(wave, monstro));
+			if (mouse_x == clamp(mouse_x, room_width/2-110-48, room_width/2-110+48))
+			{
+				if (gold >= 50)
+				{
+					instance_create_layer(obj_criacao.x, obj_criacao.y, layer, obj_monstro1);
+					gold -= 50;
+				}
+			}
+			if (mouse_x == clamp(mouse_x, room_width/2-48, room_width/2+48))
+			{
+				if (gold >= 100)
+				{
+					instance_create_layer(obj_criacao.x, obj_criacao.y, layer, obj_monstro2);
+					gold -= 100;
+				}
+			}
+			if (mouse_x == clamp(mouse_x, room_width/2+110-48, room_width/2+110+48))
+			{
+				if (gold >= 150)
+				{
+					instance_create_layer(obj_criacao.x, obj_criacao.y, layer, obj_monstro3);
+					gold -= 150;
+				}
+			}
+			if (mouse_x == clamp(mouse_x, room_width/2-48-220, room_width/2+48-220))
+			{
+				if (gold >= 100 and global.monstro4)
+				{
+					instance_create_layer(obj_criacao.x, obj_criacao.y, layer, obj_monstro4);
+					gold -= 100;
+				}
+			}
+			if (mouse_x == clamp(mouse_x, room_width/2-48+220, room_width/2+48+220))
+			{
+				if (gold >= 100)
+				{
+					//ds_list_add(wave, obj_monstro)
+					gold -= 100;
+				}
+			}
 		}
+		#endregion
 	}
 	
 	draw_set_color(c_yellow);

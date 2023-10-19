@@ -26,5 +26,7 @@ global.visual2_m5 = ini_read_real("monstro5", "visual2", false);
 #endregion
 global.sped = ini_read_real("monstros", "speed", 0);
 global.strenght = ini_read_real("monstros", "strenght", 0);
+global.monstro4 = ini_read_real("monstros", "4", false);
+global.monstro5 = ini_read_real("monstros", "5", false);
 ini_close();
 room_goto(scn_mapa);

@@ -25,4 +25,6 @@ ini_write_real("monstro5", "visual2", global.visual2_m5);
 #endregion
 ini_write_real("monstros", "strenght", global.strenght);
 ini_write_real("monstros", "speed", global.sped);
+ini_write_real("monstros", "monstro4", global.monstro4);
+ini_write_real("monstros", "monstro5", global.monstro5);
 ini_close();

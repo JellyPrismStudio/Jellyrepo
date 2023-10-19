@@ -56,6 +56,7 @@
     {"id":{"name":"spr_monstro5","path":"sprites/spr_monstro5/spr_monstro5.yy",},},
     {"id":{"name":"obj_tower","path":"objects/obj_tower/obj_tower.yy",},},
     {"id":{"name":"spr_monstro_base","path":"sprites/spr_monstro_base/spr_monstro_base.yy",},},
+    {"id":{"name":"obj_monstro4","path":"objects/obj_monstro4/obj_monstro4.yy",},},
     {"id":{"name":"spr_monstro2","path":"sprites/spr_monstro2/spr_monstro2.yy",},},
     {"id":{"name":"scn_inicio","path":"rooms/scn_inicio/scn_inicio.yy",},},
     {"id":{"name":"spr_tower","path":"sprites/spr_tower/spr_tower.yy",},},

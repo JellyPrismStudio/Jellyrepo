@@ -10,12 +10,23 @@ f_texto = function()
 
 f_monstros = function()
 {
+	var _color = global.monstro4? c_gray : c_white;
+	if (mouse_x == clamp(mouse_x, 110, 450) and mouse_y == clamp(mouse_y, 110, 220) and _color == c_white) _color = c_yellow;
+	draw_set_color(_color)
 	draw_sprite(spr_monstro4, 0, 150, 150);
 	draw_text(200, 110, "Runner:\ncorre para o fim da fase\nignorando torres")
-	draw_text(200, 170, "300");
+	draw_text(200, 170, "800");
+	draw_rectangle(100, 100, 480, 200, true);
+	if (_color == c_yellow and mouse_check_button(mb_left) and global.gold >= 800)
+	{
+		global.gold -= 800;
+		global.monstro4 = true;
+	}
+	draw_set_color(c_white);
+	
 	draw_sprite(spr_monstro5, 0, 150, 250);
 	draw_text(200, 210, "Arqueiro:\natira flechas nas torres\nduma distancia mais segura");
-	draw_text(200, 270, "500");
+	draw_text(200, 270, "1000");
 }
 
 #region visual

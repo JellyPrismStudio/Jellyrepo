@@ -32,6 +32,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_balista","order":2,"path":"objects/obj_balista/obj_balista.yy",},
+    {"name":"obj_monstro4","order":1,"path":"objects/obj_monstro4/obj_monstro4.yy",},
     {"name":"spr_monstro2","order":1,"path":"sprites/spr_monstro2/spr_monstro2.yy",},
     {"name":"spr_tower","order":1,"path":"sprites/spr_tower/spr_tower.yy",},
     {"name":"scn_shop","order":2,"path":"rooms/scn_shop/scn_shop.yy",},
