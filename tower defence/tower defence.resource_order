@@ -32,6 +32,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_balista","order":2,"path":"objects/obj_balista/obj_balista.yy",},
+    {"name":"obj_monstro5","order":1,"path":"objects/obj_monstro5/obj_monstro5.yy",},
     {"name":"obj_monstro4","order":1,"path":"objects/obj_monstro4/obj_monstro4.yy",},
     {"name":"spr_monstro2","order":1,"path":"sprites/spr_monstro2/spr_monstro2.yy",},
     {"name":"spr_tower","order":1,"path":"sprites/spr_tower/spr_tower.yy",},
@@ -61,5 +62,6 @@
     {"name":"obj_criacao","order":2,"path":"objects/obj_criacao/obj_criacao.yy",},
     {"name":"spr_balista","order":3,"path":"sprites/spr_balista/spr_balista.yy",},
     {"name":"spr_monstro3","order":1,"path":"sprites/spr_monstro3/spr_monstro3.yy",},
+    {"name":"obj_projetil_monstro","order":2,"path":"objects/obj_projetil_monstro/obj_projetil_monstro.yy",},
   ],
 }

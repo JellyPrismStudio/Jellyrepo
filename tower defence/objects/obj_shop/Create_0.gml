@@ -24,9 +24,19 @@ f_monstros = function()
 	}
 	draw_set_color(c_white);
 	
-	draw_sprite(spr_monstro5, 0, 150, 250);
-	draw_text(200, 210, "Arqueiro:\natira flechas nas torres\nduma distancia mais segura");
-	draw_text(200, 270, "1000");
+	var _color = global.monstro5? c_gray : c_white;
+	if (mouse_x == clamp(mouse_x, 110, 450) and mouse_y == clamp(mouse_y, 260, 370) and _color == c_white) _color = c_yellow;
+	draw_set_color(_color)
+	draw_sprite(spr_monstro5, 0, 150, 300);
+	draw_text(200, 260, "Arqueiro:\natira flechas nas torres\nduma distancia mais segura");
+	draw_text(200, 320, "1000");
+	draw_rectangle(100, 250, 480, 350, true);
+	if (_color == c_yellow and mouse_check_button(mb_left) and global.gold >= 1000)
+	{
+		global.gold -= 1000;
+		global.monstro5 = true;
+	}
+	draw_set_color(c_white);
 }
 
 #region visual

@@ -56,6 +56,7 @@
     {"id":{"name":"spr_monstro5","path":"sprites/spr_monstro5/spr_monstro5.yy",},},
     {"id":{"name":"obj_tower","path":"objects/obj_tower/obj_tower.yy",},},
     {"id":{"name":"spr_monstro_base","path":"sprites/spr_monstro_base/spr_monstro_base.yy",},},
+    {"id":{"name":"obj_monstro5","path":"objects/obj_monstro5/obj_monstro5.yy",},},
     {"id":{"name":"obj_monstro4","path":"objects/obj_monstro4/obj_monstro4.yy",},},
     {"id":{"name":"spr_monstro2","path":"sprites/spr_monstro2/spr_monstro2.yy",},},
     {"id":{"name":"scn_inicio","path":"rooms/scn_inicio/scn_inicio.yy",},},
@@ -94,6 +95,7 @@
     {"id":{"name":"obj_criacao","path":"objects/obj_criacao/obj_criacao.yy",},},
     {"id":{"name":"spr_balista","path":"sprites/spr_balista/spr_balista.yy",},},
     {"id":{"name":"spr_monstro3","path":"sprites/spr_monstro3/spr_monstro3.yy",},},
+    {"id":{"name":"obj_projetil_monstro","path":"objects/obj_projetil_monstro/obj_projetil_monstro.yy",},},
     {"id":{"name":"scn_level1","path":"rooms/scn_level1/scn_level1.yy",},},
   ],
   "RoomOrderNodes": [

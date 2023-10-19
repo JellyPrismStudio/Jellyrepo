@@ -39,14 +39,14 @@ f_monsterbar = function()
 	draw_sprite_ext(spr_monstro2, 0, room_width/2, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_sprite_ext(spr_monstro3, 0, room_width/2+110, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	if (global.monstro4) draw_sprite_ext(spr_monstro4, 0, room_width/2-220, room_height-70, 1.5, 1.5, 0, c_white, 1);
-	draw_sprite_ext(spr_monstro5, 0, room_width/2+220, room_height-70, 1.5, 1.5, 0, c_white, 1);
+	if (global.monstro5) draw_sprite_ext(spr_monstro5, 0, room_width/2+220, room_height-70, 1.5, 1.5, 0, c_white, 1);
 	draw_set_color(c_yellow);
 	draw_set_halign(fa_center);
 	draw_text(room_width/2-110, room_height-25, ": 50");
 	draw_text(room_width/2, room_height-25, ": 100");
 	draw_text(room_width/2+110, room_height-25, ": 150");
 	if (global.monstro4) draw_text(room_width/2-220, room_height-25, ": 100");
-	draw_text(room_width/2+220, room_height-25, ": 100");
+	if (global.monstro5) draw_text(room_width/2+220, room_height-25, ": 100");
 	draw_set_halign(-1);
 	draw_set_color(c_white)
 	draw_set_alpha(1);
@@ -94,7 +94,7 @@ f_mouse = function()
 		{
 			if (gold >= 100)
 			{
-				//ds_list_add(wave, obj_monstro)
+				ds_list_add(wave, obj_monstro5)
 				gold -= 100;
 			}
 		}
@@ -226,7 +226,7 @@ f_ui = function()
 			{
 				if (gold >= 100)
 				{
-					//ds_list_add(wave, obj_monstro)
+					instance_create_layer(obj_criacao.x, obj_criacao.y, layer, obj_monstro5);
 					gold -= 100;
 				}
 			}
