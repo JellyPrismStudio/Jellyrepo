@@ -30,3 +30,6 @@ global.monstro4 = ini_read_real("monstros", "4", false);
 global.monstro5 = ini_read_real("monstros", "5", false);
 ini_close();
 room_goto(scn_mapa);
+
+global.strenght = 0;
+global.sped = 0;

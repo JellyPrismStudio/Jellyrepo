@@ -128,7 +128,7 @@ f_ui = function()
 		f_botao();
 		f_mouse();
 		f_onda();
-		if (gold < 50 and ds_list_size(wave) == 0) show_message("perdeu");
+		if (gold < 50 and ds_list_size(wave) == 0) room_goto(scn_mapa);
 	}
 	if (game == 1)
 	{
