@@ -64,6 +64,7 @@ switch (estado)
 		if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, obj_saida, false, false))
 		{
 			instance_destroy();
+			global.xp += 10;
 		}
 	}
 	break;
