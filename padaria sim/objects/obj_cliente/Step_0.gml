@@ -2,14 +2,15 @@ switch (estado)
 {
 	#region comprando
 	case "comprando":
-	if (instance_exists(obj_balcao))
+	var _balcao = ds_list_find_value(list, pos);
+	if (instance_exists(_balcao))
 	{
 		var x1 = x;
 		var y1 = y;
-		desx = obj_balcao.x;
-		desy = obj_balcao.y;
+		desx = _balcao.x;
+		desy = _balcao.y;
 		
-		if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, obj_balcao, false, false))
+		if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, _balcao, false, false))
 		{
 			estado = "pensando";
 			desx = x;
@@ -30,17 +31,67 @@ switch (estado)
 		timer--;
 		if (timer == 0)
 		{
-			estado = "saindo";
-			for (var i = 0; i < 5; i++;)
+			var _balcao = ds_list_find_value(list, pos);
+			for (var i = 0; i < array_length(_balcao.comidas[0]); i++;)
 			{
-				if (dinheiro >= obj_balcao.comidas[1, i])
+				if (item == noone)
 				{
-					var _chance = irandom(10);
-					if (_chance < 7)
+					if (dinheiro >= _balcao.comidas[1, i])
 					{
-						dinheiro -= obj_balcao.comidas[1, i];
-						show_message(obj_balcao.comidas[0, i]);
-						break;
+						var _chance = irandom(10);
+						if (_chance < 4)
+						{
+							dinheiro -= _balcao.comidas[1, i];
+							estado = "saindo";
+							break;
+						}
+					}
+					
+					if (i == array_length(_balcao.comidas[0])-1 and estado == "pensando")
+					{
+						if (pos < ds_list_size(list)-1)
+						{
+							pos++;
+							estado = "comprando";
+							break;
+						}
+						else
+						{
+							estado = "saindo";
+							break;
+						}
+					}
+				}
+				if (item != noone)
+				{
+					if (item == _balcao.comidas[0, i])
+					{
+						if (dinheiro >= _balcao.comidas[1, i])
+						{
+							dinheiro -= _balcao.comidas[1, i];
+							estado = "saindo";
+							break;
+						}
+						else
+						{
+							estado = "saindo";
+							break;
+						}
+					}
+					
+					if (i == array_length(_balcao.comidas[0])-1 and estado == "pensando")
+					{
+						if (pos < ds_list_size(list)-1)
+						{
+							pos++;
+							estado = "comprando";
+							break;
+						}
+						else
+						{
+							estado = "saindo";
+							break;
+						}
 					}
 				}
 			}
@@ -50,7 +101,7 @@ switch (estado)
 	
 	#region saindo
 	case "saindo":
-	if (instance_exists(obj_balcao))
+	if (instance_exists(obj_saida))
 	{
 		var x1 = x;
 		var y1 = y;

@@ -3,7 +3,6 @@
   "resourceVersion": "1.0",
   "name": "obj_balcao",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
@@ -27,7 +26,11 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [],
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[0]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"nome do item\"]","varType":4,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[1]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"preço\"]","varType":4,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[2]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"submite\"]","varType":4,},
+  ],
   "solid": false,
   "spriteId": {
     "name": "spr_balcao",
