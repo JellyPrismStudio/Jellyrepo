@@ -43,6 +43,8 @@ switch (estado)
 						{
 							dinheiro -= _balcao.comidas[1, i];
 							estado = "saindo";
+							global.c_xp[cliente]++;
+							xp++;
 							break;
 						}
 					}
@@ -70,6 +72,8 @@ switch (estado)
 						{
 							dinheiro -= _balcao.comidas[1, i];
 							estado = "saindo";
+							global.c_xp[cliente]++;
+							xp++;
 							break;
 						}
 						else
