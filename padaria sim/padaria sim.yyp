@@ -38,6 +38,7 @@
   "resources": [
     {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},},
     {"id":{"name":"obj_controler","path":"objects/obj_controler/obj_controler.yy",},},
+    {"id":{"name":"obj_produtos","path":"objects/obj_produtos/obj_produtos.yy",},},
     {"id":{"name":"spr_cliente","path":"sprites/spr_cliente/spr_cliente.yy",},},
     {"id":{"name":"spr_comidas","path":"sprites/spr_comidas/spr_comidas.yy",},},
     {"id":{"name":"spr_balcao","path":"sprites/spr_balcao/spr_balcao.yy",},},

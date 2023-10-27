@@ -42,10 +42,21 @@ switch (estado)
 						if (_chance < 4)
 						{
 							dinheiro -= _balcao.comidas[1, i];
-							estado = "saindo";
+							estado = "comprando";
 							global.c_xp[cliente]++;
 							xp++;
-							break;
+							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + "por " + string(_balcao.comidas[1, i]) + "reais");
+							if (pos < ds_list_size(list)-1)
+							{
+								pos++;
+								estado = "comprando";
+								break;
+							}
+							else
+							{
+								estado = "saindo";
+								break;
+							}
 						}
 					}
 					
@@ -74,6 +85,7 @@ switch (estado)
 							estado = "saindo";
 							global.c_xp[cliente]++;
 							xp++;
+							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + "por " + string(_balcao.comidas[1, i]) + " reais");
 							break;
 						}
 						else
