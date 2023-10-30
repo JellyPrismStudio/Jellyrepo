@@ -19,3 +19,6 @@ item = choose("bolo", "pão", "pão de forma", "presunto", "queijo", noone, noon
 list = ds_list_create();
 pos = 0;
 collision_rectangle_list(0, 0, room_width, room_height, obj_balcao, false, true, list, false);
+
+level = [10, 30, 70, 160];
+lvl = 0;

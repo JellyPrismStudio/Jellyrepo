@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Objetos",
-    "path": "folders/Objetos.yy",
+    "name": "cliente",
+    "path": "folders/Objetos/cliente.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
