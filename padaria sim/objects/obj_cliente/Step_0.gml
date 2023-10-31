@@ -36,27 +36,34 @@ switch (estado)
 			{
 				if (item == noone)
 				{
+					repeat (3)
+					{
+						if (dinheiro >= _balcao.comidas[1, i])
+						{
+							var _chance = irandom(10);
+							if (_chance < 4)
+							{
+								dinheiro -= _balcao.comidas[1, i];
+								estado = "comprando";
+								global.c_xp[cliente]++;
+								xp++;
+								show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
+							}
+						}
+					}
+					
 					if (dinheiro >= _balcao.comidas[1, i])
 					{
-						var _chance = irandom(10);
-						if (_chance < 4)
+						if (pos < ds_list_size(list)-1)
 						{
-							dinheiro -= _balcao.comidas[1, i];
+							pos++;
 							estado = "comprando";
-							global.c_xp[cliente]++;
-							xp++;
-							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + "por " + string(_balcao.comidas[1, i]) + "reais");
-							if (pos < ds_list_size(list)-1)
-							{
-								pos++;
-								estado = "comprando";
-								break;
-							}
-							else
-							{
-								estado = "saindo";
-								break;
-							}
+							break;
+						}
+						else
+						{
+							estado = "saindo";
+							break;
 						}
 					}
 					
@@ -81,11 +88,33 @@ switch (estado)
 					{
 						if (dinheiro >= _balcao.comidas[1, i])
 						{
+							var _dinheiro = dinheiro;
 							dinheiro -= _balcao.comidas[1, i];
 							estado = "saindo";
 							global.c_xp[cliente]++;
+							global.gold += _dinheiro-dinheiro;
 							xp++;
-							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + "por " + string(_balcao.comidas[1, i]) + " reais");
+							global.xp += 10;
+							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
+							
+							repeat (2)
+							{
+								if (dinheiro >= _balcao.comidas[1, i])
+								{
+									var _chance = irandom(10);
+									if (_chance < 4)
+									{
+										var _dinheiro = dinheiro;
+										dinheiro -= _balcao.comidas[1, i];
+										estado = "comprando";
+										global.c_xp[cliente]++;
+										global.gold += _dinheiro-dinheiro;
+										xp++;
+										global.xp += 10;
+										show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
+									}
+								}
+							}
 							break;
 						}
 						else
@@ -131,7 +160,6 @@ switch (estado)
 		if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, obj_saida, false, false))
 		{
 			instance_destroy();
-			global.xp += 10;
 		}
 	}
 	break;

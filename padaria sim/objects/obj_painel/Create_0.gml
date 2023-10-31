@@ -14,7 +14,7 @@ f_cliente = function()
 	draw_text(room_width/2, 100, "xp: " + string(obj.xp));
 	draw_text(room_width/2, 120, "nome: " + obj.nomes[obj.cliente]);
 	draw_text(room_width/2, 140, "idade: " + obj.idades[obj.cliente]);
-	draw_text(room_width/2, 160, "genero: " + obj.idades[obj.cliente]);
+	draw_text(room_width/2, 160, "genero: " + obj.genero[obj.cliente]);
 	draw_text(room_width/2, 180, "dinheiro: " + string(obj.dinheiro));
 }
 

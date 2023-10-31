@@ -45,15 +45,23 @@ f_hotbar = function()
 			draw_set_color(c_white);
 			if (mouse_check_button_pressed(mb_left))
 			{
-				//eu fiz esse treco assim, pq tava bugando, eu enquanto fui fazendo testes pensei q talvez assim funcionasse.... e funcionou kkkkkkkkkk
 				var _nome = ["bolo", "queijo", "presunto", "pão de forma", "pão"];
 				var _preco = [10, 7, 5, 3, 2];
-				obj.comidas[0, array_length(obj.comidas[0])] = _nome[i];
-				obj.comidas[1, array_length(obj.comidas[0])] = _preco[i];
-				obj.comidas[2, array_length(obj.comidas[0])] = i;
-				obj.comidas[0, array_length(obj.comidas[0])-1] = _nome[i];
-				obj.comidas[1, array_length(obj.comidas[0])-1] = _preco[i];
-				obj.comidas[2, array_length(obj.comidas[0])-1] = i;
+				
+				for (var j = 0; j < array_length(obj.comidas[0]); j++;)
+				{
+					if (_nome[i] == obj.comidas[0, j]) break;
+					if (j == array_length(obj.comidas[0])-1)
+					{
+						//eu fiz esse treco assim, pq tava bugando, eu enquanto fui fazendo testes pensei q talvez assim funcionasse.... e funcionou kkkkkkkkkk
+						obj.comidas[0, array_length(obj.comidas[0])] = _nome[i];
+						obj.comidas[1, array_length(obj.comidas[0])] = _preco[i];
+						obj.comidas[2, array_length(obj.comidas[0])] = i;
+						obj.comidas[0, array_length(obj.comidas[0])-1] = _nome[i];
+						obj.comidas[1, array_length(obj.comidas[0])-1] = _preco[i];
+						obj.comidas[2, array_length(obj.comidas[0])-1] = i;
+					}
+				}
 			}
 		}
 		draw_sprite_ext(spr_comidas, i, room_width/2-200+i*100, room_height-100, 4, 4, 0, c_white, 1);
