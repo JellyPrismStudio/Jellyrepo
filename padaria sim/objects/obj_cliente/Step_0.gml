@@ -43,10 +43,14 @@ switch (estado)
 							var _chance = irandom(10);
 							if (_chance < 4)
 							{
+								var _dinheiro = dinheiro;
 								dinheiro -= _balcao.comidas[1, i];
-								estado = "comprando";
 								global.c_xp[cliente]++;
+								global.gold += _dinheiro-dinheiro;
 								xp++;
+								inventario[invt, 0] = _balcao.comidas[0, i];
+								inventario[invt, 1] = _balcao.comidas[2, i];
+								invt++;
 								show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
 							}
 						}
@@ -95,6 +99,9 @@ switch (estado)
 							global.gold += _dinheiro-dinheiro;
 							xp++;
 							global.xp += 10;
+							inventario[invt, 0] = _balcao.comidas[0, i];
+							inventario[invt, 1] = _balcao.comidas[2, i];
+							invt++;
 							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
 							
 							repeat (2)
@@ -106,11 +113,14 @@ switch (estado)
 									{
 										var _dinheiro = dinheiro;
 										dinheiro -= _balcao.comidas[1, i];
-										estado = "comprando";
+										estado = "saindo";
 										global.c_xp[cliente]++;
 										global.gold += _dinheiro-dinheiro;
 										xp++;
 										global.xp += 10;
+										inventario[invt, 0] = _balcao.comidas[0, i];
+										inventario[invt, 1] = _balcao.comidas[2, i];
+										invt++;
 										show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
 									}
 								}

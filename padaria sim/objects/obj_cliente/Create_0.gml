@@ -8,7 +8,8 @@ idades = ["15", "72", "pi", "178", "28", "45", "-10"];
 genero = ["m", "m", "f", "m", "m", "f", "f"];
 xp = global.c_xp[cliente];
 
-dinheiro = irandom_range(xp, 10+xp);
+start_money = irandom_range(xp+1, 10+xp);
+dinheiro = start_money;
 
 estado = "comprando";
 
@@ -22,3 +23,7 @@ collision_rectangle_list(0, 0, room_width, room_height, obj_balcao, false, true,
 
 level = [10, 30, 70, 160];
 lvl = 0;
+
+inventario[0, 0] = "";
+inventario[0, 1] = 0;
+invt = 0;
