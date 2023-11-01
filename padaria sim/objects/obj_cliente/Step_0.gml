@@ -46,6 +46,7 @@ switch (estado)
 								var _dinheiro = dinheiro;
 								dinheiro -= _balcao.comidas[1, i];
 								global.c_xp[cliente]++;
+								global.xp += 10;
 								global.gold += _dinheiro-dinheiro;
 								xp++;
 								inventario[invt, 0] = _balcao.comidas[0, i];

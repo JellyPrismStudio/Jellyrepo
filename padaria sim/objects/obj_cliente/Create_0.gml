@@ -16,7 +16,7 @@ estado = "comprando";
 timer_max = 60;
 timer = 0;
 
-item = choose("bolo", "pão", "pão de forma", "presunto", "queijo", noone, noone);
+item = choose("bolo", "pão", "pão de forma", "presunto", "queijo", "torta", "pastel", noone, noone);
 list = ds_list_create();
 pos = 0;
 collision_rectangle_list(0, 0, room_width, room_height, obj_balcao, false, true, list, false);

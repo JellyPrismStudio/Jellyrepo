@@ -36,17 +36,17 @@ f_array = function()
 
 f_hotbar = function()
 {
-	for (var i = 0; i < 5; i++;)
+	for (var i = 0; i < global.itens; i++;)
 	{
-		if (point_in_rectangle(mouse_x, mouse_y, room_width/2-200+i*100-32,room_height-132, room_width/2-200+i*100+32, room_height-68))
+		if (point_in_rectangle(mouse_x, mouse_y, room_width/2-200+(i-floor(i/5)*5)*100-32, room_height-180+80*floor(i/5)-32, room_width/2-200+(i-floor(i/5)*5)*100+32, room_height-180+80*floor(i/5)+32))
 		{
 			draw_set_color(c_gray);
-			draw_rectangle(room_width/2-200+i*100-36, room_height-136, room_width/2-200+i*100+36, room_height-64, false);
+			draw_rectangle(room_width/2-200+(i-floor(i/5)*5)*100-36, room_height-180+80*floor(i/5)-36, room_width/2-200+(i-floor(i/5)*5)*100+36, room_height-180+80*floor(i/5)+36, false);
 			draw_set_color(c_white);
 			if (mouse_check_button_pressed(mb_left))
 			{
-				var _nome = ["bolo", "queijo", "presunto", "pão de forma", "pão"];
-				var _preco = [10, 7, 5, 3, 2];
+				var _nome = ["bolo", "queijo", "presunto", "pão de forma", "pão", "torta", "pastel"];
+				var _preco = [10, 7, 5, 3, 2, 8, 4];
 				
 				for (var j = 0; j < array_length(obj.comidas[0]); j++;)
 				{
@@ -64,7 +64,7 @@ f_hotbar = function()
 				}
 			}
 		}
-		draw_sprite_ext(spr_comidas, i, room_width/2-200+i*100, room_height-100, 4, 4, 0, c_white, 1);
+		draw_sprite_ext(spr_comidas, i, room_width/2-200+(i-floor(i/5)*5)*100, room_height-180+80*floor(i/5), 4, 4, 0, c_white, 1);
 	}
 }
 

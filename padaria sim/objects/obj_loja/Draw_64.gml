@@ -6,5 +6,8 @@ if (global.xp >= level[lvl]*10)
 {
 	global.level++;
 	lvl++;
-	show_message("level up")
+	show_message("level up");
+	if (global.itens < 7) global.itens++;
 }
+
+if (keyboard_check_pressed(vk_enter)) global.itens++;
