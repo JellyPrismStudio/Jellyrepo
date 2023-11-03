@@ -43,6 +43,8 @@
     {"id":{"name":"obj_produtos","path":"objects/obj_produtos/obj_produtos.yy",},},
     {"id":{"name":"spr_cliente","path":"sprites/spr_cliente/spr_cliente.yy",},},
     {"id":{"name":"spr_comidas","path":"sprites/spr_comidas/spr_comidas.yy",},},
+    {"id":{"name":"shd_branco","path":"shaders/shd_branco/shd_branco.yy",},},
+    {"id":{"name":"spr_preco","path":"sprites/spr_preco/spr_preco.yy",},},
     {"id":{"name":"spr_balcao","path":"sprites/spr_balcao/spr_balcao.yy",},},
     {"id":{"name":"obj_balcao","path":"objects/obj_balcao/obj_balcao.yy",},},
     {"id":{"name":"scr_client_stats","path":"scripts/scr_client_stats/scr_client_stats.yy",},},

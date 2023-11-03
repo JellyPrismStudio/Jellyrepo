@@ -1,3 +1,5 @@
+qtd_max = 2;
+
 f_draw = function()
 {
 	draw_set_color(c_ltgray);
@@ -31,6 +33,29 @@ f_array = function()
 			}
 		}
 		draw_sprite_ext(spr_comidas, obj.comidas[2, i], room_width/2-250+i*100, 100, 4, 4, 0, c_white, 1);
+		if (point_in_rectangle(mouse_x, mouse_y, room_width/2-250+i*100+45-13, 85-13, room_width/2-250+i*100+45+13, 85+13))
+		{
+			shader_set(shd_branco);
+			if (mouse_check_button_pressed(mb_left))
+			{
+				obj.comidas[1, i]++;
+			}
+		}
+		draw_sprite_ext(spr_preco, 1, room_width/2-250+i*100+45, 85, 4, 4, 0, c_white, 1);
+		shader_reset();
+		if (point_in_rectangle(mouse_x, mouse_y, room_width/2-250+i*100+45-13, 115-13, room_width/2-250+i*100+45+13, 115+13))
+		{
+			shader_set(shd_branco);
+			if (mouse_check_button_pressed(mb_left))
+			{
+				obj.comidas[1, i]--;
+			}
+		}
+		draw_sprite_ext(spr_preco, 0, room_width/2-250+i*100+45, 115, 4, 4, 0, c_white, 1);
+		shader_reset();
+		draw_set_halign(fa_center);
+		draw_text(room_width/2-250+i*100, 135, "$" + string(obj.comidas[1, i]))
+		draw_set_halign(-1);
 	}
 }
 
@@ -43,7 +68,7 @@ f_hotbar = function()
 			draw_set_color(c_gray);
 			draw_rectangle(room_width/2-200+(i-floor(i/5)*5)*100-36, room_height-180+80*floor(i/5)-36, room_width/2-200+(i-floor(i/5)*5)*100+36, room_height-180+80*floor(i/5)+36, false);
 			draw_set_color(c_white);
-			if (mouse_check_button_pressed(mb_left))
+			if (mouse_check_button_pressed(mb_left) and array_length(obj.comidas[0]) < qtd_max)
 			{
 				var _nome = ["bolo", "queijo", "presunto", "pão de forma", "pão", "torta", "pastel"];
 				var _preco = [10, 7, 5, 3, 2, 8, 4];
