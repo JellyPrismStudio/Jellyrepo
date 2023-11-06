@@ -31,6 +31,7 @@
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[0]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"nome do item\"]","varType":4,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[1]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"preço\"]","varType":4,},
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[2]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"submite\"]","varType":4,},
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"comidas[3]","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"[\"quantidade\"]","varType":4,},
   ],
   "solid": false,
   "spriteId": {

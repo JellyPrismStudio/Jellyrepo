@@ -32,6 +32,21 @@ switch (estado)
 		if (timer == 0)
 		{
 			var _balcao = ds_list_find_value(list, pos);
+			
+			if (array_length(_balcao.comidas[0]) == 0)
+			{
+				if (pos < ds_list_size(list)-1)
+				{
+					pos++;
+					estado = "comprando";
+					break;
+				}
+				else
+				{
+					estado = "saindo";
+					break;
+				}
+			}
 			for (var i = 0; i < array_length(_balcao.comidas[0]); i++;)
 			{
 				if (item == noone)
@@ -52,6 +67,21 @@ switch (estado)
 								inventario[invt, 0] = _balcao.comidas[0, i];
 								inventario[invt, 1] = _balcao.comidas[2, i];
 								invt++;
+								if (_balcao.comidas[3, i] > 1) _balcao.comidas[3, i]--;
+								else
+								{
+									for (var j = i; j < array_length(_balcao.comidas[0])-1; j++;)
+									{	
+										_balcao.comidas[0, j] = _balcao.comidas[0, j+1];
+										_balcao.comidas[1, j] = _balcao.comidas[1, j+1];
+										_balcao.comidas[2, j] = _balcao.comidas[2, j+1];
+										_balcao.comidas[3, j] = _balcao.comidas[3, j+1];
+									}
+									array_resize(_balcao.comidas[0], array_length(_balcao.comidas[0])-1);
+									array_resize(_balcao.comidas[1], array_length(_balcao.comidas[1])-1);
+									array_resize(_balcao.comidas[2], array_length(_balcao.comidas[2])-1);
+									break;
+								}
 								show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
 							}
 						}
@@ -103,6 +133,21 @@ switch (estado)
 							inventario[invt, 0] = _balcao.comidas[0, i];
 							inventario[invt, 1] = _balcao.comidas[2, i];
 							invt++;
+							if (_balcao.comidas[3, i] > 1) _balcao.comidas[3, i]--;
+							else
+							{
+								for (var j = i; j < array_length(_balcao.comidas[0])-1; j++;)
+								{	
+									_balcao.comidas[0, j] = _balcao.comidas[0, j+1];
+									_balcao.comidas[1, j] = _balcao.comidas[1, j+1];
+									_balcao.comidas[2, j] = _balcao.comidas[2, j+1];
+									_balcao.comidas[3, j] = _balcao.comidas[3, j+1];
+								}
+								array_resize(_balcao.comidas[0], array_length(_balcao.comidas[0])-1);
+								array_resize(_balcao.comidas[1], array_length(_balcao.comidas[1])-1);
+								array_resize(_balcao.comidas[2], array_length(_balcao.comidas[2])-1);
+								break;
+							}
 							show_message(nomes[cliente] + " comprou " + _balcao.comidas[0, i] + " por " + string(_balcao.comidas[1, i]) + " reais");
 							
 							repeat (2)
