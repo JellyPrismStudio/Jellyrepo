@@ -9,3 +9,11 @@ if (global.xp >= level[lvl]*10)
 	show_message("level up");
 	if (global.itens < 7) global.itens++;
 }
+
+var _color = c_white;
+if (point_in_circle(mouse_x, mouse_y, 50, 50, 24)) _color = c_gray;
+draw_sprite_ext(spr_clientes, 0, 50, 50, 1.5, 1.5, 0, _color, 1);
+if (_color == c_gray and mouse_check_button_pressed(mb_left))
+{
+	instance_create_depth(0, 0, 0, obj_clientes);
+}
