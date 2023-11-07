@@ -17,3 +17,11 @@ if (_color == c_gray and mouse_check_button_pressed(mb_left))
 {
 	instance_create_depth(0, 0, 0, obj_clientes);
 }
+
+var _color = c_white;
+if (point_in_circle(mouse_x, mouse_y, 50, 100, 24)) _color = c_gray;
+draw_sprite_ext(spr_produtos, 0, 50, 100, 1.5, 1.5, 0, _color, 1);
+if (_color == c_gray and mouse_check_button_pressed(mb_left))
+{
+	instance_create_depth(0, 0, 0, obj_comidas);
+}

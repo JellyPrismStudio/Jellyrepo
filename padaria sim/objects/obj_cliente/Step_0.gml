@@ -64,6 +64,8 @@ switch (estado)
 								global.xp += 10;
 								global.gold += _dinheiro-dinheiro;
 								global.c_dinheiro[cliente] += _dinheiro-dinheiro;
+								global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
+								global.p_compras[_balcao.comidas[2, i]]++;
 								xp++;
 								inventario[invt, 0] = _balcao.comidas[0, i];
 								inventario[invt, 1] = _balcao.comidas[2, i];
@@ -129,12 +131,14 @@ switch (estado)
 							estado = "saindo";
 							global.c_xp[cliente]++;
 							global.gold += _dinheiro-dinheiro;
-							global.c_dinheiro[cliente] += _dinheiro-dinheiro;
+							global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
+							global.p_compras[_balcao.comidas[2, i]]++;
 							xp++;
 							global.xp += 10;
 							inventario[invt, 0] = _balcao.comidas[0, i];
 							inventario[invt, 1] = _balcao.comidas[2, i];
 							invt++;
+							global.p_dinheiro[i] += _dinheiro-dinheiro;
 							if (_balcao.comidas[3, i] > 1) _balcao.comidas[3, i]--;
 							else
 							{
@@ -165,6 +169,8 @@ switch (estado)
 										global.c_xp[cliente]++;
 										global.gold += _dinheiro-dinheiro;
 										global.c_dinheiro[cliente] += _dinheiro-dinheiro;
+										global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
+										global.p_compras[_balcao.comidas[2, i]]++;
 										xp++;
 										global.xp += 10;
 										inventario[invt, 0] = _balcao.comidas[0, i];
