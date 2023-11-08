@@ -33,7 +33,7 @@ f_close = function()
 	draw_set_color(c_dkgray);
 	draw_rectangle(room_width/2+302, 50, room_width/2+322, 70, false);
 	draw_set_color(c_white);
-	if (point_in_rectangle(mouse_x-camera_get_view_x(view_camera[0]), mouse_y-camera_get_view_y(view_camera[0]), room_width/2+302, 50, room_width/2+322, 70))
+	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2+302, 50, room_width/2+322, 70))
 	{
 		draw_set_color(c_gray);
 		draw_rectangle(room_width/2+305, 53, room_width/2+319, 67, false);

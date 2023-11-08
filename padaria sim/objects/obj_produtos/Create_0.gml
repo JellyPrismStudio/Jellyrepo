@@ -13,7 +13,7 @@ f_array = function()
 {
 	for (var i = 0; i < array_length(obj.comidas[0]); i++;)
 	{
-		if (point_in_rectangle(mouse_x-camera_get_view_x(view_camera[0]), mouse_y-camera_get_view_y(view_camera[0]), room_width/2-250+i*100-36, 100-36, room_width/2-250+i*100+36, 100+36))
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-250+i*100-36, 100-36, room_width/2-250+i*100+36, 100+36))
 		{
 			draw_set_color(c_gray);
 			draw_rectangle(room_width/2-250+i*100-36, 100-36, room_width/2-250+i*100+36, 100+36, false);
@@ -41,7 +41,7 @@ f_array = function()
 			}
 		}
 		draw_sprite_ext(spr_comidas, obj.comidas[2, i], room_width/2-250+i*100, 100, 4, 4, 0, c_white, 1);
-		if (point_in_rectangle(mouse_x-camera_get_view_x(view_camera[0]), mouse_y-camera_get_view_y(view_camera[0]), room_width/2-250+i*100+45-13, 85-13, room_width/2-250+i*100+45+13, 85+13))
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-250+i*100+45-13, 85-13, room_width/2-250+i*100+45+13, 85+13))
 		{
 			shader_set(shd_branco);
 			if (mouse_check_button_pressed(mb_left))
@@ -51,7 +51,7 @@ f_array = function()
 		}
 		draw_sprite_ext(spr_preco, 1, room_width/2-250+i*100+45, 85, 4, 4, 0, c_white, 1);
 		shader_reset();
-		if (point_in_rectangle(mouse_x-camera_get_view_x(view_camera[0]), mouse_y-camera_get_view_y(view_camera[0]), room_width/2-250+i*100+45-13, 115-13, room_width/2-250+i*100+45+13, 115+13))
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-250+i*100+45-13, 115-13, room_width/2-250+i*100+45+13, 115+13))
 		{
 			shader_set(shd_branco);
 			if (mouse_check_button_pressed(mb_left))
@@ -74,7 +74,7 @@ f_hotbar = function()
 {
 	for (var i = 0; i < global.itens; i++;)
 	{
-		if (point_in_rectangle(mouse_x-camera_get_view_x(view_camera[0]), mouse_y-camera_get_view_y(view_camera[0]), room_width/2-200+(i-floor(i/5)*5)*100-32, room_height-180+80*floor(i/5)-32, room_width/2-200+(i-floor(i/5)*5)*100+32, room_height-180+80*floor(i/5)+32))
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-200+(i-floor(i/5)*5)*100-32, room_height-180+80*floor(i/5)-32, room_width/2-200+(i-floor(i/5)*5)*100+32, room_height-180+80*floor(i/5)+32))
 		{
 			draw_set_color(c_gray);
 			draw_rectangle(room_width/2-200+(i-floor(i/5)*5)*100-36, room_height-180+80*floor(i/5)-36, room_width/2-200+(i-floor(i/5)*5)*100+36, room_height-180+80*floor(i/5)+36, false);
@@ -127,7 +127,7 @@ f_close = function()
 	draw_set_color(c_dkgray);
 	draw_rectangle(room_width/2+302, 50, room_width/2+322, 70, false);
 	draw_set_color(c_white);
-	if (point_in_rectangle(mouse_x-camera_get_view_x(view_camera[0]), mouse_y-camera_get_view_y(view_camera[0]), room_width/2+302, 50, room_width/2+322, 70))
+	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2+302, 50, room_width/2+322, 70))
 	{
 		draw_set_color(c_gray);
 		draw_rectangle(room_width/2+305, 53, room_width/2+319, 67, false);
