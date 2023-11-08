@@ -27,7 +27,6 @@ if (movendo)
 {
 	camera_set_view_pos(_view, _xport+mou_x-mouse_x, _yport+mou_y-mouse_y);
 	if (mouse_check_button_released(mb_left)) movendo = false;
-	show_debug_message(string(mou_x) + string(mou_y))
 }
 
 mou_x = mouse_x;
