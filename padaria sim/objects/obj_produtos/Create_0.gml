@@ -23,6 +23,7 @@ f_array = function()
 				if (obj.comidas[3, i] > 0)
 				{
 					obj.comidas[3, i]--;
+					global.p_quantidade[obj.comidas[2, i]]++;
 				}
 				else
 				{
@@ -79,8 +80,9 @@ f_hotbar = function()
 			draw_set_color(c_gray);
 			draw_rectangle(room_width/2-200+(i-floor(i/5)*5)*100-36, room_height-180+80*floor(i/5)-36, room_width/2-200+(i-floor(i/5)*5)*100+36, room_height-180+80*floor(i/5)+36, false);
 			draw_set_color(c_white);
-			if (mouse_check_button_pressed(mb_left) and array_length(obj.comidas[0]) <= qtd_max)
+			if (mouse_check_button_pressed(mb_left) and array_length(obj.comidas[0]) <= qtd_max and global.p_quantidade[i] > 0)
 			{
+				global.p_quantidade[i]--;
 				var _nome = ["bolo", "queijo", "presunto", "pão de forma", "pão", "torta", "pastel"];
 				var _preco = [10, 7, 5, 3, 2, 8, 4];
 				
@@ -117,6 +119,13 @@ f_hotbar = function()
 			}
 		}
 		draw_sprite_ext(spr_comidas, i, room_width/2-200+(i-floor(i/5)*5)*100, room_height-180+80*floor(i/5), 4, 4, 0, c_white, 1);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_center);
+		draw_set_color(c_black);
+		draw_text(room_width/2-200+(i-floor(i/5)*5)*100, room_height-180+80*floor(i/5), string(global.p_quantidade[i]));
+		draw_set_color(c_white);
+		draw_set_valign(-1);
+		draw_set_halign(-1);
 	}
 }
 

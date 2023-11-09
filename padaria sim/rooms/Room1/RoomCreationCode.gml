@@ -6,5 +6,8 @@ global.c_dinheiro = [0, 0, 0, 0, 0, 0, 0];
 global.itens = 5;
 global.p_dinheiro = [0, 0, 0, 0, 0, 0, 0];
 global.p_compras = [0, 0, 0, 0, 0, 0, 0];
+global.p_quantidade = [10, 10, 10, 10, 10, 5, 5];
+global.p_quantidade[3] = 10;
+global.p_preco = [7, 5, 4, 2, 1, 6, 2];
 
 show_debug_log(true);
