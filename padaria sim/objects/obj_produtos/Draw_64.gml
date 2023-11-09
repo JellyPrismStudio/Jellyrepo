@@ -1,4 +1,4 @@
-f_draw();
+scr_draw();
 f_array();
 f_hotbar();
-f_close();
+scr_close();

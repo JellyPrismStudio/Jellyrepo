@@ -1,5 +1,5 @@
-f_draw();
+scr_draw();
 f_comidas();
-f_close();
+scr_close();
 
 if (keyboard_check_pressed(vk_enter)) global.itens++;

@@ -1,3 +1,3 @@
 scr_draw();
 scr_close();
-f_clientes();
+f_balcoes();

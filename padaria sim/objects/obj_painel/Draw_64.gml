@@ -1,8 +1,8 @@
 if (instance_exists(obj))
 {
-	f_draw();
+	scr_draw();
 	f_cliente();
-	f_close();
+	scr_close();
 }
 else
 {
