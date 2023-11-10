@@ -73,7 +73,6 @@ f_hotbar = function()
 			draw_set_color(c_white);
 			if (mouse_check_button_pressed(mb_left) and array_length(obj.comidas[0]) <= qtd_max and global.p_quantidade[i] > 0)
 			{
-				global.p_quantidade[i]--;
 				var _nome = ["bolo", "queijo", "presunto", "pão de forma", "pão", "torta", "pastel"];
 				var _preco = [10, 7, 5, 3, 2, 8, 4];
 				
@@ -82,6 +81,7 @@ f_hotbar = function()
 					if (_nome[i] == obj.comidas[0, j])
 					{
 						obj.comidas[3, j]++;
+						global.p_quantidade[i]--;
 						break;
 					}
 					if (j == array_length(obj.comidas[0])-1 and array_length(obj.comidas[0]) < qtd_max)
@@ -95,6 +95,7 @@ f_hotbar = function()
 						obj.comidas[1, array_length(obj.comidas[0])-1] = _preco[i];
 						obj.comidas[2, array_length(obj.comidas[0])-1] = i;
 						obj.comidas[3, array_length(obj.comidas[0])-1] = 1;
+						global.p_quantidade[i]--;
 						
 						break;
 					}

@@ -3,7 +3,6 @@
   "resourceVersion": "1.0",
   "name": "obj_balcao",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -13,7 +12,10 @@
     "name": "loja",
     "path": "folders/Objetos/loja.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_mobilia",
+    "path": "objects/obj_mobilia/obj_mobilia.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

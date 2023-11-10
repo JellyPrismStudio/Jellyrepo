@@ -40,6 +40,7 @@
   "resources": [
     {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},},
     {"id":{"name":"obj_controler","path":"objects/obj_controler/obj_controler.yy",},},
+    {"id":{"name":"spr_mobilia","path":"sprites/spr_mobilia/spr_mobilia.yy",},},
     {"id":{"name":"obj_produtos","path":"objects/obj_produtos/obj_produtos.yy",},},
     {"id":{"name":"spr_cliente","path":"sprites/spr_cliente/spr_cliente.yy",},},
     {"id":{"name":"spr_comidas","path":"sprites/spr_comidas/spr_comidas.yy",},},
@@ -50,6 +51,7 @@
     {"id":{"name":"spr_balcao","path":"sprites/spr_balcao/spr_balcao.yy",},},
     {"id":{"name":"obj_balcao","path":"objects/obj_balcao/obj_balcao.yy",},},
     {"id":{"name":"scr_client_stats","path":"scripts/scr_client_stats/scr_client_stats.yy",},},
+    {"id":{"name":"obj_mobilia","path":"objects/obj_mobilia/obj_mobilia.yy",},},
     {"id":{"name":"spr_menu_produtos","path":"sprites/spr_menu_produtos/spr_menu_produtos.yy",},},
     {"id":{"name":"obj_comidas","path":"objects/obj_comidas/obj_comidas.yy",},},
     {"id":{"name":"spr_colisao","path":"sprites/spr_colisao/spr_colisao.yy",},},

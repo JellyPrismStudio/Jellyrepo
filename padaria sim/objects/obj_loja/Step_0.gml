@@ -33,3 +33,13 @@ mou_x = mouse_x;
 mou_y = mouse_y;
 
 if (keyboard_check(vk_up)) global.gold++;
+if (keyboard_check_pressed(vk_space))
+{
+	show_message("balcão do bolo " + string(global.i_balcao[0]));
+	show_message("balcão do queijo " + string(global.i_balcao[1]));
+	show_message("balcão do presunto " + string(global.i_balcao[2]));
+	show_message("balcão do pão de forma " + string(global.i_balcao[3]));
+	show_message("balcão do pão " + string(global.i_balcao[4]));
+	show_message("balcão do torta " + string(global.i_balcao[5]));
+	show_message("balcão do pastel " + string(global.i_balcao[6]));
+}
