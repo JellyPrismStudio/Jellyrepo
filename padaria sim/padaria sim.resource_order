@@ -23,6 +23,7 @@
     {"name":"obj_controler","order":3,"path":"objects/obj_controler/obj_controler.yy",},
     {"name":"spr_mobilia","order":12,"path":"sprites/spr_mobilia/spr_mobilia.yy",},
     {"name":"spr_comidas","order":4,"path":"sprites/spr_comidas/spr_comidas.yy",},
+    {"name":"spr_menu_estoque","order":9,"path":"sprites/spr_menu_estoque/spr_menu_estoque.yy",},
     {"name":"spr_preco","order":5,"path":"sprites/spr_preco/spr_preco.yy",},
     {"name":"spr_menu_balcao","order":8,"path":"sprites/spr_menu_balcao/spr_menu_balcao.yy",},
     {"name":"scr_utilidades","order":1,"path":"scripts/scr_utilidades/scr_utilidades.yy",},
@@ -39,6 +40,7 @@
     {"name":"obj_balcoes","order":10,"path":"objects/obj_balcoes/obj_balcoes.yy",},
     {"name":"obj_clientes","order":5,"path":"objects/obj_clientes/obj_clientes.yy",},
     {"name":"obj_painel","order":4,"path":"objects/obj_painel/obj_painel.yy",},
+    {"name":"obj_estoque","order":13,"path":"objects/obj_estoque/obj_estoque.yy",},
     {"name":"obj_colisao","order":3,"path":"objects/obj_colisao/obj_colisao.yy",},
   ],
 }
