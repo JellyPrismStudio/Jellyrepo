@@ -8,6 +8,7 @@ f_cliente = function()
 	draw_text(room_width/2-80, 160, "genero: " + obj.genero[obj.cliente]);
 	draw_text(room_width/2-80, 180, "dinheiro: " + string(obj.dinheiro));
 	draw_text(room_width/2-80, 200, "dinheiro inicial: " + string(obj.start_money));
+	draw_text(room_width/2-80, 220, "produto favorito: " + obj.favorito[obj.cliente]);
 	if (obj.inventario[0, 0] != "")
 	{
 		for (var i = 0; i < array_length(obj.inventario); i++;)

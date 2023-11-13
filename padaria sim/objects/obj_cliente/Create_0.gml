@@ -4,6 +4,7 @@ caminho = path_add();
 cliente = irandom(10);
 
 nomes = ["Juca", "Joao", "Maria", "Jossoares", "Viniccius13", "Jubscresvauda", "Paulinha", "James da salada de fruta", "zézinha", "Ana Maria Braga", "Silvio Santos"];
+favorito = ["pão", "presunto", "torta", "pastel", "pão de forma", "bolo", "queijo", "torta", "pastel", "bolo", "pão"];
 idades = ["15", "72", "pi", "178", "28", "45", "-10", "43", "25", "39", "\∞"];
 genero = ["m", "m", "f", "m", "m", "f", "f", "m", "f", "f", "m"];
 xp = global.c_xp[cliente];
@@ -86,12 +87,22 @@ f_state_machine = function()
 					#region caso o cliente ñ tenha nenhum item em mente
 					if (item == noone)
 					{
+						show_message(nomes[cliente])
 						#region caso o cliente tenha dinheiro o suficiente, pode comprar o item d 0 a 3 vezes
 						repeat (3)
 						{
 							if (dinheiro >= _balcao.comidas[1, i] and _balcao.comidas[3, i] > 0)
 							{
 								var _chance = irandom(10);
+								if _balcao.comidas[0, i] == favorito[cliente]
+								{
+									_chance = irandom(7);
+									show_message(string(xp));
+									global.c_xp[cliente]++;
+									global.xp += 10;
+									xp++;
+									show_message(string(xp));
+								}
 								if (_chance < 5)
 								{
 									var _dinheiro = dinheiro;
