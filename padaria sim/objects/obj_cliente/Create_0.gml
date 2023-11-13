@@ -1,11 +1,11 @@
 randomize();
 sped = 3;
 caminho = path_add();
-cliente = irandom(6);
+cliente = irandom(10);
 
-nomes = ["Juca", "Joao", "Maria", "Jossoares", "Viniccius13", "Jubscresvauda", "Paulinha"];
-idades = ["15", "72", "pi", "178", "28", "45", "-10"];
-genero = ["m", "m", "f", "m", "m", "f", "f"];
+nomes = ["Juca", "Joao", "Maria", "Jossoares", "Viniccius13", "Jubscresvauda", "Paulinha", "James da salada de fruta", "zézinha", "Ana Maria Braga", "Silvio Santos"];
+idades = ["15", "72", "pi", "178", "28", "45", "-10", "43", "25", "39", "\∞"];
+genero = ["m", "m", "f", "m", "m", "f", "f", "m", "f", "f", "m"];
 xp = global.c_xp[cliente];
 
 start_money = irandom_range(xp+1, 10+xp);

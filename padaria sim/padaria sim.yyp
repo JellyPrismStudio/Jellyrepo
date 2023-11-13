@@ -56,6 +56,7 @@
     {"id":{"name":"spr_menu_produtos","path":"sprites/spr_menu_produtos/spr_menu_produtos.yy",},},
     {"id":{"name":"obj_comidas","path":"objects/obj_comidas/obj_comidas.yy",},},
     {"id":{"name":"spr_colisao","path":"sprites/spr_colisao/spr_colisao.yy",},},
+    {"id":{"name":"spr_pagina","path":"sprites/spr_pagina/spr_pagina.yy",},},
     {"id":{"name":"obj_saida","path":"objects/obj_saida/obj_saida.yy",},},
     {"id":{"name":"obj_loja","path":"objects/obj_loja/obj_loja.yy",},},
     {"id":{"name":"spr_menu_clientes","path":"sprites/spr_menu_clientes/spr_menu_clientes.yy",},},

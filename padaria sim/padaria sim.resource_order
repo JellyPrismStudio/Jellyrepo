@@ -33,6 +33,7 @@
     {"name":"spr_menu_produtos","order":6,"path":"sprites/spr_menu_produtos/spr_menu_produtos.yy",},
     {"name":"obj_comidas","order":9,"path":"objects/obj_comidas/obj_comidas.yy",},
     {"name":"spr_colisao","order":4,"path":"sprites/spr_colisao/spr_colisao.yy",},
+    {"name":"spr_pagina","order":10,"path":"sprites/spr_pagina/spr_pagina.yy",},
     {"name":"obj_saida","order":1,"path":"objects/obj_saida/obj_saida.yy",},
     {"name":"obj_loja","order":5,"path":"objects/obj_loja/obj_loja.yy",},
     {"name":"spr_menu_clientes","order":7,"path":"sprites/spr_menu_clientes/spr_menu_clientes.yy",},

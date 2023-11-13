@@ -1,4 +1,6 @@
 preco = [100, 50];
+pagina = 0;
+pagina_max = 1;
 
 f_balcoes = function()
 {
