@@ -87,7 +87,6 @@ f_state_machine = function()
 					#region caso o cliente ñ tenha nenhum item em mente
 					if (item == noone)
 					{
-						show_message(nomes[cliente])
 						#region caso o cliente tenha dinheiro o suficiente, pode comprar o item d 0 a 3 vezes
 						repeat (3)
 						{
@@ -97,11 +96,9 @@ f_state_machine = function()
 								if _balcao.comidas[0, i] == favorito[cliente]
 								{
 									_chance = irandom(7);
-									show_message(string(xp));
 									global.c_xp[cliente]++;
 									global.xp += 10;
 									xp++;
-									show_message(string(xp));
 								}
 								if (_chance < 5)
 								{
