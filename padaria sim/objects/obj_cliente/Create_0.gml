@@ -17,7 +17,7 @@ estado = "comprando";
 timer_max = 60;
 timer = 0;
 
-item = choose("bolo", "pão", "pão de forma", "presunto", "queijo", "torta", "pastel", noone, noone);
+item = choose("bolo", "pão", "pão de forma", "presunto", "queijo", "torta", "pastel", noone, noone, noone);
 list = ds_list_create();
 pos = 0;
 collision_rectangle_list(0, 0, room_width, room_height, obj_balcao, false, true, list, false);
@@ -28,6 +28,7 @@ lvl = 0;
 inventario[0, 0] = "";
 inventario[0, 1] = 0;
 invt = 0;
+devendo = 0;
 
 f_state_machine = function()
 {
@@ -78,6 +79,7 @@ f_state_machine = function()
 					else
 					{
 						estado = "saindo";
+						if (inventario[0, 0] != "") estado = "pagando";
 						break;
 					}
 				}
@@ -106,7 +108,7 @@ f_state_machine = function()
 									dinheiro -= _balcao.comidas[1, i];
 									global.c_xp[cliente]++;
 									global.xp += 10;
-									global.gold += _dinheiro-dinheiro;
+									devendo += _dinheiro-dinheiro;
 									global.c_dinheiro[cliente] += _dinheiro-dinheiro;
 									global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
 									global.p_compras[_balcao.comidas[2, i]]++;
@@ -132,6 +134,7 @@ f_state_machine = function()
 							else
 							{
 								estado = "saindo";
+								if (inventario[0, 0] != "") estado = "pagando";
 								break;
 							}
 						}
@@ -147,6 +150,7 @@ f_state_machine = function()
 							else
 							{
 								estado = "saindo";
+								if (inventario[0, 0] != "") estado = "pagando";
 								break;
 							}
 						}
@@ -165,8 +169,9 @@ f_state_machine = function()
 								var _dinheiro = dinheiro;
 								dinheiro -= _balcao.comidas[1, i];
 								estado = "saindo";
+								if (inventario[0, 0] != "") estado = "pagando";
 								global.c_xp[cliente]++;
-								global.gold += _dinheiro-dinheiro;
+								devendo += _dinheiro-dinheiro;
 								global.c_dinheiro[cliente] += _dinheiro-dinheiro;
 								global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
 								global.p_compras[_balcao.comidas[2, i]]++;
@@ -190,8 +195,9 @@ f_state_machine = function()
 											var _dinheiro = dinheiro;
 											dinheiro -= _balcao.comidas[1, i];
 											estado = "saindo";
+											if (inventario[0, 0] != "") estado = "pagando";
 											global.c_xp[cliente]++;
-											global.gold += _dinheiro-dinheiro;
+											devendo += _dinheiro-dinheiro;
 											global.c_dinheiro[cliente] += _dinheiro-dinheiro;
 											global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
 											global.p_compras[_balcao.comidas[2, i]]++;
@@ -211,6 +217,7 @@ f_state_machine = function()
 							else
 							{
 								estado = "saindo";
+								if (inventario[0, 0] != "") estado = "pagando";
 								break;
 							}
 						}
@@ -227,6 +234,7 @@ f_state_machine = function()
 							else
 							{
 								estado = "saindo";
+								if (inventario[0, 0] != "") estado = "pagando";
 								break;
 							}
 						}
@@ -237,9 +245,36 @@ f_state_machine = function()
 			}
 		break;
 		#endregion
-	
+		
+		#region pagando
+		case "pagando":
+			var _balcao = obj_caixa;
+			if (instance_exists(_balcao))
+			{
+				var x1 = x;
+				var y1 = y;
+				desx = _balcao.x;
+				desy = _balcao.y;
+		
+				if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, _balcao, false, false))
+				{
+					estado = "esperando";
+					desx = x;
+					desy = y;
+					ds_list_add(_balcao.list, id);
+				}
+		
+				if (mp_grid_path(obj_grid.grid, caminho, x1, y1, desx, desy, true))
+				{
+					path_start(caminho, sped, path_action_stop, false)
+				}
+			}
+		break;
+		#endregion
+		
 		#region saindo
 		case "saindo":
+		if (devendo > 0) estado = "pagando";
 		if (instance_exists(obj_saida))
 		{
 			var x1 = x;
