@@ -10,4 +10,5 @@ if (timer == 0)
 		instance_create_layer(obj_saida.x, obj_saida.y, layer, obj_cliente);
 	}
 	ds_list_clear(list);
+	ds_list_destroy(list);
 }

@@ -1,18 +1,21 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_balcoes",
+  "name": "obj_funcionario",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "loja",
-    "path": "folders/Objetos/loja.yy",
+    "name": "mobilia",
+    "path": "folders/Objetos/loja/mobilia.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_mobilia",
+    "path": "objects/obj_mobilia/obj_mobilia.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,7 +31,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_funcionario",
+    "path": "sprites/spr_funcionario/spr_funcionario.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
