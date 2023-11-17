@@ -18,7 +18,7 @@ if (mouse_wheel_down())
 
 var _col = collision_point(mouse_x, mouse_y, obj_balcao, false, false) or collision_point(mouse_x, mouse_y, obj_cliente, false, false);
 var _ins = instance_exists(obj_painel) or instance_exists(obj_produtos) or instance_exists(obj_clientes) or instance_exists(obj_comidas) or instance_exists(obj_mobilias);
-if (mouse_check_button_pressed(mb_left) and !_col and !point_in_rectangle(mouse_x, mouse_y, 0, 0, 50, 100) and !_ins)
+if (mouse_check_button_pressed(mb_middle) and !_col and !point_in_rectangle(mouse_x, mouse_y, 0, 0, 50, 100) and !_ins)
 {
 	movendo = true;
 }
@@ -26,7 +26,7 @@ if (mouse_check_button_pressed(mb_left) and !_col and !point_in_rectangle(mouse_
 if (movendo)
 {
 	camera_set_view_pos(_view, _xport+mou_x-mouse_x, _yport+mou_y-mouse_y);
-	if (mouse_check_button_released(mb_left)) movendo = false;
+	if (mouse_check_button_released(mb_middle)) movendo = false;
 }
 
 mou_x = mouse_x;

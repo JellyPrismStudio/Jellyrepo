@@ -5,6 +5,14 @@ sped = 5;
 caminho = path_add();
 item = noone;
 
+var _list = ds_list_create();
+collision_rectangle_list(0, 0, room_width, room_height, obj_funcionario, false, true, _list, false);
+idd = ds_list_size(_list);
+ds_list_clear(_list);
+ds_list_destroy(_list);
+
+nomes = ["Zé du Café", "Clebin", "Jubscresvaldison", "Chapolin", "Tripa seca"]
+
 f_teste = function()
 {
 	var _list = ds_list_create();
