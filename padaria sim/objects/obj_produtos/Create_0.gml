@@ -1,6 +1,6 @@
 f_array = function()
 {
-	for (var i = 0; i < global.itens; i++;)
+	for (var i = 0; i < array_length(global.p_comidas[0]); i++;)
 	{
 		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-250+(i-floor(i/5)*5)*100-36, 100-36+100*floor(i/5), room_width/2-250+(i-floor(i/5)*5)*100+36, 100+36+100*floor(i/5)))
 		{
@@ -9,11 +9,28 @@ f_array = function()
 			draw_set_color(c_white);
 			if (mouse_check_button_pressed(mb_left))
 			{
-				if (global.p_comidas[3, i] > 0)
+				for (var j = i; j < array_length(global.p_comidas[0]); j++)
 				{
-					global.p_comidas[3, i]--;
-					global.p_quantidade[global.p_comidas[2, i]]++;
+					if (j == i)
+					{
+						global.p_quantidade[global.p_comidas[2, j]] += global.p_comidas[3, j];
+					}
+					if (j < array_length(global.p_comidas[0])-1)
+					{
+						global.p_comidas[0, j] = global.p_comidas[0, j+1];
+						global.p_comidas[1, j] = global.p_comidas[1, j+1];
+						global.p_comidas[2, j] = global.p_comidas[2, j+1];
+						global.p_comidas[3, j] = global.p_comidas[3, j+1];
+					}
+					else
+					{
+						array_resize(global.p_comidas[0], j);
+						array_resize(global.p_comidas[1], j);
+						array_resize(global.p_comidas[2], j);
+						array_resize(global.p_comidas[3], j);
+					}
 				}
+				break;
 			}
 		}
 		draw_sprite_ext(spr_comidas, global.p_comidas[2, i], room_width/2-250+(i-floor(i/5)*5)*100, 100+100*floor(i/5), 4, 4, 0, c_white, 1);
@@ -68,17 +85,17 @@ f_hotbar = function()
 						global.p_quantidade[i]--;
 						break;
 					}
-					if (j == array_length(global.p_comidas[0])-1 and array_length(global.p_comidas[0]) < obj.qtd_max)
+					if (j == array_length(global.p_comidas[0])-1)
 					{
 						//eu fiz esse treco assim, pq tava bugando, eu enquanto fui fazendo testes pensei q talvez assim funcionasse.... e funcionou kkkkkkkkkk
-						global.p_comidas[0, array_length(obj.comidas[0])] = _nome[i];
-						global.p_comidas[1, array_length(obj.comidas[0])] = _preco[i];
-						global.p_comidas[2, array_length(obj.comidas[0])] = i;
-						global.p_comidas[3, array_length(obj.comidas[0])] = 1;
-						global.p_comidas[0, array_length(obj.comidas[0])-1] = _nome[i];
-						global.p_comidas[1, array_length(obj.comidas[0])-1] = _preco[i];
-						global.p_comidas[2, array_length(obj.comidas[0])-1] = i;
-						global.p_comidas[3, array_length(obj.comidas[0])-1] = 1;
+						global.p_comidas[0, array_length(global.p_comidas[0])] = _nome[i];
+						global.p_comidas[1, array_length(global.p_comidas[0])] = _preco[i];
+						global.p_comidas[2, array_length(global.p_comidas[0])] = i;
+						global.p_comidas[3, array_length(global.p_comidas[0])] = 1;
+						global.p_comidas[0, array_length(global.p_comidas[0])-1] = _nome[i];
+						global.p_comidas[1, array_length(global.p_comidas[0])-1] = _preco[i];
+						global.p_comidas[2, array_length(global.p_comidas[0])-1] = i;
+						global.p_comidas[3, array_length(global.p_comidas[0])-1] = 1;
 						global.p_quantidade[i]--;
 						
 						break;
