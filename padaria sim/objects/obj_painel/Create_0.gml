@@ -1,3 +1,5 @@
+scr_destruir("painel");
+
 f_cliente = function()
 {
 	draw_sprite_ext(obj.sprite_index, 0, room_width/2-200, room_height/2, 2.5, 2.5, 0, c_white, 1);

@@ -1,3 +1,5 @@
+scr_destruir("estoque");
+
 pagina = 0;
 pagina_max = 1;
 

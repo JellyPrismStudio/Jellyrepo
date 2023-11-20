@@ -60,3 +60,14 @@ function scr_pagina()
 	}
 	draw_sprite_ext(spr_pagina, 1, room_width/2+280, room_height-70, 4, 4, 0, _color, 1);
 }
+
+function scr_destruir(_nome)
+{
+	if (_nome != "produtos") instance_destroy(obj_produtos);
+	if (_nome != "estoque") instance_destroy(obj_estoque);
+	if (_nome != "comidas") instance_destroy(obj_comidas);
+	if (_nome != "mobilias") instance_destroy(obj_mobilias);
+	if (_nome != "funcionarios") instance_destroy(obj_funcionarios);
+	if (_nome != "painel") instance_destroy(obj_painel);
+	if (_nome != "clientes") instance_destroy(obj_clientes);
+}

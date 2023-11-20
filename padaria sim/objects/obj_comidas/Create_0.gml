@@ -1,3 +1,5 @@
+scr_destruir("comidas");
+
 pagina = 0;
 pagina_max = 1;
 

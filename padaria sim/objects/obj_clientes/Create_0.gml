@@ -1,3 +1,5 @@
+scr_destruir("clientes");
+
 pagina = 0;
 pagina_max = 2;
 

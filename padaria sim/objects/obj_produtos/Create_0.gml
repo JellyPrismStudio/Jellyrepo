@@ -1,3 +1,5 @@
+scr_destruir("produtos");
+
 f_array = function()
 {
 	for (var i = 0; i < array_length(global.p_comidas[0]); i++;)

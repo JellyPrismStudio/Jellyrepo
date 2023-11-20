@@ -1,3 +1,5 @@
+scr_destruir("funcionarios");
+
 pagina = 0;
 pagina_max = 2;
 

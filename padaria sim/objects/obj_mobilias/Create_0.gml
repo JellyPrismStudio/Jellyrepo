@@ -1,3 +1,5 @@
+scr_destruir("mobilias");
+
 preco = [100, 50, 150];
 pagina = 0;
 pagina_max = 1;
