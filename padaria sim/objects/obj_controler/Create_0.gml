@@ -1,4 +1,5 @@
 qtd_max = 5;
-timer_max = 15;
+timer_max = 60;
 timer = timer_max;
-chance = 5;
+chance = 20;
+chance_sujeira = 10;

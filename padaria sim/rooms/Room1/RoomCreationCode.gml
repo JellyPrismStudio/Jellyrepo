@@ -14,5 +14,6 @@ global.p_comidas[0] = ["bolo", "queijo", "presunto", "pão de forma", "pão"];
 global.p_comidas[1] = [10, 7, 5, 3, 2];
 global.p_comidas[2] = [0, 1, 2, 3, 4];
 global.p_comidas[3] = [5, 5, 0, 5, 5];
+global.e_xp = [0, 0, 0, 0, 0];
 
 show_debug_log(true);

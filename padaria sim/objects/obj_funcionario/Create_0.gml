@@ -34,6 +34,12 @@ f_teste = function()
 	
 	ds_list_clear(_list);
 	ds_list_destroy(_list);
+	
+	if (instance_exists(obj_sujeira))
+	{
+		obj = obj_sujeira;
+		estado = "limpando";
+	}
 }
 
 f_coletando = function()
@@ -54,6 +60,7 @@ f_coletando = function()
 			{
 				global.p_quantidade[global.p_comidas[2, item]]--;
 				quantidade++;
+				global.e_xp[idd]++;
 			}
 		}
 	}
@@ -85,6 +92,28 @@ f_repondo = function()
 	}
 }
 
+f_limpando = function()
+{
+	var x1 = x;
+	var y1 = y;
+	desx = obj.x;
+	desy = obj.y;
+		
+	if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, obj_sujeira, false, false))
+	{
+		estado = "esperando";
+		desx = x;
+		desy = y;
+		instance_destroy(obj);
+		global.e_xp[idd]++;
+	}
+	
+	if (mp_grid_path(obj_grid.grid, caminho, x1, y1, desx, desy, true))
+	{
+		path_start(caminho, sped, path_action_stop, false)
+	}
+}
+
 f_state_machine = function()
 {
 	switch (estado)
@@ -99,6 +128,10 @@ f_state_machine = function()
 		
 		case "repondo":
 			f_repondo();
+		break;
+		
+		case "limpando":
+			f_limpando();
 		break;
 	}
 }
