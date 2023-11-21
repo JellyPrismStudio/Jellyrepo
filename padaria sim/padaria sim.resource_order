@@ -39,6 +39,7 @@
     {"name":"spr_colisao","order":6,"path":"sprites/spr_colisao/spr_colisao.yy",},
     {"name":"spr_pagina","order":10,"path":"sprites/spr_pagina/spr_pagina.yy",},
     {"name":"obj_saida","order":1,"path":"objects/obj_saida/obj_saida.yy",},
+    {"name":"spr_armazem","order":14,"path":"sprites/spr_armazem/spr_armazem.yy",},
     {"name":"obj_loja","order":5,"path":"objects/obj_loja/obj_loja.yy",},
     {"name":"obj_funcionario","order":10,"path":"objects/obj_funcionario/obj_funcionario.yy",},
     {"name":"spr_menu_clientes","order":7,"path":"sprites/spr_menu_clientes/spr_menu_clientes.yy",},
@@ -49,5 +50,6 @@
     {"name":"obj_painel","order":4,"path":"objects/obj_painel/obj_painel.yy",},
     {"name":"obj_estoque","order":13,"path":"objects/obj_estoque/obj_estoque.yy",},
     {"name":"obj_colisao","order":8,"path":"objects/obj_colisao/obj_colisao.yy",},
+    {"name":"obj_armazem","order":13,"path":"objects/obj_armazem/obj_armazem.yy",},
   ],
 }

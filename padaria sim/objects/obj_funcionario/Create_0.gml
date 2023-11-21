@@ -10,6 +10,7 @@ collision_rectangle_list(0, 0, room_width, room_height, obj_funcionario, false, 
 idd = ds_list_size(_list);
 ds_list_clear(_list);
 ds_list_destroy(_list);
+quantidade = 0;
 
 nomes = ["Zé du Café", "Clebin", "Jubscresvaldison", "Chapolin", "Tripa seca"]
 
@@ -20,11 +21,11 @@ f_teste = function()
 	for ( var i = 0; i < ds_list_size(_list); i++;)
 	{
 		var _balcao = ds_list_find_value(_list, i)
-		for (var j = 0; j < array_length(_balcao.comidas[0]); j++;)
+		for (var j = 0; j < array_length(global.p_comidas[0]); j++;)
 		{
-			if (_balcao.comidas[3, j] == 0)
+			if (global.p_comidas[3, j] == 0)
 			{
-				estado = "repondo";
+				estado = "coletando";
 				obj = _balcao;
 				item = j;
 			}
@@ -33,6 +34,34 @@ f_teste = function()
 	
 	ds_list_clear(_list);
 	ds_list_destroy(_list);
+}
+
+f_coletando = function()
+{
+	var x1 = x;
+	var y1 = y;
+	desx = obj_armazem.x;
+	desy = obj_armazem.y;
+		
+	if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, obj_armazem, false, false))
+	{
+		estado = "repondo";
+		desx = x;
+		desy = y;
+		repeat (3)
+		{
+			if (global.p_quantidade[item] > 0)
+			{
+				global.p_quantidade[global.p_comidas[2, item]]--;
+				quantidade++;
+			}
+		}
+	}
+	
+	if (mp_grid_path(obj_grid.grid, caminho, x1, y1, desx, desy, true))
+	{
+		path_start(caminho, sped, path_action_stop, false)
+	}
 }
 
 f_repondo = function()
@@ -47,11 +76,7 @@ f_repondo = function()
 		estado = "esperando";
 		desx = x;
 		desy = y;
-		if (global.p_quantidade[item] > 0)
-		{
-			global.p_quantidade[obj.comidas[2, item]]--;
-			obj.comidas[3, item]++;
-		}
+		global.p_comidas[3, item] += quantidade;
 	}
 		
 	if (mp_grid_path(obj_grid.grid, caminho, x1, y1, desx, desy, true))
@@ -66,6 +91,10 @@ f_state_machine = function()
 	{
 		case "esperando":
 			f_teste();
+		break;
+		
+		case "coletando":
+			f_coletando();
 		break;
 		
 		case "repondo":
