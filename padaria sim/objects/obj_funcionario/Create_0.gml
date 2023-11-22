@@ -21,9 +21,9 @@ f_teste = function()
 	for ( var i = 0; i < ds_list_size(_list); i++;)
 	{
 		var _balcao = ds_list_find_value(_list, i)
-		for (var j = 0; j < array_length(global.p_comidas[0]); j++;)
+		for (var j = 0; j < array_length(_balcao.comidas[0]); j++;)
 		{
-			if (global.p_comidas[3, j] == 0)
+			if (_balcao.comidas[3, j] == 0)
 			{
 				estado = "coletando";
 				obj = _balcao;
@@ -58,7 +58,7 @@ f_coletando = function()
 		{
 			if (global.p_quantidade[item] > 0)
 			{
-				global.p_quantidade[global.p_comidas[2, item]]--;
+				global.p_quantidade[obj.comidas[2, item]]--;
 				quantidade++;
 				global.e_xp[idd]++;
 			}
@@ -83,7 +83,7 @@ f_repondo = function()
 		estado = "esperando";
 		desx = x;
 		desy = y;
-		global.p_comidas[3, item] += quantidade;
+		obj.comidas[3, item] += quantidade;
 	}
 		
 	if (mp_grid_path(obj_grid.grid, caminho, x1, y1, desx, desy, true))

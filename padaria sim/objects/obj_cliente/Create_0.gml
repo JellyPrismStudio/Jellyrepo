@@ -92,10 +92,10 @@ f_state_machine = function()
 						#region caso o cliente tenha dinheiro o suficiente, pode comprar o item d 0 a 3 vezes
 						repeat (3)
 						{
-							if (dinheiro >= global.p_comidas[1, i] and global.p_comidas[3, i] > 0)
+							if (dinheiro >= _balcao.comidas[1, i] and _balcao.comidas[3, i] > 0)
 							{
 								var _chance = irandom(10);
-								if global.p_comidas[0, i] == favorito[cliente]
+								if _balcao.comidas[0, i] == favorito[cliente]
 								{
 									_chance = irandom(7);
 									global.c_xp[cliente]++;
@@ -105,18 +105,18 @@ f_state_machine = function()
 								if (_chance < 5)
 								{
 									var _dinheiro = dinheiro;
-									dinheiro -= global.p_comidas[1, i];
+									dinheiro -= _balcao.comidas[1, i];
 									global.c_xp[cliente]++;
 									global.xp += 10;
 									devendo += _dinheiro-dinheiro;
 									global.c_dinheiro[cliente] += _dinheiro-dinheiro;
-									global.p_dinheiro[global.p_comidas[2, i]] += _dinheiro-dinheiro;
-									global.p_compras[global.p_comidas[2, i]]++;
+									global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
+									global.p_compras[_balcao.comidas[2, i]]++;
 									xp++;
-									inventario[invt, 0] = global.p_comidas[0, i];
-									inventario[invt, 1] = global.p_comidas[2, i];
+									inventario[invt, 0] = _balcao.comidas[0, i];
+									inventario[invt, 1] = _balcao.comidas[2, i];
 									invt++;
-									global.p_comidas[3, i]--;
+									_balcao.comidas[3, i]--;
 								}
 							}
 						}
@@ -161,52 +161,52 @@ f_state_machine = function()
 					#region caso o cliente tenha algum item em mente
 					if (item != noone)
 					{
-						if (item == global.p_comidas[0, i])
+						if (item == _balcao.comidas[0, i])
 						{
-							if (dinheiro >= global.p_comidas[1, i] and global.p_comidas[3, i] > 0)
+							if (dinheiro >= _balcao.comidas[1, i] and _balcao.comidas[3, i] > 0)
 							{
 								#region comprando o item
 								var _dinheiro = dinheiro;
-								dinheiro -= global.p_comidas[1, i];
+								dinheiro -= _balcao.comidas[1, i];
 								estado = "saindo";
 								if (inventario[0, 0] != "") estado = "pagando";
 								global.c_xp[cliente]++;
 								devendo += _dinheiro-dinheiro;
 								global.c_dinheiro[cliente] += _dinheiro-dinheiro;
-								global.p_dinheiro[global.p_comidas[2, i]] += _dinheiro-dinheiro;
-								global.p_compras[global.p_comidas[2, i]]++;
+								global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
+								global.p_compras[_balcao.comidas[2, i]]++;
 								xp++;
 								global.xp += 10;
-								inventario[invt, 0] = global.p_comidas[0, i];
-								inventario[invt, 1] = global.p_comidas[2, i];
+								inventario[invt, 0] = _balcao.comidas[0, i];
+								inventario[invt, 1] = _balcao.comidas[2, i];
 								invt++;
-								global.p_comidas[3, i]--;
+								_balcao.comidas[3, i]--;
 								#endregion
 								
 								#region 3/10 d chance do cliente comprar 2 vezes o item, e 1/10 de comprar 3 vezes
 								repeat (2)
 								{
-									if (dinheiro >= global.p_comidas[1, i] and global.p_comidas[3, i] > 0)
+									if (dinheiro >= _balcao.comidas[1, i] and _balcao.comidas[3, i] > 0)
 									{
 										var _chance = irandom(10);
 										if (_chance < 4)
 										{
 											#region comprando o item de novo
 											var _dinheiro = dinheiro;
-											dinheiro -= global.p_comidas[1, i];
+											dinheiro -= _balcao.comidas[1, i];
 											estado = "saindo";
 											if (inventario[0, 0] != "") estado = "pagando";
 											global.c_xp[cliente]++;
 											devendo += _dinheiro-dinheiro;
 											global.c_dinheiro[cliente] += _dinheiro-dinheiro;
-											global.p_dinheiro[global.p_comidas[2, i]] += _dinheiro-dinheiro;
-											global.p_compras[global.p_comidas[2, i]]++;
+											global.p_dinheiro[_balcao.comidas[2, i]] += _dinheiro-dinheiro;
+											global.p_compras[_balcao.comidas[2, i]]++;
 											xp++;
 											global.xp += 10;
-											inventario[invt, 0] = global.p_comidas[0, i];
-											inventario[invt, 1] = global.p_comidas[2, i];
+											inventario[invt, 0] = _balcao.comidas[0, i];
+											inventario[invt, 1] = _balcao.comidas[2, i];
 											invt++;
-											global.p_comidas[3, i]--;
+											_balcao.comidas[3, i]--;
 											#endregion
 										}
 									}
