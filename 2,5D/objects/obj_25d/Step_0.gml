@@ -1,0 +1,1 @@
+image_angle = -camera_get_view_angle(view_camera[0])
