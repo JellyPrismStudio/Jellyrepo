@@ -9,7 +9,10 @@
     "name": "mobilia",
     "path": "folders/Objetos/loja/mobilia.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_mobilia",
+    "path": "objects/obj_mobilia/obj_mobilia.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

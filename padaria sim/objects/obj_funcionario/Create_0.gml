@@ -18,7 +18,7 @@ f_teste = function()
 {
 	var _list = ds_list_create();
 	collision_rectangle_list(0, 0, room_width, room_height, obj_balcao, false, true, _list, false);
-	for ( var i = 0; i < ds_list_size(_list); i++;)
+	for (var i = 0; i < ds_list_size(_list); i++;)
 	{
 		var _balcao = ds_list_find_value(_list, i)
 		for (var j = 0; j < array_length(_balcao.comidas[0]); j++;)
@@ -37,8 +37,12 @@ f_teste = function()
 	
 	if (instance_exists(obj_sujeira))
 	{
-		obj = obj_sujeira;
+		var _list = ds_list_create();
+		collision_rectangle_list(0, 0, room_width, room_height, obj_sujeira, false, true, _list, false);
+		obj = ds_list_find_value(_list, 0);
 		estado = "limpando";
+		ds_list_clear(_list);
+		ds_list_destroy(_list);
 	}
 }
 
@@ -101,10 +105,12 @@ f_limpando = function()
 		
 	if (collision_rectangle(x-sprite_width/2-sped, y-sprite_height/2-sped, x+sprite_width/2+sped, y+sprite_height/2+sped, obj_sujeira, false, false))
 	{
-		estado = "esperando";
+		estado = "limpando2";
 		desx = x;
 		desy = y;
-		instance_destroy(obj);
+		obj.limpando = true;
+		obj.timer = 60;
+		obj.timer_max = 60;
 		global.e_xp[idd]++;
 	}
 	
@@ -132,6 +138,10 @@ f_state_machine = function()
 		
 		case "limpando":
 			f_limpando();
+		break;
+		
+		case "limpando2":
+			if (obj.timer == 1) estado = "esperando";
 		break;
 	}
 }
