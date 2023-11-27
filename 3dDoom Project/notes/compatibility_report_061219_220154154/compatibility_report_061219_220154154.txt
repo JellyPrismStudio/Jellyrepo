@@ -1,0 +1,460 @@
+Converting GML script: ${project_dir}\scripts\get_keys\get_keys.gml
+Converted description /// @description get_keys()
+Converted string - line 3: 'A' -> "A"
+Converted string - line 4: 'D' -> "D"
+Converted string - line 5: 'W' -> "W"
+Converted string - line 6: 'S' -> "S"
+Converted string - line 9: 'R' -> "R"
+Converted string - line 10: 'E' -> "E"
+
+Converting GML script: ${project_dir}\scripts\collidecheck\collidecheck.gml
+Converted description /// @description collidecheck(x,y,zbottom,ztop)/// @param x
+/// @param y
+/// @param zbottom
+/// @param ztop
+
+Converting GML script: ${project_dir}\scripts\ground_movement\ground_movement.gml
+Converted description /// @description ground_movement()
+
+Converting GML script: ${project_dir}\scripts\vertical_movement\vertical_movement.gml
+Converted description /// @description vertical_movement()
+
+Converting GML script: ${project_dir}\scripts\collide_3d\collide_3d.gml
+Converted description /// @description collide_3d(object)/// @param object
+
+Converting GML script: ${project_dir}\scripts\collide_3d_circle\collide_3d_circle.gml
+Converted description /// @description collide_3d_circle(object)/// @param object
+
+Converting GML script: ${project_dir}\scripts\terrain_init\terrain_init.gml
+Converted description /// @description terrain_init()
+
+Converting GML script: ${project_dir}\scripts\terrain_floor_get_z\terrain_floor_get_z.gml
+Converted description /// @description terrain_floor_get_z(x,y)/// @param x
+/// @param y
+
+Converting GML script: ${project_dir}\scripts\terrain_ceil_get_z\terrain_ceil_get_z.gml
+Converted description /// @description terrain_ceil_get_z(x,y)/// @param x
+/// @param y
+
+Converting GML script: ${project_dir}\scripts\terrain_cleanup\terrain_cleanup.gml
+Converted description /// @description terrain_cleanup()
+
+Converting GML script: ${project_dir}\scripts\terrain_flat_to_3d\terrain_flat_to_3d.gml
+Converted builtin - line 8: background_visible[0] = false -> __background_set( e__BG.Visible, 0, false )
+Converted builtin - line 4: background_width[0] -> __background_get( e__BG.Width, 0 )
+Converted builtin - line 5: background_width[0] -> __background_get( e__BG.Width, 0 )
+Converted description /// @description terrain_flat_to_3d()
+
+Converting GML script: ${project_dir}\scripts\object_get_sound\object_get_sound.gml
+Converted description /// @description object_get_sound(objindex)/// @param objindex
+
+Converting GML script: ${project_dir}\scripts\bgm\bgm.gml
+Converted description /// @description bgm(sfx)/// @param sfx
+
+Converting GML script: ${project_dir}\scripts\bgm_init\bgm_init.gml
+Converted description /// @description bgm_init()
+
+Converting GML script: ${project_dir}\scripts\sfx\sfx.gml
+Converted description /// @description sfx(sfx)/// @param sfx
+
+Converting GML script: ${project_dir}\scripts\sfx_important\sfx_important.gml
+Converted description /// @description sfx(sfx)/// @param sfx
+
+Converting GML script: ${project_dir}\scripts\init_player_variables\init_player_variables.gml
+Converted description /// @description init_player_variables()
+
+Converting GML script: ${project_dir}\scripts\init_weapons\init_weapons.gml
+Converted description /// @description init_weapons()
+
+Converting GML script: ${project_dir}\scripts\init_weapon\init_weapon.gml
+Converted description /// @description init_weapon(id,name,shootscript,autofire,reloadspeed,hudsprite,clipsize,ammomax)/// @param id
+/// @param name
+/// @param shootscript
+/// @param autofire
+/// @param reloadspeed
+/// @param hudsprite
+/// @param clipsize
+/// @param ammomax
+
+Converting GML script: ${project_dir}\scripts\shooting_posdir\shooting_posdir.gml
+Converted description /// @description shooting_posdir(length,speed)/// @param length
+/// @param speed
+
+Converting GML script: ${project_dir}\scripts\ss_pistol\ss_pistol.gml
+Converted description /// @description ss_pistol()
+
+Converting GML script: ${project_dir}\scripts\ss_machinegun\ss_machinegun.gml
+Converted description /// @description ss_pistol()
+
+Converting GML script: ${project_dir}\scripts\item_get\item_get.gml
+Converted description /// @description item_get(item)/// @param item
+
+Converting GML script: ${project_dir}\scripts\ammo_get\ammo_get.gml
+Converted description /// @description ammo_get(weapon,amount)/// @param weapon
+/// @param amount
+
+Converting GML script: ${project_dir}\scripts\draw_self_enemy\draw_self_enemy.gml
+Converted description /// @description draw_self_enemy()
+
+Converting GML script: ${project_dir}\scripts\fx_animate\fx_animate.gml
+Converted description /// @description fx_animate(sprite,speed,x,y,z)/// @param sprite
+/// @param speed
+/// @param x
+/// @param y
+/// @param z
+
+Font font_nes has been converted to font family Arial (Bold)
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\font_nes\font_nes.gms1.png
+Font font_scary has been converted to font family Arial (Regular)
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\font_scary\font_scary.gms1.png
+Font font_hudstuff has been converted to font family Arial (Regular)
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\font_hudstuff\font_hudstuff.gms1.png
+Converting GML script: ${project_dir}\objects\obj_wall_sandstone_block64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_wall_graybrick_block64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_wall_hedge\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_floor_dirt_sq64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_floor_sq256\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_floor_sandstone_sq64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_floor_grass_sq64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_ramp_l64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_ramp_r64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_ramp_u64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_ramp_d64\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_deco1\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\obj_torch\Create_0.gml
+Converted description /// @description Inherit/Init
+
+Converting GML script: ${project_dir}\objects\obj_torch\Step_0.gml
+Converted description /// @description Flame intensity controller
+
+Converting GML script: ${project_dir}\objects\obj_torch\Other_10.gml
+Converted description /// @description Adjust bounds to z value
+
+Converting GML script: ${project_dir}\objects\obj_bluetorch\Create_0.gml
+Converted description /// @description Inherit/Init
+
+Converting GML script: ${project_dir}\objects\obj_bluetorch\Step_0.gml
+Converted description /// @description Flame intensity controller
+
+Converting GML script: ${project_dir}\objects\obj_bluetorch\Other_10.gml
+Converted description /// @description Adjust bounds to z value
+
+Converting GML script: ${project_dir}\objects\obj_greentorch\Create_0.gml
+Converted description /// @description Inherit/Init
+
+Converting GML script: ${project_dir}\objects\obj_greentorch\Step_0.gml
+Converted description /// @description Flame intensity controller
+
+Converting GML script: ${project_dir}\objects\obj_greentorch\Other_10.gml
+Converted description /// @description Adjust bounds to z value
+
+Converting GML script: ${project_dir}\objects\obj_shutterdoor_h\Create_0.gml
+Converted description /// @description Change mask
+
+Converting GML script: ${project_dir}\objects\obj_shutterdoor_h\Step_0.gml
+Converted description /// @description State machine
+
+Converting GML script: ${project_dir}\objects\obj_shutterdoor_h\Draw_0.gml
+Converted description /// @description Draw wall
+
+Converting GML script: ${project_dir}\objects\obj_shutterdoor_v\Create_0.gml
+Converted description /// @description Change mask
+
+Converting GML script: ${project_dir}\objects\obj_shutterdoor_v\Step_0.gml
+Converted description /// @description State machine
+
+Converting GML script: ${project_dir}\objects\obj_shutterdoor_v\Draw_0.gml
+Converted description /// @description Draw wall
+
+Converting GML script: ${project_dir}\objects\obj_normaldoor_h\Create_0.gml
+Converted description /// @description Change mask
+
+Converting GML script: ${project_dir}\objects\obj_normaldoor_h\Step_0.gml
+Converted description /// @description State machine
+
+Converting GML script: ${project_dir}\objects\obj_normaldoor_h\Draw_0.gml
+Converted description /// @description Draw wall
+
+Converting GML script: ${project_dir}\objects\obj_normaldoor_v\Create_0.gml
+Converted description /// @description Change mask
+
+Converting GML script: ${project_dir}\objects\obj_normaldoor_v\Step_0.gml
+Converted description /// @description State machine
+
+Converting GML script: ${project_dir}\objects\obj_normaldoor_v\Draw_0.gml
+Converted description /// @description Draw wall
+
+Converting GML script: ${project_dir}\objects\obj_titlescreen\Create_0.gml
+Converted description /// @description Init global variables
+
+Converting GML script: ${project_dir}\objects\obj_titlescreen\Draw_0.gml
+Converted description /// @description Draw stuff
+
+Converting GML script: ${project_dir}\objects\CONTROL\Create_0.gml
+Converted description /// @description Global vars
+
+Converting GML script: ${project_dir}\objects\CONTROL\Alarm_0.gml
+Converted description /// @description Deactivation
+
+Converting GML script: ${project_dir}\objects\CONTROL\Step_0.gml
+Converted description /// @description (Re)Define lights/// @param Re
+
+Converting GML script: ${project_dir}\objects\CONTROL\Other_4.gml
+Converted description /// @description Init stuff
+
+Converting GML script: ${project_dir}\objects\CONTROL\Draw_0.gml
+Converted description /// @description Set projection to the camera's projection & init fog
+
+Converting GML script: ${project_dir}\objects\CONTROL\KeyPress_82.gml
+Converted description /// @description Dev room restart
+
+Converting GML script: ${project_dir}\objects\CONTROL\KeyPress_36.gml
+Converted description /// @description Dev reseöect
+
+Converting GML script: ${project_dir}\objects\TERRAINCONTROL\Create_0.gml
+Converted description /// @description Terrain view variables
+
+Converting GML script: ${project_dir}\objects\TERRAINCONTROL\Draw_0.gml
+Converted builtin - line 2: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_yview -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Draw terrain
+
+Converting GML script: ${project_dir}\objects\TERRAINCEILCONTROL\Create_0.gml
+Converted description /// @description Ceiling view variables
+
+Converting GML script: ${project_dir}\objects\TERRAINCEILCONTROL\Draw_0.gml
+Converted builtin - line 2: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 3: view_yview -> __view_get( e__VW.YView, 0 )
+Converted description /// @description Draw ceiling
+
+Converting GML script: ${project_dir}\objects\obj_overlay\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_overlay\Step_0.gml
+Converted description /// @description Fadeout
+
+Converting GML script: ${project_dir}\objects\obj_overlay\Draw_0.gml
+Converted builtin - line 3: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 19: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 24: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 32: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 52: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 19: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 24: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 32: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 38: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 40: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 52: view_hview -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Draw HUD
+
+Converting GML script: ${project_dir}\objects\obj_mode7drawingstart\Create_0.gml
+Converted description /// @description Init drawing of mode7 stuff
+
+Converting GML script: ${project_dir}\objects\obj_player\Create_0.gml
+Converted description /// @description Cam variables
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_1.gml
+Converted description /// @description Can shoot again
+
+Converting GML script: ${project_dir}\objects\obj_player\Alarm_0.gml
+Converted description /// @description Can hurt again
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_2.gml
+Converted description /// @description Adapt to movement
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_1.gml
+Converted description /// @description Get keys
+
+Converting GML script: ${project_dir}\objects\obj_player\Step_0.gml
+Converted builtin - line 43: view_xview = x -> __view_set( e__VW.XView, 0, x )
+Converted builtin - line 44: view_yview = y -> __view_set( e__VW.YView, 0, y )
+Converted description /// @description Movement
+
+Converting GML script: ${project_dir}\objects\obj_player\Collision_dcfacb18-b378-4512-b266-f3ddbfb18c96.gml
+Converted description /// @description Change rooms
+
+Converting GML script: ${project_dir}\objects\obj_player\Mouse_61.gml
+Converted description /// @description Change to previous weapon
+
+Converting GML script: ${project_dir}\objects\obj_player\Mouse_60.gml
+Converted description /// @description Change to previous weapon
+
+Converting GML script: ${project_dir}\objects\obj_player\Other_10.gml
+Converted description /// @description Redefine Z at room start
+
+Converting GML script: ${project_dir}\objects\obj_player\Other_4.gml
+Converted builtin - line 9: background_width[0] -> __background_get( e__BG.Width, 0 )
+Converted description /// @description Jump to position
+
+Converting GML script: ${project_dir}\objects\obj_player\KeyPress_33.gml
+Converted description /// @description Dev unmouse
+
+Converting GML script: ${project_dir}\objects\obj_player\KeyPress_8.gml
+Converted description /// @description Dev game reset
+
+Converting GML script: ${project_dir}\objects\obj_bullet_pistol\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_bullet_machinegun\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\parent_wall\Create_0.gml
+Converted description /// @description Init defaults
+
+Converting GML script: ${project_dir}\objects\parent_lightsource\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\parent_enemy\Create_0.gml
+Converted description /// @description Iniherit
+
+Converting GML script: ${project_dir}\objects\parent_enemy\Other_25.gml
+Converted description /// @description Default explosion
+
+Converting GML script: ${project_dir}\objects\parent_damage\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\parent_item\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\parent_item\Other_10.gml
+Converted description /// @description Set up collisions and stuff
+
+Converting GML script: ${project_dir}\objects\parent_item\Draw_0.gml
+Converted description /// @description Draw stuff
+
+Converting GML script: ${project_dir}\objects\parent_bullet\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\parent_bullet\Alarm_11.gml
+Converted description /// @description Turn visible after being shot out
+
+Converting GML script: ${project_dir}\objects\parent_bullet\Step_0.gml
+Converted description /// @description Move
+
+Converting GML script: ${project_dir}\objects\parent_bullet\Draw_0.gml
+Converted description /// @description Draw stuff
+
+Converting GML script: ${project_dir}\objects\obj_ceyespawn\Collision_4dffac00-3f34-4d5c-a05a-8189ab491062.gml
+Converted description /// @description Spawn creepy eyes...
+
+Converting GML script: ${project_dir}\objects\obj_enemy_slime\Create_0.gml
+Converted description /// @description Initherit
+
+Converting GML script: ${project_dir}\objects\obj_enemy_slime\Step_0.gml
+Converted description /// @description AI
+
+Converting GML script: ${project_dir}\objects\obj_enemy_slime\Draw_0.gml
+Converted description /// @description 3D drawing
+
+Converting GML script: ${project_dir}\objects\obj_medkit\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_armor\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_ammo_pistol\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_ammo_machinegun\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_anifx\Create_0.gml
+Converted description /// @description Init
+
+Converting GML script: ${project_dir}\objects\obj_anifx\Other_7.gml
+Converted description /// @description Done
+
+Converting GML script: ${project_dir}\objects\obj_anifx\Draw_0.gml
+Converted description /// @description Draw stuff
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Missing audiogroup for sound: 'bgm_zuma' - setting to default audio group
+Missing audiogroup for sound: 'bgm_cave' - setting to default audio group
+Missing audiogroup for sound: 'bgm_deathtemple' - setting to default audio group
+Missing audiogroup for sound: 'snd_ambience_rain' - setting to default audio group
+Missing audiogroup for sound: 'snd_ambience_wind' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_wood' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_grass' - setting to default audio group
+Missing audiogroup for sound: 'snd_footstep_stone' - setting to default audio group
+Missing audiogroup for sound: 'snd_door' - setting to default audio group
+Missing audiogroup for sound: 'snd_door_futuristic' - setting to default audio group
+Missing audiogroup for sound: 'snd_die' - setting to default audio group
+Missing audiogroup for sound: 'snd_enemydie_slime' - setting to default audio group
+Missing audiogroup for sound: 'snd_shoot_pistol' - setting to default audio group
+Missing audiogroup for sound: 'snd_shoot_machinegun' - setting to default audio group
+Missing audiogroup for sound: 'snd_damage' - setting to default audio group
+Missing audiogroup for sound: 'snd_landing' - setting to default audio group
+Missing audiogroup for sound: 'snd_jump' - setting to default audio group
+Missing audiogroup for sound: 'snd_medkit' - setting to default audio group
+Missing audiogroup for sound: 'snd_armor' - setting to default audio group
+Missing audiogroup for sound: 'snd_reload' - setting to default audio group
+Missing audiogroup for sound: 'snd_ammo' - setting to default audio group
+Game speed set to 60
+Added compatibility script 'action/action_end_game.gml'
+Added compatibility script 'action/action_next_room.gml'
+Added compatibility script 'background/background_get_texture.gml'
+Added compatibility script 'background/__background_get.gml'
+Added compatibility script 'background/__background_get_element.gml'
+Added compatibility script 'background/__background_get_internal.gml'
+Added compatibility script 'background/__background_set.gml'
+Added compatibility script 'background/__background_set_element.gml'
+Added compatibility script 'background/__background_set_internal.gml'
+Added compatibility script 'd3d/d3d_draw_ellipsoid.gml'
+Added compatibility script 'd3d/d3d_draw_floor.gml'
+Added compatibility script 'd3d/d3d_draw_wall.gml'
+Added compatibility script 'd3d/d3d_end.gml'
+Added compatibility script 'd3d/d3d_light_define_ambient.gml'
+Added compatibility script 'd3d/d3d_light_define_direction.gml'
+Added compatibility script 'd3d/d3d_light_define_point.gml'
+Added compatibility script 'd3d/d3d_light_enable.gml'
+Added compatibility script 'd3d/d3d_primitive_begin_texture.gml'
+Added compatibility script 'd3d/d3d_primitive_end.gml'
+Added compatibility script 'd3d/d3d_set_fog.gml'
+Added compatibility script 'd3d/d3d_set_hidden.gml'
+Added compatibility script 'd3d/d3d_set_lighting.gml'
+Added compatibility script 'd3d/d3d_set_projection_ext.gml'
+Added compatibility script 'd3d/d3d_set_projection_ortho.gml'
+Added compatibility script 'd3d/d3d_start.gml'
+Added compatibility script 'd3d/d3d_transform_add_rotation_z.gml'
+Added compatibility script 'd3d/d3d_transform_add_translation.gml'
+Added compatibility script 'd3d/d3d_transform_set_identity.gml'
+Added compatibility script 'd3d/d3d_vertex_normal_texture.gml'
+Added compatibility script 'draw/draw_set_alpha_test.gml'
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'sound/sound_stop_all.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'view/__view_set.gml'
+Added compatibility script 'view/__view_set_internal.gml'
+Added compatibility script 'action/__init_action.gml'
+Added compatibility script 'background/__init_background.gml'
+Added compatibility script 'd3d/__init_d3d.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'
