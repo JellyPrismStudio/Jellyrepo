@@ -1,0 +1,42 @@
+{
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "TouchDummy2",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+  ],
+  "managed": true,
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"Event_Template","path":"objects/Event_Template/Event_Template.yy",},"propertyId":{"name":"objectSuper","path":"objects/Event_Template/Event_Template.yy",},"value":"_NPC_01",},
+  ],
+  "parent": {
+    "name": "Mapa Inicial",
+    "path": "folders/Rooms/Maps/Mapa Inicial.yy",
+  },
+  "parentObjectId": {
+    "name": "Event_Template",
+    "path": "objects/Event_Template/Event_Template.yy",
+  },
+  "persistent": false,
+  "physicsAngularDamping": 0.1,
+  "physicsDensity": 0.5,
+  "physicsFriction": 0.2,
+  "physicsGroup": 1,
+  "physicsKinematic": false,
+  "physicsLinearDamping": 0.1,
+  "physicsObject": false,
+  "physicsRestitution": 0.1,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsShapePoints": [],
+  "physicsStartAwake": true,
+  "properties": [],
+  "solid": false,
+  "spriteId": {
+    "name": "EventBox",
+    "path": "sprites/EventBox/EventBox.yy",
+  },
+  "spriteMaskId": null,
+  "visible": false,
+}

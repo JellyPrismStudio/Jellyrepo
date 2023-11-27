@@ -1,0 +1,10 @@
+super = noone;
+i = 0;	   // Index de onde tá no equip inv no objeo super
+index = 0; // Index de onde tá no inventário
+user = global.party.players[global.menu.equippage];
+equipid = 2;
+equip = 0;
+_color = c_white;
+_arrow = "";
+soundover = false;
+//sprite_index = global.inventory[index].icon;

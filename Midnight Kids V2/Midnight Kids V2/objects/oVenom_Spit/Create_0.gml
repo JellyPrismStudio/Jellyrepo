@@ -1,0 +1,13 @@
+dir = point_direction(x,y,global.player.x,global.player.y);
+fx = global.player.x;
+fy = global.player.y;
+dmg = 20
+oGround = noone;
+direction = dir;
+image_angle = dir;
+speed = 8;
+super = noone;
+life = irandom_range(30,220);
+xx = (global.player.x - x);
+yy = (global.player.y - y);
+life = sqrt(	power(xx,2) + power(yy,2)	)

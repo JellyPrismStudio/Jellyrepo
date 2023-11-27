@@ -1,0 +1,1 @@
+//shockwaves_renderer_id.Render(ppfx_id, view_camera[0]);

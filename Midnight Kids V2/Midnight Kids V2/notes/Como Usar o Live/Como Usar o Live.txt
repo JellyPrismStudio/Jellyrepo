@@ -1,0 +1,12 @@
+Em objetos:
+
+Adicione o trecho:
+if live_call() return live_result;
+No código do evento que deve ser atualizado (step, create, destroy)
+
+
+
+Em Scripts:
+
+Adicione o trecho:
+if live_call(ARGUMENTOS DA FUNÇÃO DO SCRIPT) return live_result;

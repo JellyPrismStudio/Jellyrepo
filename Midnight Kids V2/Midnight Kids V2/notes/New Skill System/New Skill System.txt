@@ -1,0 +1,45 @@
+O jogador escolhe 2 dos 4 personagens para jogar.
+O jogador vai ter uma nova tecla para a habilidade dos personagens aliados. Ex: R
+O jogo trata de lidar e ver qual é o outro jogador na party, para executar a ação dele, quando clicado em R.
+
+Digamos que a sua party seja Ryan e Lisa.
+Você está controlando Ryan, e quer que a Lisa use a sua skill para te ajudar na batalha.
+A skill pode ser de dano ou suporte, mas é uma skill unica, imutável, introcável. Digamos que a skill de
+Lisa vai ser jogar uma torre 'montável' onde ryan está que da dano a inimigos próximos.
+
+Conforme os niveis sobem, o dano dessa skill aumenta. Você não pode atribuir outra skill para Lisa, mas pode
+alterar o modo da skill. Ao invés de ser uma torre que dá dano aos inimigos, pode ser uma torre que
+conjura um domo/escudo em uma circunferencia em volta do Ryan, que impede que monstros entrem.
+
+O mesmo vale para Ryan.
+
+Se você estiver controlando Lisa, e desejar usar Ryan, você pode usar a skill defensiva dele para
+chamar atenção dos inimigos e 'tankar' o dano. Ou, você pode usar a sua skill ofensiva, que da uma
+investida contra os inimigos e arrasta todos que estiverem na sua frente junto até colidir com algo OU atingir uma distancia X
+
+São as skills básicas ou skill platina.
+
+Skill Basicas/Platinas:
+
+Ryan:
+- Agressiva: Investe contra os inimigos em uma linha, e arrasta todos os que estiverem próximos consigo até atingir uma parede
+ou atingir uma distancia específica.
+- Defensiva: Provoca os inimigo e entra em modo de defesa, tankando todos os danos recebidos.
+
+Lisa:
+- Agressiva: Arremessa uma esfera que na verdade é uma torreta portátil. Ao atingir o local, a torre se arma
+e desfere dano nos monstros que estiverem no local.
+- Defensiva: Arremesa uma esfera defensiva no local, que cria um domo na area onde os inimigos não conseguem ultrapassar, mantendo
+quem já está dentro lá dentro, e quem está lá fora lá fora. Os personagens podem sair e entrar livremente
+
+Hanna:
+- Agressiva: Acerta um ataque critico a um inimigo próximo do aliado ou o qual o aliado esteja atacando. O ataque pode causar
+um debuff de defesa, pois foi um tiro certeiro que desestabilizou a defesa do inimigo.
+- Defensiva: Hanna joga um ursinho de pelúcia explosivo, que chama o agro dos inimigos próximos e explode após alguns segundos.
+
+Dylan:
+- Agressiva: Pula e cola no seu parceiro, tocando uma música agressiva em seu rádio que desfere ondas de dano
+(DPS) nos inimigos que são empurrados para trás. (A idéia é ser mais um cover, com um pouco de dano). Dylan cura 
+o aliado dependendo de quanto dano foi causado aos inimigos atingidos
+- Defensiva: Dylan pula, curando o aliado com ondas sonoras (Cura por segundo), e aumentando a velocidade de 
+movimento.

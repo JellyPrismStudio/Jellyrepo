@@ -1,0 +1,1 @@
+if global.config.GPU.floorlight == false instance_deactivate_object(self);
