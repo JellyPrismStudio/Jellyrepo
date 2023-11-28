@@ -1,0 +1,1 @@
+if !persistente instance_destroy();

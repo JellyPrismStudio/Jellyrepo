@@ -1,0 +1,1 @@
+super = global.intern.enemyover[_GLOBAL_CAMERA.camera];

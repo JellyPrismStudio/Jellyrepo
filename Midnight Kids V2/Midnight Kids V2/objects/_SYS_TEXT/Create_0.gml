@@ -1,0 +1,12 @@
+j = 0;
+texto = "";
+colortext = c_white;
+xx = 0;
+yy = 0;
+textspeed = 1;
+tspeed = 0.1;
+text_count = 0;
+text2 = "";
+font = Ruler;
+align = fa_center;
+destroy = false;

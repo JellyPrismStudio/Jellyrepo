@@ -1,0 +1,20 @@
+/// @description Insert description here
+event_inherited();
+dist = irandom_range(0,90);
+dist2 = irandom_range(0,90);
+dist3 = irandom_range(0,90);
+dist4 = irandom_range(0,90);
+create_battle_basics_player();
+self_index = 4;
+AIM_RANGE =  global.player_stats[self_index].aimrange;
+view_range = irandom_range(80,140);
+print = 0;
+normal_speed = 3;
+dash_speed = 4;
+sneak_speed = 2;
+oDir[0] = 0;
+depth = -y;
+i = 0;
+bool1 = false;
+a = 0;
+a0 = false;

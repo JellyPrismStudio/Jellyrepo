@@ -1,0 +1,51 @@
+////////// DOCUMENTAÇÃO SCENE EVENTS
+/////////
+
+
+///////// MANAGEMENT
+
+///
+cutscene_end_action();
+///
+Esse comando é chamado dentro de cada action, e simboliza o fim daquele evento (ação).
+Por exemplo: O personagem se move 10 pixels e chama o end_action, pra ir pra proxima ação
+
+///
+cutscene_break(msg);
+///
+Mostra uma break message (show_message)
+
+/// 
+Clean_cutscene_2d_arrays()
+///
+Limpa as páginas das arrays da cutscene 
+
+///
+cutscene_page_cleaner()
+///
+Chama o cutscene_2d_arrays
+
+///
+cutscene_return()
+///
+É o inverso do cutscene_end_action, ao invés de ir para a proxima ação, volta uma
+
+///
+cutscene_do_nothing()
+///
+Usado só para segurar o primeiro espaço da array, para poder declarar ela com uma função. Essa funçõa
+não faz nada.
+
+///
+trigger_change(trigger, valor)
+///
+procura por um nome do trigger e muda o valor dele
+
+
+///////// MANAGEMENT
+
+///
+cutscene_section_start(travar player, prioridade, resetar camera)
+///
+Esse comando trava o player, ativa o modo "em mensagem", desativa o menu e reseta a camera
+

@@ -1,0 +1,1 @@
+self_index = global.party.players[0]

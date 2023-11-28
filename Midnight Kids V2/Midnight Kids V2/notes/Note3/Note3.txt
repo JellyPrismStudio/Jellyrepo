@@ -1,0 +1,275 @@
+// Para usar o Kwert Essentials você deve:
+// Criar um objeto definindo as seguintes variáveis
+// Global.console_active = true//false (Ativar ou desativar o log)
+//////////
+
+
+
+////////////////////////////
+// SET_TIMER_ARGUMENT
+//
+// Esse método seta o timer utilizado em KW_MOVE_TO
+// O Método KW_MOVE_TO NÃO funciona sem setar o argumento antes.
+////////////////////////////
+
+function kw_set_timer_argument(args){
+	global.timer_argument = args;
+	kw_cutscene_end();
+}
+
+////////////////////////////
+// KW_MOVE_TO
+//
+// Esse método move o objeto (ID) na direção (DIR) a uma velocidade (KW_SPEED) por um tempo (TIMER)
+// NOTA: Pra definir o tempo, é necessário chamar o método KW_SET_TIMER_ARGUMENT antes
+////////////////////////////
+
+function kw_move_to(id,dir,kw_speed){
+	//var flag = true
+	timer = global.timer_argument;
+	if timer > 0
+	{
+		//if global.console_active show_debug_message(string(timer)+ " frames left to end the animation in the (" + dir + ") direction at speed (" + string(kw_speed) + ")");
+		if dir == "right"	or dir == 6				id.x += kw_speed
+		if dir == "up"		or dir == 8				id.y -= kw_speed
+		if dir == "down"	or dir == 2				id.y += kw_speed
+		if dir == "left"	or dir == 4				id.x -= kw_speed
+		global.timer_argument--;
+		
+	}
+	else if timer <= 0 
+	{
+		kw_cutscene_end();
+	}
+}
+
+////////////////////////////
+// KW_PRINT_MESSAGE
+//
+// Printa uma Debug Message
+////////////////////////////
+
+function kw_print_message(message){
+	show_message(message);
+	kw_cutscene_end();
+}
+
+function kw_fade_out(speed){
+	var fade = instance_create_depth(x,y,-1,kw_obj_fade_out);
+	fade.fade_speed = speed;
+}
+
+///////////////////////////
+
+function kw_print_message2(message){
+	show_message(message);
+	show_message(message);
+	kw_cutscene_end();
+}
+
+////////////////////////////
+// TELEPORT
+////////////////////////////
+
+function kw_teleport(map_id,object_id,x,y){
+	room_goto(map_id);
+	//object_id.x = x;
+	//object_id.y = y;
+	kw_cutscene_end();
+}
+
+function kw_teleport_new(map_id,object_id,x,y,layer){
+	room_goto(map_id);
+	layer_set_target_room(map_id);
+	layer_add_instance(layer,object_id);
+	object_id.x = x;
+	object_id.y = y;
+	layer_reset_target_room();
+	kw_cutscene_end();
+}
+
+////////////////////////////
+// MESSAGES
+////////////////////////////
+
+function kw_draw_simple_message(bg,text,x,y,frame){
+	var draw = kw_obj_draw_message;
+	if x == "message" and y == "message" {			x =	0;			y =	0;		}
+	instance_create_depth(0,0,0,kw_obj_draw_message);
+	draw.kw_bg = bg ; draw.kw_text = text ; draw.kw_x = x ; draw.kw_y = y ; draw.kw_frame = frame; draw.kw_spacing = 10; draw.kw_margin = 10;
+	kw_cutscene_end();
+}
+
+function kw_draw_simple_message_face(bg,text,x,y,frame,face,name){
+	var draw = kw_obj_draw_message;
+	if x == "message" and y == "message" {			x =	0;			y =	0;		}
+	instance_create_depth(0,0,0,kw_obj_draw_message);
+	draw.kw_bg = bg ; draw.kw_text = text ; draw.kw_x = x ; draw.kw_y = y ; draw.kw_frame = frame; draw.kw_spacing = 10; draw.kw_margin = 10; draw.kw_face = face; draw.kw_name = name;
+	kw_cutscene_end();
+}
+
+function kw_wait(){
+	timer = global.timer_argument;
+	if timer > 0
+	{
+		global.timer_argument--;
+		
+	}
+	else if timer <= 0 
+	{
+		kw_cutscene_end();
+	}
+}
+
+function kw_draw_simple_message_with_name(bg,text,x,y,frame,names){
+	var draw = kw_obj_draw_message;
+	if x == "message" and y == "message" {			x =	0;			y =	0;		}
+	instance_create_depth(0,0,0,kw_obj_draw_message);
+	draw.kw_names = names;
+	draw.kw_bg = bg ; draw.kw_text = text ; draw.kw_x = x ; draw.kw_y = y ; draw.kw_frame = frame; draw.kw_spacing = 10; draw.kw_margin = 10;
+	kw_cutscene_end();
+}
+
+function kw_check_trigger(trigger){
+	if keyboard_check_pressed(trigger) kw_cutscene_end();
+}
+
+function kw_delete_simple_message(){
+	if instance_exists(kw_obj_draw_message){
+		var draw = kw_obj_draw_message;
+		instance_destroy(draw);
+		kw_cutscene_end();
+	}
+}
+
+
+////////////////////////////
+// SOUND
+////////////////////////////
+
+function kw_play_sound(sound,loop){
+	audio_play_sound(sound,1,loop);
+	kw_cutscene_end();
+}
+
+function kw_stop_sound(sound){
+	audio_stop_sound(sound);
+	kw_cutscene_end();
+}
+
+function kw_turn_flag(variable, par){
+	show_debug_message(variable);
+	(variable) = par;
+	kw_cutscene_end();
+}
+
+function kw_turn_movement_flag(){
+	global.deactivate_keys = !global.deactivate_keys;	
+	kw_cutscene_end();
+}
+
+function kw_set_obj_animation(object,ospeed){
+	object.image_speed = ospeed;
+}
+
+
+function kw_turn_car_on(){
+	global.car_allowed = true;
+	kw_cutscene_end();
+}
+
+function turn_enemies(){
+	global.turn_enemies = true;
+	kw_cutscene_end();
+}
+
+function kw_start(){
+	global.scening = 1;
+	kw_cutscene_end();
+}
+
+function kw_turn_school(){
+	global.scening = 2;
+	kw_cutscene_end();
+}
+
+function kw_turn_shop(){
+	global.scening = 3;
+	kw_cutscene_end();
+}
+
+function kw_back_to_school(){
+	global.scening = 4;
+	kw_cutscene_end();
+}
+
+function kw_back_to_main_build(){
+	global.scening = 5;
+	kw_cutscene_end();
+}
+
+function kw_get_on_car(){
+	global.scening = 6;
+	kw_cutscene_end();
+}
+
+function kw_on_car(){
+	global.scening = 7;
+	kw_cutscene_end();
+}
+
+function kw_go_posto(){
+	global.scening = 8;
+	kw_cutscene_end();
+}
+
+function kw_libios(){
+}
+
+function kw_ending_scenes(){
+	global.scening = 9;
+	kw_cutscene_end();
+}
+
+function kw_last_scene(){
+	global.scening = 10;
+	global.on_car = true;
+	global.deactivate_keys = false;
+	kw_cutscene_end();
+}
+
+function kw_block_exit_car(){
+	global.cant_exit = true;
+	kw_cutscene_end();
+}
+
+function kw_block_enter_car(){
+	global.cant_car = true;
+	kw_cutscene_end();
+}
+
+function kw_allow_exit_car(){
+	global.cant_exit = false;
+	kw_cutscene_end();
+}
+
+function kw_allow_enter_car(){
+	global.cant_car = false;
+	kw_cutscene_end();
+}
+
+function kw_get_out_car(){
+	global.on_car = false;
+	kw_cutscene_end();
+}
+
+function kw_delete_enemy(){
+	global.delete_enemy = true;
+	global.activate_fx = true;
+	kw_cutscene_end();
+}
+
+function kw_create_end(){
+	instance_create_layer(x,y,"Instances",obj_ending);
+	kw_cutscene_end();
+}

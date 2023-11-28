@@ -1,0 +1,59 @@
+function kmove_input_multiple_collider(linput, lspd, lent, lcol1, lcol2, lcol3, k_lappr){
+	kstarter("moving?");
+	if linput == 0 {
+	var iup = keyboard_check(vk_up);	var idw = keyboard_check(vk_down);
+	var ilf = keyboard_check(vk_left);	var irt = keyboard_check(vk_right);}
+	
+	if linput == 1{
+	var iup =  keyboard_check(ord("W"));	var idw =  keyboard_check(ord("S"));
+	var ilf =  keyboard_check(ord("A"));	var irt =  keyboard_check(ord("D"));
+	}	
+	if instance_exists(_SYS_OBJECT_NULL){
+		instance_create_depth(0,0,0,_SYS_OBJECT_NULL)
+	}
+	else {
+		var dump1 = _SYS_OBJECT_NULL;	
+		var dump2 = _SYS_OBJECT_NULL;	
+		var dump3 = _SYS_OBJECT_NULL;
+		var aux = _SYS_OBJECT_NULL;
+		}
+	if linput == 2{
+		var iup = keyboard_check(ord("W")) or keyboard_check(vk_up);
+		var ilf = keyboard_check(ord("A")) or keyboard_check(vk_left);
+		var irt = keyboard_check(ord("D")) or keyboard_check(vk_right);
+		var idw = keyboard_check(ord("S")) or keyboard_check(vk_down);
+	}
+	
+	if variable_instance_exists(lcol1, "_kcollider") {
+		if lcol1._kcollider = true {
+		dump1 = lcol1;		lcol1 = aux;
+		}
+		}
+	else if variable_instance_exists(dump1, "_kcollider") {	
+		if dump1._kcollider = true {
+			lcol1 = dump1;dump1 = aux;
+			}
+		}
+	if variable_instance_exists(lcol2, "_kcollider") {if lcol2._kcollider = true {dump2 = lcol2;		lcol2 = aux;}}
+	else if variable_instance_exists(dump2, "_kcollider") {	if dump2._kcollider = true {lcol2 = dump2;dump2 = aux;}}
+	if variable_instance_exists(lcol3, "_kcollider") {if lcol3._kcollider = true {dump3 = lcol3;		lcol3 = aux;}}
+	else if variable_instance_exists(dump3, "_kcollider") {	if dump3._kcollider = true {lcol3 = dump3;dump3 = aux;}}
+	
+	if iup  && global.can_move{		
+		if !place_meeting(x,y-lspd,lcol1) && !place_meeting(x,y-lspd,lcol2) && !place_meeting(x,y-lspd,lcol3) lent.y -= lspd;
+		else if k_lappr and (!place_meeting(x,y-1,lcol1) && !place_meeting(x,y-1,lcol2) && !place_meeting(x,y-1,lcol3)) lent.y -= 1;
+	}
+	else if idw  && global.can_move{
+		if !place_meeting(x,y+lspd,lcol1) && !place_meeting(x,y+lspd,lcol2) && !place_meeting(x,y+lspd,lcol3) lent.y += lspd;
+		else if k_lappr and (!place_meeting(x,y+1,lcol1) && !place_meeting(x,y+1,lcol2) && !place_meeting(x,y+1,lcol3)) lent.y += 1;
+	}
+	
+	if ilf  && global.can_move{
+		if !place_meeting(x-lspd,y,lcol1) && !place_meeting(x-lspd,y,lcol2) && !place_meeting(x-lspd,y,lcol3)lent.x -= lspd;
+		else if k_lappr and (!place_meeting(x-1,y,lcol1) && !place_meeting(x-1,y,lcol2) && !place_meeting(x-1,y,lcol3)) lent.x -= 1;
+	}
+	else if irt  && global.can_move{
+		if !place_meeting(x+lspd,y,lcol1) && !place_meeting(x+lspd,y,lcol2) && !place_meeting(x+lspd,y,lcol3) lent.x += lspd;
+		else if k_lappr and (!place_meeting(x+1,y,lcol1) && !place_meeting(x+1,y,lcol2) && !place_meeting(x+1,y,lcol3)) lent.x += 1;
+	}
+}
