@@ -1,11 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_sujeira",
+  "name": "obj_faxineiro",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,7 +12,10 @@
     "name": "funcionarios",
     "path": "folders/Objetos/loja/mobilia/funcionarios.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_mobilia",
+    "path": "objects/obj_mobilia/obj_mobilia.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -30,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sujeira",
-    "path": "sprites/spr_sujeira/spr_sujeira.yy",
+    "name": "spr_faxineiro",
+    "path": "sprites/spr_faxineiro/spr_faxineiro.yy",
   },
   "spriteMaskId": null,
   "visible": true,

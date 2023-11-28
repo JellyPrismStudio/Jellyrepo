@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "mobilia",
-    "path": "folders/Objetos/loja/mobilia.yy",
+    "name": "compra",
+    "path": "folders/Objetos/loja/mobilia/compra.yy",
   },
   "parentObjectId": null,
   "persistent": false,

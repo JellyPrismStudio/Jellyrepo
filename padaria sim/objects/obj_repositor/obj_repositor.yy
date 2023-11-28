@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_funcionario",
+  "name": "obj_repositor",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "mobilia",
-    "path": "folders/Objetos/loja/mobilia.yy",
+    "name": "funcionarios",
+    "path": "folders/Objetos/loja/mobilia/funcionarios.yy",
   },
   "parentObjectId": {
     "name": "obj_mobilia",
@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_funcionario",
-    "path": "sprites/spr_funcionario/spr_funcionario.yy",
+    "name": "spr_repositor",
+    "path": "sprites/spr_repositor/spr_repositor.yy",
   },
   "spriteMaskId": null,
   "visible": true,
