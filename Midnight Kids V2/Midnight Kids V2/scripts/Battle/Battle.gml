@@ -264,7 +264,7 @@ function battle_complex_click(){
 	var new_x = global.player.x + lengthdir_x(_distance, _radius_direction);
 	var new_y = global.player.y + lengthdir_y(_distance, _radius_direction);
 	//
-	var _on_intersec = kget_radius_by_pos(new_x,new_y,global.player.AIM_RANGE,false,self);
+	var _on_intersec = kget_radius_by_pos(new_x,new_y,global.player.AIM_RANGE,false,id);
 	if _on_intersec {
 		image_blend = c_purple;
 		return true

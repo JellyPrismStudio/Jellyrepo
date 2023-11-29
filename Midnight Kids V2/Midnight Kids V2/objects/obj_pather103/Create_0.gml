@@ -1,4 +1,4 @@
-create_enemy_stats("Slime",320,10,7,4,4,10,10,8,7);
+//create_enemy_stats("Slime",320,10,7,4,4,10,10,8,7);
 create_directions_variables(x, y, 5, 6, false);
 create_pathfinding_variables();
 ALARM_ATTACK = 60;

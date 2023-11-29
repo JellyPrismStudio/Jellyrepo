@@ -42,7 +42,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	2.9,
+			spd:	3.9,
 			object: playerA,
 			skillslearned: [
 				0,
@@ -94,7 +94,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	2,
+			spd:	3,
 			object: playerB,
 			skillslearned: [
 				0,
@@ -145,7 +145,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	3.2,
+			spd:	4.2,
 			object: playerHanna,
 			skillslearned: [
 				1,
@@ -194,7 +194,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	3.7,
+			spd:	4.7,
 			object: playerD,
 			skillslearned: [
 				2,

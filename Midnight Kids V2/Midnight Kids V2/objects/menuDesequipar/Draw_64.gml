@@ -6,7 +6,7 @@ if global.player_stats[user].equip[tipe] != -1
 	if position_meeting(mouse_x,mouse_y,self){
 		plus_text_font(524,200,global.player_stats[user].equip[tipe].nome,#65313b,DayDream_pt8,fa_left, fa_top);
 		plus_text_font(524,220,global.player_stats[user].equip[tipe].text,#4b4030, Ruler, fa_left, fa_top);
-		plus_text_font(524,370,"Status", _color, DayDream_pt8, 0, 300, fa_left, fa_top);
+		plus_text_font(524,370,"Status", _color, DayDream_pt8, fa_left, fa_top);
 		
 		yy = 398
 		status = [global.language.menu.atk, global.language.menu.def, global.language.menu.mag, global.language.menu.cri, global.language.menu.eva, global.language.menu.hit, global.language.menu.hp, global.language.menu.sp]

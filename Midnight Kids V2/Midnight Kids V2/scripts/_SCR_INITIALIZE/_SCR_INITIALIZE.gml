@@ -40,7 +40,7 @@ create_enemy_database();
 		camera_height: 720,
 	    guisize: 5,
 		interaction: true,
-	    music_volume: 10,
+	    music_volume: 100,
 	    playeropacity: 0.7,
 	    showhud: true,
 	    sound_volume: 1,

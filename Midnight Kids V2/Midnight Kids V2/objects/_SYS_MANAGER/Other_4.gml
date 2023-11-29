@@ -39,20 +39,7 @@ function run_basics(){
 	
 }
 
-function run_weather(type, strength, additive, size){
-	if type == "Rain" or type == 0 {
-		var rain = instance_create_layer(0,0,"Setup",obj_chuva);
-		rain.amount = strength;
-		rain.additive = additive;
-		rain.size = size;
-	}
-	if type == "Dust" or type == 1{
-		var dust = instance_create_layer(0,0,"Setup",obj_poeira);
-		dust.amount = strength;
-		dust.additive = 1;
-		dust.size = 0.08;		
-	}
-}
+
 if room != TelaInicial run_basics();
 
 switch (room){

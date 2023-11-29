@@ -572,37 +572,21 @@ function add_equip_to_inv(equip){
 }
 	
 function play_audio(variable,_sound,_priority,_loop,_gain,_offset = 0){
-	if variable=="BGM1" 
-	{		
-		if global.sounds.BGM1 != string(_sound){
-			audio_stop_sound(asset_get_index(global.sounds.BGM1));
-			audio_play_sound(_sound,_priority,_loop,1,_offset);
-			global.sounds.BGM1 = string(_sound);
-			
-		}
+	clamp(_gain,0,100);
+	clamp(_gain,0,100);
+	if variable == "BGM1"
+	{
+		if string(global.sounds.BGM1) != string(_sound)
+		{
+			audio_stop_sound(global.sounds.BGM1);
+			global.sounds.BGM1 = (_sound);
+			audio_play_sound(_sound,_priority,_loop,_gain/100,_offset);	
+		}		
 		change_audio("BGM1")
-	}	
-	if variable=="BGM2"{
-		if global.sounds.BGM2 != string(_sound){
-			audio_stop_sound(asset_get_index(global.sounds.BGM2));
-			audio_play_sound(_sound,_priority,_loop,1,_offset);
-			global.sounds.BGM2 = string(_sound);
-		}
-		change_audio("BGM2")
 	}
-	if variable=="BGM3"{
-		//change_audio("BGM1",0.1, 1)
-		if global.sounds.BGM3 != string(_sound){
-			audio_stop_sound(asset_get_index(global.sounds.BGM3));
-			audio_play_sound(_sound,_priority,_loop,1,_offset);
-			global.sounds.BGM3 = string(_sound);
-		}
-		//change_audio("BGM3", 1, 1)
+	else if variable=="SFX"{
+		audio_play_sound(_sound,_priority,_loop,_gain/100,_offset);		
 	}
-	if variable=="SFX"{
-		audio_play_sound(_sound,_priority,_loop,1,_offset);		
-	}
-	
 }
 
 function change_audio(audio, vol = 1, time = 1)
@@ -613,28 +597,28 @@ function change_audio(audio, vol = 1, time = 1)
 	{
 		if global.sounds.BGM1 != noone
 		{
-			audio_sound_gain(asset_get_index(global.sounds.BGM1), (global.config.music_volume/100)*vol, time);
+			audio_sound_gain(global.sounds.BGM1, (global.config.music_volume/100), time);
 		}
 	}
 	 if audio == "BGM2" or audio == "ALL"
 	{
 		if global.sounds.BGM2 != noone
 		{
-			audio_sound_gain(asset_get_index(global.sounds.BGM2), (global.config.music_volume/100)*vol, time);
+			audio_sound_gain(global.sounds.BGM2, (global.config.music_volume/100), time);
 		}
 	}
 	if audio == "BGM3" or audio == "ALL"
 	{
 		if global.sounds.BGM3 != noone
 		{
-			audio_sound_gain(asset_get_index(global.sounds.BGM3), (global.config.music_volume/100)*vol, time);
+			audio_sound_gain((global.sounds.BGM3), (global.config.music_volume/100), time);
 		}
 	}
 	
 	if audio == "SFX" or audio == "ALL"
 	{
 		if global.sounds.SFX0 != noone{
-			audio_sound_gain(asset_get_index(global.sounds.SFX0), (global.config.music_volume/100)*vol, time);
+			audio_sound_gain((global.sounds.SFX0), (global.config.music_volume/100), time);
 		}
 	}
 }
@@ -852,6 +836,21 @@ function over_image_ext(sprite, xx, yy, width, height, ongui = true)
 	{
 		if plus_point_in_rectangle(mouse_x, mouse_y, xx - sprite_get_xoffset(sprite), yy - sprite_get_yoffset(sprite), xx + sprite_get_width(sprite) + width, yy + sprite_get_height(sprite)+height) return true
 		else return false	
+	}
+}
+
+function run_weather(type, strength, additive, size){
+	if type == "Rain" or type == 0 {
+		var rain = instance_create_layer(0,0,"Setup",obj_chuva);
+		rain.amount = strength;
+		rain.additive = additive;
+		rain.size = size;
+	}
+	if type == "Dust" or type == 1{
+		var dust = instance_create_layer(0,0,"Setup",obj_poeira);
+		dust.amount = strength;
+		dust.additive = 1;
+		dust.size = 0.08;		
 	}
 }
 

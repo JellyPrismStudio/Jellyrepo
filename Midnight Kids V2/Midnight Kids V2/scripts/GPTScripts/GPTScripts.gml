@@ -1073,3 +1073,17 @@ function mouse_check_once(key)
 	return _return;
 }
     
+function remove_ref_string(_string) {
+    // Tamanho do prefixo "ref "
+	_string = string(_string);
+    var tamanhoPrefixo = string_length("ref ");
+
+    // Verifica se a string começa com "ref "
+    if (string_copy(string, 1, tamanhoPrefixo) == "ref sound ") {
+        // Remove o prefixo "ref "
+        _string = string_delete(string, 1, tamanhoPrefixo);
+    }
+
+    // Converte a string para int e retorna
+    return _string;
+}
