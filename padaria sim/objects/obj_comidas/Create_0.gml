@@ -19,7 +19,17 @@ f_comidas = function()
 			if (mouse_check_button_pressed(mb_left) and global.gold >= global.p_preco[i])
 			{
 				global.gold -= global.p_preco[i];
-				global.p_quantidade[i]++;
+				if (instance_exists(obj_entregador) and obj_entregador.image_alpha == 0)
+				{
+					var _slot = array_length(obj_entregador.itens)
+					obj_entregador.itens[_slot+1] = i;
+					obj_entregador.timer = obj_entregador.timer_max;
+				}
+				else
+				{
+					var _obj = instance_create_depth(obj_saida.x, obj_saida.y, depth, obj_entregador);
+					_obj.itens[0] = i;
+				}
 			}
 		}
 		

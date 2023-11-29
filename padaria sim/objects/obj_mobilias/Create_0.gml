@@ -1,6 +1,6 @@
 scr_destruir("mobilias");
 
-preco = [100, 50, 150];
+preco = [30, 15, 50, 50];
 pagina = 0;
 pagina_max = 1;
 
@@ -84,7 +84,7 @@ f_vaso = function()
 	draw_text(room_width/2-130, 240, "posicionar vaso:\nquantidade de vasos: " + string(global.mobilia[1]));
 }
 
-f_funcionario = function()
+f_repositor = function()
 {
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-140, 280, room_width/2+250, 320))
 	{
@@ -109,7 +109,7 @@ f_funcionario = function()
 		if (mouse_check_button(mb_left)) image_blend = c_gray;
 		if (mouse_check_button_released(mb_left) and global.mobilia[2] > 0)
 		{
-			var _balcao = instance_create_depth(mouse_x, mouse_y, depth, obj_funcionario);
+			var _balcao = instance_create_depth(mouse_x, mouse_y, depth, obj_repositor);
 			with (_balcao)
 			{
 				seguindo = true;
@@ -119,7 +119,47 @@ f_funcionario = function()
 		}
 	}
 	
-	draw_sprite_ext(spr_funcionario, 0, room_width/2-200, 330, 1.5, 1.5, 0, c_white, 1);
-	draw_text(room_width/2-130, 280, "comprar funcionario:\n$" + string(preco[2]));
-	draw_text(room_width/2-130, 340, "posicionar funcionario:\nquantidade de funcionario: " + string(global.mobilia[2]));
+	draw_sprite_ext(spr_repositor, 0, room_width/2-200, 330, 1.5, 1.5, 0, c_white, 1);
+	draw_text(room_width/2-130, 280, "comprar repositor:\n$" + string(preco[2]));
+	draw_text(room_width/2-130, 340, "posicionar repositor:\nquantidade de repositores: " + string(global.mobilia[2]));
+}
+
+f_faxineiro= function()
+{
+	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-140, 380, room_width/2+250, 420))
+	{
+		draw_set_color(c_gray);
+		draw_rectangle(room_width/2-140, 380, room_width/2+250, 420, false);
+		draw_set_color(c_white);
+		
+		if (mouse_check_button(mb_left)) image_blend = c_gray;
+		if (mouse_check_button_released(mb_left) and global.gold >= preco[3])
+		{
+			global.gold -= preco[3];
+			global.mobilia[3]++;
+		}
+	}
+	
+	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), room_width/2-140, 440, room_width/2+250, 480))
+	{
+		draw_set_color(c_gray);
+		draw_rectangle(room_width/2-140, 440, room_width/2+250, 480, false);
+		draw_set_color(c_white);
+		
+		if (mouse_check_button(mb_left)) image_blend = c_gray;
+		if (mouse_check_button_released(mb_left) and global.mobilia[3] > 0)
+		{
+			var _balcao = instance_create_depth(mouse_x, mouse_y, depth, obj_faxineiro);
+			with (_balcao)
+			{
+				seguindo = true;
+			}
+			global.mobilia[3]--;
+			instance_destroy();
+		}
+	}
+	
+	draw_sprite_ext(spr_faxineiro, 0, room_width/2-200, 430, 1.5, 1.5, 0, c_white, 1);
+	draw_text(room_width/2-130, 380, "comprar faxineiro:\n$" + string(preco[3]));
+	draw_text(room_width/2-130, 440, "posicionar faxineiro:\nquantidade de faxineiros: " + string(global.mobilia[3]));
 }

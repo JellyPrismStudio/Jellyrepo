@@ -1,13 +1,16 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_saida",
-  "eventList": [],
+  "name": "obj_entregador",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "compra",
-    "path": "folders/Objetos/loja/mobilia/compra.yy",
+    "name": "loja",
+    "path": "folders/Objetos/loja.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_balcao",
-    "path": "sprites/spr_balcao/spr_balcao.yy",
+    "name": "spr_entregador",
+    "path": "sprites/spr_entregador/spr_entregador.yy",
   },
   "spriteMaskId": null,
   "visible": true,
