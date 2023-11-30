@@ -1,0 +1,1 @@
+draw_text(10, 10, "players conectados: \n"+string(ds_list_size(sockets)));
