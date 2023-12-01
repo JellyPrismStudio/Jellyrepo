@@ -1,3 +1,5 @@
+depth = -(y+sprite_height/2);
+
 var w, a, s, d, velh, velv;
 w = keyboard_check(ord("W"));
 a = keyboard_check(ord("A"));

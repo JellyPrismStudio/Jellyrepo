@@ -36,6 +36,7 @@
   "resources": [
     {"id":{"name":"spr_planta","path":"sprites/spr_planta/spr_planta.yy",},},
     {"id":{"name":"spr_terra","path":"sprites/spr_terra/spr_terra.yy",},},
+    {"id":{"name":"spr_sementes","path":"sprites/spr_sementes/spr_sementes.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

@@ -19,6 +19,7 @@
   "ResourceOrderSettings": [
     {"name":"spr_planta","order":2,"path":"sprites/spr_planta/spr_planta.yy",},
     {"name":"spr_terra","order":1,"path":"sprites/spr_terra/spr_terra.yy",},
+    {"name":"spr_sementes","order":3,"path":"sprites/spr_sementes/spr_sementes.yy",},
     {"name":"obj_terra","order":1,"path":"objects/obj_terra/obj_terra.yy",},
   ],
 }
