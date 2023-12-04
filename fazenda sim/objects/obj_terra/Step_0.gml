@@ -8,7 +8,15 @@ if (place_meeting(x, y, obj_player))
 		if (planta == 4)
 		{
 			planta = 0;
-			obj_player.sementes += choose(1, 2, 2);
+			if (sprite[spr] == spr_cafe) obj_player.inventario[0] += 2;
+			if (sprite[spr] == spr_cenoura) obj_player.inventario[4] += 4;
+			if (sprite[spr] == spr_tomate) obj_player.inventario[4] += 6;
+			if (sprite[spr] == spr_milho)
+			{
+				planta = 2;
+				obj_player.inventario[4] += 4;
+			}
+			
 		}
 		else if (molhado == false)
 		{
@@ -17,12 +25,13 @@ if (place_meeting(x, y, obj_player))
 		}
 		space_press = true;
 	}
-	if (keyboard_check(vk_shift) and !shift_press and obj_player.sementes > 0)
+	if (keyboard_check(vk_shift) and !shift_press and obj_player.inventario[obj_player.slot] > 0 and obj_player.slot != 4)
 	{
 		if (planta == 0)
 		{
 			planta = 1;
-			obj_player.sementes--;
+			obj_player.inventario[obj_player.slot]--;
+			spr = obj_player.slot;
 		}
 		shift_press = true;
 	}
