@@ -15,5 +15,5 @@ y += vlv;
 
 if (mouse_wheel_down()) slot++;
 if (mouse_wheel_up()) slot--;
-if (slot = -1) slot = 4;
-if (slot = 5) slot = 0;
+if (slot = -1) slot = 6;
+if (slot = 7) slot = 0;

@@ -6,3 +6,4 @@ space_press = false;
 shift_press = false;
 sprite = [spr_cafe, spr_cenoura, spr_tomate, spr_milho];
 spr = 0;
+adubado = 0;
