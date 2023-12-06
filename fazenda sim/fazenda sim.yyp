@@ -41,6 +41,8 @@
   "resources": [
     {"id":{"name":"spr_slot","path":"sprites/spr_slot/spr_slot.yy",},},
     {"id":{"name":"spr_cafe","path":"sprites/spr_cafe/spr_cafe.yy",},},
+    {"id":{"name":"spr_limoeiro","path":"sprites/spr_limoeiro/spr_limoeiro.yy",},},
+    {"id":{"name":"spr_pessegueiro","path":"sprites/spr_pessegueiro/spr_pessegueiro.yy",},},
     {"id":{"name":"spr_terra","path":"sprites/spr_terra/spr_terra.yy",},},
     {"id":{"name":"spr_sementes","path":"sprites/spr_sementes/spr_sementes.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
@@ -48,6 +50,7 @@
     {"id":{"name":"scr","path":"scripts/scr/scr.yy",},},
     {"id":{"name":"obj_terra","path":"objects/obj_terra/obj_terra.yy",},},
     {"id":{"name":"obj_loja","path":"objects/obj_loja/obj_loja.yy",},},
+    {"id":{"name":"spr_macieira","path":"sprites/spr_macieira/spr_macieira.yy",},},
     {"id":{"name":"spr_milho","path":"sprites/spr_milho/spr_milho.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_compras","path":"objects/obj_compras/obj_compras.yy",},},
