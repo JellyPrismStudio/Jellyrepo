@@ -24,6 +24,7 @@
   "ResourceOrderSettings": [
     {"name":"spr_slot","order":1,"path":"sprites/spr_slot/spr_slot.yy",},
     {"name":"spr_limoeiro","order":6,"path":"sprites/spr_limoeiro/spr_limoeiro.yy",},
+    {"name":"obj_fruta","order":4,"path":"objects/obj_fruta/obj_fruta.yy",},
     {"name":"spr_pessegueiro","order":5,"path":"sprites/spr_pessegueiro/spr_pessegueiro.yy",},
     {"name":"spr_terra","order":1,"path":"sprites/spr_terra/spr_terra.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
@@ -31,6 +32,7 @@
     {"name":"spr_macieira","order":4,"path":"sprites/spr_macieira/spr_macieira.yy",},
     {"name":"spr_milho","order":3,"path":"sprites/spr_milho/spr_milho.yy",},
     {"name":"obj_compras","order":2,"path":"objects/obj_compras/obj_compras.yy",},
+    {"name":"spr_frutas","order":6,"path":"sprites/spr_frutas/spr_frutas.yy",},
     {"name":"spr_cenoura","order":2,"path":"sprites/spr_cenoura/spr_cenoura.yy",},
     {"name":"spr_tomate","order":1,"path":"sprites/spr_tomate/spr_tomate.yy",},
   ],
