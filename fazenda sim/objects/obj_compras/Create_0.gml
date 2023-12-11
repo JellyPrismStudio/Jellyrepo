@@ -46,10 +46,10 @@ f_comprar = function()
 			draw_rectangle(room_width/2-250+100*(i-(floor(i/6))*6)-45, 150-45+120*floor(i/6),room_width/2-250+100*(i-(floor(i/6))*6)+45, 150+45+120*floor(i/6), false);
 			draw_set_color(c_white);
 			
-			if (mouse_check_button_pressed(mb_left) and obj_player.inventario[MOEDAS] >= precos[i])
+			if (mouse_check_button_pressed(mb_left) and obj_player.dinheiro >= precos[i])
 			{
 				obj_player.inventario[i] ++;
-				obj_player.inventario[MOEDAS] -= precos[i];
+				obj_player.dinheiro -= precos[i];
 			}
 		}
 		
@@ -79,7 +79,7 @@ f_vender = function()
 			if (mouse_check_button_pressed(mb_left) and obj_player.inventario[i] > 0)
 			{
 				obj_player.inventario[i]--;
-				obj_player.inventario[MOEDAS] += precos[i];
+				obj_player.dinheiro += precos[i];
 			}
 		}
 		

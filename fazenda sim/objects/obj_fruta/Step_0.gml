@@ -1,5 +1,5 @@
 if (place_meeting(x, y, obj_player))
 {
-	obj_player.inventario[MOEDAS] += image_index+1;
+	obj_player.dinheiro += image_index+1;
 	instance_destroy();
 }

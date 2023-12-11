@@ -10,4 +10,3 @@ adubado = 0;
 vida = 100;
 
 #macro ADUBO 7
-#macro MOEDAS 8

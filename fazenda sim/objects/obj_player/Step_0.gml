@@ -15,5 +15,7 @@ y += vlv;
 
 if (mouse_wheel_down()) slot++;
 if (mouse_wheel_up()) slot--;
-if (slot == -1) slot = 9;
-if (slot == 10) slot = 0;
+if (slot == -1) slot = 6;
+if (slot == 7) slot = 0;
+
+if (keyboard_check_released(ord("E")) and !instance_exists(obj_inventario)) instance_create_depth(0, 0, 0, obj_inventario);
