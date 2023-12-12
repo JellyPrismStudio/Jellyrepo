@@ -40,6 +40,7 @@
     "IDEVersion": "2023.8.1.102",
   },
   "resources": [
+    {"id":{"name":"spr_adubo","path":"sprites/spr_adubo/spr_adubo.yy",},},
     {"id":{"name":"spr_slot","path":"sprites/spr_slot/spr_slot.yy",},},
     {"id":{"name":"obj_inventario","path":"objects/obj_inventario/obj_inventario.yy",},},
     {"id":{"name":"spr_cafe","path":"sprites/spr_cafe/spr_cafe.yy",},},

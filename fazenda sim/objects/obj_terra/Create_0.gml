@@ -8,5 +8,3 @@ sprite = [spr_cafe, spr_cenoura, spr_tomate, spr_milho, spr_macieira, spr_pesseg
 spr = 0;
 adubado = 0;
 vida = 100;
-
-#macro ADUBO 7

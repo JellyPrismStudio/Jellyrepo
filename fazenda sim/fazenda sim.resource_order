@@ -23,6 +23,7 @@
     {"name":"inventario","order":5,"path":"folders/Sprites/inventario.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"spr_adubo","order":2,"path":"sprites/spr_adubo/spr_adubo.yy",},
     {"name":"spr_slot","order":1,"path":"sprites/spr_slot/spr_slot.yy",},
     {"name":"obj_inventario","order":11,"path":"objects/obj_inventario/obj_inventario.yy",},
     {"name":"obj_pedra","order":1,"path":"objects/obj_pedra/obj_pedra.yy",},

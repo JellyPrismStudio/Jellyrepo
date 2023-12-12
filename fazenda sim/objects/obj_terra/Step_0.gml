@@ -11,7 +11,7 @@ if (place_meeting(x, y, obj_player))
 			if !(_spr == spr_macieira or _spr == spr_pessegueiro or _spr == spr_limoeiro)
 			{
 				planta = 0;
-				if (sprite[spr] == spr_cafe) obj_player.inventario[0] += 2;
+				if (sprite[spr] == spr_cafe) scr_item(spr_sementes, 0, 2);
 				if (sprite[spr] == spr_cenoura) obj_player.dinheiro += 4;
 				if (sprite[spr] == spr_tomate) dinheiro += 6;
 				if (sprite[spr] == spr_milho)
@@ -29,15 +29,20 @@ if (place_meeting(x, y, obj_player))
 		}
 		space_press = true;
 	}
-	if (keyboard_check(vk_shift) and !shift_press and obj_player.inventario[obj_player.slot] > 0)
+	if (keyboard_check(vk_shift) and !shift_press and obj_player.inventario[2, obj_player.slot] > 0)
 	{
-		if (obj_player.slot != ADUBO)
+		if (obj_player.inventario[0, obj_player.slot] != spr_adubo)
 		{
 			if (planta == 0)
 			{
 				planta = 1;
-				obj_player.inventario[obj_player.slot]--;
-				spr = obj_player.slot;
+				obj_player.inventario[2, obj_player.slot]--;
+				spr = obj_player.inventario[1, obj_player.slot];
+				if (obj_player.inventario[2, obj_player.slot] == 0)
+				{
+					obj_player.inventario[0, obj_player.slot] = noone;
+					obj_player.inventario[1, obj_player.slot] = 0;
+				}
 			}
 			shift_press = true;
 		}
@@ -45,7 +50,12 @@ if (place_meeting(x, y, obj_player))
 		{
 			timer_max = 300;
 			adubado += 10;
-			obj_player.inventario[obj_player.slot]--;
+			obj_player.inventario[2, obj_player.slot]--;
+			if (obj_player.inventario[2, obj_player.slot] == 0)
+			{
+				obj_player.inventario[0, obj_player.slot] = noone;
+				obj_player.inventario[1, obj_player.slot] = 0;
+			}
 		}
 	}
 }
