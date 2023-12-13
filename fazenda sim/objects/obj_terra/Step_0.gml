@@ -13,7 +13,7 @@ if (place_meeting(x, y, obj_player))
 				planta = 0;
 				if (sprite[spr] == spr_cafe) scr_item(spr_sementes, 0, 2);
 				if (sprite[spr] == spr_cenoura) obj_player.dinheiro += 4;
-				if (sprite[spr] == spr_tomate) dinheiro += 6;
+				if (sprite[spr] == spr_tomate) obj_player.dinheiro += 6;
 				if (sprite[spr] == spr_milho)
 				{
 					planta = 2;

@@ -13,7 +13,22 @@ if (!dia)
 else
 {
 	alpha = lerp(alpha, 0, .05);
-	if (alpha <= .05) alpha = 0;
+	if (alpha <= .05 and alpha > 0)
+	{
+		alpha = 0;
+		repeat (instance_number(obj_porco))
+		{
+			obj_player.dinheiro += 5;
+		}
+		repeat (instance_number(obj_galinha))
+		{
+			obj_player.dinheiro += 4;
+		}
+		repeat (instance_number(obj_vaca))
+		{
+			obj_player.dinheiro += 3;
+		}
+	}
 }
 
 if (keyboard_check_pressed(vk_f1)) game_save("save");
