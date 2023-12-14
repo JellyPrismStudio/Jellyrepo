@@ -6,3 +6,4 @@ vsped = 0;
 hsped = 0;
 desx = x;
 desy = y;
+casa = obj_casa;
