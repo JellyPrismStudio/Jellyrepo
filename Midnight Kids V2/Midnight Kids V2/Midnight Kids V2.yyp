@@ -246,10 +246,9 @@
   "isEcma": false,
   "LibraryEmitters": [
     {"name":"RainEmitter","path":"particlelib/RainEmitter/RainEmitter.yy",},
-    {"name":"RainEmitter","path":"particlelib/RainEmitter/RainEmitter.yy",},
   ],
   "MetaData": {
-    "IDEVersion": "2023.8.1.102",
+    "IDEVersion": "2023.2.1.75",
   },
   "resources": [
     {"id":{"name":"Varnished","path":"fonts/Varnished/Varnished.yy",},},
@@ -671,7 +670,7 @@
     {"id":{"name":"obj_poeira","path":"objects/obj_poeira/obj_poeira.yy",},},
     {"id":{"name":"GMLive_thread","path":"scripts/GMLive_thread/GMLive_thread.yy",},},
     {"id":{"name":"oTarget_ArrowPlayer","path":"objects/oTarget_ArrowPlayer/oTarget_ArrowPlayer.yy",},},
-    {"id":{"name":"ItenDatabase","path":"scripts/ItenDatabase/ItenDatabase.yy",},},
+    {"id":{"name":"ItemDatabase","path":"scripts/ItemDatabase/ItemDatabase.yy",},},
     {"id":{"name":"spr_depthgrass","path":"sprites/spr_depthgrass/spr_depthgrass.yy",},},
     {"id":{"name":"scr_light_animation","path":"scripts/scr_light_animation/scr_light_animation.yy",},},
     {"id":{"name":"xTrunk","path":"objects/xTrunk/xTrunk.yy",},},
@@ -1350,7 +1349,6 @@
     {"roomId":{"name":"Factory03","path":"rooms/Factory03/Factory03.yy",},},
     {"roomId":{"name":"rBase1","path":"rooms/rBase1/rBase1.yy",},},
   ],
-  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"nonresizable","autocrop":false,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

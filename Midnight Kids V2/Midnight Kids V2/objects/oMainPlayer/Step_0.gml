@@ -41,9 +41,9 @@ else
 	vr1 = global.config.view_range_min;
 	vr2 = global.config.view_range_max;
 }
-	if keyboard_check_released(ord("W")) or keyboard_check_released(ord("A")) or keyboard_check_released(ord("S")) or keyboard_check_released(ord("D")) {
+	//if keyboard_check_released(ord("W")) or keyboard_check_released(ord("A")) or keyboard_check_released(ord("S")) or keyboard_check_released(ord("D")) {
 		view_range = irandom_range(vr1,vr2);
-	}
+	//}
 }
 else view_range = 99999999
 
@@ -233,7 +233,7 @@ else
 {
 	if stay global.player.stay = true;
 	else global.player.stay = false;
-	if to_gamepad_click(mb_right) and !to_gamepad_pressed(vk_control)
+	if to_gamepad_click(mb_right) and !to_gamepad_pressed(vk_control) and global.player_stats[self_index].hp > 0
 	{
 		if !position_meeting(mouse_x,mouse_y,colisor)
 		{
@@ -254,6 +254,17 @@ else
 		if global.player_index != self_index image_alpha = global.config.customize.followersOpacity;
 	}
 	else image_alpha = 0;
+	
+	
+	///// MORTE ///////
+	if global.player_stats[self_index].hp <= 0 {
+		image_alpha = 0;
+		global.player_stats[self_index].hp = 0;
+	}
+	///////////////////
+	
+	
+	
 	if !global.on_message image_blend = #a39fac;
 	if inputplace == false {
 			if a0 == false and !kget_radius(self,view_range,true,true,false,global.party.playersobj[0]){

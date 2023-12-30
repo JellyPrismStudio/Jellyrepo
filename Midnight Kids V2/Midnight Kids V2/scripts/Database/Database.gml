@@ -11,15 +11,15 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			idlegraph:  sAnnieIdle,
 			atkgraph:	sAnnieIdle,
 			aimrange:	15,
-			hp:			110,
+			hp:			40,
 			sp:			25,
 			mhp:		110,//_hp,
 			msp:		25,
 			staminamax:	50,
 			stamina:	50,
 			staminarcv: 0.13,
-			atack:		6,
-			magic:		10,
+			atack:		2,
+			magic:		3,
 			crit:		2,
 			def:		8,
 			mdef:		7,
@@ -42,7 +42,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	3.9,
+			spd:	2.9,
 			object: playerA,
 			skillslearned: [
 				0,
@@ -94,7 +94,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	3,
+			spd:	2,
 			object: playerB,
 			skillslearned: [
 				0,
@@ -145,7 +145,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	4.2,
+			spd:	3.2,
 			object: playerHanna,
 			skillslearned: [
 				1,
@@ -194,7 +194,7 @@ function create_player_stats(lvl,_hp,_sp,_atck,_magic,_crit){
 			buffcooldown: [0,0,0,0,0,0,0,0,0,0,0],
 			buffid: [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
 			
-			spd:	4.7,
+			spd:	3.7,
 			object: playerD,
 			skillslearned: [
 				2,

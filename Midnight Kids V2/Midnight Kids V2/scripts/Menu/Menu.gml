@@ -375,10 +375,21 @@ function draw_life(player, yy){
 		var _cur_allign = draw_get_halign();
 		var _cur_vallign = draw_get_valign();
 		var _font_comp = -12;
-		var _sp_color = #649dd9;
-		var _hp_color = #e17575;
-		var _hp_base = _hp_color;
-		var _shield_color = #ecac2f;
+		
+		if global.player_stats[player].hp > 0
+		{
+			var _sp_color = #649dd9;
+			var _hp_color = #e17575;
+			var _hp_base = _hp_color;
+			var _shield_color = #ecac2f;
+		}
+		else
+		{
+			var _sp_color = c_dkgray;
+			var _hp_color = c_dkgray;
+			var _hp_base = _hp_color;
+			var _shield_color = c_dkgray;
+		}
 		var _sprite = Sprite246;
 		var _guisize = 1;//global.config.guisize;
 		//var _gratio = GPT_window_ratio();
@@ -441,13 +452,15 @@ function draw_life(player, yy){
 			draw_sprite_ext(sGUIPlayer, global.player_stats[player].ind, (_width - 55), (_height-53)-yy,_guisize,_guisize,0,c_white,1);
 		}
 		else {
+			if global.player_stats[player].hp > 0 live_color = c_white
+			else live_color = c_dkgray
 			draw_text_color((_width - 55) + _font_comp,(_height-53)+sprite_get_height(spriteindex)/2-yy+_font_comp*2,"SP: " + string(int64(global.player_stats[player].stamina))+"/"+string(global.player_stats[player].staminamax),_sp_color,_sp_color,_sp_color,_sp_color,1)
 			draw_text_color((_width - 55) + _font_comp,(_height-53)+sprite_get_height(spriteindex)/2-yy+_font_comp, "HP: " + string(global.player_stats[player].hp)+"/"+string(global.player_stats[player].mhp),_hp_color,_hp_color,_hp_color,_hp_color,1)
 			draw_text((_width - 55) + _font_comp,(_height-53)+sprite_get_height(spriteindex)/2-yy, string(global.player_stats[player].nome))
 			
-			draw_sprite_ext(spriteindex, imageindex, (_width - 55) + sprite_get_width(spriteindex) * difference/2, (_height-53)-yy/(1+difference),(1-difference)*_guisize,(1-difference)*_guisize,0,c_white,0.3);
-			draw_sprite_ext(manaspriteindex, manaimageindex, (_width - 55) + sprite_get_width(manaspriteindex) * difference/2, (_height-53)-yy/(1+difference),(1-difference)*_guisize,(1-difference)*_guisize,0,c_white,0.3);
-			draw_sprite_ext(sGUIPlayer, global.player_stats[player].ind, (_width - 55) + sprite_get_width(spriteindex) * difference/2, (_height-53)-yy/(1+difference),(1-difference)*_guisize,(1-difference)*_guisize,0,c_white,0.3);
+			draw_sprite_ext(spriteindex, imageindex, (_width - 55) + sprite_get_width(spriteindex) * difference/2, (_height-53)-yy/(1+difference),(1-difference)*_guisize,(1-difference)*_guisize,0,live_color,0.3);
+			draw_sprite_ext(manaspriteindex, manaimageindex, (_width - 55) + sprite_get_width(manaspriteindex) * difference/2, (_height-53)-yy/(1+difference),(1-difference)*_guisize,(1-difference)*_guisize,0,live_color,0.3);
+			draw_sprite_ext(sGUIPlayer, global.player_stats[player].ind, (_width - 55) + sprite_get_width(spriteindex) * difference/2, (_height-53)-yy/(1+difference),(1-difference)*_guisize,(1-difference)*_guisize,0,live_color,0.3);
 		}
 		draw_set_font(_cur_font);
 		draw_set_halign(_cur_allign);

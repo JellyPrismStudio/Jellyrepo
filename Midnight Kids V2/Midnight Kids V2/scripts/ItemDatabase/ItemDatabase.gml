@@ -404,10 +404,10 @@ function create_materials(){
 
 function item_heal(amount = 50, player = global.player_index)
 {
-	global.player_stats[player].hp += amount;
+	global.player_stats[global.party.players[player]].hp += amount;
 }
 
-function item_draw_chooses()
+function item_draw_chooses(ind = -1)
 {
 		var yy1 = -10
 		var yy2 = 70
@@ -415,10 +415,17 @@ function item_draw_chooses()
 		plus_text_font(global.camera.width + 445, global.camera.height - 105, global.language.menu.useon, c_white, DayDream_pt8,fa_center,fa_top)
 		if gui_image_hitbox(global.config.camera_width - 200, global.config.camera_height/2 + yy1, spr_BubbleSpeech, 2, 1)
 		{
-			draw_sprite_ext(spr_BubbleSpeech,0,global.config.camera_width - 200, global.config.camera_height/2 + yy1, 2, 1, 0, c_white, 1)
-			if mouse_check_button_pressed(mb_left)
+			if ind != -1 and ind == 1
 			{
-				_return = 0
+				draw_sprite_ext(spr_BubbleSpeech,0,global.config.camera_width - 200, global.config.camera_height/2 + yy1, 2, 1, 0, c_dkgray, 1)
+			}
+			else
+			{
+				draw_sprite_ext(spr_BubbleSpeech,0,global.config.camera_width - 200, global.config.camera_height/2 + yy1, 2, 1, 0, c_white, 1)
+				if mouse_check_button_pressed(mb_left)
+				{
+					_return = 0
+				}
 			}
 		}
 		else
@@ -429,11 +436,18 @@ function item_draw_chooses()
 
 		if gui_image_hitbox(global.config.camera_width - 200, global.config.camera_height/2 + yy2, spr_BubbleSpeech, 2, 1)
 		{
-			draw_sprite_ext(spr_BubbleSpeech,0,global.config.camera_width - 200, global.config.camera_height/2 + yy2, 2, 1, 0, c_white, 1)
-			if mouse_check_button_pressed(mb_left)
+			if ind != -1 and ind == 0
 			{
-				_return = 1
+				draw_sprite_ext(spr_BubbleSpeech,0,global.config.camera_width - 200, global.config.camera_height/2 + yy2, 2, 1, 0, c_dkgray, 1)
+			}
+			else
+			{
+				draw_sprite_ext(spr_BubbleSpeech,0,global.config.camera_width - 200, global.config.camera_height/2 + yy2, 2, 1, 0, c_white, 1)
+				if mouse_check_button_pressed(mb_left)
+				{
+					_return = 1
 				
+				}
 			}
 			
 		}
@@ -474,13 +488,15 @@ function item_use_potion(hp = arg0, type = arg1){
 }
 
 function item_use_feather(arg = arg0, type = arg1){
-	var _p = item_draw_chooses();
+	var _p = item_draw_chooses(1);
 	if global.party.players[1] != -1 and run_funct[5] == true
 	{
-		if global.player_stats[_p].hp <= 0 {
-			item_heal(50, _p);
+		if global.player_stats[global.party.players[1]].hp <= 0
+		{
+			item_heal(50, 1);
 			remove_item(1, run_funct[1])
 		}
+	
 		
 		if variable_instance_exists(id,"run_funct")
 			{

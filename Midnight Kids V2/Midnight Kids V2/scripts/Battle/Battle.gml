@@ -264,7 +264,7 @@ function battle_complex_click(){
 	var new_x = global.player.x + lengthdir_x(_distance, _radius_direction);
 	var new_y = global.player.y + lengthdir_y(_distance, _radius_direction);
 	//
-	var _on_intersec = kget_radius_by_pos(new_x,new_y,global.player.AIM_RANGE,false,id);
+	var _on_intersec = kget_radius_by_pos(new_x,new_y,global.player.AIM_RANGE,false,self);
 	if _on_intersec {
 		image_blend = c_purple;
 		return true
@@ -381,7 +381,7 @@ function create_damage(playeridx = get_player, dmgmult = 1){
 		if global.player.invulnerable != true
 		{	
 			dmg_inst.dmg = dmg;
-			stats.hp -= dmg*dmgmult;
+			stats.hp -= dmg*dmgmult;			
 		}
 		else {
 			dmg_inst.dmg = 0
@@ -448,9 +448,14 @@ function battle_mouse_over(mult = 1){
 	
 function battle_enemies_get_range(_mult = 1){
 	if global.debug.ghosting == false {
-		if kget_radius(self.id,BATTLE_RANGE*_mult,false,true,true,global.party.playersobj[0]) or kget_radius(self.id,BATTLE_RANGE*_mult,false,true,true,global.party.playersobj[1])
+		if kget_radius(self.id,BATTLE_RANGE*_mult,false,true,true,global.party.playersobj[0]) 
 		{
-			return true
+			if global.player_stats[global.party.players[0]].hp > 0 return true
+		}
+		else if kget_radius(self.id,BATTLE_RANGE*_mult,false,true,true,global.party.playersobj[1])
+		{
+			if global.player_stats[global.party.players[1]].hp > 0 return true
+			else return false
 		}
 		else return false
 	}

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "ItenDatabase",
+  "name": "ItemDatabase",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

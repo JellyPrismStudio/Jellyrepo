@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "TelaInicial",
-  "creationCodeFile": "rooms/TelaInicial/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/TelaInicial/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

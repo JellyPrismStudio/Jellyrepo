@@ -556,7 +556,7 @@
     {"name":"sMetalLightPoleFront","order":2,"path":"sprites/sMetalLightPoleFront/sMetalLightPoleFront.yy",},
     {"name":"GMLive_thread","order":4,"path":"scripts/GMLive_thread/GMLive_thread.yy",},
     {"name":"oTarget_ArrowPlayer","order":1,"path":"objects/oTarget_ArrowPlayer/oTarget_ArrowPlayer.yy",},
-    {"name":"ItenDatabase","order":1,"path":"scripts/ItenDatabase/ItenDatabase.yy",},
+    {"name":"ItemDatabase","order":1,"path":"scripts/ItemDatabase/ItemDatabase.yy",},
     {"name":"scr_light_animation","order":1,"path":"scripts/scr_light_animation/scr_light_animation.yy",},
     {"name":"xTrunk","order":7,"path":"objects/xTrunk/xTrunk.yy",},
     {"name":"sLandingFX","order":3,"path":"sprites/sLandingFX/sLandingFX.yy",},
