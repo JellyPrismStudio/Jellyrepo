@@ -115,11 +115,11 @@ create_enemy_database();
 	}
 	global.party = {
 		ultimate: 0,
-		players: [2, 0, -1],
+		players: [3, 0, -1],
 		captain: true,
 		capagressive: false,
 		follow: true,	
-		playersobj: [playerHanna, playerA, playerHanna],
+		playersobj: [playerD, playerA, playerHanna],
 		isVisible: true,
 		followersVisible: true,
 	}

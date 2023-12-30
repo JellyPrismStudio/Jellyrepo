@@ -1,1 +1,1 @@
-create_language("PT");
+create_language();

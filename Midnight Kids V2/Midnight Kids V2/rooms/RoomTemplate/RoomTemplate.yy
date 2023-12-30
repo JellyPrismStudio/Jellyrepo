@@ -43,6 +43,7 @@
     {"name":"inst_1F7BDFEE","path":"rooms/RoomTemplate/RoomTemplate.yy",},
     {"name":"inst_5E0EDF47","path":"rooms/RoomTemplate/RoomTemplate.yy",},
     {"name":"inst_61DBC1DC","path":"rooms/RoomTemplate/RoomTemplate.yy",},
+    {"name":"inst_61EED5F6","path":"rooms/RoomTemplate/RoomTemplate.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -54,6 +55,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"Interaction_Door_Template","path":"objects/Interaction_Door_Template/Interaction_Door_Template.yy",},"propertyId":{"name":"_interactable","path":"objects/Interaction_Door_Template/Interaction_Door_Template.yy",},"value":"global.language.chat._interact._location1",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"Interaction_Door_Template","path":"objects/Interaction_Door_Template/Interaction_Door_Template.yy",},"propertyId":{"name":"_yfix","path":"objects/Interaction_Door_Template/Interaction_Door_Template.yy",},"value":"150",},
           ],"rotation":0.0,"scaleX":2.6701388,"scaleY":4.0277777,"x":192.51929,"y":536.9999,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_61EED5F6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"sceneCrafting","path":"objects/sceneCrafting/sceneCrafting.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-176.0,"y":320.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29C93622","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"colisor","path":"objects/colisor/colisor.yy",},"properties":[],"rotation":0.0,"scaleX":8.125,"scaleY":56.062504,"x":-130.0,"y":0.56134033,},

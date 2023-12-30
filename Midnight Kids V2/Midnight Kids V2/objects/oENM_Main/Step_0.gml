@@ -69,7 +69,7 @@ if is_on_view {
 			if position_meeting(x,y,oDmgObject) {
 				var object_skill = instance_place(x,y,oDmgObject);
 				var dmgobj = find_value_on_array_bool(damageid, object_skill)
-				if object_skill != -4
+				if object_skill != -4 and instance_exists(object_skill)
 				{
 					if object_skill.deal_damage and !dmgobj
 					{
@@ -85,7 +85,10 @@ if is_on_view {
 					damaged = true;
 					array_push(damageid, object_skill)
 					sdm(damageid);
-					if object_skill.class == 1 instance_destroy(object_skill);
+					if variable_instance_exists(object_skill, "class")
+					{
+						if object_skill.class == 1 instance_destroy(object_skill);
+					}
 					// === //
 					}
 				}
