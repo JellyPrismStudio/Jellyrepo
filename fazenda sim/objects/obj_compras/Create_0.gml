@@ -36,11 +36,11 @@ f_fecha = function()
 f_comprar = function()
 {
 	draw_text(room_width/2-290, 30, "comprar:");
-	var precos = [1, 2,	3, 5, 4, 7, 8, 9];
-	var planta = ["café", "cenoura", "tomate", "milho", "maça", "pessego", "limão", "adubo"];
-	var _spr = [spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_adubo];
-	var _sub = [0, 1, 2, 3, 4, 5, 6, 7];
-	for (var i = 0; i < 8; i++;)
+	var precos = [1, 2,	3, 5, 4, 7, 8, 9, 8, 5, 6, 7];
+	var planta = ["café", "cenoura", "tomate", "milho", "maça", "pessego", "limão", "adubo", "casinha", "porco", "galinha", "vaca"];
+	var _spr = [spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_adubo, spr_animais, spr_animais, spr_animais, spr_animais];
+	var _sub = [0, 1, 2, 3, 4, 5, 6, 0, 0, 1, 2, 3];
+	for (var i = 0; i < 12; i++;)
 	{
 		if (point_in_rectangle(mouse_x, mouse_y, room_width/2-250+100*(i-(floor(i/6))*6)-45, 150-45+120*floor(i/6), room_width/2-250+100*(i-(floor(i/6))*6)+45, 150+45+120*floor(i/6)))
 		{
@@ -59,7 +59,7 @@ f_comprar = function()
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_bottom);
 		draw_text(room_width/2-250+100*(i-(floor(i/6))*6), 150-40+120*floor(i/6), string(planta[i]));
-		draw_text(room_width/2-250+100*(i-(floor(i/6))*6)+37, 150+47+120*floor(i/6), string(precos[i]));
+		draw_text(room_width/2-250+100*(i-(floor(i/6))*6)+40, 150+50+120*floor(i/6), string(precos[i]));
 		draw_set_halign(-1);
 		draw_set_valign(-1);
 	}
@@ -68,11 +68,11 @@ f_comprar = function()
 f_vender = function()
 {
 	draw_text(room_width/2-290, 330, "vender:");
-	var precos = [1, 2,	3, 5, 4, 7, 8, 9];
-	var planta = ["café", "cenoura", "tomate", "milho", "maça", "pessego", "limão", "adubo"];
-	var _spr = [spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_adubo];
-	var _sub = [0, 1, 2, 3, 4, 5, 6, 7];
-	for (var i = 0; i < 8; i++;)
+	var precos = [1, 2,	3, 5, 4, 7, 8, 9, 8, 5, 6, 7];
+	var planta = ["café", "cenoura", "tomate", "milho", "maça", "pessego", "limão", "adubo", "casinha", "porco", "galinha", "vaca"];
+	var _spr = [spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_sementes, spr_adubo, spr_animais, spr_animais, spr_animais, spr_animais];
+	var _sub = [0, 1, 2, 3, 4, 5, 6, 0, 0, 1, 2, 3];
+	for (var i = 0; i < 12; i++;)
 	{
 		if (point_in_rectangle(mouse_x, mouse_y, room_width/2-250+100*(i-(floor(i/6))*6)-45, 450-45+120*floor(i/6), room_width/2-250+100*(i-(floor(i/6))*6)+45, 450+45+120*floor(i/6)))
 		{
@@ -91,7 +91,7 @@ f_vender = function()
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_bottom);
 		draw_text(room_width/2-250+100*(i-(floor(i/6))*6), 450-40+120*floor(i/6), string(planta[i]));
-		draw_text(room_width/2-250+100*(i-(floor(i/6))*6)+37, 450+47+120*floor(i/6), string(precos[i]));
+		draw_text(room_width/2-250+100*(i-(floor(i/6))*6)+40, 450+50+120*floor(i/6), string(precos[i]));
 		draw_set_halign(-1);
 		draw_set_valign(-1);
 	}

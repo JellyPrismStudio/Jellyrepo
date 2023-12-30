@@ -1,6 +1,6 @@
 depth = -y;
 visible = true;
-if (place_meeting(x, y, obj_casa) and !obj_controler.dia) visible = false;
+if (place_meeting(x, y, casa) and !obj_controler.dia) visible = false;
 
 var _chance = irandom(300)
 if (_chance == 1)
@@ -11,10 +11,10 @@ if (_chance == 1)
 	desy = clamp(desy, sprite_height, room_height)
 }
 
-if (!obj_controler.dia and instance_exists(obj_casa))
+if (!obj_controler.dia and instance_exists(casa))
 {
-	desx = obj_casa.x;
-	desy = obj_casa.y;
+	desx = casa.x;
+	desy = casa.y;
 }
 
 if (mp_grid_path(obj_grid.grid, caminho, x, y, desx, desy, true))
