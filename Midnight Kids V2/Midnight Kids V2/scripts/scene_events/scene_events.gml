@@ -1,4 +1,7 @@
 #region INTERN (NOT CUTSCENES)
+// MÉTODOS USADOS DENTRO DOS MÉTODOS DAS CUTSCENES, E NÃO COMO MÉTODOS DE CUTSCENE EM SI
+
+
 function _intern_timer(stime)
 {
 	var instanceid = self.id;
@@ -239,6 +242,8 @@ function manage_party(pid, pid2, val = 1){
 
 function cutscene_section_start(unlockplayer = false, priority = false, camerareset = true){
 	// cutscene_section_start(travar player, prioridade, resetar camera)
+	// Inicia uma seção de cutscene, travando o player, dando prioridade a esse evento, resetando a camera,
+	// travando menus,
 	if camerareset _GLOBAL_CAMERA.reset = true;	
 	global.cutscene.priority = priority;
 	global.intern.event = id;
@@ -251,6 +256,7 @@ function cutscene_section_start(unlockplayer = false, priority = false, camerare
 
 function cutscene_section_end(unlockplayer = true, priority = false){
 	// destravar player, prioridade, resetar camera
+	// Fecha a seção da cutscene
 	_GLOBAL_CAMERA.reset = false;
 	_GLOBAL_CAMERA.customtarget = false;
 	_GLOBAL_CAMERA.targetobj = global.player;
@@ -265,6 +271,23 @@ function cutscene_section_end(unlockplayer = true, priority = false){
 
 function cutscene_start(_triggerEvent = 0, _blockmovement = true, _blockinputs = true, _popup = true, _popupname = "Interact", _triggerID = "", _triggerVAL = "", _triggerPAGE = 0, _camerareset = true)
 {
+	// _triggerEvent = Método de ativação
+	
+	// Se o triggerEvent for 0, inicia a cutscene no toque.
+	// Se o triggerEvent for 1, inicia a cutscene quando aperta espaço
+	
+	// _blockmovement = Bloquear movimento na cutscene
+	
+	// _blockInputs = bloqueia menu
+	
+	// _popup = Se o evento tera uma popup de interação
+	
+	// _popupname = nome da popup
+	
+	// _triggerID = verifica se o trigger desse ID é igual ao
+	// _triggerVAL, e caso seja igual, a página do evento é modificada para
+	// _triggerPage.
+	
 	isTrigger = false;
 	
 	if _triggerEvent < 0
@@ -408,7 +431,7 @@ function cutscene_visibile(lobj, lbool = true){
 	
 function cutscene_change_graphic(obj, graphic, dir = 1)
 {
-	
+	// Muda o gráfico de um objeto
 	_intern_graphic(obj, graphic, dir);
 	obj.customspr = false;
 	cutscene_end_action();
@@ -416,7 +439,8 @@ function cutscene_change_graphic(obj, graphic, dir = 1)
 
 function cutscene_change_graphic_timed(obj, graphic, time, dir = 1)
 {
-	
+	// Espera 'time' frames para mudar o gráfico de um objeto.
+	// Esse método é uma junção de WAIT com cutscene_change_graphic
 	_intern_graphic(obj, graphic, dir);
 	if _intern_timer(time)
 	{
@@ -464,6 +488,17 @@ function cutscene_move(dir,spd,stime, lockplayer = true, instanceid = self.id){
 	
 function cutscene_move_anim(dir,spd,stime, initsprite, sprite, xdir = 1, lockplayer = true, instanceid = self.id){
 	// Move algum objeto
+	// dir: 8= norte
+	//      6= leste
+	//      4= oeste
+	//      2= sul
+	// spd: velocidade
+	// stime: por quanto tempo se move
+	// initsprite: sprite inicial que o objeto tem
+	// sprite: sprite que deve ter enquanto performa a ação de mover
+	// xdir: ---
+	// lockplayer: trava o input do player
+	// instanceid: ---
 	time[self.scene_indexer] = stime;
 	_intern_graphic(instanceid, sprite, xdir);
 	if !variable_instance_exists(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]"){
@@ -538,7 +573,7 @@ function store_value(oname, value,object){
 
 function cutscene_next_step(condition,conditionvalue,reset=false,resetval = 0){
 	// Esse é um IF. Se as informações e condições baterem, prossegue.
-	if condition = conditionvalue {
+	if condition == conditionvalue {
 		cutscene_end_action();
 	}
 	else if reset {
@@ -595,6 +630,7 @@ function cutscene_goto_page_clean(page, resetval){
 }
 
 function cutscene_switched_page(trigger, value, pageval){
+	// Muda a página de eventos
 	_length = array_length(global.triggers);
 	_triggered = false;
 	
@@ -614,6 +650,7 @@ function cutscene_switched_page(trigger, value, pageval){
 }
 
 function cutscene_switch(trigger, value, pageval){
+	// Adiciona trigger
 	_length = array_length(global.triggers);
 	_triggered = false;
 	
@@ -735,19 +772,24 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 #region MOVE
 
 	function cutscene_camera_change(target = "player"){
+		// Muda o foco da câmera
 		if !instance_exists(_GLOBAL_CAMERA) instance_create_depth(0,0,global.intern.depths.over,_GLOBAL_CAMERA)
 		if target == "player" {
 			_GLOBAL_CAMERA.customtarget = false;
 			_GLOBAL_CAMERA.targetobj = global.player;
 		}
 		else {
-			_GLOBAL_CAMERA.customtarget = true;
-			_GLOBAL_CAMERA.targetobj = target;			
+			if instance_exists(target)
+			{
+				_GLOBAL_CAMERA.customtarget = true;
+				_GLOBAL_CAMERA.targetobj = target;	
+			}
 		}
 		cutscene_end_action();
 	}
 
 	function cutscene_look_direction(object = self, side = "R", opposite = false){
+		// Faz um objeto olhar em uma direção (L ou R)
 		var mult = 1;
 		if opposite mult = -1
 		if object != global.player
@@ -775,6 +817,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 	}
 	
 	function cutscene_look_at_point(object, xpoint, opposite){
+		// Faz um objeto olhar para um ponto x e y
 		var mult = 1;
 		if opposite mult = -1
 		if object.x < xpoint object.image_xscale = 1*mult;
@@ -784,6 +827,10 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 
 	function cutscene_pathfind_move(mainobj, reach_x, reach_y, objspeed){
 		// Faz o objeto ir até a coord
+		// Use o cutscene_move_path ao invés desse método
+		/////////////////////////////////////////////////
+		
+		
 		variable_instance_set(mainobj,"target_x",reach_x);
 		variable_instance_set(mainobj,"target_y",reach_x);
 		variable_instance_set(mainobj,"obj_speed",objspeed);
@@ -807,7 +854,9 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 		// Pra usar esse método, é necessário criar um ALARM.
 		// Nele, você precisa chamar a função SET_PATH();
 		// Como argumento do set_path, você pode por o ID do alarm.
-		// É necessário por um alarm_set(ID DO ALARM) no create tb
+		// É necessário por um alarm_set(ID DO ALARM) no create tb, para iniciar ele
+		// OBS: O evento é feito em alarm pois precisa atualizar com menos frequencia
+		// que um step
 		with (object) {
 			reach_x = _x;
 			reach_y = _y;
@@ -816,12 +865,12 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 		}
 			if GPT_compare_with_margin(object.x,object.reach_x,objspeed * 2) and GPT_compare_with_margin(object.y, object.reach_y, objspeed * 2)
 			{
-				sdm("EEEEEEEEEEEEEEEE");
 				cutscene_end_action();			
 			}
 	}
 	
 	function cutscene_change_coordinates(object,xx,yy, validate = false){
+		// Muda a coordenada do objeto X
 		if validate{
 			if !instance_exists(object) instance_create_depth(xx,yy,0,object);	
 		}
@@ -831,6 +880,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 	}
 	
 	function cutscene_wait_reach_pos(object,reach_x,reach_y){
+		// Espera o objeto X se mover para x e y
 			if int64(object.x) == reach_x and int64(object.y) == reach_y {
 				cutscene_end_action();
 			}
@@ -840,11 +890,13 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 
 #region CHANGE_ROOM
 function cutscene_change_room(room_name){
+	// Muda a room
 	room_goto(room_name);
 	cutscene_end_action();
 }
 
 function teleport_between_room(room_name,xx1,yy1,obj = other){
+	// OBSOLETO
 	var object = instance_create_depth(obj.x,obj.y,+1,Teleporter);
 	object._xx = xx1;
 	object._yy = yy1;
@@ -871,6 +923,7 @@ function perform_transfer(room_name,xx1,yy1,obj,fade = true, _wait = true){
 #region CUTSCENE INPUT
 
 function cutscene_wait_for_input(keyormouse = "k", input){
+	// Espera por um input do teclado ou mouse
 	if keyormouse == "key" or keyormouse == "keyboard" or keyormouse == "k" keyormouse = "k";
 	if keyormouse == "mouse" or keyormouse == "m" keyormouse = "m";
 	
@@ -958,6 +1011,7 @@ function cutscene_wait_for_input_on_collission(keyormouse = "k", input, object, 
 
 #region VARIABLES MANAGEMENT
 	function cutscene_variable(object, variable_name, variable_value){
+		// Muda o valor de uma variavel de um objeto
 		variable_instance_set(object,variable_name,variable_value);
 		variable_name = variable_value;
 		cutscene_end_action();
@@ -965,6 +1019,7 @@ function cutscene_wait_for_input_on_collission(keyormouse = "k", input, object, 
 	
 	function cutscene_self_variable(variable, value)
 	{
+		// muda a própria variável
 		variable = value;	
 	}
 	
@@ -1150,6 +1205,583 @@ function cutscene_fade_out(time){
 	inst.effect = "out";
 	inst.spd = time;
 	if inst.finished2 cutscene_end_action()
+}
+	
+function instanciate_choices(arg1, arg2, arg3 = "", page1 = noone, page2 = noone , page3 = noone){
+	var screen = global.config.camera_width/2/2;
+	var plus_y = 0;
+	var window_x = camera_get_view_x(view_camera[0]) + screen;
+	var window_y = camera_get_view_y(view_camera[0]);
+	if arg3 == "" plus_y = 50
+	if !instance_exists(choiceManager){
+		var cm = instance_create_depth(0,0,global.intern.depths.msg+1,choiceManager);
+			/////////////////////////////
+			var opt1 = instance_create_depth(window_x,window_y + 100 + plus_y,global.intern.depths.msg,choiceBox);
+			opt1.texto = arg1;
+			opt1.image_xscale = 4;
+			opt1.super = cm;
+			opt1.myid = 1;
+			
+			var opt2 = instance_create_depth(window_x,window_y + 200 + plus_y,global.intern.depths.msg,choiceBox);
+			opt2.texto = arg2;
+			opt2.image_xscale = 4;
+			opt2.super = cm;
+			opt2.myid = 2;
+			
+			if arg3 != "" 
+			{
+				var opt3 = instance_create_depth(window_x,window_y + 300,global.intern.depths.msg,choiceBox);
+				opt3.texto = arg3;
+				opt3.image_xscale = 4;
+				opt3.super = cm;
+				opt3.myid = 3;
+			}
+			/////////////////////////////
+			
+		
+	}
+	else 
+	{
+		var cm = instance_find(choiceManager, 0);
+		if cm.parid != -1 
+		{
+			_choice = cm.parid;
+			if _choice == 1 and page1 != noone
+			{
+				self.scene_indexer = page1;	
+				self.scene[self.scene_indexer] = -1;
+			}
+			else if _choice == 2 and page2 != noone
+				{
+					self.scene_indexer = page2;	
+					self.scene[self.scene_indexer] = -1;
+				}
+				else if _choice == 3 and page3 != noone
+					{
+						self.scene_indexer = page3;	
+						self.scene[self.scene_indexer] = -1;
+					}
+			
+			cutscene_end_action();
+		}
+		
+	}
+}
+
+function bubble_speech(object, text, name, waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
+	//show_debug_message(object);
+	// Usar o WITH para ver cada instancia
+	if !instance_exists(_SYS_BUBBLE_SPEECH){		
+		//show_debug_message("Criou");
+		draw = inst_bubble();
+		draw.instanciator = object;
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+		draw.colorname = namecolor; draw.pointergraph = pointergraphic;
+	}
+	else{
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; 
+				draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix; draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;
+			draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+			draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+		
+	if waitforinput and draw.message_ended{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+	
+}
+	
+function bubble_speech_choices(object, text, name, page1, page2, opt1 = "sim", opt2 = "não", horz = true){
+	var waitforinput = true; 
+	var yfix = 0; 
+	var color = c_black; 
+	var namecolor = #2a1c05; 
+	var graphic = spr_BubbleSpeech; 
+	var pointergraphic = PointerSpeech
+	//show_debug_message(object);
+	// Usar o WITH para ver cada instancia
+	if !instance_exists(_SYS_BUBBLE_SPEECH_CHOICE){		
+		//show_debug_message("Criou");
+		draw = inst_bubble_choice();
+		draw.instanciator = object; draw.super = self; draw.page1 = page1; draw.page2 = page2; draw.horz = horz;
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+		draw.colorname = namecolor; draw.pointergraph = pointergraphic; draw.opt1 = opt1; draw.opt2 = opt2;
+	}
+	else{
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH_CHOICE){
+			if instanciator == check_object { 
+				draw = self.id; draw.super = self; draw.page1 = page1; draw.page2 = page2; draw.horz = horz;
+				draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; 
+				draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix; draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;  draw.super = self; draw.page1 = page1; draw.page2 = page2; draw.horz = horz;
+			draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+			draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+		
+	if waitforinput and draw.message_ended and draw.choice != 0 {
+		if draw.choice == 1
+		{
+			self.scene_indexer = page1;	
+			self.scene[self.scene_indexer] = -1;
+		}
+		else if draw.choice == 2
+		{
+			self.scene_indexer = page2;	
+			self.scene[self.scene_indexer] = -1;
+		}
+		cutscene_end_action();
+		instance_destroy(draw);
+	}
+}
+
+function bubble_speech_party(object, text, name, waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
+
+	if object == global.player {
+		if global.player_stats[global.player.self_index].ind == 0 {
+			if text.lisa != "" text = text.lisa else text = text._default
+		}
+		else if global.player_stats[global.player.self_index].ind == 1 {
+			if text.ryan != "" text = text.ryan else text = text._default 
+		}
+		else if global.player_stats[global.player.self_index].ind == 2 {
+			if text.hanna != "" text = text.hanna else text = text._default
+		}
+		else if global.player_stats[global.player.self_index].ind == 3 {
+			if text.dylan != "" text = text.dylan else text = text._default
+		}	
+	}
+	if !instance_exists(_SYS_BUBBLE_SPEECH){		
+		//show_debug_message("Criou");
+		draw = inst_bubble();
+		draw.instanciator = object;
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+		draw.colorname = namecolor;
+	}
+	else{
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; 
+				draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix; draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;
+			draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+			draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+		
+	if waitforinput and draw.message_ended{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+	
+}
+
+function bubble_speech_timed(time, object, text, name, waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
+	//show_debug_message(object);
+	// Usar o WITH para ver cada instancia
+
+	if !instance_exists(_SYS_BUBBLE_SPEECH){		
+		//show_debug_message("Criou");
+		draw = inst_bubble();
+		draw.instanciator = object;
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+		draw.colorname = namecolor;
+	}
+	else{
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; 
+				draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+				draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;
+			draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix; draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+		
+		
+	if !instance_exists(_AUX_TIMER_SPEECH){
+		timerobj = instance_create_depth(0,0,0,_AUX_TIMER_SPEECH);		
+		variable_instance_set(timerobj,"varname","_BUBBLESPEECH");
+		variable_instance_set(timerobj,"vartimer",time);
+	}
+	else
+	{
+		if !variable_instance_exists(_AUX_TIMER_SPEECH,"varname")
+		{
+			timerobj = instance_create_depth(0,0,0,_AUX_TIMER_SPEECH);		
+			variable_instance_set(timerobj,"varname","_BUBBLESPEECH");
+			variable_instance_set(timerobj,"vartimer",time);
+		}
+		else
+		{
+			if _AUX_TIMER_SPEECH.varname == "_BUBBLESPEECH"
+			{
+				var objecttimer = _AUX_TIMER_SPEECH;
+				if objecttimer.vartimer > 0 {
+					objecttimer.vartimer--;
+					
+				}
+				else
+				{
+					cutscene_end_action();
+					instance_destroy(draw);
+					instance_destroy(objecttimer);
+				}
+			}
+		}
+	}	
+		
+}
+
+function bubble_speech_on_trigger(object, messageobject, text, name, namecolor = c_red, yfix = 0, reset = true, resid = 0, collider1, collider2 = collider1, collider3 = collider1, collider4 = collider1){
+	//show_debug_message(object);
+	
+	isTrigger = (
+		place_meeting(object.x,object.y,collider1) or 
+		place_meeting(object.x,object.y,collider2) or	
+		place_meeting(object.x,object.y,collider3) or 
+		place_meeting(object.x,object.y,collider4)
+	)
+	
+	
+	inst = _SYS_BUBBLE_MANAGER;
+	
+	
+	
+	if !instance_exists(_SYS_BUBBLE_SPEECH){
+		//show_debug_message("Criou");
+		draw = inst_bubble();
+		draw.instanciator = object;
+		draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+		draw.colorname = namecolor;
+	}
+	else if instance_exists(_SYS_BUBBLE_SPEECH){
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+				draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;
+			draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+			draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+	
+	if isTrigger{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+	if !isTrigger and reset == true {cutscene_goto(resid); instance_destroy(draw);}
+	if !isTrigger and reset == false{ instance_destroy(draw)}
+}
+
+function bubble_speech_on_radius(object, messageobject, text, name, rad = 15, yfix = 0, reset = true, resid = 0, collider1, collider2 = collider1, collider3 = collider1, collider4 = collider1){
+	
+	isTrigger = kget_radius(object, rad, false, true, false, collider1, collider2, collider3, collider4);
+	
+	inst = _SYS_BUBBLE_MANAGER;	
+	
+	if !instance_exists(_SYS_BUBBLE_SPEECH){
+		//show_debug_message("Criou");
+		draw = instance_create_depth(0,0,0,_SYS_BUBBLE_SPEECH);
+		draw.instanciator = object;
+		draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+	}
+	else if instance_exists(_SYS_BUBBLE_SPEECH){
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;				
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;
+			draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+			_exists = true;
+		}
+	}
+	
+	if isTrigger{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+	if !isTrigger and reset == true {cutscene_goto(resid); instance_destroy(draw);}
+	if !isTrigger and reset == false{ instance_destroy(draw)}	
+	
+	//if !instance_exists(_SYS_BUBBLE_SPEECH){
+	//	var draw = _SYS_BUBBLE_SPEECH;
+	//	instance_create_depth(0,0,0,draw);
+	//	draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+	//}
+	//else{
+	//	var draw = _SYS_BUBBLE_SPEECH;
+	//	draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+	//}
+	
+	
+	//if isTrigger{
+	//	if keyboard_check_pressed(vk_space){
+	//		cutscene_end_action();
+	//		instance_destroy(draw);
+	//	}
+	//}
+	//if !isTrigger and reset == true {cutscene_goto(resid); instance_destroy(draw)}
+	//if !isTrigger and reset == false{ instance_destroy(draw)}
+}
+
+function bubble_speech_on_trigger_ext(object, text, name, yfix = 0, color = c_white, graphic = BubbleSpeech, pointergraphic = PointerSpeech, collider1, collider2 = collider1, collider3 = collider1, collider4 = collider1){
+	
+	isTrigger = (
+		place_meeting(object.x,object.y,collider1) or 
+		place_meeting(object.x,object.y,collider2) or	
+		place_meeting(object.x,object.y,collider3) or 
+		place_meeting(object.x,object.y,collider4)
+	)
+	
+	if !instance_exists(_SYS_BUBBLE_SPEECH){
+		var draw = _SYS_BUBBLE_SPEECH;
+		instance_create_depth(0,0,0,draw);
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+	}
+	else{
+		var draw = _SYS_BUBBLE_SPEECH;
+		draw.object = object; draw.text = text; draw.bubblename = name; draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+	}
+	
+	if isTrigger{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+}
+	
+function popup(object, text, name, waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = NullSprite, pointergraphic = NullSprite){
+	//show_debug_message(object);
+	// Usar o WITH para ver cada instancia
+	if !instance_exists(_SYS_POPUP){		
+		draw = inst_popup();
+		draw.instanciator = object;
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+		draw.colorname = namecolor;
+	}
+	else{
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_POPUP){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; 
+				draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix; draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_popup();
+			draw.instanciator = check_object;
+			draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+			draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+		
+	if waitforinput{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+}
+
+function cutscene_low_priority(){
+	if global.cutscene.priority == false
+	{
+		
+		cutscene_end_action();	
+	}	
+}
+	
+function popup_on_trigger(object, messageobject, text, name, namecolor = c_white, yfix = 0, reset = true, resid = 0, collider1, collider2 = collider1, collider3 = collider1, collider4 = collider1, cutscene = true){
+	//show_debug_message(object);
+	
+	if !global.onmenu
+	{
+		
+				
+		
+		if  collider1 == "player" collider1 = global.player;
+	
+		isTrigger = (
+			
+				place_meeting(object.x,object.y,collider1) or 
+				place_meeting(object.x,object.y,collider2) or	
+				place_meeting(object.x,object.y,collider3) or 
+				place_meeting(object.x,object.y,collider4)
+			
+		)
+		sdm(id, global.intern.event);
+		if isTrigger
+		{
+			sdm("ist");
+			if !instance_exists(global.intern.event) global.intern.event = noone;
+			if global.intern.event == noone	global.intern.event = id			
+		}
+		else
+		{
+			sdm("nst");
+			if global.intern.event == id global.intern.event = noone;
+		}
+	
+		inst = _SYS_POPUP;
+	
+	
+		if !instance_exists(inst){
+			//show_debug_message("Criou");
+			draw = instance_create_depth(0,0,0,inst);
+			draw.instanciator = object;
+			draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+			draw.colorname = namecolor;
+		}
+		else if instance_exists(inst){
+			var check_object = object;
+			var _exists = false;
+			with(inst){
+				if instanciator == check_object { 
+					draw = self.id;
+					draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+					draw.colorname = namecolor;
+					_exists = true; break}
+			}
+			if _exists == false {
+				draw = instance_create_depth(0,0,0,inst);
+				draw.instanciator = check_object;
+				draw.object = messageobject; draw.text = text; draw.bubblename = name;  draw.yfix = yfix;
+				draw.colorname = namecolor;
+				_exists = true;
+			}
+		}
+	
+		if isTrigger and global.intern.event == id{
+			global.on_popup = true
+			if keyboard_check_pressed(vk_space)
+			{
+				
+				if cutscene {
+					cutscene_end_action();
+					global.on_popup = false;
+				}
+				instance_destroy(draw);
+			}
+		}
+		if !isTrigger and reset == true {global.on_popup = false;cutscene_goto(resid); instance_destroy(draw);}
+		if !isTrigger and reset == false{global.on_popup = false;instance_destroy(draw)}
+	}
+}
+
+function balloon(sprite, event, wait = false,  yfix = 0, cutscene = true, loopable = false){
+
+	if !instance_exists(balloonObject) {
+		var bubble = instance_create_depth(event.x, event.y - event.sprite_height +yfix, global.intern.depths.over, balloonObject);
+		bubble.sprite_index = sprite;
+		bubble.loop = loopable;
+		_baloon = bubble;
+	}
+	else 
+	{
+		var bubble = instance_find(balloonObject, 0);
+		bubble.x = event.x;
+		bubble.y = event.y - event.sprite_height + yfix;
+		bubble.loop = loopable;
+		_baloon = bubble;
+	}
+	
+	if cutscene
+	{
+		if wait 
+		{
+			
+			if bubble.ended == true {
+				cutscene_end_action();
+				instance_destroy(bubble);
+			}
+		}
+		else 
+		{
+			cutscene_end_action();
+		}
+	}
+}
+	
+
+#endregion
+
+#region Text and Draw
+
+function text_on_view(_x,_y,_text,_textspeed = 0,_color = c_white,_font = Ruler,_align = fa_center){
+	_obj = validate_object(_SYS_TEXT);
+	if _obj != false {
+		_obj.xx = _x;
+		_obj.yy = _y;
+		_obj.texto = _text;
+		_obj.textspeed = _textspeed;
+		_obj.colortext = _color;
+		_obj.font = _font;
+		_obj.align = _align;
+		
+	}	
 }
 
 #endregion

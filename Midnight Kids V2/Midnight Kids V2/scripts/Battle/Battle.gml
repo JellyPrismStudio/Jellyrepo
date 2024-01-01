@@ -64,7 +64,7 @@ function battle_buff_debuff(stats = "", value = 0, time = 0)
 		}
 		else
 		{
-			show_message("no")
+			
 		}
 	}	
 }
@@ -169,12 +169,14 @@ function battle_enemy_calculate_damage(selfid = self, enemy, player = 0, dmgmult
 
 function battle_deal_damage(damage, target = 0){
 	var _pindex = global.party.players[target];
+	if target == 1 dmgmult = 0.65;
+	else dmgmult = 1;
 	damage = damage - (global.player_stats[_pindex].def)/10;
-	damage = int64(damage);
+	damage = int64(damage * dmgmult);
 	var object = global.party.playersobj[target];
 	var yy = object.y - object.sprite_height;
 	if damage < 0 damage = 0;
-	global.player_stats[_pindex].hp -= damage;
+	global.player_stats[_pindex].hp -= damage ;
 	var dmg_inst = instance_create_depth(object.x,yy,global.intern.depths.over,_BATTLE_DMG);
 	dmg_inst.dmg = damage;
 	dmg_inst.super = self;
@@ -193,16 +195,12 @@ function battle_deal_magic_damage(damage){
 }
 	
 function battle_get_damage(dmg = 0, _alpha = 0, super){
-	if live_call(dmg, _alpha, super) return live_result;
 	dyy = y;
 	dxx = x;
-	//dyy = super.y - super.sprite_height - 2;
 	
 	if super == global.player draw_set_font(RulerBattle);
 	else draw_set_font(DayDream_pt6);
-	//if dmg <= global.player_stats[global.player_index].atack and dmg !=0 draw_text_color(x,y,string(dmg),c_orange,c_orange,c_orange,c_orange,_alpha);
 	var _color = c_black;
-	//else if dmg > global.player_stats[global.player_index].atack  draw_text_color(x,y,"-"+string(dmg)+"-",c_red,c_red,c_red,c_red,_alpha);
 	if super = global.player {
 		if dmg == 0 {
 			draw_text_color(dxx,dyy,"Miss",c_gray,c_gray,c_gray,c_gray,_alpha/2);
@@ -364,14 +362,18 @@ function calculate_player_damage(){
 }
 	
 function create_damage(playeridx = get_player, dmgmult = 1){
+	if get_player == 1
+	{
+		dmgmult = 0.15;
+	}
 	if get_player > - 1
 		{
 		if !instance_exists(global.party.playersobj[playeridx]) {
-			var object = global.party.playersobj[playeridx]
+			var object = global.party.playersobj[playeridx];
 		}
 		else
 		{
-			var object = global.party.playersobj[0]	
+			var object = global.party.playersobj[0];
 		}
 		var stats = global.player_stats[object.self_index];
 		var dmg = battle_enemy_calculate_damage(self, self, global.party.players[playeridx], dmgmult);

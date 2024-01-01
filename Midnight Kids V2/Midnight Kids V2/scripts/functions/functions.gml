@@ -584,6 +584,16 @@ function play_audio(variable,_sound,_priority,_loop,_gain,_offset = 0){
 		}		
 		change_audio("BGM1")
 	}
+	else if variable == "BGM3"
+	{
+		if string(global.sounds.BGM3) != string(_sound)
+		{
+			audio_stop_sound(global.sounds.BGM3);
+			global.sounds.BGM3 = (_sound);
+			audio_play_sound(_sound,_priority,_loop,_gain/100,_offset);	
+		}		
+		change_audio("BGM3")		
+	}
 	else if variable=="SFX"{
 		audio_play_sound(_sound,_priority,_loop,_gain/100,_offset);		
 	}

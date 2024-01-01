@@ -29,7 +29,7 @@ create_enemy_database();
 		autoaim: true,
 	    autocamera: false,
 	    bigobjectspadding: 150,
-	    directory: "C:/Users/Kauzz/Desktop/Midnight Kids/Midnight-Kids/data/",
+	    directory: working_directory,
 	    dynamiccamera: true,
 	    dynamicdist: true,
 	    fullscreen: false,
