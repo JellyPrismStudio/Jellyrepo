@@ -926,6 +926,7 @@
     {"name":"_noise2","order":2,"path":"sprites/_noise2/_noise2.yy",},
     {"name":"sLisaBomb","order":20,"path":"sprites/sLisaBomb/sLisaBomb.yy",},
     {"name":"background","order":2,"path":"sprites/background/background.yy",},
+    {"name":"factoryEvent_teste","order":30,"path":"objects/factoryEvent_teste/factoryEvent_teste.yy",},
     {"name":"xDinersMenu","order":8,"path":"objects/xDinersMenu/xDinersMenu.yy",},
     {"name":"Sprite43","order":13,"path":"sprites/Sprite43/Sprite43.yy",},
     {"name":"xPole","order":2,"path":"objects/xPole/xPole.yy",},

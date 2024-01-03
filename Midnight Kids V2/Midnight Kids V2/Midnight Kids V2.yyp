@@ -1104,6 +1104,7 @@
     {"id":{"name":"_noise2","path":"sprites/_noise2/_noise2.yy",},},
     {"id":{"name":"sLisaBomb","path":"sprites/sLisaBomb/sLisaBomb.yy",},},
     {"id":{"name":"background","path":"sprites/background/background.yy",},},
+    {"id":{"name":"factoryEvent_teste","path":"objects/factoryEvent_teste/factoryEvent_teste.yy",},},
     {"id":{"name":"xDinersMenu","path":"objects/xDinersMenu/xDinersMenu.yy",},},
     {"id":{"name":"Sprite43","path":"sprites/Sprite43/Sprite43.yy",},},
     {"id":{"name":"xPole","path":"objects/xPole/xPole.yy",},},
