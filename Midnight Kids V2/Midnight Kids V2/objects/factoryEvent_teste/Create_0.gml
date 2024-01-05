@@ -38,6 +38,8 @@ scene_info[0] = [
 	
 	[cutscene_move_anim,"left", 1, 120,spriteIdle,spriteWalk, 1, true, global.player],
 	
+	[cutscene_section_start, false, false],
+	
 	[cutscene_wait, 60],
 	[bubble_speech,global.player,"moonwalkin", "Maicu Jaksu", 1, 0, global.config.textcolor, c_olive],
 	
@@ -127,4 +129,5 @@ scene_info[0] = [
 	[cutscene_wait, 60],
 	[bubble_speech,global.player,"é verdade!", "Drauzio Varella", 1, 0, global.config.textcolor, c_olive],
 	[bubble_speech,global.player,"quer dizer, as vezes não", "Drauzio Varella", 1, 0, global.config.textcolor, c_olive],
+	[cutscene_reset()], 
 ]
