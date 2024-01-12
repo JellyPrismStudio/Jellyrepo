@@ -1,0 +1,1 @@
+draw_healthbar(20, 10, view_wport[0]-20, 20, vida, c_black, c_red, c_red, 0, true, true);
