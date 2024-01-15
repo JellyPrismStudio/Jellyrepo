@@ -34,9 +34,11 @@
     "IDEVersion": "2023.8.1.102",
   },
   "resources": [
+    {"id":{"name":"obj_up","path":"objects/obj_up/obj_up.yy",},},
     {"id":{"name":"spr_inimigo1","path":"sprites/spr_inimigo1/spr_inimigo1.yy",},},
     {"id":{"name":"spr_enemy_bullet","path":"sprites/spr_enemy_bullet/spr_enemy_bullet.yy",},},
     {"id":{"name":"spr_inimigo_base","path":"sprites/spr_inimigo_base/spr_inimigo_base.yy",},},
+    {"id":{"name":"spr_boosters","path":"sprites/spr_boosters/spr_boosters.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"obj_melee_base","path":"objects/obj_melee_base/obj_melee_base.yy",},},
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
