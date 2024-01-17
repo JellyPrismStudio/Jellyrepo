@@ -5,6 +5,9 @@ switch(room){
 	ppfx_id.ProfileLoad(title_profile);	
 	break
 	
+	case rJunkyard1:
+	break
+	
 	case rDinersIn:
 	ppfx_id.ProfileUnload()
 	ppfx_id.ProfileLoad(main_interior_profile);

@@ -48,6 +48,52 @@ function _intern_graphic(obj, graphic, xscale = 1){
 		else obj.sprite_index = graphic;
 	}	
 }
+	
+function _intern_get_hero(name)
+{
+	var _result = name;
+	if string_com_margem_erro(name, "Lisa", 1)
+	{
+		var _found = find_value_on_array(global.party.playersobj, global.player_stats[0].object)
+		if _found > -1
+		{			
+			_result = global.party.playersobj[_found]
+		}
+	}
+	else if string_com_margem_erro(name, "Ryan", 1)
+	{
+		var _found = find_value_on_array(global.party.playersobj, global.player_stats[1].object)
+		if _found > -1
+		{			
+			_result = global.party.playersobj[_found]
+		}
+	}
+	else if string_com_margem_erro(name, "Hanna", 1)
+	{
+		var _found = find_value_on_array(global.party.playersobj, global.player_stats[2].object)
+		if _found > -1
+		{			
+			_result = global.party.playersobj[_found]
+		}
+	}
+	else if string_com_margem_erro(name, "Dylan",1)
+	{
+		var _found = find_value_on_array(global.party.playersobj, global.player_stats[3].object)
+		if _found > -1
+		{			
+			_result = global.party.playersobj[_found]
+		}
+	}
+	else if string_com_margem_erro(name, "Follower",1)
+	{
+		if global.party.players[1] > -1
+		{
+			if instance_exists(global.party.playersobj[1])	_result = global.party.playersobj[1]
+		}
+	}
+	
+	return _result;
+}
 #endregion
 
 
@@ -269,7 +315,7 @@ function cutscene_section_end(unlockplayer = true, priority = false){
 }
 
 
-function cutscene_start(_triggerEvent = 0, _blockmovement = true, _blockinputs = true, _popup = true, _popupname = "Interact", _triggerID = "", _triggerVAL = "", _triggerPAGE = 0, _camerareset = true)
+function cutscene_start(_triggerEvent = 0, _blockmovement = true, _blockinputs = true, _popup = true, _popupname = "Interact", _triggerID = "", _triggerVAL = "", _triggerPAGE = 0, _camerareset = true, collider = global.player)
 {
 	// _triggerEvent = Método de ativação
 	
@@ -298,10 +344,7 @@ function cutscene_start(_triggerEvent = 0, _blockmovement = true, _blockinputs =
 	if _triggerEvent == 0 or string_com_margem_erro(_triggerEvent, "Touch")
 	{
 		isTrigger = (
-			place_meeting(object.x,object.y,collider1) or 
-			place_meeting(object.x,object.y,collider2) or	
-			place_meeting(object.x,object.y,collider3) or 
-			place_meeting(object.x,object.y,collider4)
+			place_meeting(x,y,collider)
 		)
 	}
 	
@@ -310,18 +353,21 @@ function cutscene_start(_triggerEvent = 0, _blockmovement = true, _blockinputs =
 		if to_gamepad_pressed(vk_space)
 			{
 				isTrigger = (			
-				place_meeting(object.x,object.y,collider1) or 
-				place_meeting(object.x,object.y,collider2) or	
-				place_meeting(object.x,object.y,collider3) or 
-				place_meeting(object.x,object.y,collider4)
+				place_meeting(x,y,collider)
 				)
 		}
+	}
+	
+	if _triggerEvent == 2 or string_com_margem_erro(_triggerEvent, "Auto")
+	{
+		isTrigger = true;
 	}
 	
 	
 	
 	if isTrigger
 	{
+		kmove_allow(!_blockmovement);
 		_length = array_length(global.triggers);
 		_triggered = false;
 	
@@ -347,7 +393,7 @@ function cutscene_start(_triggerEvent = 0, _blockmovement = true, _blockinputs =
 			global.intern.event = id;
 			global.on_message = _blockinputs;
 			global.menuenabled = false;
-			kmove_allow(!_blockmovement);		
+					
 		}
 		if _popup == true
 		{
@@ -771,8 +817,9 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 
 #region MOVE
 
-	function cutscene_camera_change(target = "player"){
+	function cutscene_camera_change(target = "player", _xfix = 0, _yfix = 0){
 		// Muda o foco da câmera
+		target = _intern_get_hero(target);
 		if !instance_exists(_GLOBAL_CAMERA) instance_create_depth(0,0,global.intern.depths.over,_GLOBAL_CAMERA)
 		if target == "player" {
 			_GLOBAL_CAMERA.customtarget = false;
@@ -1271,6 +1318,9 @@ function instanciate_choices(arg1, arg2, arg3 = "", page1 = noone, page2 = noone
 function bubble_speech(object, text, name, waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
 	//show_debug_message(object);
 	// Usar o WITH para ver cada instancia
+	
+	object = _intern_get_hero(object);
+	
 	if !instance_exists(_SYS_BUBBLE_SPEECH){		
 		//show_debug_message("Criou");
 		draw = inst_bubble();

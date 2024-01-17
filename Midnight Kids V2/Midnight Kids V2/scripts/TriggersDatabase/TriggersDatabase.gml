@@ -20,8 +20,8 @@ function create_triggers(){
 		
 		// 2
 		{
-		    name : "",
-			description: "",
+		    name : "Junkyard1",
+			description: "Primeira fala do Ryan e Hanna",
 		    id : 2,
 			value: false
 		},

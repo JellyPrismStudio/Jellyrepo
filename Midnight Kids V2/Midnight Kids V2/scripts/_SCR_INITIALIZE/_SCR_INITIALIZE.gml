@@ -73,7 +73,7 @@ create_enemy_database();
 		doubleClickDetected: false,
 		////////////////////////////////
 		////////////////////////////////
-		firstmap: RoomTemplate,
+		firstmap: rJunkyard1,
 		firstx: 400,
 		firsty: 405,
 		////////////////////////////////
@@ -115,11 +115,11 @@ create_enemy_database();
 	}
 	global.party = {
 		ultimate: 0,
-		players: [3, 0, -1],
+		players: [1, 2, -1],
 		captain: true,
 		capagressive: false,
 		follow: true,	
-		playersobj: [playerD, playerA, playerHanna],
+		playersobj: [playerB, playerHanna, playerHanna],
 		isVisible: true,
 		followersVisible: true,
 	}
