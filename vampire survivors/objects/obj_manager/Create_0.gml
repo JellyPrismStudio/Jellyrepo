@@ -14,3 +14,4 @@ level_enemys[7] = [obj_enemy1, obj_enemy1, obj_archer_base, obj_archer_base, obj
 level_enemys[8] = [obj_enemy1, obj_enemy1, obj_archer_base, obj_archer_base, obj_archer_base];
 level_enemys[9] = [obj_enemy1, obj_enemy1, obj_archer_base, obj_archer_base, obj_archer_base];
 level_enemys[10] = [obj_enemy1, obj_enemy1, obj_archer_base, obj_archer_base, obj_archer_base];
+level_enemys[10] = [obj_enemy1];
