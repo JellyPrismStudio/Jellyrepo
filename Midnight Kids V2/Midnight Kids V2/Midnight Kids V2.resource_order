@@ -125,6 +125,7 @@
     {"name":"GasStation","order":11,"path":"folders/Rooms/Maps/GasStation.yy",},
     {"name":"Repair Shop","order":2,"path":"folders/Rooms/Maps/GasStation/Repair Shop.yy",},
     {"name":"rGasConvenience","order":1,"path":"folders/Rooms/Maps/GasStation/rGasConvenience.yy",},
+    {"name":"Junkyard","order":14,"path":"folders/Rooms/Maps/Junkyard.yy",},
     {"name":"Mapa Inicial","order":2,"path":"folders/Rooms/Maps/Mapa Inicial.yy",},
     {"name":"Room1","order":3,"path":"folders/Rooms/Maps/Room1.yy",},
     {"name":"Room2","order":4,"path":"folders/Rooms/Maps/Room2.yy",},
@@ -205,7 +206,6 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Tilesheet","order":5,"path":"folders/Tile Sets/Tilesheet.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Junkyard","order":14,"path":"folders/Rooms/Maps/Junkyard.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Varnished","order":5,"path":"fonts/Varnished/Varnished.yy",},

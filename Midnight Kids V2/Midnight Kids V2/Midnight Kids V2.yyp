@@ -142,6 +142,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GasStation","folderPath":"folders/Rooms/Maps/GasStation.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Repair Shop","folderPath":"folders/Rooms/Maps/GasStation/Repair Shop.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"rGasConvenience","folderPath":"folders/Rooms/Maps/GasStation/rGasConvenience.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Junkyard","folderPath":"folders/Rooms/Maps/Junkyard.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Mapa Inicial","folderPath":"folders/Rooms/Maps/Mapa Inicial.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Room1","folderPath":"folders/Rooms/Maps/Room1.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Room2","folderPath":"folders/Rooms/Maps/Room2.yy",},
@@ -228,7 +229,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesheet","folderPath":"folders/Tile Sets/Tilesheet.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Junkyard","folderPath":"folders/Rooms/Maps/Junkyard.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Ant Party.ttf","CopyToMask":-1,"filePath":"datafiles",},
@@ -247,9 +247,10 @@
   "isEcma": false,
   "LibraryEmitters": [
     {"name":"RainEmitter","path":"particlelib/RainEmitter/RainEmitter.yy",},
+    {"name":"RainEmitter","path":"particlelib/RainEmitter/RainEmitter.yy",},
   ],
   "MetaData": {
-    "IDEVersion": "2023.2.1.75",
+    "IDEVersion": "2023.8.1.102",
   },
   "resources": [
     {"id":{"name":"Varnished","path":"fonts/Varnished/Varnished.yy",},},
@@ -1356,6 +1357,7 @@
     {"roomId":{"name":"RoomDebug","path":"rooms/RoomDebug/RoomDebug.yy",},},
     {"roomId":{"name":"rJunkyard1","path":"rooms/rJunkyard1/rJunkyard1.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"nonresizable","autocrop":false,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
