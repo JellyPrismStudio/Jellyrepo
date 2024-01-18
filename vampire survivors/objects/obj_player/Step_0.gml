@@ -22,3 +22,5 @@ gun.x = x+lengthdir_x(50, point_direction(x, y, mouse_x, mouse_y));
 gun.y = y+lengthdir_y(50, point_direction(x, y, mouse_x, mouse_y));
 gun.image_angle = point_direction(x, y, mouse_x, mouse_y);
 gun.image_yscale = gun.x < x? -1 : 1;
+
+if (vida <= 0) game_restart();
