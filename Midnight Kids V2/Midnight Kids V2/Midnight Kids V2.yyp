@@ -1276,6 +1276,7 @@
     {"id":{"name":"_SYS_FADE","path":"objects/_SYS_FADE/_SYS_FADE.yy",},},
     {"id":{"name":"BlueSnake_Walking","path":"sprites/BlueSnake_Walking/BlueSnake_Walking.yy",},},
     {"id":{"name":"EventTemplate","path":"objects/EventTemplate/EventTemplate.yy",},},
+    {"id":{"name":"factoryEvent_ferrovelho","path":"objects/factoryEvent_ferrovelho/factoryEvent_ferrovelho.yy",},},
     {"id":{"name":"sPlant1","path":"sprites/sPlant1/sPlant1.yy",},},
     {"id":{"name":"SkillOneB","path":"objects/SkillOneB/SkillOneB.yy",},},
     {"id":{"name":"Sprite203","path":"sprites/Sprite203/Sprite203.yy",},},

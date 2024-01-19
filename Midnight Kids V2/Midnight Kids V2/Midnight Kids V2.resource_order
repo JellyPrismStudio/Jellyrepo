@@ -1074,6 +1074,7 @@
     {"name":"_SYS_FADE","order":5,"path":"objects/_SYS_FADE/_SYS_FADE.yy",},
     {"name":"BlueSnake_Walking","order":1,"path":"sprites/BlueSnake_Walking/BlueSnake_Walking.yy",},
     {"name":"EventTemplate","order":2,"path":"objects/EventTemplate/EventTemplate.yy",},
+    {"name":"factoryEvent_ferrovelho","order":31,"path":"objects/factoryEvent_ferrovelho/factoryEvent_ferrovelho.yy",},
     {"name":"sPlant1","order":2,"path":"sprites/sPlant1/sPlant1.yy",},
     {"name":"SkillOneB","order":1,"path":"objects/SkillOneB/SkillOneB.yy",},
     {"name":"Sprite203","order":31,"path":"sprites/Sprite203/Sprite203.yy",},
