@@ -837,6 +837,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 
 	function cutscene_look_direction(object = self, side = "R", opposite = false){
 		// Faz um objeto olhar em uma direção (L ou R)
+		_intern_get_hero(object)
 		var mult = 1;
 		if opposite mult = -1
 		if object != global.player
