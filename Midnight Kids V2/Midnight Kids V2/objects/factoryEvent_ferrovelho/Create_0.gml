@@ -3,6 +3,7 @@ event_inherited();
 spriteIdle = sPlayer2;
 spriteWalk = sPlayer2Walking;
 
+#region 0
 scene_info[0] = [
 	[cutscene_switched_page, 1, true, 2],
 	[cutscene_section_start, true, true],
@@ -36,6 +37,12 @@ scene_info[0] = [
 	[bubble_speech, playerB, "Siga meus passos", "Ryan"],
 	[bubble_speech, playerB, "E cuidado pra não se machucar", "Ryan"],
 	
+	[cutscene_move_anim, "down", 1, 110, spriteIdle, spriteWalk, -1, true, playerB], 
+]
+#endregion
+
+#region 2
+scene_info[1] = [
 	[cutscene_move_anim, "down", 1, 110, spriteIdle, spriteWalk, -1, true, playerB],
 	[cutscene_move_anim, "down", 1, 60, spriteIdle, spriteWalk, 1, true, playerHanna],
 	
@@ -108,3 +115,4 @@ scene_info[0] = [
 	[bubble_speech, "Hanna", "Viemos aqui procurar a tal bateria,", "Hanna"],
 	[bubble_speech, "Hanna", "não ficar babando em cima de carros abandonados.", "Hanna"],
 ]
+#endregion
