@@ -73,7 +73,7 @@ create_enemy_database();
 		doubleClickDetected: false,
 		////////////////////////////////
 		////////////////////////////////
-		firstmap: rJunkyard1,
+		firstmap: rGasStation,
 		firstx: 400,
 		firsty: 405,
 		////////////////////////////////

@@ -10,7 +10,7 @@ scene_info[0] = [
 	[cutscene_variable,self,"destroy",false],
 	[cutscene_lock_menu],
 	[cutscene_lock_movement, false],
-	[perform_transfer, rJunkyard1, global.intern.firstx,  global.intern.firsty, global.player, true, false],
+	[perform_transfer, global.intern.firstmap, global.intern.firstx,  global.intern.firsty, global.player, true, false],
 	[cutscene_delete_object, inst_49376BCA],
 
 	[cutscene_lock_movement, true],

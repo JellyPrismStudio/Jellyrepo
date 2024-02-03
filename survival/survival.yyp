@@ -34,8 +34,11 @@
     "IDEVersion": "2023.8.1.102",
   },
   "resources": [
+    {"id":{"name":"Anotações","path":"notes/Anotações/Anotações.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_noise","path":"sprites/spr_noise/spr_noise.yy",},},
     {"id":{"name":"obj_luz","path":"objects/obj_luz/obj_luz.yy",},},
+    {"id":{"name":"Procedural","path":"objects/Procedural/Procedural.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},},
     {"id":{"name":"spr_backgorund","path":"sprites/spr_backgorund/spr_backgorund.yy",},},

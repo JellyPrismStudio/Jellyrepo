@@ -1,0 +1,60 @@
+> Fazer um código que vai ler o ruido
+
+
+Imagem A
+
+a8sdki25ji9
+
+ad
+
+a - pra cima
+b - pra esquerda
+c - pra direita
+d - pra baixo
+
+26 + 10 + 26 
+
+
+AR
+
+
+a8 - a8
+A primeira textura, e vai ir aumentando a textura, seguindo a formula x + 3; 1 + 3 = 4, 4 + 3 = 7 4 + 3 
+
+7 / 6 = 1 
+
+x + 2x + 1/3 + x/2
+
+
+
+
+> Fazer seed:
+Primeiro escolher entre imagem A e a imagem B
+
+Depois escolher qual vai ser a orientação dela:
+
+
+Depois fazer a escala:
+1 - Em pé		(0)
+2 - Deitado		(180)
+3 - Esquerda	(270)
+4 - Direita		(90)
+
+1 - 1x		1y
+2 - 2x		1y
+3 - 1x		2y
+4 - 2x		2y
+5 - 1.5x	1y
+6 - 1x		1.5y
+7 - 1.5x	1.5y
+8 - -1x		-1y
+9 - 1x		-1y
+0 - -1x		1y
+a - -1.5x	-2y
+b - -2x		-1.5y+
+
+if 3 caractere da string == "4"
+{
+	image_xscale = 2
+	image_yscale = 2
+}
