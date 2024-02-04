@@ -21,7 +21,8 @@ _WS = false;
 _AD = false;
 mouse_cooldown = 10;
 depth = global.intern.depths.over;
-
-
+_xfix = 0;
+_yfix = 0;
+alarm_set(0,3);
 
 view_camera[0] = camera_create_view(0, 0, camera_w, camera_h, 0, self, -1, -1, camera_w/2, camera_h/2);

@@ -1,3 +1,5 @@
+if !global.on_message
+{
 	if variable_instance_exists(self, "path") {
 		if path_exists(path) path_delete(path);	
 		
@@ -14,4 +16,4 @@
 	if path_get_length(path) > 130	and path_get_length(path) < 300	pathing_speed = 4
 	else if path_get_length(path) > 300								pathing_speed = 5
 	else pathing_speed = 3
-	
+}

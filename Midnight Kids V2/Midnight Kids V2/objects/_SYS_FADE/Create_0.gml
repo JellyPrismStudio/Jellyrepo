@@ -19,5 +19,6 @@ image_alpha = 0;
 depth = global.intern.depths.over;
 finished1 = false;
 finished2 = false;
+alarm_set(0,3);
 
 // You can write your code in this editor

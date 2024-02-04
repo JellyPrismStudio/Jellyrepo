@@ -1,20 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "playerB",
+  "name": "ev_Junkyard0",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Ryan",
-    "path": "folders/Objects/Objects/Characters/Playables/Ryan.yy",
+    "name": "Junkyard",
+    "path": "folders/Rooms/Maps/Junkyard.yy",
   },
   "parentObjectId": {
-    "name": "oMainPlayer",
-    "path": "objects/oMainPlayer/oMainPlayer.yy",
+    "name": "Event_Template",
+    "path": "objects/Event_Template/Event_Template.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,12 +32,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPlayer3",
-    "path": "sprites/sPlayer3/sPlayer3.yy",
+    "name": "EventBox2",
+    "path": "sprites/EventBox2/EventBox2.yy",
   },
-  "spriteMaskId": {
-    "name": "Col",
-    "path": "sprites/Col/Col.yy",
-  },
+  "spriteMaskId": null,
+  "tags": [
+    "Events",
+  ],
   "visible": true,
 }

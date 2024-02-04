@@ -12,8 +12,11 @@ depth_sort();
 
 
 function local_look_direction(_xx = gplayer.x, _yy = gplayer.y){
-	if _xx < x image_xscale = -1;
-	else if _xx > x image_xscale = 1;	
+	if !global.on_message and !global.onmenu
+	{
+		if _xx < x image_xscale = -1;
+		else if _xx > x image_xscale = 1;	
+	}
 }
 
 //if keyboard_check_twice(vk_alt, 500) show_message("Clickskskskskj");
@@ -229,7 +232,7 @@ if global.player_index == self_index and !global.on_message  {
 	
 	
 }
-else
+else if global.player_index != self_index and !global.on_message
 {
 	if stay global.player.stay = true;
 	else global.player.stay = false;
@@ -312,6 +315,10 @@ else
 		}
 		
 		// COMPANION
+}
+else {
+	image_alpha = 1;
+	image_blend = c_white;	
 }
 
 if global.player_stats[global.player_index].hp > 0 and cured

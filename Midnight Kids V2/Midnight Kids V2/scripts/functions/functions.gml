@@ -418,7 +418,7 @@ function find_string_on_array(array, name){
 	// ARG = o ID do item
 	var index = -4;
 	for(i=0;i<array_length(array);i++){
-		if string(array[i]) == name{	
+		if string(array[i]) == string(name){	
 			index = i;
 		}
 	}
@@ -863,4 +863,3 @@ function run_weather(type, strength, additive, size){
 		dust.size = 0.08;		
 	}
 }
-

@@ -90,7 +90,7 @@ switch (room){
 		run_weather(0, 1, true, 0.3);
 		break
 		
-		case RoomTemplate:
+		case ROOM_TEMPLATE:
 		alarm_set(1,10); 
 		play_audio("BGM1",BGM_TheAncientForest,0,1,global.config.music_volume);
 		add_text_to_log("\n===\Convenience carregado pelo Manager", file);

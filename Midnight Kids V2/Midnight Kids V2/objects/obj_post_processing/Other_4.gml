@@ -18,7 +18,7 @@ switch(room){
 	ppfx_id.ProfileLoad(main_interior_profile);
 	break
 	
-	case RoomTemplate:
+	case ROOM_TEMPLATE:
 	ppfx_id.ProfileUnload()
 	ppfx_id.ProfileLoad(main_interior_profile);
 	break
@@ -32,6 +32,6 @@ switch(room){
 	
 	default:
 	ppfx_id.ProfileUnload()
-	ppfx_id.ProfileLoad(main_profile);
+	//ppfx_id.ProfileLoad(main_profile);
 	break
 }

@@ -73,9 +73,9 @@ create_enemy_database();
 		doubleClickDetected: false,
 		////////////////////////////////
 		////////////////////////////////
-		firstmap: rGasStation,
+		firstmap: rJunkyard0,
 		firstx: 400,
-		firsty: 405,
+		firsty: 495,
 		////////////////////////////////
 		///////////////////////////////
 		
@@ -111,15 +111,15 @@ create_enemy_database();
 	global.can_move = true;
 	global.menuenabled = false;
 	global.party = {
-		players: [2, 1, -1],	
+		players: [-1, -1],	
 	}
 	global.party = {
 		ultimate: 0,
-		players: [1, 2, -1],
+		players: [1, 2],
 		captain: true,
 		capagressive: false,
 		follow: true,	
-		playersobj: [playerB, playerHanna, playerHanna],
+		playersobj: [playerB, playerHanna],
 		isVisible: true,
 		followersVisible: true,
 	}

@@ -13,6 +13,19 @@ function create_language_EN(){
 		//////
 		
 		global.language = {
+			names:
+			{
+				ryan: "Ryan",
+				hanna: "Hanna",
+				dylan: "Dylan",
+				lisa: "Lisa",
+				
+				colorryan: c_olive,
+				colorhanna: c_purple,
+				colorlisa: c_olive,
+				colordylan: c_orange,
+					
+			},
 			presets :
 			{
 				unknown: "???",	
@@ -340,8 +353,29 @@ function create_language_EN(){
 					m14: "What? Who are you?",
 					m15: "401j 429jk 7694njr sik019k",
 					m16: "Nooooooooooooo",
-				}
+				},
 				
+				junkyard:
+				{
+					r0_1: "Ugh, fechado",
+					h1: "E agora? Teremos que procurar em outro lugar \n pelo visto. ",
+					r1_1: "Mas nós já viemos até aqui...",
+					h1_2: "Está trancado Ryan, o que vamos fazer?",
+					r2: "Siga meus passos e cuidado para não se machucar. ",
+					
+					// Ryan pula a cerca
+					h3: "Eu não vou fazer isso! Sem chance!",
+					r3_1: "Vamos lá Hanna, ninguem liga se entrarmos \n nesse ferro-velho abandonado",
+					h3_2: "Nem pensar, eu não vou pular ai pra \n dentro desse lugar",
+					r3_3: "Mas quem falou em pular? (Portão abre)",
+					r3_4: "Tá vendo? Agora é só entrar",
+					h3_5: "Isso me parece errado",
+					r3_6: "Hanna, está abandonado, confia em mim, isso aqui \n está mais largado do que (alguma coisa)",
+					h3_7: "...",
+					h3_8: "Ok, mas vamos rápido com isso",
+					
+					h4: "Se pegarem a gente estaremos encrencados. Meus pais vão me matar! Vamos achar essa tal bateria logo e sair daqui!",
+				}
 				
 			}
 		}/////////////////////////////////////////////

@@ -30,29 +30,16 @@ function _intern_timer(stime)
 function _intern_graphic(obj, graphic, xscale = 1){
 	if instance_exists(obj)
 	{
-		if obj == global.player
-		{
-			if sprite_exists(graphic)
-			{
-				obj.sprite_index = graphic;
-				obj.image_xscale = xscale
-				obj.customspr = true;
-			}
-			else
-			{
-				obj.sprite_index = global.player_stats[global.party.players[0]].idlegraph
-				obj.image_xscale = xscale
-				obj.customspr = false;
-			}
-		}
-		else obj.sprite_index = graphic;
+
+		obj.sprite_index = graphic;
+		obj.image_xscale = xscale;
 	}	
 }
 	
 function _intern_get_hero(name)
 {
 	var _result = name;
-	if string_com_margem_erro(name, "Lisa", 1)
+	if string_com_margem_erro(name, "Lisa", 0)
 	{
 		var _found = find_value_on_array(global.party.playersobj, global.player_stats[0].object)
 		if _found > -1
@@ -60,7 +47,7 @@ function _intern_get_hero(name)
 			_result = global.party.playersobj[_found]
 		}
 	}
-	else if string_com_margem_erro(name, "Ryan", 1)
+	else if string_com_margem_erro(name, "Ryan", 0)
 	{
 		var _found = find_value_on_array(global.party.playersobj, global.player_stats[1].object)
 		if _found > -1
@@ -68,7 +55,7 @@ function _intern_get_hero(name)
 			_result = global.party.playersobj[_found]
 		}
 	}
-	else if string_com_margem_erro(name, "Hanna", 1)
+	else if string_com_margem_erro(name, "Hanna", 0)
 	{
 		var _found = find_value_on_array(global.party.playersobj, global.player_stats[2].object)
 		if _found > -1
@@ -76,7 +63,7 @@ function _intern_get_hero(name)
 			_result = global.party.playersobj[_found]
 		}
 	}
-	else if string_com_margem_erro(name, "Dylan",1)
+	else if string_com_margem_erro(name, "Dylan", 0)
 	{
 		var _found = find_value_on_array(global.party.playersobj, global.player_stats[3].object)
 		if _found > -1
@@ -84,7 +71,7 @@ function _intern_get_hero(name)
 			_result = global.party.playersobj[_found]
 		}
 	}
-	else if string_com_margem_erro(name, "Follower",1)
+	else if string_com_margem_erro(name, "Follower", 0)
 	{
 		if global.party.players[1] > -1
 		{
@@ -310,6 +297,10 @@ function cutscene_section_end(unlockplayer = true, priority = false){
 	global.intern.event = noone;
 	global.on_message = false;
 	global.menuenabled = true;
+	if instance_exists(CameraFocus) {
+		instance_destroy(CameraFocus)
+		_GLOBAL_CAMERA.target = global.player
+	}
 	kmove_allow(unlockplayer);
 	cutscene_end_action();
 }
@@ -500,88 +491,7 @@ function cutscene_change_graphic_timed(obj, graphic, time, dir = 1)
 //======================================================//
 //======================================================//
 
-///@description Move o objeto em uma direção.
-function cutscene_move(dir,spd,stime, lockplayer = true, instanceid = self.id){
-	// Move algum objeto
-	time[self.scene_indexer] = stime;
-	if !variable_instance_exists(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]"){
-		variable_instance_set(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]", 0);
-		instanceid._sceneTimer[self.scene_indexer] = 0;
-		instanceid._timerbol = true;
-	}
-	else
-	{
-		
-	}
-	if instanceid._sceneTimer[self.scene_indexer] < time[self.scene_indexer]
-	{
-		if dir == "downleft"	or dir == 1			{	instanceid.y += spd/2 ; instanceid.x -= spd/2;	}
-		if dir == "down"		or dir == 2										instanceid.y += spd
-		if dir == "downright"	or dir == 3			{	instanceid.y += spd/2 ; instanceid.x += spd/2;	}
-		if dir == "left"		or dir == 4										instanceid.x -= spd
-		if dir == "right"		or dir == 6										instanceid.x += spd
-		if dir == "upleft"		or dir == 7			{	instanceid.y -= spd/2 ; instanceid.x -= spd/2;	}
-		if dir == "up"			or dir == 8										instanceid.y -= spd
-		if dir == "upright"		or dir == 9			{	instanceid.y -= spd/2 ; instanceid.x += spd/2;	}
-		instanceid._sceneTimer[self.scene_indexer]++;
-	}
-	else if instanceid._sceneTimer[self.scene_indexer] >= time[self.scene_indexer]
-	{
-		instanceid._sceneTimer[self.scene_indexer] = 0;
-		cutscene_end_action();		
-	}
-}
-	
-function cutscene_move_anim(dir,spd,stime, initsprite, sprite, xdir = 1, lockplayer = true, instanceid = self.id){
-	// Move algum objeto
-	// dir: 8= norte
-	//      6= leste
-	//      4= oeste
-	//      2= sul
-	// spd: velocidade
-	// stime: por quanto tempo se move
-	// initsprite: sprite inicial que o objeto tem
-	// sprite: sprite que deve ter enquanto performa a ação de mover
-	// xdir: ---
-	// lockplayer: trava o input do player
-	// instanceid: ---
-	time[self.scene_indexer] = stime;
-	_intern_graphic(instanceid, sprite, xdir);
-	if !variable_instance_exists(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]"){
-		variable_instance_set(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]", 0);
-		instanceid._sceneTimer[self.scene_indexer] = 0;
-		instanceid._timerbol = true;
-	}
-	else
-	{
-		
-	}
-	if instanceid._sceneTimer[self.scene_indexer] < time[self.scene_indexer]
-	{
-		if dir == "downleft"	or dir == 1			{	instanceid.y += spd/2 ; instanceid.x -= spd/2;	}
-		if dir == "down"		or dir == 2										instanceid.y += spd
-		if dir == "downright"	or dir == 3			{	instanceid.y += spd/2 ; instanceid.x += spd/2;	}
-		if dir == "left"		or dir == 4										instanceid.x -= spd
-		if dir == "right"		or dir == 6										instanceid.x += spd
-		if dir == "upleft"		or dir == 7			{	instanceid.y -= spd/2 ; instanceid.x -= spd/2;	}
-		if dir == "up"			or dir == 8										instanceid.y -= spd
-		if dir == "upright"		or dir == 9			{	instanceid.y -= spd/2 ; instanceid.x += spd/2;	}
-		instanceid._sceneTimer[self.scene_indexer]++;
-	}
-	else if instanceid._sceneTimer[self.scene_indexer] >= time[self.scene_indexer]
-	{
-		instanceid._sceneTimer[self.scene_indexer] = 0;
-		if instanceid = global.player instanceid.customspr = false;
-		else _intern_graphic(instanceid, initsprite, xdir);
-		cutscene_end_action();		
-	}
-}
 
-function cutscene_lock_movement(boolean = false){
-	// Trava o movimento
-	global.can_move = boolean
-	cutscene_end_action();
-}
 
 //======================================================//
 //======================================================//
@@ -824,36 +734,57 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 		if target == "player" {
 			_GLOBAL_CAMERA.customtarget = false;
 			_GLOBAL_CAMERA.targetobj = global.player;
+			_GLOBAL_CAMERA._xfix = _xfix;
+			_GLOBAL_CAMERA._yfix = _yfix;
 		}
 		else {
 			if instance_exists(target)
 			{
 				_GLOBAL_CAMERA.customtarget = true;
-				_GLOBAL_CAMERA.targetobj = target;	
+				_GLOBAL_CAMERA.targetobj = target;
+				_GLOBAL_CAMERA._xfix = _xfix;
+				_GLOBAL_CAMERA._yfix = _yfix;
 			}
 		}
 		cutscene_end_action();
 	}
+		
+	function cutscene_orbital_camera(object, _x = 0,_y = 0)
+	{
+		object = _intern_get_hero(object);
+		if !instance_exists(CameraFocus) {
+			if object == -1 or object == -4	instance_create_depth(x,y,global.intern.depths.setup,CameraFocus)
+			else instance_create_depth(object.x+_x,object.y+_y,global.intern.depths.setup,CameraFocus)
+			
+		}
+		_GLOBAL_CAMERA.customtarget = true;
+		_GLOBAL_CAMERA.targetobj = CameraFocus
+		if object == -1 or object == -4
+		{
+			
+			CameraFocus.x = _x;
+			CameraFocus.y = _y;
+		}
+		else
+		{
+			CameraFocus.target = object;
+			CameraFocus.xfix = _x;
+			CameraFocus.yfix = _y;
+			
+		}
+		cutscene_end_action()
+	}
 
 	function cutscene_look_direction(object = self, side = "R", opposite = false){
+		
 		// Faz um objeto olhar em uma direção (L ou R)
-		_intern_get_hero(object)
+		object = _intern_get_hero(object);
 		var mult = 1;
 		if opposite mult = -1
 		if object != global.player
 		{
-			if side == "R" or side == 1{
-				if object.x > global.player.x object.image_xscale = -1*mult;
-				else if object.x < global.player.x object.image_xscale = 1*mult;
-			}
-			else if side == "L" or side == -1 {
-				if object.x < global.player.x object.image_xscale = -1*mult;
-				else if object.x > global.player.x object.image_xscale = 1*mult;			
-			}
-			else {
-				if object.x < side.x object.image_xscale = 1*mult;
-				else if object.x > side.x object.image_xscale = -1*mult;	
-			}
+			if side == "R" or side == 1 object.image_xscale = 1;
+			if side == "L" or side == -1 object.image_xscale = -1;
 		}
 		else
 		{
@@ -862,6 +793,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 			
 		}
 		cutscene_end_action();
+		
 	}
 	
 	function cutscene_look_at_point(object, xpoint, opposite){
@@ -919,6 +851,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 	
 	function cutscene_change_coordinates(object,xx,yy, validate = false){
 		// Muda a coordenada do objeto X
+		object = _intern_get_hero(object)
 		if validate{
 			if !instance_exists(object) instance_create_depth(xx,yy,0,object);	
 		}
@@ -933,6 +866,155 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 				cutscene_end_action();
 			}
 	}
+		
+		///@description Move o objeto em uma direção.
+	function cutscene_move(dir,spd,stime, lockplayer = true, instanceid = self.id){
+	// Move algum objeto
+	time[self.scene_indexer] = stime;
+	if !variable_instance_exists(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]"){
+		variable_instance_set(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]", 0);
+		instanceid._sceneTimer[self.scene_indexer] = 0;
+		instanceid._timerbol = true;
+	}
+	else
+	{
+		
+	}
+	if instanceid._sceneTimer[self.scene_indexer] < time[self.scene_indexer]
+	{
+		if dir == "downleft"	or dir == 1			{	instanceid.y += spd/2 ; instanceid.x -= spd/2;	}
+		if dir == "down"		or dir == 2										instanceid.y += spd
+		if dir == "downright"	or dir == 3			{	instanceid.y += spd/2 ; instanceid.x += spd/2;	}
+		if dir == "left"		or dir == 4										instanceid.x -= spd
+		if dir == "right"		or dir == 6										instanceid.x += spd
+		if dir == "upleft"		or dir == 7			{	instanceid.y -= spd/2 ; instanceid.x -= spd/2;	}
+		if dir == "up"			or dir == 8										instanceid.y -= spd
+		if dir == "upright"		or dir == 9			{	instanceid.y -= spd/2 ; instanceid.x += spd/2;	}
+		instanceid._sceneTimer[self.scene_indexer]++;
+	}
+	else if instanceid._sceneTimer[self.scene_indexer] >= time[self.scene_indexer]
+	{
+		instanceid._sceneTimer[self.scene_indexer] = 0;
+		cutscene_end_action();		
+	}
+}
+	
+	function cutscene_move_anim(dir,spd,stime, initsprite, sprite, xdir = 1, lockplayer = true, instanceid = self.id){
+	// Move algum objeto
+	// dir: 8= norte
+	//      6= leste
+	//      4= oeste
+	//      2= sul
+	// spd: velocidade
+	// stime: por quanto tempo se move
+	// initsprite: sprite inicial que o objeto tem
+	// sprite: sprite que deve ter enquanto performa a ação de mover
+	// xdir: ---
+	// lockplayer: trava o input do player
+	// instanceid: ---
+	time[self.scene_indexer] = stime;
+	
+	if xdir != 1 and xdir != -1
+	{
+		 if dir == "right" _intern_graphic(instanceid, sprite, 1);
+		 else if dir == "left" _intern_graphic(instanceid, sprite, -1);
+	}
+	else _intern_graphic(instanceid, sprite, xdir);
+	if !variable_instance_exists(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]"){
+		variable_instance_set(instanceid,"_sceneTimer[" + string(self.scene_indexer) +"]", 0);
+		instanceid._sceneTimer[self.scene_indexer] = 0;
+		instanceid._timerbol = true;
+	}
+	else
+	{
+		
+	}
+	if instanceid._sceneTimer[self.scene_indexer] < time[self.scene_indexer]
+	{
+		if dir == "downleft"	or dir == 1			{	instanceid.y += spd/2 ; instanceid.x -= spd/2;	}
+		if dir == "down"		or dir == 2										instanceid.y += spd
+		if dir == "downright"	or dir == 3			{	instanceid.y += spd/2 ; instanceid.x += spd/2;	}
+		if dir == "left"		or dir == 4										instanceid.x -= spd
+		if dir == "right"		or dir == 6										instanceid.x += spd
+		if dir == "upleft"		or dir == 7			{	instanceid.y -= spd/2 ; instanceid.x -= spd/2;	}
+		if dir == "up"			or dir == 8										instanceid.y -= spd
+		if dir == "upright"		or dir == 9			{	instanceid.y -= spd/2 ; instanceid.x += spd/2;	}
+		instanceid._sceneTimer[self.scene_indexer]++;
+	}
+	else if instanceid._sceneTimer[self.scene_indexer] >= time[self.scene_indexer]
+	{
+		instanceid._sceneTimer[self.scene_indexer] = 0;
+		if instanceid = global.player instanceid.customspr = false;
+		else _intern_graphic(instanceid, initsprite, xdir);
+		cutscene_end_action();		
+	}
+}
+
+	function cutscene_move_length(dir,spd, length, initsprite, sprite, instanceid = self.id, xdir = 2, lockplayer = true){
+	// Move algum objeto
+	// dir: 8= norte
+	//      6= leste
+	//      4= oeste
+	//      2= sul
+	// spd: velocidade
+	// stime: por quanto tempo se move
+	// initsprite: sprite inicial que o objeto tem
+	// sprite: sprite que deve ter enquanto performa a ação de mover
+	// xdir: ---
+	// lockplayer: trava o input do player
+	// instanceid: ---
+	instanceid = _intern_get_hero(instanceid);
+	
+	if xdir != 1 and xdir != -1
+	{
+		 if dir == "right" _intern_graphic(instanceid, sprite, 1);
+		 else if dir == "left" _intern_graphic(instanceid, sprite, -1);
+	}
+	else _intern_graphic(instanceid, sprite, xdir);
+			
+	if !variable_instance_exists(self, "_local1") variable_instance_set(self, "_local1",length)
+	else
+	{
+		if _local1 == -1 _local1 = length	
+	}
+	
+	if	_local1 - spd > 0
+	{
+		if variable_instance_exists(instanceid, "customspr") instanceid.customspr = true;
+		
+		
+		if dir == "downleft"	or dir == 1			{	instanceid.y += spd/2 ; instanceid.x -= spd/2;	}
+		if dir == "down"		or dir == 2										instanceid.y += spd
+		if dir == "downright"	or dir == 3			{	instanceid.y += spd/2 ; instanceid.x += spd/2;	}
+		if dir == "left"		or dir == 4										instanceid.x -= spd
+		if dir == "right"		or dir == 6										instanceid.x += spd
+		if dir == "upleft"		or dir == 7			{	instanceid.y -= spd/2 ; instanceid.x -= spd/2;	}
+		if dir == "up"			or dir == 8										instanceid.y -= spd
+		if dir == "upright"		or dir == 9			{	instanceid.y -= spd/2 ; instanceid.x += spd/2;	}	
+		_local1 -= spd;
+	}
+	else
+	{
+		if dir == "downleft"	or dir == 1			{	instanceid.y += _local1/2 ; instanceid.x -= _local1/2;	}
+		if dir == "down"		or dir == 2											instanceid.y += _local1
+		if dir == "downright"	or dir == 3			{	instanceid.y += _local1/2 ; instanceid.x += _local1/2;	}
+		if dir == "left"		or dir == 4											instanceid.x -= _local1
+		if dir == "right"		or dir == 6											instanceid.x += _local1
+		if dir == "upleft"		or dir == 7			{	instanceid.y -= _local1/2 ; instanceid.x -= _local1/2;	}
+		if dir == "up"			or dir == 8											instanceid.y -= _local1
+		if dir == "upright"		or dir == 9			{	instanceid.y -= _local1/2 ; instanceid.x += _local1/2;	}
+		_local1 = -1
+		if variable_instance_exists(instanceid, "customspr") instanceid.customspr = false;
+		_intern_graphic(instanceid, initsprite, 1);
+		cutscene_end_action()
+	}
+}
+
+	function cutscene_lock_movement(boolean = false){
+	// Trava o movimento
+	global.can_move = boolean
+	cutscene_end_action();
+}
 
 #endregion
 
@@ -1316,11 +1398,28 @@ function instanciate_choices(arg1, arg2, arg3 = "", page1 = noone, page2 = noone
 	}
 }
 
-function bubble_speech(object, text, name, waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
+function bubble_speech(object, text, name = "", waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
 	//show_debug_message(object);
 	// Usar o WITH para ver cada instancia
 	
 	object = _intern_get_hero(object);
+	if object == global.player_stats[0].object {
+		namecolor = c_olive;
+		name = "Lisa";
+	}
+	if object == global.player_stats[1].object 
+	{
+		namecolor = c_red;
+		name = "Ryan";
+	}
+	if object == global.player_stats[2].object {
+		namecolor = c_purple;
+		name = "Hanna";
+	}
+	if object == global.player_stats[3].object {
+		namecolor = c_orange;
+		name = "Dylan";
+	}
 	
 	if !instance_exists(_SYS_BUBBLE_SPEECH){		
 		//show_debug_message("Criou");
@@ -1784,6 +1883,7 @@ function popup_on_trigger(object, messageobject, text, name, namecolor = c_white
 
 function balloon(sprite, event, wait = false,  yfix = 0, cutscene = true, loopable = false){
 
+	event = _intern_get_hero(event);
 	if !instance_exists(balloonObject) {
 		var bubble = instance_create_depth(event.x, event.y - event.sprite_height +yfix, global.intern.depths.over, balloonObject);
 		bubble.sprite_index = sprite;
