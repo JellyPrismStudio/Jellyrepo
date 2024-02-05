@@ -7,11 +7,11 @@ raio = 200;
 
 instance_create_depth(x, y, 0, obj_camera);
 
-for (var i = 3; i < room_height/64; i++;)
+//for (var i = 3; i < room_height/64; i++;)
 {
-	for (var j = 0; j < room_width/64; j++;)
+	//for (var j = 0; j < room_width/64; j++;)
 	{
-		instance_create_depth(j*64, i*64, -i*64, obj_colisao);
+		//instance_create_depth(j*64, i*64, -i*64, obj_colisao);
 	}
 }
 

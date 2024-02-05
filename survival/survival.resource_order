@@ -19,8 +19,10 @@
   "ResourceOrderSettings": [
     {"name":"Anotações","order":17,"path":"notes/Anotações/Anotações.yy",},
     {"name":"spr_noise","order":2,"path":"sprites/spr_noise/spr_noise.yy",},
+    {"name":"obj_noise","order":5,"path":"objects/obj_noise/obj_noise.yy",},
     {"name":"obj_luz","order":3,"path":"objects/obj_luz/obj_luz.yy",},
     {"name":"Procedural","order":16,"path":"objects/Procedural/Procedural.yy",},
+    {"name":"obj_seed","order":4,"path":"objects/obj_seed/obj_seed.yy",},
     {"name":"obj_camera","order":2,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_colisao","order":1,"path":"objects/obj_colisao/obj_colisao.yy",},
     {"name":"spr_backgorund","order":1,"path":"sprites/spr_backgorund/spr_backgorund.yy",},
