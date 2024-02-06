@@ -2,7 +2,7 @@ randomize();
 
 global.seed = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 show_message(global.seed)
-var size = 64;
+size = 64;
 
 var _sprite = string_copy(global.seed, 0, 1);
 var _sprite = _sprite == "a"? 0 : _sprite;
@@ -91,13 +91,4 @@ for (var i = _adx; i < room_width+sprite_get_width(spr_noise)*abs(_xscale); i +=
 	}
 }
 
-for (var i = 0; i < room_width; i += size;)
-{
-	for (var j = 0; j < room_height; j += size;)
-	{
-		if (collision_rectangle(i-size/2, j+size/2, i+size/2, j+size/2, obj_noise, true, false))
-		{
-			instance_create_depth(i, j, -j-size, obj_colisao);
-		}
-	}
-}
+frame = 0;
