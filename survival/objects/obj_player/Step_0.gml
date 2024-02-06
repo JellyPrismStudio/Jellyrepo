@@ -67,3 +67,6 @@ if (mouse_check_button_pressed(mb_right) and !collision_line(x, y, mouse_x, mous
 	var _y = floor((mouse_y+32)/64)*64;
 	if (!collision_rectangle(_x-32, _y-32, _x+32, _y+32, obj_player, false, false)) instance_create_depth(_x, _y, -_y, obj_colisao);
 }
+
+var _col = instance_place(x, y, obj_colisao);
+if (_col) instance_destroy(_col);
