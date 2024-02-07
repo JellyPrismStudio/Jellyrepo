@@ -92,3 +92,5 @@ for (var i = _adx; i < room_width+sprite_get_width(spr_noise)*abs(_xscale); i +=
 }
 
 frame = 0;
+x_ = obj_player.x;
+y_ = obj_player.y;

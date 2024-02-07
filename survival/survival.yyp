@@ -35,10 +35,11 @@
   },
   "resources": [
     {"id":{"name":"Anotações","path":"notes/Anotações/Anotações.yy",},},
-    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_colisao","path":"sprites/spr_colisao/spr_colisao.yy",},},
     {"id":{"name":"spr_noise","path":"sprites/spr_noise/spr_noise.yy",},},
     {"id":{"name":"obj_noise","path":"objects/obj_noise/obj_noise.yy",},},
     {"id":{"name":"obj_luz","path":"objects/obj_luz/obj_luz.yy",},},
+    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"Procedural","path":"objects/Procedural/Procedural.yy",},},
     {"id":{"name":"obj_seed","path":"objects/obj_seed/obj_seed.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},

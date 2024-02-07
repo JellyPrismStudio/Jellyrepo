@@ -21,6 +21,7 @@
     {"name":"spr_noise","order":2,"path":"sprites/spr_noise/spr_noise.yy",},
     {"name":"obj_noise","order":5,"path":"objects/obj_noise/obj_noise.yy",},
     {"name":"obj_luz","order":3,"path":"objects/obj_luz/obj_luz.yy",},
+    {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"Procedural","order":16,"path":"objects/Procedural/Procedural.yy",},
     {"name":"obj_seed","order":4,"path":"objects/obj_seed/obj_seed.yy",},
     {"name":"obj_camera","order":2,"path":"objects/obj_camera/obj_camera.yy",},

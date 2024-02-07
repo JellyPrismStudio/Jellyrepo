@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_player",
-    "path": "sprites/spr_player/spr_player.yy",
+    "name": "spr_colisao",
+    "path": "sprites/spr_colisao/spr_colisao.yy",
   },
   "spriteMaskId": null,
   "visible": true,
