@@ -2,7 +2,7 @@ randomize();
 
 global.seed = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 show_message(global.seed)
-size = 64;
+size = 32;
 
 var _sprite = string_copy(global.seed, 0, 1);
 var _sprite = _sprite == "a"? 0 : _sprite;

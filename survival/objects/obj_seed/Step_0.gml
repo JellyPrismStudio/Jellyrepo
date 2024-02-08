@@ -1,7 +1,7 @@
 var _x1 = floor(obj_player.x/16/size)*16*size;
-var _x2 = floor(obj_player.x/16/size)*16*size+16*64;
+var _x2 = floor(obj_player.x/16/size)*16*size+16*size;
 var _y1 = floor(obj_player.y/16/size)*16*size;
-var _y2 = floor(obj_player.y/16/size)*16*size+16*64;
+var _y2 = floor(obj_player.y/16/size)*16*size+16*size;
 if (!collision_rectangle(_x1, _y1, _x2, _y2, Object8, false, false) and frame == 0)
 {
 	instance_create_depth(_x1+size, _y1+size, 0, Object8);
