@@ -2,7 +2,7 @@ function followup_captain()
 {
 	if on_radius
 			{				
-				if variable_instance_exists(self,"path") path_delete(path);
+				if variable_instance_exists(self,"path") if path_exists(path) path_delete(path);
 				path = path_add();
 				target_x = x;
 				target_y = y;
@@ -12,7 +12,7 @@ function followup_captain()
 			} 
 			else 
 			{
-				if variable_instance_exists(self,"path") path_delete(path);
+				if variable_instance_exists(self,"path") if path_exists(path) path_delete(path);
 				path = path_add();
 				//if global.player.x < x xx = random_range(player_range/4,player_range-1) else xx = random_range(-player_range/4,-player_range+1);
 				//if global.player.y < y yy = random_range(player_range/4,player_range-1) else yy = random_range(-player_range/4,-player_range+1);

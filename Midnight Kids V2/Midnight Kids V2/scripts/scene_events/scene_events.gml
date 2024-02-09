@@ -27,6 +27,26 @@ function _intern_timer(stime)
 	
 }
 
+function _intern_change_camera(target, _xfix, _yfix){
+	target = _intern_get_hero(target);
+		if !instance_exists(_GLOBAL_CAMERA) instance_create_depth(0,0,global.intern.depths.over,_GLOBAL_CAMERA)
+		if target == "player" {
+			_GLOBAL_CAMERA.customtarget = false;
+			_GLOBAL_CAMERA.targetobj = global.player;
+			_GLOBAL_CAMERA._xfix = _xfix;
+			_GLOBAL_CAMERA._yfix = _yfix;
+		}
+		else {
+			if instance_exists(target)
+			{
+				_GLOBAL_CAMERA.customtarget = true;
+				_GLOBAL_CAMERA.targetobj = target;
+				_GLOBAL_CAMERA._xfix = _xfix;
+				_GLOBAL_CAMERA._yfix = _yfix;
+			}
+		}	
+}
+
 function _intern_graphic(obj, graphic, xscale = 1){
 	if instance_exists(obj)
 	{
@@ -80,6 +100,31 @@ function _intern_get_hero(name)
 	}
 	
 	return _result;
+}
+
+function _intern_orbital_camera(object, _x, _y)
+{
+	object = _intern_get_hero(object);
+		if !instance_exists(CameraFocus) {
+			if object == -1 or object == -4	instance_create_depth(x,y,global.intern.depths.setup,CameraFocus)
+			else instance_create_depth(object.x+_x,object.y+_y,global.intern.depths.setup,CameraFocus)
+			
+		}
+		_GLOBAL_CAMERA.customtarget = true;
+		_GLOBAL_CAMERA.targetobj = CameraFocus
+		if object == -1 or object == -4
+		{
+			
+			CameraFocus.x = _x;
+			CameraFocus.y = _y;
+		}
+		else
+		{
+			CameraFocus.target = object;
+			CameraFocus.xfix = _x;
+			CameraFocus.yfix = _y;
+			
+		}	
 }
 #endregion
 
@@ -671,9 +716,21 @@ function clean_fade(){
 	}
 }
 
-function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id, keep = false){
+function cutscene_object_fade(effect, speed, reach = -1, reachstart = -1, object = self.id, keep = false){
+	// Effect = "in" "out"
 	// Seta o fade in ou out
 	//image_alpha = reachstart;
+	speed = speed/100
+	if effect == "in"
+	{
+		reach = 0;
+		reachstart = 1;
+	}
+	else if effect == "out"
+	{
+		reach = 1;
+		reachstart = 0;
+	}
 	if global.cleanfade != true {
 		if !instance_exists(_SYS_FADE) {
 			sys_fade = instance_create_depth(0,0,-10000, _SYS_FADE);
@@ -683,7 +740,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 		}
 		object = sys_fade
 		switch(effect){
-			case "in":
+			case "out":
 				if !variable_instance_exists(object,"_sceneIndexerHelperFade"){
 					variable_instance_set(object,"_sceneIndexerHelperFade", effect);
 					object.image_alpha = reachstart;
@@ -695,7 +752,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 				}	
 			break
 		
-			case "out":
+			case "in":
 				if !variable_instance_exists(object,"_sceneIndexerHelperFade"){
 					variable_instance_set(object,"_sceneIndexerHelperFade", effect);
 					object.image_alpha = reachstart;
@@ -729,23 +786,7 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 
 	function cutscene_camera_change(target = "player", _xfix = 0, _yfix = 0){
 		// Muda o foco da câmera
-		target = _intern_get_hero(target);
-		if !instance_exists(_GLOBAL_CAMERA) instance_create_depth(0,0,global.intern.depths.over,_GLOBAL_CAMERA)
-		if target == "player" {
-			_GLOBAL_CAMERA.customtarget = false;
-			_GLOBAL_CAMERA.targetobj = global.player;
-			_GLOBAL_CAMERA._xfix = _xfix;
-			_GLOBAL_CAMERA._yfix = _yfix;
-		}
-		else {
-			if instance_exists(target)
-			{
-				_GLOBAL_CAMERA.customtarget = true;
-				_GLOBAL_CAMERA.targetobj = target;
-				_GLOBAL_CAMERA._xfix = _xfix;
-				_GLOBAL_CAMERA._yfix = _yfix;
-			}
-		}
+		_intern_change_camera(target, _xfix, _yfix)
 		cutscene_end_action();
 	}
 		
@@ -967,8 +1008,9 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 	
 	if xdir != 1 and xdir != -1
 	{
-		 if dir == "right" _intern_graphic(instanceid, sprite, 1);
-		 else if dir == "left" _intern_graphic(instanceid, sprite, -1);
+		 if dir == "right" or dir == "up" _intern_graphic(instanceid, sprite, 1);
+		 else if dir == "left" or dir == "left" _intern_graphic(instanceid, sprite, -1);
+		 else _intern_graphic(instanceid, sprite, 1);
 	}
 	else _intern_graphic(instanceid, sprite, xdir);
 			
@@ -1008,6 +1050,24 @@ function cutscene_object_fade(effect, speed, reach, reachstart, object = self.id
 		_intern_graphic(instanceid, initsprite, 1);
 		cutscene_end_action()
 	}
+}
+		
+	function cutscene_move_length_parallel(dir,spd, length, initsprite, sprite, instanceid = self.id, xdir = 2, lockplayer = true){
+	instanceid = _intern_get_hero(instanceid);
+	if !instance_exists(_AUX_MOVE_DB)
+	{
+		instance_create_depth(0,0,0,_AUX_MOVE_DB);
+	}
+	// Primeiro, criamos o database manager
+	// Depois, checamos se já existe a instanceid.
+	// Caso não exista, é criado.
+	// 
+	
+	
+	_AUX_MOVE_DB.data[array_length(_AUX_MOVE_DB.data)] = [instanceid, dir, spd, length, initsprite, sprite, xdir, lockplayer];
+	_AUX_MOVE_DB.run_next = true
+	cutscene_end_action();
+	
 }
 
 	function cutscene_lock_movement(boolean = false){
@@ -1398,10 +1458,82 @@ function instanciate_choices(arg1, arg2, arg3 = "", page1 = noone, page2 = noone
 	}
 }
 
-function bubble_speech(object, text, name = "", waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
+function cutscene_speech(object, text, camera_pad = [0, 0,-50], name = "", waitforinput = true, customconfigs = [spr_BubbleSpeech, PointerSpeech, c_black, #2a1c05, 0]){
 	//show_debug_message(object);
 	// Usar o WITH para ver cada instancia
 	
+	var graphic = customconfigs[0];
+	var pointergraphic = customconfigs[1];
+	var color = customconfigs[2];
+	var namecolor = customconfigs[3];
+	var yfix = customconfigs[4];
+	
+	if camera_pad[0] >= 0
+	{
+		_intern_orbital_camera(object, camera_pad[1], camera_pad[2]);		
+	}
+	object = _intern_get_hero(object);
+	if object == global.player_stats[0].object {
+		namecolor = c_olive;
+		name = "Lisa";
+	}
+	if object == global.player_stats[1].object 
+	{
+		namecolor = c_red;
+		name = "Ryan";
+	}
+	if object == global.player_stats[2].object {
+		namecolor = c_purple;
+		name = "Hanna";
+	}
+	if object == global.player_stats[3].object {
+		namecolor = c_orange;
+		name = "Dylan";
+	}
+	
+	if !instance_exists(_SYS_BUBBLE_SPEECH){		
+		//show_debug_message("Criou");
+		draw = inst_bubble();
+		draw.instanciator = object;
+		draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+		draw.colorname = namecolor; draw.pointergraph = pointergraphic;
+	}
+	else{
+		var check_object = object;
+		var _exists = false;
+		with(_SYS_BUBBLE_SPEECH){
+			if instanciator == check_object { 
+				draw = self.id;
+				draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; 
+				draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix; draw.colorname = namecolor;
+				_exists = true; break}
+		}
+		if _exists == false {
+			draw = inst_bubble();
+			draw.instanciator = check_object;
+			draw.object = object; draw.text = text; draw.bubblename = name;  draw.colortext = color; draw.graphic = graphic; draw.graphicpointer = pointergraphic; draw.yfix = yfix;
+			draw.colorname = namecolor;
+			_exists = true;
+		}
+	}
+		
+	if waitforinput and draw.message_ended{
+		if keyboard_check_pressed(vk_space){
+			cutscene_end_action();
+			instance_destroy(draw);
+		}
+	}
+	
+}
+
+function bubble_speech(object, text, name = "", waitforinput = true, yfix = 0, color = c_black, namecolor = #2a1c05, graphic = spr_BubbleSpeech, pointergraphic = PointerSpeech){
+	//show_debug_message(object);
+	// Usar o WITH para ver cada instancia
+	if waitforinput == true
+	{
+		_intern_change_camera(object, 0, 0)	;
+		
+	}
 	object = _intern_get_hero(object);
 	if object == global.player_stats[0].object {
 		namecolor = c_olive;

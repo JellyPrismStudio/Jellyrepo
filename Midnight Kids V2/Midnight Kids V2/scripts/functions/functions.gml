@@ -863,3 +863,70 @@ function run_weather(type, strength, additive, size){
 		dust.size = 0.08;		
 	}
 }
+
+
+function get_last_instance(objeto) {
+    var numInstancias = instance_number(objeto);
+    
+    if (numInstancias > 0) {
+        return instance_find(objeto, numInstancias - 1);
+    } else {
+        return noone;
+    }
+}
+
+/// Retorna true se alguma instância do objeto tiver a variável com o valor desejado.
+
+function check_instances_for_variable(objeto, nome_variavel, valor_desejado) {
+    var numInstancias = instance_number(objeto);
+    
+    for (var i = 0; i < numInstancias; i++) {
+        var instanciaAtual = instance_find(objeto, i);
+        
+        if (variable_instance_get(instanciaAtual, nome_variavel) == valor_desejado) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+function check_instances_for_variable_return(objeto, nome_variavel, valor_desejado) {
+    var numInstancias = instance_number(objeto);
+    
+    for (var i = 0; i < numInstancias; i++) {
+        var instanciaAtual = instance_find(objeto, i);
+        
+        if (variable_instance_get(instanciaAtual, nome_variavel) == valor_desejado) {
+            return instanciaAtual;
+        }
+    }
+    
+    return -4;
+}
+
+/// get_instance_with_max_value(objeto, nome_variavel)
+/// Retorna a instância com o maior valor para a variável especificada.
+
+function get_instance_with_max_value(objeto, nome_variavel) {
+    var numInstancias = instance_number(objeto);
+    
+    if (numInstancias > 0) {
+        var instanciaComMaiorValor = instance_find(objeto, 0);
+        var maiorValor = variable_instance_get(instanciaComMaiorValor, nome_variavel);
+
+        for (var i = 1; i < numInstancias; i++) {
+            var instanciaAtual = instance_find(objeto, i);
+            var valorAtual = variable_instance_get(instanciaAtual, nome_variavel);
+
+            if (valorAtual > maiorValor) {
+                instanciaComMaiorValor = instanciaAtual;
+                maiorValor = valorAtual;
+            }
+        }
+
+        return instanciaComMaiorValor;
+    } else {
+        return noone;
+    }
+}

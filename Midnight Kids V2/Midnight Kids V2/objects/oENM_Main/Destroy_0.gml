@@ -17,14 +17,6 @@ if global.party.players[1] != -1 {
 	}
 	global.player_stats[global.party.players[1]].xp += partyxp;
 }
-if global.party.players[2] != -1 {
-	if finalxp > global.player_stats[global.party.players[2]].exp_needed[global.player_stats[global.party.players[2]].level-1] {
-	levelup(global.party.players[2]);
-	var yy = y - global.player.sprite_height;
-	instance_create_depth(x,yy,global.intern.depths.over,_BATTLE_LEVELUP);
-	}
-	global.player_stats[global.party.players[2]].xp += partyxp;
-}
 
 
 instance_create_depth(x,y,depth,oFx_Explosion1);

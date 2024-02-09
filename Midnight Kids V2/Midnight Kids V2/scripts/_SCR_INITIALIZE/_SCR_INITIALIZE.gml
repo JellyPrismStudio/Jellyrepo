@@ -73,7 +73,7 @@ create_enemy_database();
 		doubleClickDetected: false,
 		////////////////////////////////
 		////////////////////////////////
-		firstmap: rJunkyard0,
+		firstmap: RoomDebug,
 		firstx: 400,
 		firsty: 495,
 		////////////////////////////////

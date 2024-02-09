@@ -11,6 +11,7 @@ scene_info[0] = [
 	[cutscene_lock_menu],
 	[cutscene_lock_movement, false],
 	[perform_transfer, global.intern.firstmap, global.intern.firstx,  global.intern.firsty, global.player, true, false],
+	[cutscene_instanciate_object,-400,-400,0,global.player],
 	[cutscene_delete_object, inst_49376BCA],
 
 	[cutscene_lock_movement, true],

@@ -6,6 +6,7 @@ if timer <= 1{
 			//sdm("PRINT<-----------------------");
 			loading = true;
 			alarm_set(1,3);
+			
 			alarm_set(0,4);
 			alarmed = true;
 		}
