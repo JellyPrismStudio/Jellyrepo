@@ -1,3 +1,5 @@
+size = obj_seed.size;
+
 var w = keyboard_check(ord("W"));
 var a = keyboard_check(ord("A"));
 var s = keyboard_check(ord("S"));
@@ -46,7 +48,7 @@ repeat (abs(vlv))
 	}
 }
 
-var _raio = point_in_circle(floor((mouse_x+32)/64)*64, floor((mouse_y+32)/64)*64, x, y, raio);
+var _raio = point_in_circle(floor((mouse_x+size/2)/size)*size, floor((mouse_y+size/2)/size)*size, x, y, raio);
 
 if (mouse_check_button_pressed(mb_left))
 {
@@ -63,9 +65,9 @@ if (mouse_check_button_pressed(mb_left))
 
 if (mouse_check_button_pressed(mb_right) and !collision_line(x, y, mouse_x, mouse_y, obj_colisao, false, false) and _raio)
 {
-	var _x = floor((mouse_x+32)/64)*64;
-	var _y = floor((mouse_y+32)/64)*64;
-	if (!collision_rectangle(_x-32, _y-32, _x+32, _y+32, obj_player, false, false)) instance_create_depth(_x, _y, -_y, obj_colisao);
+	var _x = floor((mouse_x+size/2)/size)*size;
+	var _y = floor((mouse_y+size/2)/size)*size;
+	if (!collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_player, false, false)) instance_create_depth(_x, _y, -_y, obj_colisao);
 }
 
 var _col = instance_place(x, y, obj_colisao);
