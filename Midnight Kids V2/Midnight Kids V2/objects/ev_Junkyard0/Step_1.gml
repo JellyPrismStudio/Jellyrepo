@@ -24,7 +24,7 @@ scene_info[0] = [
 	// Players sobem
 	[cutscene_move_length_parallel, "up", 1, 270, sPlayer3, sPlayer3, "Ryan"],	
 	[cutscene_move_length, "up", 0.8, 250, sPlayer2, sPlayer2Walking, "Hanna", -1],
-	[cutscene_move_length, "right", 0.8, 50, sPlayer2, sPlayer2Walking, "Hanna", 1],
+	
 	[cutscene_wait, 1],	
 	
 	[balloon,balloon_exclamacao, "Ryan", true],
@@ -55,7 +55,7 @@ scene_info[0] = [
 	[cutscene_orbital_camera, "Ryan", 0, -30],
 	[cutscene_move_length, "left", 1, 150, sPlayer3, sPlayer3, "Ryan"],
 	[balloon, balloon_Duvida, "Hanna", true],
-	[cutscene_move_length, "up", 10, 100, sPlayer3, sPlayer3, "Ryan"],
+	[cutscene_move_length, "up", 10, 80, sPlayer3, sPlayer3, "Ryan"],
 	[cutscene_wait, 30],
 	[cutscene_move_length, "up", 10, 100, sPlayer3, sPlayer3, "Ryan"],
 	[cutscene_wait, 30],
@@ -65,33 +65,32 @@ scene_info[0] = [
 	
 	// Hanna se nega a subir
 	[balloon,balloon_exclamacao, "Hanna", true],
-	[cutscene_move_length, "left", 1, 100, sPlayer2, sPlayer2Walking, "Hanna"],
+	[cutscene_move_length, "left", 1, 50, sPlayer2, sPlayer2Walking, "Hanna"],
 	[cutscene_look_direction,  "Hanna", "L"],
 	[cutscene_speech, "Hanna",global.language.main.junkyard.h3],
 	[cutscene_speech, "Ryan",global.language.main.junkyard.r3_1],
 	[cutscene_speech, "Hanna",global.language.main.junkyard.h3_2],
 	[cutscene_speech, "Ryan",global.language.main.junkyard.r3_3],
+	[cutscene_move_length, "down", 1, 50, sPlayer3, sPlayer3, "Ryan"],
 	[cutscene_speech, "Ryan",global.language.main.junkyard.r3_4],
 	
 	// Hanna pensativa 1
 	[balloon, balloon_waiting, "Hanna", true, 0, true],
-	[cutscene_wait, 70],
 	[cutscene_look_direction,  "Hanna", "L"],
-	[cutscene_wait, 70],
+	[cutscene_wait, 30],
 	[cutscene_look_direction,  "Hanna", "R"],
-	[cutscene_wait, 70],
+	[cutscene_wait, 30],
 	[cutscene_look_direction,  "Hanna", "L"],
 	[cutscene_wait, 30],
 	[cutscene_speech, "Hanna",global.language.main.junkyard.h3_5],
 	[cutscene_speech, "Ryan",global.language.main.junkyard.r3_6],
 	[cutscene_speech, "Hanna",global.language.main.junkyard.h3_7],
-	[cutscene_wait, 70],
 	
 	// Hanna pensativa 2
 	[cutscene_move_length, "right", 1, 100, sPlayer2, sPlayer2Walking, "Hanna"],
 	[cutscene_look_direction,  "Hanna", "R"],
 	[balloon, balloon_waiting, "Hanna", true],
-	[cutscene_wait, 120],
+	[cutscene_wait, 70],
 	[cutscene_move_length, "left", 1, 100, sPlayer2, sPlayer2Walking, "Hanna"],
 	[cutscene_look_direction,  "Hanna", "L"],
 	[cutscene_wait, 60],
@@ -100,6 +99,10 @@ scene_info[0] = [
 	
 	//[cutscene_object_fade, "out", 0.2],
 	
+	[cutscene_move_length_parallel, "up", 1, 60, sPlayer3, sPlayer3,		"Ryan"],
+	[cutscene_move_length_parallel, "up", 1, 60, sPlayer2, sPlayer2Walking, "Hanna"],
+	
+	[cutscene_object_fade, "out", 1],
 	
 	// FINISHING				
 	[cutscene_section_end],

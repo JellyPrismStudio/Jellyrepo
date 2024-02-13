@@ -38,6 +38,8 @@
     {"id":{"name":"spr_colisao","path":"sprites/spr_colisao/spr_colisao.yy",},},
     {"id":{"name":"spr_noise","path":"sprites/spr_noise/spr_noise.yy",},},
     {"id":{"name":"obj_noise","path":"objects/obj_noise/obj_noise.yy",},},
+    {"id":{"name":"spr_tile2","path":"sprites/spr_tile2/spr_tile2.yy",},},
+    {"id":{"name":"spr_tile1","path":"sprites/spr_tile1/spr_tile1.yy",},},
     {"id":{"name":"obj_luz","path":"objects/obj_luz/obj_luz.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"Procedural","path":"objects/Procedural/Procedural.yy",},},
