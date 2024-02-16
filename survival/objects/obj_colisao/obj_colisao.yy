@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_colisao",
-    "path": "sprites/spr_colisao/spr_colisao.yy",
+    "name": "spr_tile1",
+    "path": "sprites/spr_tile1/spr_tile1.yy",
   },
   "spriteMaskId": null,
   "visible": true,
