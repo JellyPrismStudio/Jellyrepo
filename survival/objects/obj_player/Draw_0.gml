@@ -13,3 +13,5 @@ draw_circle(x, y, raio, true);
 var _dir = point_direction(x, y, mouse_x, mouse_y);
 draw_line(x, y, x+lengthdir_x(raio, _dir), y+lengthdir_y(raio, _dir));
 draw_set_color(c_white);
+
+draw_text(x, y-sprite_height*1.3, fps);

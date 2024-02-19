@@ -72,9 +72,3 @@ if (mouse_check_button_pressed(mb_right) and !collision_line(x, y, mouse_x, mous
 
 var _col = instance_place(x, y, obj_colisao);
 if (_col) instance_destroy(_col);
-
-if (keyboard_check_pressed(vk_enter))
-{
-	view_enabled[1] = !view_enabled[1];
-	view_enabled[0] = !view_enabled[0];
-}
