@@ -19,9 +19,10 @@
   "ResourceOrderSettings": [
     {"name":"Anotações","order":17,"path":"notes/Anotações/Anotações.yy",},
     {"name":"spr_noise","order":2,"path":"sprites/spr_noise/spr_noise.yy",},
-    {"name":"obj_noise","order":5,"path":"objects/obj_noise/obj_noise.yy",},
+    {"name":"obj_noise_dirt","order":5,"path":"objects/obj_noise_dirt/obj_noise_dirt.yy",},
     {"name":"spr_tile2","order":5,"path":"sprites/spr_tile2/spr_tile2.yy",},
-    {"name":"spr_tile1","order":4,"path":"sprites/spr_tile1/spr_tile1.yy",},
+    {"name":"spr_tile_dirt","order":4,"path":"sprites/spr_tile_dirt/spr_tile_dirt.yy",},
+    {"name":"obj_noise_sand","order":7,"path":"objects/obj_noise_sand/obj_noise_sand.yy",},
     {"name":"obj_luz","order":3,"path":"objects/obj_luz/obj_luz.yy",},
     {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"Procedural","order":16,"path":"objects/Procedural/Procedural.yy",},
@@ -30,5 +31,6 @@
     {"name":"obj_chunk","order":6,"path":"objects/obj_chunk/obj_chunk.yy",},
     {"name":"obj_colisao","order":1,"path":"objects/obj_colisao/obj_colisao.yy",},
     {"name":"spr_backgorund","order":1,"path":"sprites/spr_backgorund/spr_backgorund.yy",},
+    {"name":"spr_tile_sand","order":6,"path":"sprites/spr_tile_sand/spr_tile_sand.yy",},
   ],
 }
