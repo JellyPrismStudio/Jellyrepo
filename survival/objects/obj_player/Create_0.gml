@@ -7,10 +7,6 @@ raio = 200;
 
 instance_create_depth(x, y, 0, obj_camera);
 
-//for (var i = 3; i < room_height/64; i++;)
-{
-	//for (var j = 0; j < room_width/64; j++;)
-	{
-		//instance_create_depth(j*64, i*64, -i*64, obj_colisao);
-	}
-}
+item[0] = [spr_bloco, spr_bloco, spr_bloco, spr_bloco, spr_bloco, spr_bloco, spr_bloco, spr_bloco, noone, spr_bloco];
+item[1] = [0, 0, 0, 0, 0, 0, 0, 0, noone, 0];
+item[2] = [1, 1, 1, 1, 1, 1, 1, 1, 0, 1];
