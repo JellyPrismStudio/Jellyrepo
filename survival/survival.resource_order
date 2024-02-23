@@ -29,6 +29,7 @@
     {"name":"Procedural","order":16,"path":"objects/Procedural/Procedural.yy",},
     {"name":"obj_seed","order":4,"path":"objects/obj_seed/obj_seed.yy",},
     {"name":"obj_camera","order":2,"path":"objects/obj_camera/obj_camera.yy",},
+    {"name":"obj_print","order":9,"path":"objects/obj_print/obj_print.yy",},
     {"name":"obj_chunk","order":6,"path":"objects/obj_chunk/obj_chunk.yy",},
     {"name":"obj_colisao","order":1,"path":"objects/obj_colisao/obj_colisao.yy",},
     {"name":"spr_backgorund","order":1,"path":"sprites/spr_backgorund/spr_backgorund.yy",},

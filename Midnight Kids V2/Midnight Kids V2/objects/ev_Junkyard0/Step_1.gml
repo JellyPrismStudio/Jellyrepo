@@ -102,8 +102,6 @@ scene_info[0] = [
 	[cutscene_move_length_parallel, "up", 1, 60, sPlayer3, sPlayer3,		"Ryan"],
 	[cutscene_move_length_parallel, "up", 1, 60, sPlayer2, sPlayer2Walking, "Hanna"],
 	
-	[cutscene_object_fade, "out", 1],
-	
 	// FINISHING				
 	[cutscene_section_end],
 	

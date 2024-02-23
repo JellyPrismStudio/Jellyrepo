@@ -17,31 +17,31 @@ switch (_xscale)
 		_xscale = 1;
 	break;
 	case "1":
-		_xscale = 1.5;
+		_xscale = 1.25;
 	break;
 	case "2":
-		_xscale = 2;
+		_xscale = 1.5;
 	break;
 	case "3":
-		_xscale = 2.5;
+		_xscale = 0.75;
 	break;
 	case "4":
-		_xscale = 3;
+		_xscale = 2;
 	break;
 	case "5":
 		_xscale = -1;
 	break;
 	case "6":
-		_xscale = -1.5;
+		_xscale = -1.25;
 	break;
 	case "7":
-		_xscale = -2;
+		_xscale = -1.5;
 	break;
 	case "8":
-		_xscale = -2.5;
+		_xscale = -0.75;
 	break;
 	case "9":
-		_xscale = -3;
+		_xscale = -2;
 	break;
 }
 var _yscale = string_copy(global.seed, 3, 1);
@@ -51,31 +51,31 @@ switch (_yscale)
 		_yscale = 1;
 	break;
 	case "2":
-		_yscale = 1.5;
+		_yscale = 1.25;
 	break;
 	case "3":
-		_yscale = 2;
+		_yscale = 1.50;
 	break;
 	case "4":
-		_yscale = 2.5;
+		_yscale = 0.75;
 	break;
 	case "5":
-		_yscale = 3;
+		_yscale = 2;
 	break;
 	case "6":
 		_yscale = -1;
 	break;
 	case "7":
-		_yscale = -1.5;
+		_yscale = -1.25;
 	break;
 	case "8":
-		_yscale = -2;
+		_yscale = -1.5;
 	break;
 	case "9":
-		_yscale = -2.5;
+		_yscale = -0.75;
 	break;
 	case "10":
-		_yscale = -3;
+		_yscale = -2;
 	break;
 }
 
