@@ -47,7 +47,6 @@
     {"id":{"name":"Procedural","path":"objects/Procedural/Procedural.yy",},},
     {"id":{"name":"obj_seed","path":"objects/obj_seed/obj_seed.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
-    {"id":{"name":"obj_print","path":"objects/obj_print/obj_print.yy",},},
     {"id":{"name":"obj_chunk","path":"objects/obj_chunk/obj_chunk.yy",},},
     {"id":{"name":"obj_colisao","path":"objects/obj_colisao/obj_colisao.yy",},},
     {"id":{"name":"spr_backgorund","path":"sprites/spr_backgorund/spr_backgorund.yy",},},

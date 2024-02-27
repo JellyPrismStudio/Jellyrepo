@@ -6,9 +6,9 @@ if (frame == clamp(frame, 0, 16))
 		var j = y1+size*(frame-1);
 		var _val = collision_rectangle(i-size/2, j+size/2, i+size/2, j+size/2, obj_noise_dirt, true, false) and !collision_point(i, j, obj_colisao, false, false);
 		var _sand = collision_rectangle(i-size/2, j+size/2, i+size/2, j+size/2, obj_noise_sand, true, false) and !collision_point(i, j, obj_colisao, false, false);
-		ini_open("save.ini");
-		var _val = ini_read_real("x"+string(x)+"y"+string(y), "x"+string(i)+"y"+string(j), _val)
-		ini_close();
+		//ini_open("save.ini");
+		//var _val = ini_read_real("x"+string(x)+"y"+string(y), "x"+string(i)+"y"+string(j), _val)
+		//ini_close();
 		if (_val)
 		{
 			var _obj = instance_create_depth(i, j, -j-size, obj_colisao);
@@ -17,8 +17,7 @@ if (frame == clamp(frame, 0, 16))
 	}	
 }
 
-
-var _r = obj_player.raio+obj_player.sprite_width*obj_player.image_xscale;
+/*var _r = obj_player.raio+obj_player.sprite_width*obj_player.image_xscale;
 if (mouse_check_button_pressed(mb_any))
 {
 	if (mouse_check_button_pressed(mb_left))

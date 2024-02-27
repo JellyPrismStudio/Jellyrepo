@@ -52,6 +52,7 @@ var _raio = point_in_circle(floor((mouse_x+size/2)/size)*size, floor((mouse_y+si
 
 if (mouse_check_button_pressed(mb_left))
 {
+	var _col = false;
 	var _dir = point_direction(x, y, mouse_x, mouse_y);
 	for (var i = floor(sprite_width/2*image_xscale); i < raio; i++;)
 	{
