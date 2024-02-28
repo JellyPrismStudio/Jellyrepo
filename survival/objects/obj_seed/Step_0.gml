@@ -1,10 +1,10 @@
-if (timer <= 500) timer++;
+if (timer <= 250) timer++;
 if (timer > 0 and timer/10 == floor(timer/10))
 {
 	if (!surface_exists(surf_dirt)) surf_dirt = surface_create(room_width/10, room_height/10);
 	var _x = timer/10-1;
 	var _y = 0;
-	while (_x >= 10)
+	while (_x >= 5)
 	{
 		_x -= 5;
 		_y++;
@@ -12,9 +12,9 @@ if (timer > 0 and timer/10 == floor(timer/10))
 	_x *= room_width/10;
 	_y *= room_height/10;
 	surface_set_target(surf_dirt);
-	for (var i = _x; i < _x+room_width/5; i += sprite_get_width(spr_noise)*abs(_xscale);)
+	for (var i = 0; i < room_width/5; i += sprite_get_width(spr_noise)*abs(_xscale);)
 	{
-		for (var j = _y; j < _y+room_height/5; j += sprite_get_height(spr_noise)*abs(_yscale);)
+		for (var j = 0; j < room_height/5; j += sprite_get_height(spr_noise)*abs(_yscale);)
 		{
 			draw_sprite_ext(spr_noise, _sprite, i, j, _xscale, _yscale, 0, c_white, 1);
 		}

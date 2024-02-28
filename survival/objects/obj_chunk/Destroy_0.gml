@@ -5,7 +5,7 @@ for (var i = x1; i < x2; i += size;)
 		var _col = collision_point(i, j, obj_colisao, false, true);
 		if (_col)
 		{
-			instance_destroy(_col);
+			instance_destroy(_col, false);
 		}
 	}
 }

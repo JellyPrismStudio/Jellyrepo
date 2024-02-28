@@ -1,8 +1,8 @@
 randomize();
 depth = -room_height;
 
-obj_player.x = room_width/10;
-obj_player.y = room_height/11;
+obj_player.x = room_width/4;
+obj_player.y = room_height/4;
 
 var _dirt = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 var _sand = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
