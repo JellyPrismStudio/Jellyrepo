@@ -1,8 +1,8 @@
 randomize();
 depth = -room_height;
 
-obj_player.x = room_width/4;
-obj_player.y = room_height/4;
+obj_player.x = 0;
+obj_player.y = 0;
 
 var _dirt = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 var _sand = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
@@ -84,7 +84,18 @@ switch (_yscale)
 	break;
 }
 
-surf_dirt = surface_create(room_width/10, room_height/10);
+var _adx = _xscale < 0? sprite_get_width(spr_noise)*abs(_xscale) : 0;
+var _ady = _yscale < 0? sprite_get_height(spr_noise)*abs(_yscale) : 0;
+for (var i = _adx; i < room_width+sprite_get_width(spr_noise)*abs(_xscale); i += sprite_get_width(spr_noise)*abs(_xscale);)
+{
+	for (var j = _ady; j < room_height+sprite_get_height(spr_noise)*abs(_yscale); j += sprite_get_height(spr_noise)*abs(_yscale);)
+	{
+		var _obj = instance_create_depth(i, j, 0, obj_noise_dirt);
+		_obj.image_index = _sprite;
+		_obj.image_xscale = _xscale;
+		_obj.image_yscale = _yscale;
+	}
+}
 
 timer = 0;
 /*var _sprite = string_copy(global.seed, 4, 1);

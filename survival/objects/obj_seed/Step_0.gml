@@ -1,4 +1,4 @@
-if (timer <= 250) timer++;
+/*if (timer <= 250) timer++;
 if (timer > 0 and timer/10 == floor(timer/10))
 {
 	if (!surface_exists(surf_dirt)) surf_dirt = surface_create(room_width/10, room_height/10);
@@ -24,18 +24,20 @@ if (timer > 0 and timer/10 == floor(timer/10))
 	spr_dirt = sprite_create_from_surface(surf_dirt, 0, 0, room_width/10, room_height/10, true, false, 0, 0);
 	var _obj = instance_create_depth(_x, _y, depth, obj_noise_dirt);
 	_obj.sprite_index = spr_dirt;
-}
+}*/
+//if (timer < room_height/sprite_get_width(spr_bloco)/10) timer++;
+
 
 var _x = floor(obj_player.x/16/size)*16*size+16*size/2;
 var _y = floor(obj_player.y/16/size)*16*size+16*size/2;
 
 if (chunkx != floor(obj_player.x/size/16) or chunky != floor(obj_player.y/size/16))
 {
-	for (var i = -1; i <= 1; i++;)
+	for (var i = -2; i <= 2; i++;)
 	{
-		for (var j = -1; j <= 1; j++;)
+		for (var j = -2; j <= 2; j++;)
 		{
-			if (!collision_point(_x+size*16*i, _y+size*16*j, obj_chunk, false, false))
+			if (!collision_point(_x+size*16*i, _y+size*16*j, obj_chunk, false, false) and !((i == -2 or i == 2) and (j == -2 or j == 2)))
 			{
 				instance_create_depth(_x+size*16*i, _y+size*16*j, -_y+size*16*j, obj_chunk);
 			}
@@ -43,7 +45,9 @@ if (chunkx != floor(obj_player.x/size/16) or chunky != floor(obj_player.y/size/1
 	}
 	with (obj_chunk)
 	{
-		if (abs(floor(x/size/16)-floor(obj_player.x/size/16)) > 1 or abs(floor(y/size/16)-floor(obj_player.y/size/16)) > 1)
+		var _disx = abs(floor(x/size/16)-floor(obj_player.x/size/16));
+		var _disy = abs(floor(y/size/16)-floor(obj_player.y/size/16));
+		if (_disx > 2 or _disy > 2 or (_disx == 2 and _disy == 2))
 		{
 			instance_destroy();
 		}

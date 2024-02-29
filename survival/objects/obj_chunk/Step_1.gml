@@ -1,23 +1,31 @@
-if (frame <=  16) frame++;
-if (frame == clamp(frame, 0, 16))
+if (frame <=  256) frame++;
+if (frame == clamp(frame, 0, 256))
 {
-	for (var i = x1; i < x2; i += size;)
+	var _x = frame;
+	var _y = 0;
+	while (_x >= 16)
 	{
-		var j = y1+size*(frame-1);
-		var _val = collision_rectangle(i-size/2, j+size/2, i+size/2, j+size/2, obj_noise_dirt, true, false) and !collision_point(i, j, obj_colisao, false, false);
-		var _sand = collision_rectangle(i-size/2, j+size/2, i+size/2, j+size/2, obj_noise_sand, true, false) and !collision_point(i, j, obj_colisao, false, false);
-		//ini_open("save.ini");
-		//var _val = ini_read_real("x"+string(x)+"y"+string(y), "x"+string(i)+"y"+string(j), _val)
-		//ini_close();
-		if (_val)
-		{
-			var _obj = instance_create_depth(i, j, -j-size, obj_colisao);
-			if (_sand) _obj.sprite_index = spr_tile_sand;
-		}
-	}	
+		_x -= 16;
+		_y++;
+	}
+	_x *= size;
+	_y *= size;
+	_x += x1;
+	_y += y1;
+	var _val = collision_rectangle(_x-size/2, _y+size/2, _x+size/2, _y+size/2, obj_noise_dirt, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
+	var _sand = collision_rectangle(_x-size/2, _y+size/2, _x+size/2, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
+	ini_open("save"+string(x)+".ini");
+	var _val = ini_read_real("y"+string(y), "x"+string(_x)+"y"+string(_y)+"bloco", _val)
+	ini_close();
+	if (_val)
+	{
+		var _obj = instance_create_depth(_x, _y, -_y-size, obj_colisao);
+		if (_sand) _obj.sprite_index = spr_tile_sand;
+		//show_message(_x)
+	}
 }
 
-/*var _r = obj_player.raio+obj_player.sprite_width*obj_player.image_xscale;
+var _r = obj_player.raio+obj_player.sprite_width*obj_player.image_xscale;
 if (mouse_check_button_pressed(mb_any))
 {
 	if (mouse_check_button_pressed(mb_left))
@@ -32,8 +40,8 @@ if (mouse_check_button_pressed(mb_any))
 		}
 		if (_col)
 		{
-			ini_open("save.ini")
-			ini_write_real("x"+string(x)+"y"+string(y), "x"+string(_col.x)+"y"+string(_col.y), false);
+			ini_open("save"+string(x)+".ini")
+			ini_write_real("y"+string(y), "x"+string(_col.x)+"y"+string(_col.y)+"bloco", false);
 			ini_close();
 		}
 	}
@@ -47,8 +55,8 @@ if (mouse_check_button_pressed(mb_any))
 		var _y = floor((mouse_y+_size2)/_size)*_size;
 		if (!collision_rectangle(_x-_size2, _y-_size2, _x+_size2, _y+_size2, obj_player, false, false))
 		{
-			ini_open("save.ini")
-			ini_write_real("x"+string(x)+"y"+string(y), "x"+string(_x)+"y"+string(_y), true);
+			ini_open("save"+string(x)+".ini")
+			ini_write_real("y"+string(y), "x"+string(_x)+"y"+string(_y)+"bloco", true);
 			ini_close();
 		}
 	}
