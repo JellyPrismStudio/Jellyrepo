@@ -23,6 +23,7 @@
     {"name":"spr_tile_dirt","order":4,"path":"sprites/spr_tile_dirt/spr_tile_dirt.yy",},
     {"name":"obj_noise_sand","order":7,"path":"objects/obj_noise_sand/obj_noise_sand.yy",},
     {"name":"spr_bloco","order":7,"path":"sprites/spr_bloco/spr_bloco.yy",},
+    {"name":"spr_noise2","order":8,"path":"sprites/spr_noise2/spr_noise2.yy",},
     {"name":"obj_luz","order":3,"path":"objects/obj_luz/obj_luz.yy",},
     {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"obj_item","order":8,"path":"objects/obj_item/obj_item.yy",},
