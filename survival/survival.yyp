@@ -41,6 +41,7 @@
     {"id":{"name":"spr_tile_dirt","path":"sprites/spr_tile_dirt/spr_tile_dirt.yy",},},
     {"id":{"name":"obj_noise_sand","path":"objects/obj_noise_sand/obj_noise_sand.yy",},},
     {"id":{"name":"spr_bloco","path":"sprites/spr_bloco/spr_bloco.yy",},},
+    {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},},
     {"id":{"name":"spr_noise2","path":"sprites/spr_noise2/spr_noise2.yy",},},
     {"id":{"name":"obj_luz","path":"objects/obj_luz/obj_luz.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},

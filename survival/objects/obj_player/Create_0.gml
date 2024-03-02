@@ -1,7 +1,7 @@
 state = "idle";
 vlh = 0;
 vlv = 0;
-vl = 5;
+vl = 6;
 slide = .2;
 raio = 200;
 

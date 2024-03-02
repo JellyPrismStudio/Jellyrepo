@@ -1,15 +1,22 @@
 randomize();
 depth = -room_height;
 
-obj_player.x = 0;
-obj_player.y = 0;
+obj_player.x = room_width/2;
+obj_player.y = room_height/2;
+size = 64;
+for (var i = 0; i < room_width/size/16; i++;)
+{
+	for (var j = 0; j < room_width/size/16; j++;)
+	{
+		global.chunks[i, j] = noone;
+	}
+}
 
 var _dirt = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 var _sand = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 global.seed = _dirt+_sand;
 global.spr_dirt = noone;
 show_message(global.seed)
-size = 64;
 
 _sprite = string_copy(global.seed, 0, 1);
 _sprite = _sprite == "a"? 0 : _sprite;

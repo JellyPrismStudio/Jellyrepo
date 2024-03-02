@@ -1,7 +1,7 @@
-if (frame <=  256) frame++;
-if (frame == clamp(frame, 0, 256))
+if (frame <=  128) frame++;
+if (frame == clamp(frame, 0, 128))
 {
-	var _x = frame;
+	var _x = frame*2-2;
 	var _y = 0;
 	while (_x >= 16)
 	{
@@ -10,20 +10,45 @@ if (frame == clamp(frame, 0, 256))
 	}
 	_x *= size;
 	_y *= size;
-	_x += x1;
-	_y += y1;
-	var _val = collision_rectangle(_x-size/2, _y+size/2, _x+size/2, _y+size/2, obj_noise_dirt, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
-	var _sand = collision_rectangle(_x-size/2, _y+size/2, _x+size/2, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
-	ini_open("save"+string(x)+".ini");
-	var _val = ini_read_real("y"+string(y), "x"+string(_x)+"y"+string(_y)+"bloco", _val)
-	ini_close();
+	_x += x1+size/2;
+	_y += y1+size/2;
+	var _val = collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_noise_dirt, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
+	if (ds_list_size(global.chunks[x1/size/16, y1/size/16]) < frame*2)
+	{
+		ds_list_add(global.chunks[x1/size/16, y1/size/16], _val)
+	}
+	else
+	{
+		_val = ds_list_find_value(global.chunks[x1/size/16, y1/size/16], frame*2-1);
+	}
+	var _sand = collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
 	if (_val)
 	{
 		var _obj = instance_create_depth(_x, _y, -_y-size, obj_colisao);
 		if (_sand) _obj.sprite_index = spr_tile_sand;
-		//show_message(_x)
 	}
+	
+	var _val = collision_rectangle(_x-size/2+size, _y-size/2, _x+size/2+size, _y+size/2, obj_noise_dirt, true, false) and !collision_point(_x+size, _y, obj_colisao, false, false);
+	if (ds_list_size(global.chunks[x1/size/16, y1/size/16]) < frame*2+1)
+	{
+		ds_list_add(global.chunks[x1/size/16, y1/size/16], _val)
+	}
+	else
+	{
+		_val = ds_list_find_value(global.chunks[x1/size/16, y1/size/16], frame*2-1);
+	}
+	var _sand = collision_rectangle(_x-size/2+size, _y-size/2, _x+size/2+size, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x+size, _y, obj_colisao, false, false);
+	if (_val)
+	{
+		var _obj = instance_create_depth(_x+size, _y, -_y-size, obj_colisao);
+		if (_sand) _obj.sprite_index = spr_tile_sand;
+	}
+	//show_message(frame);
+	//ini_open("save"+string(x)+".ini");*/
+	//var _val = ini_read_real("y"+string(y), "x"+string(_x)+"y"+string(_y)+"bloco", _val)
+	//ini_close();
 }
+
 
 var _r = obj_player.raio+obj_player.sprite_width*obj_player.image_xscale;
 if (mouse_check_button_pressed(mb_any))
@@ -38,11 +63,13 @@ if (mouse_check_button_pressed(mb_any))
 			var _col = collision_point(_x, _y, obj_colisao, false, false);
 			if (_col) break;
 		}
-		if (_col)
+		if (_col and _col.x == clamp(_col.x, x1, x2) and _col.y == clamp(_col.y, y1, y2))
 		{
-			ini_open("save"+string(x)+".ini")
-			ini_write_real("y"+string(y), "x"+string(_col.x)+"y"+string(_col.y)+"bloco", false);
-			ini_close();
+			var _x = (_col.x-x1-size/2)/size;
+			var _y = (_col.y-y1-size/2)/size*16;
+			var _pos = _x+_y;
+			show_debug_message(_pos);
+			ds_list_set(global.chunks[x1/size/16, y1/size/16], _pos, 0);
 		}
 	}
 	
