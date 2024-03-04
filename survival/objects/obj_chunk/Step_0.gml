@@ -19,7 +19,7 @@ if (frame == clamp(frame, 0, 128))
 	}
 	else
 	{
-		_val = ds_list_find_value(global.chunks[x1/size/16, y1/size/16], frame*2-1);
+		_val = ds_list_find_value(global.chunks[x1/size/16, y1/size/16], frame*2-2);
 	}
 	var _sand = collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
 	if (_val)
@@ -68,7 +68,6 @@ if (mouse_check_button_pressed(mb_any))
 			var _x = (_col.x-x1-size/2)/size;
 			var _y = (_col.y-y1-size/2)/size*16;
 			var _pos = _x+_y;
-			show_debug_message(_pos);
 			ds_list_set(global.chunks[x1/size/16, y1/size/16], _pos, 0);
 		}
 	}
@@ -78,13 +77,15 @@ if (mouse_check_button_pressed(mb_any))
 	var _raio = point_in_circle(floor((mouse_x+_size2)/_size)*_size, floor((mouse_y+_size2)/_size)*_size, obj_player.x, obj_player.y, obj_player.raio);
 	if (mouse_check_button_pressed(mb_right) and !collision_line(obj_player.x, obj_player.y, mouse_x, mouse_y, obj_colisao, false, false) and _raio)
 	{
-		var _x = floor((mouse_x+_size2)/_size)*_size;
-		var _y = floor((mouse_y+_size2)/_size)*_size;
-		if (!collision_rectangle(_x-_size2, _y-_size2, _x+_size2, _y+_size2, obj_player, false, false))
+		var _x = floor((mouse_x)/size)*size+size/2;
+		var _y = floor((mouse_y)/size)*size+size/2;
+		if (!collision_rectangle(_x-_size2, _y-_size2, _x+_size2, _y+_size2, obj_player, false, false) and _x == clamp(_x, x1, x2) and _y == clamp(_y, y1, y2))
 		{
-			ini_open("save"+string(x)+".ini")
-			ini_write_real("y"+string(y), "x"+string(_x)+"y"+string(_y)+"bloco", true);
-			ini_close();
+			var _x = (_x-x1-size/2)/size;
+			var _y = (_y-y1-size/2)/size*16;
+			var _pos = _x+_y;
+			show_debug_message(_pos)
+			ds_list_set(global.chunks[x1/size/16, y1/size/16], _pos, 1);
 		}
 	}
 }
