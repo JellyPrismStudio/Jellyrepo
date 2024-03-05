@@ -6,7 +6,7 @@ y1 = y-size*16/2;
 x2 = x+size*16/2;
 y2 = y+size*16/2;
 
-if (global.chunks[x1/size/16, y1/size/16] == noone)
+if (global.chunks[x1/size/16+1, y1/size/16+1] == noone)
 {
-	global.chunks[x1/size/16, y1/size/16] = ds_list_create();
+	global.chunks[x1/size/16+1, y1/size/16+1] = ds_list_create();
 }

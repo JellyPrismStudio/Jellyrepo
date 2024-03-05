@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_noise",
-    "path": "sprites/spr_noise/spr_noise.yy",
+    "name": "spr_noise2",
+    "path": "sprites/spr_noise2/spr_noise2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

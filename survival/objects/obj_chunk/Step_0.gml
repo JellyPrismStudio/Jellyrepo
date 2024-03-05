@@ -13,13 +13,13 @@ if (frame == clamp(frame, 0, 128))
 	_x += x1+size/2;
 	_y += y1+size/2;
 	var _val = collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_noise_dirt, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
-	if (ds_list_size(global.chunks[x1/size/16, y1/size/16]) < frame*2)
+	if (ds_list_size(global.chunks[x1/size/16+1, y1/size/16+1]) < frame*2)
 	{
-		ds_list_add(global.chunks[x1/size/16, y1/size/16], _val)
+		ds_list_add(global.chunks[x1/size/16+1, y1/size/16+1], _val)
 	}
 	else
 	{
-		_val = ds_list_find_value(global.chunks[x1/size/16, y1/size/16], frame*2-2);
+		_val = ds_list_find_value(global.chunks[x1/size/16+1, y1/size/16+1], frame*2-2);
 	}
 	var _sand = collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x, _y, obj_colisao, false, false);
 	if (_val)
@@ -29,13 +29,13 @@ if (frame == clamp(frame, 0, 128))
 	}
 	
 	var _val = collision_rectangle(_x-size/2+size, _y-size/2, _x+size/2+size, _y+size/2, obj_noise_dirt, true, false) and !collision_point(_x+size, _y, obj_colisao, false, false);
-	if (ds_list_size(global.chunks[x1/size/16, y1/size/16]) < frame*2+1)
+	if (ds_list_size(global.chunks[x1/size/16+1, y1/size/16+1]) < frame*2+1)
 	{
-		ds_list_add(global.chunks[x1/size/16, y1/size/16], _val)
+		ds_list_add(global.chunks[x1/size/16+1, y1/size/16+1], _val)
 	}
 	else
 	{
-		_val = ds_list_find_value(global.chunks[x1/size/16, y1/size/16], frame*2-1);
+		_val = ds_list_find_value(global.chunks[x1/size/16+1, y1/size/16+1], frame*2-1);
 	}
 	var _sand = collision_rectangle(_x-size/2+size, _y-size/2, _x+size/2+size, _y+size/2, obj_noise_sand, true, false) and !collision_point(_x+size, _y, obj_colisao, false, false);
 	if (_val)
@@ -43,10 +43,6 @@ if (frame == clamp(frame, 0, 128))
 		var _obj = instance_create_depth(_x+size, _y, -_y-size, obj_colisao);
 		if (_sand) _obj.sprite_index = spr_tile_sand;
 	}
-	//show_message(frame);
-	//ini_open("save"+string(x)+".ini");*/
-	//var _val = ini_read_real("y"+string(y), "x"+string(_x)+"y"+string(_y)+"bloco", _val)
-	//ini_close();
 }
 
 
@@ -68,7 +64,7 @@ if (mouse_check_button_pressed(mb_any))
 			var _x = (_col.x-x1-size/2)/size;
 			var _y = (_col.y-y1-size/2)/size*16;
 			var _pos = _x+_y;
-			ds_list_set(global.chunks[x1/size/16, y1/size/16], _pos, 0);
+			ds_list_set(global.chunks[x1/size/16+1, y1/size/16+1], _pos, 0);
 		}
 	}
 	
@@ -85,7 +81,7 @@ if (mouse_check_button_pressed(mb_any))
 			var _y = (_y-y1-size/2)/size*16;
 			var _pos = _x+_y;
 			show_debug_message(_pos)
-			ds_list_set(global.chunks[x1/size/16, y1/size/16], _pos, 1);
+			ds_list_set(global.chunks[x1/size/16+1, y1/size/16+1], _pos, 1);
 		}
 	}
 }

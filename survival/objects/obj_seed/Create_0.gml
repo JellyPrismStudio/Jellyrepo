@@ -3,10 +3,10 @@ depth = -room_height;
 
 obj_player.x = room_width/2;
 obj_player.y = room_height/2;
-size = 64;
-for (var i = 0; i < room_width/size/16; i++;)
+size = 48;
+for (var i = 0; i <= room_width/size/16+1; i++;)
 {
-	for (var j = 0; j < room_width/size/16; j++;)
+	for (var j = 0; j <= room_width/size/16+1; j++;)
 	{
 		global.chunks[i, j] = noone;
 	}
@@ -91,11 +91,11 @@ switch (_yscale)
 	break;
 }
 
-var _adx = _xscale < 0? sprite_get_width(spr_noise)*abs(_xscale) : 0;
-var _ady = _yscale < 0? sprite_get_height(spr_noise)*abs(_yscale) : 0;
-for (var i = _adx; i < room_width+sprite_get_width(spr_noise)*abs(_xscale); i += sprite_get_width(spr_noise)*abs(_xscale);)
+var _adx = _xscale < 0? sprite_get_width(spr_noise2)*abs(_xscale) : 0;
+var _ady = _yscale < 0? sprite_get_height(spr_noise2)*abs(_yscale) : 0;
+for (var i = _adx; i < room_width+sprite_get_width(spr_noise2)*abs(_xscale); i += sprite_get_width(spr_noise2)*abs(_xscale);)
 {
-	for (var j = _ady; j < room_height+sprite_get_height(spr_noise)*abs(_yscale); j += sprite_get_height(spr_noise)*abs(_yscale);)
+	for (var j = _ady; j < room_height+sprite_get_height(spr_noise2)*abs(_yscale); j += sprite_get_height(spr_noise2)*abs(_yscale);)
 	{
 		var _obj = instance_create_depth(i, j, 0, obj_noise_dirt);
 		_obj.image_index = _sprite;
