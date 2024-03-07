@@ -1,12 +1,12 @@
 randomize();
 depth = -room_height;
 
-obj_player.x = room_width/2;
-obj_player.y = room_height/2;
+obj_player.x = 1200;
+obj_player.y = 1200;
 size = 48;
-for (var i = 0; i <= room_width/size/16+1; i++;)
+for (var i = 0; i <= room_width/size/16+2; i++;)
 {
-	for (var j = 0; j <= room_width/size/16+1; j++;)
+	for (var j = 0; j <= room_width/size/16+2; j++;)
 	{
 		global.chunks[i, j] = noone;
 	}
