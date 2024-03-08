@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_tile_dirt",
-    "path": "sprites/spr_tile_dirt/spr_tile_dirt.yy",
+    "name": "spr_tile_template",
+    "path": "sprites/spr_tile_template/spr_tile_template.yy",
   },
   "spriteMaskId": null,
   "visible": true,
