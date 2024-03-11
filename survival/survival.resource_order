@@ -48,6 +48,7 @@
     {"name":"GMLive_roomLoader","order":2,"path":"scripts/GMLive_roomLoader/GMLive_roomLoader.yy",},
     {"name":"GMLive_program","order":3,"path":"scripts/GMLive_program/GMLive_program.yy",},
     {"name":"GMLive_exec","order":1,"path":"scripts/GMLive_exec/GMLive_exec.yy",},
+    {"name":"spr_tile_template2","order":13,"path":"sprites/spr_tile_template2/spr_tile_template2.yy",},
     {"name":"obj_item","order":8,"path":"objects/obj_item/obj_item.yy",},
     {"name":"spr_tile_dirt2","order":10,"path":"sprites/spr_tile_dirt2/spr_tile_dirt2.yy",},
     {"name":"Procedural","order":16,"path":"objects/Procedural/Procedural.yy",},

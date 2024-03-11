@@ -48,7 +48,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.1.102",
+    "IDEVersion": "2023.2.1.75",
   },
   "resources": [
     {"id":{"name":"Anotações","path":"notes/Anotações/Anotações.yy",},},
@@ -83,6 +83,7 @@
     {"id":{"name":"GMLive_builder","path":"scripts/GMLive_builder/GMLive_builder.yy",},},
     {"id":{"name":"GMLive_program","path":"scripts/GMLive_program/GMLive_program.yy",},},
     {"id":{"name":"GMLive_exec","path":"scripts/GMLive_exec/GMLive_exec.yy",},},
+    {"id":{"name":"spr_tile_template2","path":"sprites/spr_tile_template2/spr_tile_template2.yy",},},
     {"id":{"name":"obj_item","path":"objects/obj_item/obj_item.yy",},},
     {"id":{"name":"spr_tile_dirt2","path":"sprites/spr_tile_dirt2/spr_tile_dirt2.yy",},},
     {"id":{"name":"Procedural","path":"objects/Procedural/Procedural.yy",},},
@@ -109,7 +110,6 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
-  "templateType": "game",
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],
