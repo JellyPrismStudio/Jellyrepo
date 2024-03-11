@@ -31,6 +31,7 @@
     {"name":"GMLive_noDeactivate","order":3,"path":"scripts/GMLive_noDeactivate/GMLive_noDeactivate.yy",},
     {"name":"obj_gmlive","order":4,"path":"objects/obj_gmlive/obj_gmlive.yy",},
     {"name":"obj_noise_dirt","order":5,"path":"objects/obj_noise_dirt/obj_noise_dirt.yy",},
+    {"name":"spr_destroy","order":14,"path":"sprites/spr_destroy/spr_destroy.yy",},
     {"name":"spr_tile_dirt","order":4,"path":"sprites/spr_tile_dirt/spr_tile_dirt.yy",},
     {"name":"GMLive_seekSetOp","order":6,"path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},
     {"name":"spr_tile_dirt3","order":11,"path":"sprites/spr_tile_dirt3/spr_tile_dirt3.yy",},

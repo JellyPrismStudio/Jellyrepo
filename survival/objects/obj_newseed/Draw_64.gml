@@ -28,7 +28,7 @@ function draw_ds_grid(grid, x, y, largura_celula, altura_celula) {
 
             // Desenha o valor da célula na tela
 			var _color = make_color_hsv(valor_celula,255,valor_celula)         
-			draw_text_color(draw_x, draw_y, ".", _color, _color, _color, _color, 1);
+			draw_text_color(draw_x, draw_y, "0", _color, _color, _color, _color, 1);
         }
     }
 }

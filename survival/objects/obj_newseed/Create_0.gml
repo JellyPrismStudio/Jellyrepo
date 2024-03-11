@@ -1,5 +1,5 @@
 perlin = false;
-gridsize = 3;
+gridsize = 8;
 seedserial = irandom_range(0,100000000000000000)
 show_debug_message(seedserial);
 someGrid = ds_grid_create(view_get_wport(view_camera[1])/gridsize,view_get_hport(view_camera[1])/gridsize)

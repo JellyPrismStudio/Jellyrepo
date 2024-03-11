@@ -4,6 +4,8 @@ vlv = 0;
 vl = 6;
 slide = .2;
 raio = 200;
+timer_max = 20;
+timer = 0;
 
 instance_create_depth(x, y, 0, obj_camera);
 
