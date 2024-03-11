@@ -74,6 +74,14 @@ switch (bitmask) {
     default:    _frame = 0;    break;
 }
 
+if _bitmask[3] == 1 
+{
+	// 12   47   48
+
+	if _frame == 12 _frame = choose(12,47,48)
+	if _frame == 8 _frame = choose(8, 49, 50)
+}
+
 image_index = _frame;
 
 /*

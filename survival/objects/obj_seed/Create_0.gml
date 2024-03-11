@@ -16,7 +16,7 @@ var _dirt = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_ran
 var _sand = choose("a", "b", "c")+string(irandom_range(0, 9))+string(irandom_range(0, 9));
 global.seed = _dirt+_sand;
 global.spr_dirt = noone;
-show_message(global.seed)
+show_debug_message(global.seed)
 
 _sprite = string_copy(global.seed, 0, 1);
 _sprite = _sprite == "a"? 0 : _sprite;

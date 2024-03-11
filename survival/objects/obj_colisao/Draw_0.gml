@@ -1,6 +1,8 @@
-if (live_call()) return live_result;
+//if (live_call()) return live_result;
 
 draw_self();
+
+/*
 draw_set_font(Font1);
 
 var unkw = 17
