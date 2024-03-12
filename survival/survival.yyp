@@ -62,6 +62,7 @@
     {"id":{"name":"obj_noise_dirt","path":"objects/obj_noise_dirt/obj_noise_dirt.yy",},},
     {"id":{"name":"GMLive_http","path":"scripts/GMLive_http/GMLive_http.yy",},},
     {"id":{"name":"spr_destroy","path":"sprites/spr_destroy/spr_destroy.yy",},},
+    {"id":{"name":"spr_destroy2","path":"sprites/spr_destroy2/spr_destroy2.yy",},},
     {"id":{"name":"spr_tile_dirt","path":"sprites/spr_tile_dirt/spr_tile_dirt.yy",},},
     {"id":{"name":"GMLive_seekSetOp","path":"scripts/GMLive_seekSetOp/GMLive_seekSetOp.yy",},},
     {"id":{"name":"GMLive_action","path":"scripts/GMLive_action/GMLive_action.yy",},},
