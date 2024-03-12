@@ -1,33 +1,3 @@
-/*if (timer <= 250) timer++;
-if (timer > 0 and timer/10 == floor(timer/10))
-{
-	if (!surface_exists(surf_dirt)) surf_dirt = surface_create(room_width/10, room_height/10);
-	var _x = timer/10-1;
-	var _y = 0;
-	while (_x >= 5)
-	{
-		_x -= 5;
-		_y++;
-	}
-	_x *= room_width/10;
-	_y *= room_height/10;
-	surface_set_target(surf_dirt);
-	for (var i = 0; i < room_width/5; i += sprite_get_width(spr_noise)*abs(_xscale);)
-	{
-		for (var j = 0; j < room_height/5; j += sprite_get_height(spr_noise)*abs(_yscale);)
-		{
-			draw_sprite_ext(spr_noise, _sprite, i, j, _xscale, _yscale, 0, c_white, 1);
-		}
-	}
-	surface_reset_target();
-
-	spr_dirt = sprite_create_from_surface(surf_dirt, 0, 0, room_width/10, room_height/10, true, false, 0, 0);
-	var _obj = instance_create_depth(_x, _y, depth, obj_noise_dirt);
-	_obj.sprite_index = spr_dirt;
-}*/
-//if (timer < room_height/sprite_get_width(spr_bloco)/10) timer++;
-
-
 var _x = floor(obj_player.x/16/size)*16*size+16*size/2;
 var _y = floor(obj_player.y/16/size)*16*size+16*size/2;
 
@@ -56,3 +26,24 @@ if (chunkx != floor(obj_player.x/size/16) or chunky != floor(obj_player.y/size/1
 
 chunkx = floor(obj_player.x/size/16);
 chunky = floor(obj_player.y/size/16);
+
+timer_day--;
+if (timer_day == 0)
+{
+	day = !day;
+	timer_day = timer_day_max;
+}
+
+if (!day)
+{
+	alpha = lerp(alpha, alpha_max, .002);
+	if (alpha >= alpha_max-.01) alpha = alpha_max;
+}
+else
+{
+	alpha = lerp(alpha, 0, .002);
+	if (alpha <= .01 and alpha > 0)
+	{
+		alpha = 0;
+	}
+}

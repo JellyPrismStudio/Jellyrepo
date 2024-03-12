@@ -58,28 +58,40 @@ if (mouse_check_button(mb_left) and timer == 0)
 {
 	var _col = false;
 	var _dir = point_direction(x, y, mouse_x, mouse_y);
-	for (var i = floor(sprite_width/2*image_xscale); i < raio; i++;)
+	for (var i = size/2; i < raio; i++;)
 	{
 		var _x = x+lengthdir_x(i, _dir);
 		var _y = y+lengthdir_y(i, _dir);
-		var _col = collision_point(_x, _y, obj_colisao, false, false);
+		var _col = collision_point(_x, _y+size/2, obj_colisao, false, false);
+		if (!_col) _col = collision_point(_x, _y, obj_colisao, false, false);
 		if (_col) break;
 	}
 	if (_col)
 	{
-		var _x1 = floor(_col.x/16/size)*16*size;
-		var _y1 = floor(_col.y/16/size)*16*size;
-		var _x = (_col.x-_x1-size/2)/size;
-		var _y = (_col.y-_y1-size/2)/size*16;
-		var _pos = _x+_y;
-		ds_list_set(global.chunks[_x1/size/16+1, _y1/size/16+1], _pos, 0);
-		
-		instance_destroy(_col);
+		_col.vida -= mining_damage;
+		_col.timer = _col.timer_max;
+		if (_col.vida <= 0)
+		{
+			var _x1 = floor(_col.x/16/size)*16*size;
+			var _y1 = floor(_col.y/16/size)*16*size;
+			var _x = (_col.x-_x1-size/2)/size;
+			var _y = (_col.y-_y1-size/2)/size*16;
+			var _pos = _x+_y;
+			ds_list_set(global.chunks[_x1/size/16+1, _y1/size/16+1], _pos, 0);
+			instance_destroy(_col);
+		}
 	}
 	timer = timer_max;
 }
 
 var _dir = point_direction(x, y, mouse_x, mouse_y);
+
+image_xscale = 1;
+if (_dir == clamp(_dir, 0, 45) or _dir == clamp(_dir, 315, 360) or _dir == clamp(_dir, 135, 225)) sprite_index = spr_player_side;
+if (_dir == clamp(_dir, 135, 225)) image_xscale = -1;
+if (_dir == clamp(_dir, 45, 135)) sprite_index = spr_player_up;
+if (_dir == clamp(_dir, 225, 315)) sprite_index = spr_player_dwn;
+
 var _dis = point_distance(x, y, mouse_x, mouse_y);
 var _moux = x+lengthdir_x(clamp(_dis, 0, size*3.5), _dir);
 var _mouy = y+lengthdir_y(clamp(_dis, 0, size*3.5), _dir);

@@ -1,4 +1,4 @@
-if (!col and point_distance(x, y, obj_player.x, obj_player.y) < 80)
+if (!col and point_distance(x, y, obj_player.x, obj_player.y) < 130)
 {
 	col = true;
 }
@@ -25,8 +25,8 @@ if (col)
 	}
 	if (_slot != noone)
 	{
-		x = lerp(x, obj_player.x, .03);
-		y = lerp(y, obj_player.y, .03);
+		x = lerp(x, obj_player.x, .06);
+		y = lerp(y, obj_player.y, .06);
 		if (place_meeting(x, y, obj_player))
 		{
 			obj_player.item[0, _slot] = sprite_index;

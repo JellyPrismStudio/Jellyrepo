@@ -63,8 +63,8 @@
   },
   "origin": 4,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "mapa",
+    "path": "folders/Sprites/mapa.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

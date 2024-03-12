@@ -34,3 +34,14 @@ if keyboard_check(vk_f5){
 		draw_text_color(x, y - 70, image_index+1, c_color, c_color, c_color, c_color, alpha);
 	}
 }
+
+if (vida < vida_max)
+{
+	draw_healthbar(x-20, y-80, x+20, y-70, vida%vida_max, c_black, c_red, c_lime, 0, true, true);
+	if (timer > 0) timer--;
+	if (timer == 0)
+	{
+		vida++;
+		if (vida == vida_max) timer = timer_max;
+	}
+}
