@@ -43,11 +43,15 @@
 
 		//Erase Light
 		var _list = ds_list_create();
-		
-		for (var i = 0; i < instance_number(obj_uls_collider); ++i) 
-		{
-		    ds_list_add(_list, instance_find(obj_uls_collider, i));
-		}
+		var _x = camera_get_view_x(view_camera[0]);
+		var _y = camera_get_view_y(view_camera[0]);
+		var _w = camera_get_view_width(view_camera[0]);
+		var _h = camera_get_view_height(view_camera[0]);
+		collision_rectangle_list(_x, _y, _x+_w, _y+_h, obj_uls_collider, false, true, _list, true);
+//		for (var i = 0; i < instance_number(obj_colisao); ++i) 
+//		{
+//		    ds_list_add(_list, instance_find(obj_colisao, i));
+//		}
 		
 		var _num = ds_list_size(_list);
 		
@@ -80,7 +84,7 @@
 				    //Sign test and cast shadow
 					if( !scr_signtest( i1[0], i1[1], i2[0], i2[1], x,y) )
 					{
-						scr_castshadow(VBuffer, radius_surf, i1[0], i1[1], i2[0], i2[1], x,y, i_find.z_height);
+						scr_castshadow(VBuffer, radius_surf, i1[0], i1[1], i2[0], i2[1], x,y, 1);
 					}
 				}
 			}

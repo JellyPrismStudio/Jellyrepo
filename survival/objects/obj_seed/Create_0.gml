@@ -1,8 +1,8 @@
 randomize();
 depth = -room_height;
 
-obj_player.x = room_width/4;
-obj_player.y = room_width-4;
+obj_player.x = room_width/2;
+obj_player.y = room_width/2;
 size = 48;
 for (var i = 0; i <= room_width/size/16+2; i++;)
 {

@@ -52,13 +52,15 @@ var _col = instance_place(x, y, obj_colisao);
 if (_col) instance_destroy(_col);
 
 var _raio = point_in_circle(floor((mouse_x+size/2)/size)*size, floor((mouse_y+size/2)/size)*size, x, y, raio);
+var _dis = point_distance(x, y, mouse_x, mouse_y);
+var _dir = point_direction(x, y, mouse_x, mouse_y);
 
 if (timer > 0) timer--;
 if (mouse_check_button(mb_left) and timer == 0)
 {
 	var _col = false;
-	var _dir = point_direction(x, y, mouse_x, mouse_y);
-	for (var i = size/2; i < raio; i++;)
+	
+	for (var i = size/2; i < raio and i < _dis; i++;)
 	{
 		var _x = x+lengthdir_x(i, _dir);
 		var _y = y+lengthdir_y(i, _dir);
@@ -84,15 +86,12 @@ if (mouse_check_button(mb_left) and timer == 0)
 	timer = timer_max;
 }
 
-var _dir = point_direction(x, y, mouse_x, mouse_y);
-
 image_xscale = 1;
 if (_dir == clamp(_dir, 0, 45) or _dir == clamp(_dir, 315, 360) or _dir == clamp(_dir, 135, 225)) sprite_index = spr_player_side;
 if (_dir == clamp(_dir, 135, 225)) image_xscale = -1;
 if (_dir == clamp(_dir, 45, 135)) sprite_index = spr_player_up;
 if (_dir == clamp(_dir, 225, 315)) sprite_index = spr_player_dwn;
 
-var _dis = point_distance(x, y, mouse_x, mouse_y);
 var _moux = x+lengthdir_x(clamp(_dis, 0, size*3.5), _dir);
 var _mouy = y+lengthdir_y(clamp(_dis, 0, size*3.5), _dir);
 var _x = floor((_moux)/size)*size+size/2;
