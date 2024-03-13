@@ -1,3 +1,5 @@
+scr_define_corners();
+
 alarm[0] = 2;
 depth = -y;
 timer_max = 180;
