@@ -1,22 +1,22 @@
-var _x = floor(obj_player.x/16/size)*16*size+16*size/2;
-var _y = floor(obj_player.y/16/size)*16*size+16*size/2;
+var _x = floor(obj_player.x/10/size)*10*size+10*size/2;
+var _y = floor(obj_player.y/10/size)*10*size+10*size/2;
 
-if (chunkx != floor(obj_player.x/size/16) or chunky != floor(obj_player.y/size/16))
+if (chunkx != floor(obj_player.x/size/10) or chunky != floor(obj_player.y/size/10))
 {
 	for (var i = -1; i <= 1; i++;)
 	{
 		for (var j = -1; j <= 1; j++;)
 		{
-			if (!collision_point(_x+size*16*i, _y+size*16*j, obj_chunk, false, false))
+			if (!collision_point(_x+size*10*i, _y+size*10*j, obj_chunk, false, false))
 			{
-				instance_create_depth(_x+size*16*i, _y+size*16*j, -_y+size*16*j, obj_chunk);
+				instance_create_depth(_x+size*10*i, _y+size*10*j, -_y+size*10*j, obj_chunk);
 			}
 		}
 	}
 	with (obj_chunk)
 	{
-		var _disx = abs(floor(x/size/16)-floor(obj_player.x/size/16));
-		var _disy = abs(floor(y/size/16)-floor(obj_player.y/size/16));
+		var _disx = abs(floor(x/size/10)-floor(obj_player.x/size/10));
+		var _disy = abs(floor(y/size/10)-floor(obj_player.y/size/10));
 		if (_disx > 1 or _disy > 1)
 		{
 			instance_destroy();
@@ -24,8 +24,8 @@ if (chunkx != floor(obj_player.x/size/16) or chunky != floor(obj_player.y/size/1
 	}
 }
 
-chunkx = floor(obj_player.x/size/16);
-chunky = floor(obj_player.y/size/16);
+chunkx = floor(obj_player.x/size/10);
+chunky = floor(obj_player.y/size/10);
 
 timer_day--;
 if (timer_day == 0)

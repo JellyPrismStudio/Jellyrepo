@@ -1,1 +1,1 @@
-//draw_rectangle(x-size*8, y-size*8, x+size*8, y+size*8, true);
+//draw_rectangle(x-size*5, y-size*5, x+size*5, y+size*5, true);

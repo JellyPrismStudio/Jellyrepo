@@ -7,7 +7,7 @@
 		if (surface_exists(surf_final_light))
 		{
 			//Get Camera
-			var cam_id = view_get_camera(view_current);
+			var cam_id = view_camera[0];//view_get_camera(view_current);
 			var cam_x = camera_get_view_x(cam_id);
 			var cam_y = camera_get_view_y(cam_id);
 			

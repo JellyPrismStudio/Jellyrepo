@@ -4,9 +4,9 @@ depth = -room_height;
 obj_player.x = room_width/2;
 obj_player.y = room_width/2;
 size = 48;
-for (var i = 0; i <= room_width/size/16+2; i++;)
+for (var i = 0; i <= room_width/size/10+2; i++;)
 {
-	for (var j = 0; j <= room_width/size/16+2; j++;)
+	for (var j = 0; j <= room_width/size/10+2; j++;)
 	{
 		global.chunks[i, j] = noone;
 	}
@@ -110,5 +110,5 @@ day = true;
 alpha_max = .9;
 alpha = 0;
 
-chunkx = -floor(obj_player.x/size/16);
-chunky = -floor(obj_player.y/size/16);
+chunkx = -floor(obj_player.x/size/10);
+chunky = -floor(obj_player.y/size/10);

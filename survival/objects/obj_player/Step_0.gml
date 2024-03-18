@@ -74,12 +74,12 @@ if (mouse_check_button(mb_left) and timer == 0)
 		_col.timer = _col.timer_max;
 		if (_col.vida <= 0)
 		{
-			var _x1 = floor(_col.x/16/size)*16*size;
-			var _y1 = floor(_col.y/16/size)*16*size;
+			var _x1 = floor(_col.x/10/size)*10*size;
+			var _y1 = floor(_col.y/10/size)*10*size;
 			var _x = (_col.x-_x1-size/2)/size;
-			var _y = (_col.y-_y1-size/2)/size*16;
+			var _y = (_col.y-_y1-size/2)/size*10;
 			var _pos = _x+_y;
-			ds_list_set(global.chunks[_x1/size/16+1, _y1/size/16+1], _pos, 0);
+			ds_list_set(global.chunks[_x1/size/10+1, _y1/size/10+1], _pos, 0);
 			instance_destroy(_col);
 		}
 	}
@@ -98,11 +98,11 @@ var _x = floor((_moux)/size)*size+size/2;
 var _y = floor((_mouy)/size)*size+size/2;
 if (mouse_check_button_pressed(mb_right) and !collision_rectangle(_x-size/2+2, _y-size/2+2, _x+size/2-2, _y+size/2-2, obj_colisao, false, false))
 {
-	var _x1 = floor(_x/16/size)*16*size;
-	var _y1 = floor(_y/16/size)*16*size;
+	var _x1 = floor(_x/10/size)*10*size;
+	var _y1 = floor(_y/10/size)*10*size;
 	var _x_ = (_x-_x1-size/2)/size;
-	var _y_ = (_y-_y1-size/2)/size*16;;
+	var _y_ = (_y-_y1-size/2)/size*10;
 	var _pos = _x_+_y_;
-	ds_list_set(global.chunks[_x1/size/16+1, _y1/size/16+1], _pos, 1);
+	ds_list_set(global.chunks[_x1/size/10+1, _y1/size/10+1], _pos, 1);
 	instance_create_depth(_x, _y, -_y, obj_colisao);
 }

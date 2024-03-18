@@ -1,5 +1,6 @@
 /// @description Drawing And Calculating Shadow
 	//Check visibility
+	
 	if not(instance_position(x, y, obj_uls_collider) && obj_uls_controller.disable_inside)
 	{
 		Visible = true;
