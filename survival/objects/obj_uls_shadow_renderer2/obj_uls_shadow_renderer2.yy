@@ -1,15 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_uls_shadow_renderer",
+  "name": "obj_uls_shadow_renderer2",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Internal",
-    "path": "folders/Objects/Ultimate Light System/Internal.yy",
+    "name": "internal",
+    "path": "folders/objects2/ultimate light system/internal.yy",
   },
   "parentObjectId": null,
   "persistent": false,

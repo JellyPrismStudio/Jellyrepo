@@ -17,7 +17,7 @@ function draw_ds_grid(grid, x, y, largura_celula, altura_celula) {
     var altura = ds_grid_height(grid);
 
     // Loop para percorrer cada célula da grid
-    for (var grid_y = 0; grid_y < altura; grid_y++) {
+    /*for (var grid_y = 0; grid_y < altura; grid_y++) {
         for (var grid_x = 0; grid_x < largura; grid_x++) {
             // Obtém o valor da célula
             var valor_celula = ds_grid_get(grid, grid_x, grid_y);
@@ -30,7 +30,7 @@ function draw_ds_grid(grid, x, y, largura_celula, altura_celula) {
 			var _color = make_color_hsv(valor_celula,255,valor_celula)         
 			draw_text_color(draw_x, draw_y, "0", _color, _color, _color, _color, 1);
         }
-    }
+    }*/
 }
 
 // Exemplo de uso

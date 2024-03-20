@@ -17,3 +17,24 @@ if (_col7) with (_col7) {event_user(0);};
 if (_col8) with (_col8) {event_user(0);};
 
 event_user(0);
+
+if image_index > 40
+{
+	image_blend = c_red;
+}
+else if image_index > 30
+{
+	image_blend = c_blue;
+}
+else if image_index > 20
+{
+	image_blend = c_green;
+}
+else if image_index > 10
+{
+	image_blend = c_orange;
+}
+else if image_index > 0
+{
+	image_blend = c_white;
+}

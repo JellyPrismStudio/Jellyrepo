@@ -1,17 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_uls_shadow_renderer",
+  "name": "obj_light_lamp2",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Internal",
-    "path": "folders/Objects/Ultimate Light System/Internal.yy",
+    "name": "example",
+    "path": "folders/objects2/example.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_uls_light2",
+    "path": "objects/obj_uls_light2/obj_uls_light2.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

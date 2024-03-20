@@ -40,6 +40,8 @@ y == clamp(y, _y-sprite_width/2, _y+_h+sprite_width*1.5))
 			var c_color = c_white
 			draw_text_color(x, y - 70, image_index+1, c_color, c_color, c_color, c_color, alpha);
 		}
+		
+		image_blend = c_color;
 	}
 
 	if (vida < vida_max)
