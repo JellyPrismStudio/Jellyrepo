@@ -36,5 +36,5 @@ else if image_index > 10
 }
 else if image_index > 0
 {
-	image_blend = c_white;
+	//instance_destroy();
 }

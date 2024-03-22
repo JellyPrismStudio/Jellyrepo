@@ -7,7 +7,7 @@ var _y = camera_get_view_y(view_camera[0]);
 var _w = camera_get_view_width(view_camera[0]);
 var _h = camera_get_view_height(view_camera[0]);
 if (x == clamp(x, _x-sprite_width/2, _x+_w+sprite_width/2) and
-y == clamp(y, _y-sprite_width/2, _y+_h+sprite_width*1.5))
+y == clamp(y, _y-sprite_height, _y+_h+sprite_width*2))
 {
 	if keyboard_check(vk_f5){
 		draw_set_font(Font1);

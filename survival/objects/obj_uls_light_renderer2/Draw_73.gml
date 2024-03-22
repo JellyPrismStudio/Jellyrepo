@@ -18,7 +18,7 @@
 			
 			if (surface_exists(surf_particles))
 			{
-				draw_surface_ext( surf_particles, cam_x, cam_y, 1, 1, 0, -1, final_light_alpha);
+				//draw_surface_ext( surf_particles, cam_x, cam_y, 1, 1, 0, -1, final_light_alpha);
 			}
 	
 			gpu_set_blendmode(bm_normal);

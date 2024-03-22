@@ -15,7 +15,7 @@
 			shader_set(sh_lighten)
 			shader_set_uniform_f_array(uni_sh_color, array_shadow_color);
 	
-			draw_surface_ext( surf_final_light, cam_x, cam_y, 1, 1, 0, -1, 1);
+			//draw_surface_ext( surf_final_light, cam_x, cam_y, 1, 1, 0, -1, 1);
 	
 			shader_reset();
 		}
