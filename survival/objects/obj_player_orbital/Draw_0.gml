@@ -1,0 +1,1 @@
+if !lockcamera draw_self();

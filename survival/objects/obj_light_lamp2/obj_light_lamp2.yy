@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "example",
-    "path": "folders/objects2/example.yy",
+    "path": "folders/Objects/objects2/example.yy",
   },
   "parentObjectId": {
     "name": "obj_uls_light2",

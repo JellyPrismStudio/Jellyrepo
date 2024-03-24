@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "internal",
-    "path": "folders/objects2/ultimate light system/internal.yy",
+    "path": "folders/Objects/objects2/ultimate light system/internal.yy",
   },
   "parentObjectId": null,
   "persistent": false,

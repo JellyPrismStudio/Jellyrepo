@@ -1,29 +1,24 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_light_mouse2",
+  "name": "obj_player_orbital",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
-  "overriddenProperties": [
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_uls_light","path":"objects/obj_uls_light/obj_uls_light.yy",},"propertyId":{"name":"light_animation","path":"objects/obj_uls_light/obj_uls_light.yy",},"value":"False",},
-  ],
+  "overriddenProperties": [],
   "parent": {
-    "name": "example",
-    "path": "folders/Objects/objects2/example.yy",
+    "name": "Objetos",
+    "path": "folders/Objetos.yy",
   },
-  "parentObjectId": {
-    "name": "obj_uls_light2",
-    "path": "objects/obj_uls_light2/obj_uls_light2.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
-  "physicsGroup": 0,
+  "physicsGroup": 1,
   "physicsKinematic": false,
   "physicsLinearDamping": 0.1,
   "physicsObject": false,
@@ -34,7 +29,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "Sprite26",
+    "path": "sprites/Sprite26/Sprite26.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

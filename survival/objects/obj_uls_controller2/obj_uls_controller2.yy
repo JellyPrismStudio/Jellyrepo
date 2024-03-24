@@ -13,7 +13,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "ultimate light system",
-    "path": "folders/objects2/ultimate light system.yy",
+    "path": "folders/Objects/objects2/ultimate light system.yy",
   },
   "parentObjectId": null,
   "persistent": false,
