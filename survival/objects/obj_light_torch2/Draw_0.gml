@@ -24,3 +24,6 @@ gpu_set_blendmode(bm_add);
 	uls_set_light_alpha(self, 0.6 * random_range(0.93, 1.06))
 
 gpu_set_blendmode(bm_normal);
+
+x = obj_player_orbital.x;
+y = obj_player_orbital.y;
