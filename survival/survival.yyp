@@ -29,12 +29,12 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Example","folderPath":"folders/Objects/Example.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Custom Shapes","folderPath":"folders/Objects/Example/Custom Shapes.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ultimate Light System","folderPath":"folders/Objects/Ultimate Light System.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Internal","folderPath":"folders/Objects/Ultimate Light System/Internal.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"objects2","folderPath":"folders/Objects/objects2.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"example","folderPath":"folders/Objects/objects2/example.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"ultimate light system","folderPath":"folders/Objects/objects2/ultimate light system.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"internal","folderPath":"folders/Objects/objects2/ultimate light system/internal.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ultimate Light System","folderPath":"folders/Objects/Ultimate Light System.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Internal","folderPath":"folders/Objects/Ultimate Light System/Internal.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objetos","folderPath":"folders/Objetos.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle Systems","folderPath":"folders/Particle Systems.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy",},
@@ -73,7 +73,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.1.75",
+    "IDEVersion": "2023.8.1.102",
   },
   "resources": [
     {"id":{"name":"obj_light_torch","path":"objects/obj_light_torch/obj_light_torch.yy",},},
@@ -200,6 +200,7 @@
     {"roomId":{"name":"room_example","path":"rooms/room_example/room_example.yy",},},
     {"roomId":{"name":"room_example2","path":"rooms/room_example2/room_example2.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],
