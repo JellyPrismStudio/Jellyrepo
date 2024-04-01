@@ -12,10 +12,10 @@
     {"name":"inst_5304E13F","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5083DEA4","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_42AC48EC","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_4F6FAAFF","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_106693A1","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_6623F1E3","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_134FFED8","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_4F6FAAFF","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_106693A1","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd": false,
   "layers": [

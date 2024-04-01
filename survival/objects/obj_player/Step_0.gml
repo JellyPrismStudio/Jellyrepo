@@ -39,6 +39,13 @@ var _dir = point_direction(x, y, mouse_x, mouse_y);
 if (timer > 0) timer--;
 if (mouse_check_button(mb_left) and timer == 0)
 {
+	var _dir = point_direction(x, y-sprite_height/2, mouse_x, mouse_y);
+	var _obj = instance_create_depth(x+lengthdir_x(lenght, _dir), y-sprite_height/2+lengthdir_y(lenght, _dir), depth-sprite_height, obj_nomedahora);
+	_obj.image_yscale = side;
+	_obj.image_xscale = 2;
+	_obj.image_angle = _dir;
+	side *= -1;
+	
 	var _col = false;
 	
 	for (var i = size/2; i < raio and i < _dis; i++;)
@@ -86,4 +93,23 @@ if (mouse_check_button_pressed(mb_right) and !collision_rectangle(_x-size/2+2, _
 	var _pos = _x_+_y_;
 	ds_list_set(global.chunks[_x1/size/10+1, _y1/size/10+1], _pos, 1);
 	instance_create_depth(_x, _y, -_y, obj_colisao);
+}
+
+repeat (abs(vlh))
+{
+	if (!place_meeting(x+sign(vlh), y, obj_colisao)) x += sign(vlh);
+	else
+	{
+		if (!place_meeting(x+sign(vlh), y-vl*3, obj_colisao)) y -= 1;
+		else if (!place_meeting(x+sign(vlh), y+vl*3, obj_colisao)) y += 1;
+	}
+}
+repeat (abs(vlv))
+{
+	if (!place_meeting(x, y+sign(vlv), obj_colisao)) y += sign(vlv);
+	else
+	{
+		if (!place_meeting(x-vl*3, y+sign(vlv), obj_colisao)) x -= 1;
+		else if (!place_meeting(x+vl*3, y+sign(vlv), obj_colisao)) x += 1;
+	}
 }
