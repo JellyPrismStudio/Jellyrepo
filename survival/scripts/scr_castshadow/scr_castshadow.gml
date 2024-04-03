@@ -50,22 +50,22 @@ function scr_castshadow(argument0, argument1, argument2, argument3, argument4, a
 	
 		//var colour_argb = floor(_Z * 255) * power(256, 3);
 	
-		vertex_position(_vb, _Ax + offsetx,_Ay + offsety);
+		vertex_position(_vb, _Ax + offsetx-obj_player.vlh,_Ay + offsety-obj_player.vlv);
 		vertex_color(_vb, c_black, _Z);
 
-		vertex_position(_vb, _Bx + offsetx,_By + offsety);
+		vertex_position(_vb, _Bx + offsetx-obj_player.vlh,_By + offsety-obj_player.vlv);
 		vertex_color(_vb, c_black, _Z);
 
-		vertex_position(_vb, Adx + offsetx,Ady + offsety);
+		vertex_position(_vb, Adx + offsetx-obj_player.vlh,Ady + offsety-obj_player.vlv);
 		vertex_color(_vb, c_black, _Z);
 
-		vertex_position(_vb, _Bx + offsetx,_By + offsety);
+		vertex_position(_vb, _Bx + offsetx-obj_player.vlh,_By + offsety-obj_player.vlv);
 		vertex_color(_vb, c_black, _Z);
 
-		vertex_position(_vb, Adx + offsetx,Ady + offsety);
+		vertex_position(_vb, Adx + offsetx-obj_player.vlh,Ady + offsety-obj_player.vlv);
 		vertex_color(_vb, c_black, _Z);
 
-		vertex_position(_vb, Bdx + offsetx,Bdy + offsety);
+		vertex_position(_vb, Bdx + offsetx-obj_player.vlh,Bdy + offsety-obj_player.vlv);
 		vertex_color(_vb, c_black, _Z);
 	
 		/*

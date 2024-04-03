@@ -102,6 +102,7 @@ repeat (abs(vlh))
 	{
 		if (!place_meeting(x+sign(vlh), y-vl*3, obj_colisao)) y -= 1;
 		else if (!place_meeting(x+sign(vlh), y+vl*3, obj_colisao)) y += 1;
+		else vlh = 0;
 	}
 }
 repeat (abs(vlv))
@@ -111,5 +112,6 @@ repeat (abs(vlv))
 	{
 		if (!place_meeting(x-vl*3, y+sign(vlv), obj_colisao)) x -= 1;
 		else if (!place_meeting(x+vl*3, y+sign(vlv), obj_colisao)) x += 1;
+		else vlv = 0;
 	}
 }
