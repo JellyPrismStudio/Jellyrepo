@@ -1,5 +1,5 @@
 /// @description Initialize Values
-
+depth = 100;
 	//Set up Vertex
 	vertex_format_begin();
 	vertex_format_add_position();

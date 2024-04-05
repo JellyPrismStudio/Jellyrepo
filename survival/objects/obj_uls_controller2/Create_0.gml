@@ -1,5 +1,5 @@
 /// @description Initializing Values
-
+depth = 100;
 	//Circle Precision
 	draw_set_circle_precision(128);
 	

@@ -1,8 +1,8 @@
 /// @description Draw
-
 	//Render the surface from light controller
 	with(obj_uls_controller)
 	{
+		depth = 200;
 		//Render Light Post Processing
 		if (surface_exists(surf_final_light))
 		{

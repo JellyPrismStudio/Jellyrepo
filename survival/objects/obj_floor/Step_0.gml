@@ -1,1 +1,1 @@
-depth = 500-y;
+depth = -y+camera_get_view_y(view_camera[0]);

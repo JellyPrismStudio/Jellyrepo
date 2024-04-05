@@ -14,7 +14,7 @@ repeat (4)
 		_y *= size;
 		_x += x1+size/2;
 		_y += y1+size/2;
-		var _val = true;
+		var _val = collision_rectangle(_x-size/2, _y-size/2, _x+size/2, _y+size/2, obj_noise_dirt, true, false);
 		if (ds_list_size(global.chunks[x1/size/10+1, y1/size/10+1]) < frame)
 		{
 			ds_list_add(global.chunks[x1/size/10+1, y1/size/10+1], _val)
