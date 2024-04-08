@@ -196,6 +196,7 @@
     {"id":{"name":"uls_collider_set_angle","path":"scripts/uls_collider_set_angle/uls_collider_set_angle.yy",},},
     {"id":{"name":"spr_triangle","path":"sprites/spr_triangle/spr_triangle.yy",},},
     {"id":{"name":"obj_light_lamp2","path":"objects/obj_light_lamp2/obj_light_lamp2.yy",},},
+    {"id":{"name":"obj_grid","path":"objects/obj_grid/obj_grid.yy",},},
     {"id":{"name":"GMLive_nodeTools","path":"scripts/GMLive_nodeTools/GMLive_nodeTools.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],

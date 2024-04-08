@@ -10,6 +10,7 @@ if (chunkx != floor(obj_player.x/size/10) or chunky != floor(obj_player.y/size/1
 			if (!collision_point(_x+size*10*i, _y+size*10*j, obj_chunk, false, false))
 			{
 				instance_create_depth(_x+size*10*i, _y+size*10*j, -_y+size*10*j, obj_chunk);
+				obj_grid.alarm[0] = 16;
 			}
 		}
 	}

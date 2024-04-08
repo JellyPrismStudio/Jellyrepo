@@ -142,6 +142,7 @@
     {"name":"uls_collider_set_angle","order":2,"path":"scripts/uls_collider_set_angle/uls_collider_set_angle.yy",},
     {"name":"spr_triangle","order":3,"path":"sprites/spr_triangle/spr_triangle.yy",},
     {"name":"obj_light_lamp2","order":1,"path":"objects/obj_light_lamp2/obj_light_lamp2.yy",},
+    {"name":"obj_grid","order":14,"path":"objects/obj_grid/obj_grid.yy",},
     {"name":"GMLive_nodeTools","order":3,"path":"scripts/GMLive_nodeTools/GMLive_nodeTools.yy",},
   ],
 }
