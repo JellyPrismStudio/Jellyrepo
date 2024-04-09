@@ -115,3 +115,8 @@ repeat (abs(vlv))
 		else vlv = 0;
 	}
 }
+
+if (keyboard_check_pressed(vk_space))
+{
+	instance_create_depth(x, y, depth, obj_inimigo);
+}
