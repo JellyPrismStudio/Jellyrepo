@@ -76,6 +76,7 @@
     {"name":"uls_get_light_range","order":3,"path":"scripts/uls_get_light_range/uls_get_light_range.yy",},
     {"name":"spr_tile_template","order":7,"path":"sprites/spr_tile_template/spr_tile_template.yy",},
     {"name":"obj_noise_sand","order":7,"path":"objects/obj_noise_sand/obj_noise_sand.yy",},
+    {"name":"obj_destroy","order":15,"path":"objects/obj_destroy/obj_destroy.yy",},
     {"name":"spr_bloco","order":10,"path":"sprites/spr_bloco/spr_bloco.yy",},
     {"name":"obj_uls_collider","order":1,"path":"objects/obj_uls_collider/obj_uls_collider.yy",},
     {"name":"GMLive_compiler","order":1,"path":"scripts/GMLive_compiler/GMLive_compiler.yy",},

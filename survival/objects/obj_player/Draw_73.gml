@@ -13,4 +13,7 @@ var _y = floor((_mouy)/size)*size+size/2;
 var _submit = collision_rectangle(_x-size/2+2, _y-size/2+2, _x+size/2-2, _y+size/2-2, obj_colisao, false, false);
 _submit = _submit == noone? 0 : 1;
 var _sprite = _submit? spr_destroy2 : spr_destroy;
-draw_sprite(_sprite, _submit, _x, _y);
+destroy.x = _x;
+destroy.y = _y;
+destroy.image_index = _submit;
+destroy.sprite_index = _sprite;

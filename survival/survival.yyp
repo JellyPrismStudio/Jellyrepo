@@ -114,6 +114,7 @@
     {"id":{"name":"uls_get_light_range","path":"scripts/uls_get_light_range/uls_get_light_range.yy",},},
     {"id":{"name":"spr_tile_template","path":"sprites/spr_tile_template/spr_tile_template.yy",},},
     {"id":{"name":"obj_noise_sand","path":"objects/obj_noise_sand/obj_noise_sand.yy",},},
+    {"id":{"name":"obj_destroy","path":"objects/obj_destroy/obj_destroy.yy",},},
     {"id":{"name":"spr_bloco","path":"sprites/spr_bloco/spr_bloco.yy",},},
     {"id":{"name":"obj_uls_collider","path":"objects/obj_uls_collider/obj_uls_collider.yy",},},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},

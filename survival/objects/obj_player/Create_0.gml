@@ -6,6 +6,7 @@ slide = .3;
 raio = 200;
 timer_max = 20;
 timer = 0;
+destroy = instance_create_depth(x, y, depth, obj_destroy);
 
 instance_create_depth(x, y, 0, obj_camera);
 

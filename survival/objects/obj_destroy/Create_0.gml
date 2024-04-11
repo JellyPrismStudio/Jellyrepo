@@ -1,0 +1,1 @@
+depth = -100-sprite_width-y+camera_get_view_y(view_camera[0])
