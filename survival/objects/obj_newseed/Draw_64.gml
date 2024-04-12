@@ -3,13 +3,7 @@ if (live_call()) return live_result;
 draw_text(10,10, "F3 - Perlin Noise - Proc. Gen")
 draw_text(10,30, "F2 - Change Seed")
 
-if keyboard_check_pressed(vk_f3)
-{
-	ds_grid_destroy(someGrid);
-	someGrid = ds_grid_create(view_get_wport(view_camera[1])/gridsize,view_get_hport(view_camera[1])/gridsize)
-	noise(someGrid,2,20,5,1,255,20, irandom_range(0,100));
-	perlin = true;
-}
+
 
 /// Função para desenhar uma ds_grid na tela
 function draw_ds_grid(grid, x, y, largura_celula, altura_celula) {
@@ -36,9 +30,9 @@ function draw_ds_grid(grid, x, y, largura_celula, altura_celula) {
 // Exemplo de uso
 if perlin == true
 {
-var pos_x = 0; // Posição x inicial para desenho da grid
-var pos_y = 0; // Posição y inicial para desenho da grid
-var largura_celula = gridsize; // Largura da célula da grid
-var altura_celula = gridsize; // Altura da célula da grid
-draw_ds_grid(someGrid, pos_x, pos_y, largura_celula, altura_celula); // Chama a função para desenhar a ds_grid
+	var pos_x = 0; // Posição x inicial para desenho da grid
+	var pos_y = 0; // Posição y inicial para desenho da grid
+	var largura_celula = gridsize; // Largura da célula da grid
+	var altura_celula = gridsize; // Altura da célula da grid
+	draw_ds_grid(someGrid, pos_x, pos_y, largura_celula, altura_celula); // Chama a função para desenhar a ds_grid
 }
